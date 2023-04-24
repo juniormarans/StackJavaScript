@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "fic-dev"
+version = "0.1.0"
+description = ""
+authors = ["Valtair <valtair.junior@unemat.br>"]
+readme = "README.md"
+packages = [{include = "fast_gen"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+mkdocs-material = "^9.1.2"
+mkdocstrings = "^0.20.0"
+mkdocstrings-python = "^0.8.3"
+mkdocs-swagger-ui-tag = "^0.6.1"
+jinja2 = "^3.1.2"
+pymdown-extensions = "^9.10"
+taskipy = "^1.10.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = "."
+addopts = "--doctest-modules --ignore=alembic"
+
+[tool.black]
+line-length = 79
+
+[tool.isort]
+line_length = 79
+profile = "black"
+
+[tool.taskipy.tasks]
+run = "uvicorn app:app --reload --host 0.0.0.0 --port 7000 --proxy-headers --forwarded-allow-ips '*'"
+lint = "black --check --diff . && isort --check --diff ."
+docs = "mkdocs serve"
+test = "pytest -s -x --cov=app -vv"
+test_pdb = "pytest -s -x --pdb"
+post_test = "coverage html"
+cov = "google-chrome htmlcov/index.html"
+rev = "read -p 'nome da revision: ' nome && alembic revision --autogenerate -m $nome "
+up = "alembic upgrade head"
+down = "alembic downgrade base"
+export = "poetry export > requirements.txt --without-hashes"
+install_req = "cat requirements.txt | grep -E '^[^# ]' | cut -d ';' -f1  | xargs -n 1 poetry add"
+install_up_req = "cat requirements.txt | grep -E '^[^# ]' | cut -d '=' -f1  | xargs -n 1 poetry add"
+pc = "pre-commit run --all-files"
+pc_update = "pre-commit autoupdate"
+init_db = "docker start postgres"
