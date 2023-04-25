@@ -12,6 +12,7 @@ theme:
   logo: assets/logo.png
   favicon: assets/logo.png
   palette:
+    - primary: yellow
     # Palette toggle for light mode
     - scheme: default
       toggle:
@@ -23,7 +24,6 @@ theme:
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to light mode
-
 markdown_extensions:
 - attr_list
 - admonition
