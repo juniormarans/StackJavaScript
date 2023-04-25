@@ -58,23 +58,23 @@ Os comentários em HTML são úteis para tornar o código mais fácil de entende
 A identação em HTML é a prática de adicionar espaços em branco e quebras de linha para organizar e estruturar o código. A identação em HTML é uma boa prática de codificação e pode ajudar a tornar o código mais fácil de entender e manter.
 
 ```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Título da página</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-    <h1>Este é um título principal</h1>
-    <p>Este é um exemplo de parágrafo em HTML.</p>
-    <ul>
-      <li>Item 1 da lista</li>
-      <li>Item 2 da lista</li>
-      <li>Item 3 da lista</li>
-    </ul>
-  </body>
-</html>
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Título da página</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+      <h1>Este é um título principal</h1>
+      <p>Este é um exemplo de parágrafo em HTML.</p>
+      <ul>
+        <li>Item 1 da lista</li>
+        <li>Item 2 da lista</li>
+        <li>Item 3 da lista</li>
+      </ul>
+    </body>
+  </html>
 ```
 
 O código acima mostra uma página HTML simples com identação. Observe que as tags HTML dentro de outras tags HTML estão indentadas com dois espaços para facilitar a leitura e entender a hierarquia do código.

@@ -49,17 +49,17 @@ A estrutura básica de uma página HTML é composta por uma série de elementos 
 A estrutura básica de uma página HTML é essencial para garantir a correta renderização da página pelos navegadores da web. Além disso, seguir esse padrão ajuda os desenvolvedores a criar páginas consistentes e padronizadas, facilitando a manutenção e a atualização do conteúdo da página no futuro.
 
 ```html
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <title>Minha Página HTML</title>
-  </head>
-  <body>
-    <h1>Bem-vindo à minha página HTML!</h1>
-    <p>Esta é uma página HTML básica.</p>
-  </body>
-</html>
+  <!DOCTYPE html>
+  <html lang="pt-br">
+    <head>
+      <meta charset="UTF-8">
+      <title>Minha Página HTML</title>
+    </head>
+    <body>
+      <h1>Bem-vindo à minha página HTML!</h1>
+      <p>Esta é uma página HTML básica.</p>
+    </body>
+  </html>
 ```
 
 Nesse exemplo, a página começa com a declaração do doctype, seguida da tag HTML, que define o idioma da página como português do Brasil. A seção head inclui a meta tag que define o conjunto de caracteres da página como UTF-8 e o título da página. A seção body inclui o conteúdo real da página, que consiste em um cabeçalho h1 e um parágrafo simples.
