@@ -1,6 +1,7 @@
 site_name: FIC DEV
-repo_url: "https://github.com/juniormarans/fast-gen/tree/main/backend#readme"
-repo_name: "Fast-Gen"
+repo_url: "https://github.com/juniormarans/StackJavaScript/tree/gh-pages"
+
+repo_name: "FIC-Dev"
 edit_uri: "tree/main/backend/docs"
 
 theme:
