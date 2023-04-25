@@ -135,4 +135,4 @@ Para referenciar um elemento HTML por ID em CSS, use o seletor de ID, que é uma
 
 O código acima define um estilo para o elemento com o ID "paragrafo1".
 
-É importante lembrar que a escolha do método de identificação de elemento HTML depende do contexto e das necessidades específicas do desenvolvedor. Além disso, é importante lembrar que a especificidade dos seletores CSS é levada em consideração quando vários estilos se aplicam ao mesmo elemento, o que pode levar a conflitos e resultados inesperados se não for gerenciado corretamente.
+A escolha do método de identificação de elemento HTML depende do contexto e das necessidades específicas do desenvolvedor. Além disso, é importante lembrar que a especificidade dos seletores CSS é levada em consideração quando vários estilos se aplicam ao mesmo elemento, o que pode levar a conflitos e resultados inesperados se não for gerenciado corretamente.

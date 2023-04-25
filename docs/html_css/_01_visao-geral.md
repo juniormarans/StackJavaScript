@@ -20,7 +20,7 @@ Depois, o navegador executa qualquer código JavaScript incluído na página, pe
 
 Finalmente, o navegador exibe a página na tela do usuário, combinando todos os elementos processados para criar a visualização final da página. Durante todo o processo, o navegador monitora as interações do usuário com a página, permitindo que a página seja atualizada ou modificada dinamicamente, conforme necessário.
 
-Em resumo, uma página web funciona através de uma combinação de elementos HTML, CSS e JavaScript que são processados pelo navegador da web para fornecer uma experiência interativa e consistente aos usuários.
+Uma página web funciona através de uma combinação de elementos HTML, CSS e JavaScript que são processados pelo navegador da web para fornecer uma experiência interativa e consistente aos usuários.
 
 ## Os fundamentos do HTML
 
@@ -32,7 +32,7 @@ Os elementos são as estruturas de dados que compõem uma página da web. Eles s
 
 Os atributos são usados para definir as propriedades de um elemento. Eles são definidos dentro da tag de abertura e geralmente têm um valor associado que define o comportamento ou a aparência do elemento. Existem vários tipos de atributos, como os atributos de estilo, que definem o estilo visual do elemento, e os atributos de ação, que especificam o comportamento interativo do elemento.
 
-Em resumo, tags, elementos e atributos são conceitos fundamentais do HTML que permitem aos desenvolvedores criar e estruturar páginas da web de forma consistente e padronizada. Tags são blocos básicos de construção do HTML, elementos são as estruturas de dados que compõem a página e atributos definem as propriedades e comportamentos desses elementos.
+Tags, elementos e atributos são conceitos fundamentais do HTML que permitem aos desenvolvedores criar e estruturar páginas da web de forma consistente e padronizada. Tags são blocos básicos de construção do HTML, elementos são as estruturas de dados que compõem a página e atributos definem as propriedades e comportamentos desses elementos.
 
 ## Estrutura básica de uma página html
 

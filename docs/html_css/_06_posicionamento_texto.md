@@ -1,4 +1,4 @@
-# Posicionamento de Tesxt
+# Posicionamento de Texto
 
 O posicionamento de texto em uma página HTML é tão importante quanto o posicionamento de elementos, pois pode afetar a legibilidade e o fluxo visual da página. Existem várias maneiras de posicionar o texto em uma página HTML.
 

@@ -42,7 +42,7 @@ Com o posicionamento fixo, é possível posicionar um elemento em relação à j
   </div>
 ```
 
-## Posicionamento em Grade (Grid)
+## Posicionamento em Grade
 
 Com o posicionamento em grade, é possível criar uma estrutura de linhas e colunas em uma página e posicionar elementos nessa estrutura. O posicionamento em grade é definido usando as propriedades "display: grid" e "grid-template-rows", "grid-template-columns" e "grid-gap".
 

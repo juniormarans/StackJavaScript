@@ -39,4 +39,4 @@ Uma lista de definição é usada para listar termos e suas definições corresp
   </dl>
 ```
 
-É importante lembrar que cada tipo de lista pode ser personalizado com CSS para mudar a aparência dos itens, marcadores e estilos de layout.
+Cada tipo de lista pode ser personalizado com CSS para mudar a aparência dos itens, marcadores e estilos de layout.

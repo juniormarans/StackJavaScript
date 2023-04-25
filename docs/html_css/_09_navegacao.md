@@ -51,4 +51,4 @@ Barras de navegação são semelhantes aos menus de navegação, mas geralmente 
 
 O código acima cria uma barra de navegação com um logotipo, links de texto para diferentes seções do site e um formulário de pesquisa.
 
-É importante lembrar que a navegação pode ser personalizada com CSS para mudar a aparência dos links de texto, menus e barras de navegação.
+A navegação pode ser personalizada com CSS para mudar a aparência dos links de texto, menus e barras de navegação.

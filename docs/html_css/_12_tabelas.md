@@ -19,7 +19,7 @@ As tabelas HTML são usadas para exibir dados em linhas e colunas. As tabelas s�
   </table>
 ```
 
-Neste exemplo, a tag `<table>` é usada para criar a tabela. As linhas da tabela são criadas com a tag `<tr>`, que representa uma linha. As células da tabela são criadas com a tag `<td>`, que representa uma célula de dados. As células de cabeçalho da tabela são criadas com a tag `<th>`, que representa uma célula de cabeçalho.
+A tag `<table>` é usada para criar a tabela. As linhas da tabela são criadas com a tag `<tr>`, que representa uma linha. As células da tabela são criadas com a tag `<td>`, que representa uma célula de dados. As células de cabeçalho da tabela são criadas com a tag `<th>`, que representa uma célula de cabeçalho.
 
 A primeira linha da tabela contém as células de cabeçalho. A segunda e terceira linhas contêm as células de dados.
 
@@ -67,7 +67,7 @@ A tag `<thead>` é usada para criar um cabeçalho de tabela, que normalmente inc
   </table>
 ```
 
-Neste exemplo, a tag `<thead>` é usada para criar o cabeçalho da tabela com as células de cabeçalho `<th>`. A tag `<tbody>` é usada para criar o corpo da tabela com as células de dados `<td>`. A tag `<tfoot>` é usada para criar o rodapé da tabela com a célula Total.
+A tag `<thead>` é usada para criar o cabeçalho da tabela com as células de cabeçalho `<th>`. A tag `<tbody>` é usada para criar o corpo da tabela com as células de dados `<td>`. A tag `<tfoot>` é usada para criar o rodapé da tabela com a célula Total.
 
 Note que a célula de preço na tag `<tfoot>` está em branco, já que não faz sentido somar preços.
 

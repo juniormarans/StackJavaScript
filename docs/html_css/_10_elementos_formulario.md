@@ -2,7 +2,7 @@
 
 Elementos de formulário HTML são usados ​​para coletar informações do usuário, como nome, endereço, senha, etc.
 
-## Label
+## Rótulo
 
 A tag `<label>` em HTML é usada para associar um rótulo descritivo a um elemento de formulário, como um campo de texto ou uma caixa de seleção. Isso ajuda a tornar os formulários mais acessíveis e fáceis de usar para usuários com deficiência visual, pois permite que o rótulo seja lido em conjunto com o elemento de formulário correspondente.
 
@@ -13,7 +13,7 @@ O atributo "for" deve ser usado para especificar o ID do elemento de formulário
   <input type="text" id="nome" name="nome">
 ```
 
-## Input
+## Campo de Entrada de Dados
 
 O elemento HTML `<input>` é usado para coletar informações do usuário por meio de campos de entrada, como texto, senha, caixa de seleção, botão de opção, etc.
 
