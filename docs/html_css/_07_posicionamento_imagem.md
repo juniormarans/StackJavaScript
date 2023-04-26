@@ -42,3 +42,9 @@ Uma imagem pode ser transformada em um link, de modo que, quando clicada, a imag
   </a>
   <p>Esta imagem é um link para outro site.</p>
 ```
+
+## Desafios
+
+- 04 - Criando uma imagem de fundo responsiva: Crie uma imagem de fundo que se ajuste ao tamanho da tela do dispositivo. Use a tag background-image para definir a imagem de fundo e a tag background-size para ajustar o tamanho da imagem.
+
+- 05 - Posicionando um elemento no rodapé da página: Crie um layout onde um elemento de texto esteja sempre posicionado no rodapé da página. Use a tag position para posicionar o elemento no rodapé e a tag bottom para alinhar o elemento à parte inferior da página.

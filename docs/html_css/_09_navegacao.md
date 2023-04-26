@@ -52,3 +52,9 @@ Barras de navegação são semelhantes aos menus de navegação, mas geralmente 
 O código acima cria uma barra de navegação com um logotipo, links de texto para diferentes seções do site e um formulário de pesquisa.
 
 A navegação pode ser personalizada com CSS para mudar a aparência dos links de texto, menus e barras de navegação.
+
+## Desafios
+
+- 06 - Criando um menu horizontal: Crie um menu horizontal com links para outras páginas. Use a tag display para transformar a lista de links em uma barra horizontal e a tag text-align para alinhar o texto ao centro da barra.
+
+- 07 - Crie uma lista de navegação para o site de uma empresa fictícia de tecnologia. A lista deve conter links para as seguintes seções do site: Home, Sobre Nós, Serviços, Produtos e Contato. Além disso, crie uma lista de serviços oferecidos pela empresa, que inclua pelo menos 3 itens, e posicione-a abaixo da seção de serviços da lista de navegação.

@@ -74,3 +74,11 @@ Note que a célula de preço na tag `<tfoot>` está em branco, já que não faz 
 Ao dividir a tabela em seções com essas tags, é possível aplicar estilos diferentes a cada seção usando CSS, tornando a tabela mais estilizada e fácil de ler.
 
 As tabelas HTML são frequentemente usadas para exibir dados tabulares, como informações de contato, preços de produtos e horários de eventos. É importante lembrar que as tabelas HTML devem ser usadas apenas para dados tabulares e não para formatação de layout. Para isso, é recomendado o uso de CSS.
+
+## Desafios
+
+- 10 - Crie uma tabela com informações sobre os alunos de uma turma. A tabela deve conter as colunas: nome, sobrenome, idade e média.
+
+- 11 - Crie uma tabela com informações sobre os produtos de uma loja virtual. A tabela deve conter as colunas: produto, preço e disponibilidade.
+
+- 12 - Crie uma tabela com informações sobre os funcionários de uma empresa. A tabela deve conter as colunas: nome, cargo, salário e data de admissão.

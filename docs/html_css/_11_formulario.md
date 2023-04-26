@@ -22,3 +22,9 @@ O formulário possui três campos: um campo de texto para o nome do usuário, um
 O botão de envio é criado usando a tag `<input>` com o atributo "type" definido como "submit". Quando o usuário clica no botão, o formulário é enviado para o servidor para processamento. Também é possível criar botões de resetar usando a tag `<input>` com o atributo "type" definido como "reset".
 
 É possível estilizar os formulários usando CSS, e também é possível adicionar validação de formulário usando JavaScript para garantir que os usuários preencham os campos corretamente antes de enviar o formulário.
+
+## Desafios
+
+- 08 - Crie um formulário de cadastro de usuário com os seguintes campos: nome, sobrenome, e-mail, telefone e senha. Adicione um botão para enviar o formulário e outro para limpar os campos.
+
+- 09 - Crie um formulário de contato com os seguintes campos: nome, e-mail, assunto e mensagem. Adicione um botão para enviar o formulário e outro para limpar os campos.
