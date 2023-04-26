@@ -1302,13 +1302,13 @@ Em resumo, o arquivo package.json é fundamental em projetos Node.js, pois ele a
 <p>Vamos entender o que está acontecendo em cada linha do código:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
 </code></pre></div>
-<p>Aqui estamos importando o módulo <code>express</code> para o nosso código. O <code>express</code> é um framework para criação de aplicações web em Node.js. A palavra-chave <code>const</code> é utilizada para declarar uma constante.</p>
+<p>Importando o módulo <code>express</code> para o nosso código. O <code>express</code> é um framework para criação de aplicações web em Node.js. A palavra-chave <code>const</code> é utilizada para declarar uma constante.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">bodyParser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;body-parser&#39;</span><span class="p">);</span>
 </code></pre></div>
-<p>Estamos importando o módulo <code>body-parser</code> que é um middleware para análise do corpo das requisições HTTP.</p>
+<p>Importando o módulo <code>body-parser</code> que é um middleware para análise do corpo das requisições HTTP.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">cors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cors&#39;</span><span class="p">);</span>
 </code></pre></div>
-<p>Estamos importando o módulo <code>cors</code> que é um middleware que permite o acesso de outras origens à API.</p>
+<p>Importando o módulo <code>cors</code> que é um middleware que permite o acesso de outras origens à API.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">express</span><span class="p">();</span>
 </code></pre></div>
 <p>Aqui estamos criando a nossa aplicação express, que será utilizada para configurar as rotas e endpoints da API.</p>
@@ -1318,12 +1318,12 @@ Em resumo, o arquivo package.json é fundamental em projetos Node.js, pois ele a
 <div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cors</span><span class="p">());</span>
 <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">bodyParser</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
 </code></pre></div>
-<p>Aqui estamos utilizando os middlewares <code>cors</code> e <code>body-parser</code> que importamos anteriormente para nossa aplicação express. O <code>cors</code> habilita o acesso de outras origens à API e o <code>body-parser</code> analisa o corpo das requisições HTTP.</p>
+<p>Utilizamos os middlewares <code>cors</code> e <code>body-parser</code> que importamos anteriormente para nossa aplicação express. O <code>cors</code> habilita o acesso de outras origens à API e o <code>body-parser</code> analisa o corpo das requisições HTTP.</p>
 <div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;Bem-vindo à API RESTful&#39;</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div>
-<p>Aqui estamos definindo uma rota para a raiz da nossa aplicação (<code>/</code>). Quando um usuário acessar essa rota, a API enviará como resposta uma mensagem de boas-vindas.</p>
+<p>Definindo uma rota para a raiz da nossa aplicação (<code>/</code>). Quando um usuário acessar essa rota, a API enviará como resposta uma mensagem de boas-vindas.</p>
 <div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Servidor iniciado em http://localhost:</span><span class="si">${</span><span class="nx">port</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 <span class="p">});</span>
@@ -1368,7 +1368,6 @@ Em resumo, o arquivo package.json é fundamental em projetos Node.js, pois ele a
 </code></pre></div>
 <p>Nesse exemplo, criamos a rota <code>/usuario/:id</code> recebe um parâmetro de rota <code>id</code>. Quando um usuário acessa essa rota com um ID específico, o Express armazena esse ID no objeto <code>params</code> e podemos acessá-lo através da propriedade <code>id</code>. Em seguida, podemos usar esse ID para buscar informações específicas do usuário com esse ID em um banco de dados, por exemplo.</p>
 <p>Para testar essa rota, basta acessar <code>http://localhost:3000/usuario/123</code> no navegador, onde <code>123</code> é um exemplo de ID de usuário. A mensagem de resposta irá incluir esse ID na mensagem.</p>
-<p>Claro, aqui vão alguns exemplos de como utilizar parâmetros de query string e route parameters em uma aplicação Node.js com Express:</p>
 <h3 id="parametros-de-query-string">Parâmetros de Query String</h3>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">bodyParser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;body-parser&#39;</span><span class="p">);</span>
