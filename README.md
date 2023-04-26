@@ -31,3 +31,5 @@ poetry shell && poetry install
 ### **Dependências**
 
 - Todas as dependências podem ser encontradas no diretório `./` (o arquivo `pyproject.toml` e `requiriments.txt`)
+
+[click aqui e veja a documentação](https://juniormarans.github.io/StackJavaScript/)
