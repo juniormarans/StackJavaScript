@@ -53,7 +53,7 @@ O código acima cria uma barra de navegação com um logotipo, links de texto pa
 
 A navegação pode ser personalizada com CSS para mudar a aparência dos links de texto, menus e barras de navegação.
 
-## Desafios
+## Exercícios de Fixação
 
 - 06 - Criando um menu horizontal: Crie um menu horizontal com links para outras páginas. Use a tag display para transformar a lista de links em uma barra horizontal e a tag text-align para alinhar o texto ao centro da barra.
 

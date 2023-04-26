@@ -75,7 +75,7 @@ Ao dividir a tabela em seções com essas tags, é possível aplicar estilos dif
 
 As tabelas HTML são frequentemente usadas para exibir dados tabulares, como informações de contato, preços de produtos e horários de eventos. É importante lembrar que as tabelas HTML devem ser usadas apenas para dados tabulares e não para formatação de layout. Para isso, é recomendado o uso de CSS.
 
-## Desafios
+## Exercícios de Fixação
 
 - 10 - Crie uma tabela com informações sobre os alunos de uma turma. A tabela deve conter as colunas: nome, sobrenome, idade e média.
 

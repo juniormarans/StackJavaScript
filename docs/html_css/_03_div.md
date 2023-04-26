@@ -29,7 +29,7 @@ No exemplo acima, a tag `<div>` é usada para agrupar o conteúdo em duas seçõ
 
 A tag `<div>` é muito útil para organizar e estruturar o conteúdo de uma página da web. Ela permite que você agrupe diferentes elementos em uma seção lógica, o que torna o código HTML mais fácil de entender e manter. Além disso, a tag `<div>` é frequentemente usada para criar layouts complexos em combinação com CSS.
 
-## Desafios
+## Exercícios de Fixação
 
 - 01 - Página de perfil: Crie uma página de perfil simples com uma imagem de perfil, nome do usuário, uma breve descrição e alguns interesses listados em parágrafos separados.
 

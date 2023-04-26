@@ -403,3 +403,32 @@
   </body>
 </html>
 ```
+
+## Atividade 13
+
+```css
+  .elemento {
+    height: 300px;
+    width: 500px;
+    margin: 20px;
+    padding: 10px;
+  }
+```
+
+## Atividade 14
+
+```css
+  .elemento {
+    height: 50%;
+    width: 80%;
+  }
+```
+
+## Atividade 15
+
+```css
+  .elemento {
+    border: 2px dotted red;
+    border-radius: 10px;
+  }
+```

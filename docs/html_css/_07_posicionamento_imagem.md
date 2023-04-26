@@ -43,7 +43,7 @@ Uma imagem pode ser transformada em um link, de modo que, quando clicada, a imag
   <p>Esta imagem é um link para outro site.</p>
 ```
 
-## Desafios
+## Exercícios de Fixação
 
 - 04 - Criando uma imagem de fundo responsiva: Crie uma imagem de fundo que se ajuste ao tamanho da tela do dispositivo. Use a tag background-image para definir a imagem de fundo e a tag background-size para ajustar o tamanho da imagem.
 

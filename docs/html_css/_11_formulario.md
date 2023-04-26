@@ -23,7 +23,7 @@ O botão de envio é criado usando a tag `<input>` com o atributo "type" definid
 
 É possível estilizar os formulários usando CSS, e também é possível adicionar validação de formulário usando JavaScript para garantir que os usuários preencham os campos corretamente antes de enviar o formulário.
 
-## Desafios
+## Exercícios de Fixação
 
 - 08 - Crie um formulário de cadastro de usuário com os seguintes campos: nome, sobrenome, e-mail, telefone e senha. Adicione um botão para enviar o formulário e outro para limpar os campos.
 
