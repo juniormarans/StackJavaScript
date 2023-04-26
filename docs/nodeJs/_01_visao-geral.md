@@ -90,6 +90,59 @@ Uma API de serviço da web é uma API que fornece acesso a serviços da web, ger
 
 O protocolo HTTP é amplamente utilizado na internet para transferência de dados entre clientes e servidores. Ele usa uma abordagem de solicitação-resposta, onde o cliente envia uma solicitação ao servidor e espera uma resposta. Essa abordagem é bastante simples e pode ser facilmente implementada por diferentes plataformas e linguagens de programação.
 
+Como exemplo de API Webservice temos a [ViaCEP](https://viacep.com.br/), a API ViaCEP é um serviço gratuito que permite a consulta de endereços brasileiros utilizando o CEP como parâmetro. A seguir vou mostrar como utilizar a API ViaCEP em uma aplicação JavaScript para buscar informações de um endereço.
+
+##### Passo 1: Entendendo a API ViaCEP
+
+A API ViaCEP oferece diferentes formas de consulta, incluindo busca por CEP, endereço ou logradouro. Neste tutorial, vamos utilizar a busca por CEP.
+
+A URL base da API ViaCEP é `https://viacep.com.br/ws/`. Para buscar informações de um endereço a partir do CEP, basta adicionar o CEP à URL e enviar uma requisição HTTP GET.
+
+Por exemplo, para buscar informações do endereço correspondente ao CEP 01310-100, a URL seria:
+
+```url
+https://viacep.com.br/ws/01310100/json/
+```
+
+Caso seja um CEP valido a resposta da API será um objeto JSON contendo informações como logradouro, bairro, cidade, estado, entre outras, conforme Exemplo:
+
+```json
+    {
+      "cep": "01310-100",
+      "logradouro": "Praça da Sé",
+      "complemento": "lado ímpar",
+      "bairro": "Sé",
+      "localidade": "São Paulo",
+      "uf": "SP",
+      "ibge": "3550308",
+      "gia": "1004",
+      "ddd": "11",
+      "siafi": "7107"
+    } 
+```
+
+##### Passo 2: Criando uma função para buscar informações de um endereço a partir do CEP
+
+Agora que entendemos como funciona a API ViaCEP, podemos criar uma função para buscar informações de um endereço a partir do CEP.
+
+```javascript
+async function buscaEndereco(cep) {
+    try {
+
+      const url = `https://viacep.com.br/ws/${cep}/json/`;
+      const response = await fetch(url);
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+buscaEndereco(78206020)
+```
+
+Esta função recebe um parâmetro `cep` contendo o CEP que desejamos buscar. Em seguida, montamos a URL da API utilizando o CEP como parâmetro e enviamos uma requisição HTTP GET utilizando a função `fetch`. Por fim, mostramos em tela o resultado, poderiamos tambem retornar os dados da resposta da API no formato JSON.
+
 #### API RESTful
 
 Uma API RESTful é uma API que segue o estilo arquitetural REST (Representational State Transfer). O REST é um conjunto de princípios para projetar sistemas distribuídos na web. Ele é baseado na ideia de que um recurso na web deve ser identificado por uma URL única e que as operações em torno desse recurso devem ser definidas pelos métodos HTTP padrão (GET, POST, PUT, DELETE).
