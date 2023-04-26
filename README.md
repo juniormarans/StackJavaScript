@@ -1,82 +1,30 @@
-# General workflow
+# Fluxo de trabalho geral
 
-The dependencies are managed with [Poetry](https://python-poetry.org/), go there and install it.
+As dependências são gerenciadas com [Poetry](https://python-poetry.org/), acesse lá e instale.
 
-From `./backend/` you can install all the dependencies with:
+De `./` você pode instalar todas as dependências com:
 
-```console
-$ poetry install
-```
-If it originates from a requirements.txt
-```console
-$ cat requirements.txt | xargs poetry add
+```bash
+poetry shell && poetry install
+
 ```
 
-Then you can start a shell session with the new environment with:
-
-```console
-$ poetry shell
-```
 ----
-## **Root Directory**
-- Next, open your editor at `./backend/` (instead of the project root: `./`), so that you see an `./app/` directory with your code inside. That way, your editor will be able to find all the imports, etc. Make sure your editor uses the environment you just created with Poetry.
 
-#### **alembic:**
-- If you need to use a relational database, it is recommended to use [alembic](https://alembic.sqlalchemy.org/en/latest/) to manage data migrations. `./backend/alembic/`
+## **Diretório Raiz**
 
+- Em seguida, abra seu editor em `./`, para que você veja um diretório `./docs/` com seu código dentro. Dessa forma, seu editor poderá encontrar todas as importações, etc. Certifique-se de que seu editor use o ambiente que você acabou de criar com o Poetry.
 
-**Migrations**
-During local development run the migrations with `alembic` commands and the migration code will be in your app directory. So you can add it to your git repository.
+- **gitignore** arquivo de configuração usado pelo sistema de controle de versão Git para especificar quais arquivos e pastas devem ser ignorados durante o processo de versionamento do projeto.
+- **LICENSE**  contém a licença de uso de um software ou projeto, definindo os termos e condições em que o software pode ser utilizado, modificado e distribuído.
+- **mkdocs.yml** arquivo de configuração usado pelo MkDocs,
+- **pyproject.lock** contém informações precisas sobre as dependências e versões exatas utilizadas pelo projeto em um determinado momento, garantindo que a mesma configuração de dependências seja reproduzida em diferentes máquinas.
+- **"pyproject.toml** arquivo de configuração que é usado por algumas ferramentas de desenvolvimento em Python, como o "poetry" e o "flit", para definir as configurações do projeto.
 
-Make sure you create a "revision" of your models and that you "upgrade" your database with that revision every time you change them. As this is what will update the tables in your database. Otherwise, your application will have errors.
+### **docs**
 
-* If you created a new model in `./backend/app/models/`, make sure to import it in `./backend/app/db/`, that Python module (`base.py`) that imports all the models will be used by Alembic.
+- o nível onde se encontra toda documentação encapsula os módulos do aplicativo `./docs/`
 
-* After changing a model (for example, adding a column), create a revision, e.g.:
+### **Dependências**
 
-```console
-$ alembic revision --autogenerate -m "Add column last_name to User model"
-```
-
-* Commit to the git repository the files generated in the alembic directory.
-
-* After creating the revision, run the migration in the database (this is what will actually change the database):
-
-```console
-$ alembic upgrade head
-```
-
-#### **app**
-- the app level encapsulates the application modules `./backend/app/`
-
-- **api** contains all application endpoints `./backend/app/api/`
-- **auth** if necessary, it contains the application documentation, standard for authorization. OAuth 2.0-based Allows applications such as Web App, Mobile and Desktop to gain limited access to user information via the HTTP protocol `./backend/app/auth/`.
-- **core** contains all environment variables used in the application `./backend/app/core/`, obtaining `.env` files as source in `./`
-
-- **database** if there is a need to prepopulate data, they should stay at this level`./backend/app/database/`.
-
-- **db** configure the connection and build the database `./backend/app/db/`.
-
-- **models** Modify or add SQLAlchemy models in `./backend/app/models/`
-- **schema** responsible for validating the data structure before allowing input to an endpoint.
-
-- **static** only if there is a need for static elements in the project.
-
-- **templates** contains templates that are needed in the project, if necessary.
-
-- **uploads** if necessary save files.
-
-- **util** module that contains methods that may or may not be reused in different projects. if Minio client, settings in `./backend/app/util/` (the file `minio.py`)
-if Websocket client, settings in `./backend/app/util/` (the file `ws.py`)
-
-#### **docs**
-- if it exists, it contains the application's documentation `./backend/docs/`
-
-#### **tests**
-- The ideal scenario would be TDD. Test driven development is a process where you write the test before writing the code. `./backend/tests/`
-
-#### **.env**
-- All environment variables can be fount int the directory `./backand/`(the file `.env`)
-
-#### **Dependencies**
-- All the dependencies can be found in the directory `./backend` (the file `pyproject.toml` and `requiriments.txt`)
+- Todas as dependências podem ser encontradas no diretório `./` (o arquivo `pyproject.toml` e `requiriments.txt`)

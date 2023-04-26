@@ -1,7 +1,7 @@
 site_name: FIC DEV
 repo_url: "https://github.com/juniormarans/StackJavaScript/tree/main"
 
-repo_name: "FIC-Dev"
+repo_name: "Full-Stack-JavaScript"
 edit_uri: "tree/main/backend/docs"
 
 theme:
