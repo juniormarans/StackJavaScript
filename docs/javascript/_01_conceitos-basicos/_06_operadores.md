@@ -141,8 +141,6 @@ let resultado = (valor1 + valor2) * valor3; // resultado = 30
 
 Os operadores aritméticos em JavaScript são muito importantes para realizar cálculos matemáticos em variáveis. Além disso, entender a precedência dos operadores aritméticos é fundamental para escrever códigos corretos e eficientes. Por isso, é importante seguir as convenções de boas práticas de código, utilizar nomes descritivos para as variáveis e utilizar parênteses quando necessário para garantir a ordem correta de execução das operações.
 
-Claro! Abaixo segue um exemplo de operadores de atribuição em JavaScript, com convenções de boas práticas de código.
-
 ## Operadores de Atribuição em JavaScript
 
 Os operadores de atribuição em JavaScript são utilizados para atribuir valores a variáveis. Abaixo segue uma lista dos operadores de atribuição em JavaScript:
@@ -433,8 +431,6 @@ Neste exemplo, o operador ternário `?` verifica se a `idade` é maior ou igual 
 Os operadores de comparação em JavaScript são fundamentais para a criação de expressões condicionais e tomada de decisões em um programa. É importante utilizá-los corretamente e de acordo com as boas práticas de código, visando garantir a legibilidade e manutenção do código.
 
 ## Operadores Lógicos
-
-Claro, segue abaixo a tabela com os operadores lógicos em JavaScript:
 
 | Operador | Descrição                                              |
 |----------|--------------------------------------------------------|

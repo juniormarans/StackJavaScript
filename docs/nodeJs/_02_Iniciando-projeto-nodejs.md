@@ -134,19 +134,19 @@ Vamos entender o que está acontecendo em cada linha do código:
 const express = require('express');
 ```
 
-Aqui estamos importando o módulo `express` para o nosso código. O `express` é um framework para criação de aplicações web em Node.js. A palavra-chave `const` é utilizada para declarar uma constante.
+Importando o módulo `express` para o nosso código. O `express` é um framework para criação de aplicações web em Node.js. A palavra-chave `const` é utilizada para declarar uma constante.
 
 ```js
 const bodyParser = require('body-parser');
 ```
 
-Estamos importando o módulo `body-parser` que é um middleware para análise do corpo das requisições HTTP.
+Importando o módulo `body-parser` que é um middleware para análise do corpo das requisições HTTP.
 
 ```js
 const cors = require('cors');
 ```
 
-Estamos importando o módulo `cors` que é um middleware que permite o acesso de outras origens à API.
+Importando o módulo `cors` que é um middleware que permite o acesso de outras origens à API.
 
 ```js
 const app = express();
@@ -165,7 +165,7 @@ app.use(cors());
 app.use(bodyParser.json());
 ```
 
-Aqui estamos utilizando os middlewares `cors` e `body-parser` que importamos anteriormente para nossa aplicação express. O `cors` habilita o acesso de outras origens à API e o `body-parser` analisa o corpo das requisições HTTP.
+Utilizamos os middlewares `cors` e `body-parser` que importamos anteriormente para nossa aplicação express. O `cors` habilita o acesso de outras origens à API e o `body-parser` analisa o corpo das requisições HTTP.
 
 ```js
 app.get('/', (req, res) => {
@@ -173,7 +173,7 @@ app.get('/', (req, res) => {
 });
 ```
 
-Aqui estamos definindo uma rota para a raiz da nossa aplicação (`/`). Quando um usuário acessar essa rota, a API enviará como resposta uma mensagem de boas-vindas.
+Definindo uma rota para a raiz da nossa aplicação (`/`). Quando um usuário acessar essa rota, a API enviará como resposta uma mensagem de boas-vindas.
 
 ```js
 app.listen(port, () => {
@@ -237,8 +237,6 @@ app.listen(port, () => {
 Nesse exemplo, criamos a rota `/usuario/:id` recebe um parâmetro de rota `id`. Quando um usuário acessa essa rota com um ID específico, o Express armazena esse ID no objeto `params` e podemos acessá-lo através da propriedade `id`. Em seguida, podemos usar esse ID para buscar informações específicas do usuário com esse ID em um banco de dados, por exemplo.
 
 Para testar essa rota, basta acessar `http://localhost:3000/usuario/123` no navegador, onde `123` é um exemplo de ID de usuário. A mensagem de resposta irá incluir esse ID na mensagem.
-
-Claro, aqui vão alguns exemplos de como utilizar parâmetros de query string e route parameters em uma aplicação Node.js com Express:
 
 ### Parâmetros de Query String
 
