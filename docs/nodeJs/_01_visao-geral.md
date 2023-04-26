@@ -107,18 +107,18 @@ https://viacep.com.br/ws/01310100/json/
 Caso seja um CEP valido a resposta da API será um objeto JSON contendo informações como logradouro, bairro, cidade, estado, entre outras, conforme Exemplo:
 
 ```json
-    {
-      "cep": "01310-100",
-      "logradouro": "Praça da Sé",
-      "complemento": "lado ímpar",
-      "bairro": "Sé",
-      "localidade": "São Paulo",
-      "uf": "SP",
-      "ibge": "3550308",
-      "gia": "1004",
-      "ddd": "11",
-      "siafi": "7107"
-    } 
+{
+  "cep": "01310-100",
+  "logradouro": "Avenida Paulista",
+  "complemento": "de 612 a 1510 - lado par",
+  "bairro": "Bela Vista",
+  "localidade": "São Paulo",
+  "uf": "SP",
+  "ibge": "3550308",
+  "gia": "1004",
+  "ddd": "11",
+  "siafi": "7107"
+} 
 ```
 
 ##### Passo 2: Criando uma função para buscar informações de um endereço a partir do CEP
@@ -138,7 +138,7 @@ async function buscaEndereco(cep) {
     }
   }
 
-buscaEndereco(78206020)
+buscaEndereco(01310100)
 ```
 
 Esta função recebe um parâmetro `cep` contendo o CEP que desejamos buscar. Em seguida, montamos a URL da API utilizando o CEP como parâmetro e enviamos uma requisição HTTP GET utilizando a função `fetch`. Por fim, mostramos em tela o resultado, poderiamos tambem retornar os dados da resposta da API no formato JSON.
