@@ -28,11 +28,11 @@ Para seguir este guia, recomendamos que você utilize Ubuntu 20.04. Antes de com
 
 Para instalar o Node.js no Linux, siga os seguintes passos:
 
-## Passo 1: Abra o terminal
+### Passo 1: Abra o terminal
 
 Abra o terminal no seu sistema Linux. O terminal pode ser encontrado no menu de aplicativos ou pressionando a tecla de atalho `Ctrl + Alt + T`.
 
-## Passo 2: Atualize o gerenciador de pacotes
+### Passo 2: Atualize o gerenciador de pacotes
 
 Antes de instalar o Node.js, é recomendável atualizar o gerenciador de pacotes para garantir que você esteja baixando a versão mais recente. Use o seguinte comando no terminal:
 
@@ -40,7 +40,7 @@ Antes de instalar o Node.js, é recomendável atualizar o gerenciador de pacotes
 sudo apt update
 ```
 
-## Passo 3: Instale o Node.js
+### Passo 3: Instale o Node.js
 
 Existem diferentes formas de instalar o Node.js no Linux, mas neste exemplo, usaremos o gerenciador de pacotes `apt` no Ubuntu ou no Debian. Use o seguinte comando para instalar o Node.js:
 
@@ -54,7 +54,7 @@ Além disso, você também precisa instalar o gerenciador de pacotes npm (Node P
 sudo apt install npm
 ```
 
-## Passo 4: Verifique a instalação
+### Passo 4: Verifique a instalação
 
 Após a instalação do Node.js e npm, você pode verificar se tudo foi instalado corretamente executando o seguinte comando no terminal:
 
