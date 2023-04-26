@@ -23,7 +23,10 @@ poetry shell && poetry install
 
 ### **docs**
 
-- o nível onde se encontra toda documentação encapsula os módulos do aplicativo `./docs/`
+- o nível onde se encontra toda documentação `./docs/`
+- **assets** é o local comum para armazenar arquivos estáticos, como imagens, arquivos de fonte, arquivos de áudio ou vídeo, entre outros recursos que são usados em um aplicativo ou site.
+- **stylesheets** é geralmente usado para armazenar arquivos de folha de estilo em um projeto web. As folhas de estilo são usadas para definir a aparência e o estilo visual do site ou aplicativo, como a fonte, as cores, o layout e outros aspectos de design.
+- **index.md** arquivo de conteúdo que é usado como a página inicial (ou índice)  `./docs/index.md`.
 
 ### **Dependências**
 
