@@ -1,4 +1,4 @@
-# Tabelas
+## Tabelas
 
 As tabelas HTML são usadas para exibir dados em linhas e colunas. As tabelas são compostas de células que são organizadas em linhas e colunas.
 
@@ -25,7 +25,7 @@ A primeira linha da tabela contém as células de cabeçalho. A segunda e tercei
 
 Além disso, as tabelas HTML suportam alguns atributos adicionais, como border, que define a largura da borda da tabela, e cellpadding e cellspacing, que definem o espaçamento entre as células da tabela.
 
-## Mais tags de tabelas
+### Mais tags de tabelas
 
 As tags `<thead>`, `<tbody>` e `<tfoot>` são usadas para dividir uma tabela HTML em seções separadas, tornando-a mais fácil de ler e compreender.
 
@@ -75,7 +75,7 @@ Ao dividir a tabela em seções com essas tags, é possível aplicar estilos dif
 
 As tabelas HTML são frequentemente usadas para exibir dados tabulares, como informações de contato, preços de produtos e horários de eventos. É importante lembrar que as tabelas HTML devem ser usadas apenas para dados tabulares e não para formatação de layout. Para isso, é recomendado o uso de CSS.
 
-## Exercícios de Fixação
+### Exercícios de Fixação
 
 - 10 - Crie uma tabela com informações sobre os alunos de uma turma. A tabela deve conter as colunas: nome, sobrenome, idade e média.
 

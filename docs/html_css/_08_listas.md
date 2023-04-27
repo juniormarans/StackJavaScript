@@ -1,8 +1,8 @@
-# Tipos de Listas
+## Tipos de Listas
 
 Em HTML, existem três tipos principais de listas: lista ordenada, lista não ordenada e lista de definição.
 
-## Lista ordenada
+### Lista ordenada
 
 Uma lista ordenada é usada para listar itens em uma ordem específica, com cada item numerado ou com um marcador personalizado. Para criar uma lista ordenada, use a tag `<ol>` e as tags `<li>` para cada item da lista:
 
@@ -14,7 +14,7 @@ Uma lista ordenada é usada para listar itens em uma ordem específica, com cada
   </ol>
 ```
 
-## Lista não ordenada
+### Lista não ordenada
 
 Uma lista não ordenada é usada para listar itens sem uma ordem específica, com cada item marcado por um ponto, círculo ou outro símbolo personalizado. Para criar uma lista não ordenada, use a tag `<ul>` e as tags `<li>` para cada item da lista:
 
@@ -26,7 +26,7 @@ Uma lista não ordenada é usada para listar itens sem uma ordem específica, co
   </ul>
 ```
 
-## Lista de definição
+### Lista de definição
 
 Uma lista de definição é usada para listar termos e suas definições correspondentes. Para criar uma lista de definição, use a tag `<dl>`, as tags `<dt>` para os termos e as tags `<dd>` para as definições:
 

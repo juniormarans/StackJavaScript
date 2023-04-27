@@ -34,7 +34,7 @@ markdown_extensions:
         class: mermaid
 - toc:
     permalink: "#"
-    baselevel: 2
+    baselevel: 1
 extra_css:
 - stylesheets/extra.css
 - stylesheets/material.css
@@ -42,14 +42,14 @@ extra_css:
 
 plugins:
 - toc-md:
-    toc_page_title: Sumário
-    header_level: 3
+    toc_page_title: ''
+    header_level: 4
     pickup_description_meta: false
     pickup_description_class: false
-    output_path: summary.md
+    output_path: sumário.md
     output_log: true
-    ignore_page_pattern: summary.md
-    remove_navigation_page_pattern: summary.md
+    ignore_page_pattern: sumário.md
+    remove_navigation_page_pattern: sumário.md
 - search
 - mkdocstrings:
     default_handler: python

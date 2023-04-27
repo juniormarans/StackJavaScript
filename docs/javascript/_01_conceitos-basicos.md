@@ -314,15 +314,15 @@ Em resumo, JavaScript possui vários tipos de dados que são usados para represe
 
 ### Formatação e Indentação de Código em JavaScript
 
-A `formatação` e `indentação` de código em JavaScript são importantes para a `legibilidade` e `manutenção` do código. Quando o código é organizado de maneira consistente e estruturada, é mais fácil para outros desenvolvedores entenderem o código e fazerem alterações.
+A **formatação** e **indentação** de código em JavaScript são importantes para a **legibilidade** e **manutenção** do código. Quando o código é organizado de maneira consistente e estruturada, é mais fácil para outros desenvolvedores entenderem o código e fazerem alterações.
 
 #### Princípios de Formatação de Código em JavaScript
 
-Os `princípios de formatação` de código em JavaScript incluem a `consistência`, a `clareza` e a `simplicidade`. A `consistência` é importante para que o código seja organizado de maneira previsível e fácil de entender. Isso pode ser alcançado usando um conjunto de regras de formatação que se aplicam a todo o código. A `clareza` refere-se à legibilidade do código, ou seja, a facilidade de compreender o que cada instrução faz. Isso pode ser alcançado usando nomes de variáveis descritivos, comentários claros e código bem organizado. A `simplicidade` envolve manter o código o mais simples possível, eliminando instruções desnecessárias e mantendo o código fácil de entender.
+Os **princípios de formatação** de código em JavaScript incluem a **consistência**, a **clareza** e a **simplicidade**. A **consistência** é importante para que o código seja organizado de maneira previsível e fácil de entender. Isso pode ser alcançado usando um conjunto de regras de formatação que se aplicam a todo o código. A **clareza** refere-se à legibilidade do código, ou seja, a facilidade de compreender o que cada instrução faz. Isso pode ser alcançado usando nomes de variáveis descritivos, comentários claros e código bem organizado. A **simplicidade** envolve manter o código o mais simples possível, eliminando instruções desnecessárias e mantendo o código fácil de entender.
 
-A escolha de `nomes descritivos` para variáveis em JavaScript é uma prática importante que ajuda a tornar o código mais `legível` e `fácil` de entender. Uma `variável descritiva` é aquela que possui um nome que descreve claramente o que a variável representa ou armazena.
+A escolha de **nomes descritivos** para variáveis em JavaScript é uma prática importante que ajuda a tornar o código mais **legível** e **fácil** de entender. Uma **variável descritiva** é aquela que possui um nome que descreve claramente o que a variável representa ou armazena.
 
-A seguir, estão alguns exemplos de `variáveis descritivas` em JavaScript, demonstrando como a escolha de nomes pode ser significativa para a compreensão do código:
+A seguir, estão alguns exemplos de **variáveis descritivas** em JavaScript, demonstrando como a escolha de nomes pode ser significativa para a compreensão do código:
 
 ```javascript
 // Exemplo 1: Variáveis descritivas para armazenar dados do usuário
@@ -331,7 +331,7 @@ let idadeUsuario = 30; // variável para armazenar a idade do usuário
 let emailUsuario = "maria@email.com"; // variável para armazenar o e-mail do usuário
 ```
 
-No exemplo acima, os nomes das `variáveis` são claramente `descritivos` e indicam o tipo de informação que cada variável está armazenando. Isso torna o código mais fácil de entender, especialmente para outros desenvolvedores que podem precisar trabalhar com esse código.
+No exemplo acima, os nomes das **variáveis** são claramente **descritivos** e indicam o tipo de informação que cada variável está armazenando. Isso torna o código mais fácil de entender, especialmente para outros desenvolvedores que podem precisar trabalhar com esse código.
 
 ```javascript
 // Exemplo 2: Variáveis descritivas para cálculos matemáticos
@@ -342,9 +342,9 @@ let valorFrete = 10.00; // variável para armazenar o valor do frete
 let valorFinal = valorTotal + (quantidadeProdutos * 5) + valorFrete; // cálculo do valor final
 ```
 
-Nesse exemplo, os `nomes das variáveis` refletem as informações que elas representam, tornando o código mais `fácil de entender`. Além disso, a escolha de nomes `descritivos` ajuda a `prevenir erros`, como a utilização incorreta de uma variável.
+Nesse exemplo, os **nomes das variáveis** refletem as informações que elas representam, tornando o código mais **fácil de entender**. Além disso, a escolha de nomes **descritivos** ajuda a **prevenir erros**, como a utilização incorreta de uma variável.
 
-Em resumo, a escolha de `nomes descritivos` para variáveis em JavaScript é uma `prática importante` que pode ajudar a tornar o código mais `legível` e `fácil` de entender. Ao escolher `nomes descritivos`, os desenvolvedores podem facilitar o processo de `leitura` e `manutenção` do código, bem como prevenir erros de programação.
+Em resumo, a escolha de nomes descritivos para variáveis em JavaScript é uma `prática importante` que pode ajudar a tornar o código mais `legível` e `fácil` de entender. Ao escolher `nomes descritivos`, os desenvolvedores podem facilitar o processo de `leitura` e `manutenção` do código, bem como prevenir erros de programação.
 
 #### Princípios de Indentação de Código em JavaScript
 

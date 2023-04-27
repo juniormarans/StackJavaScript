@@ -1,8 +1,8 @@
-# Posicionamento de Elementos
+## Posicionamento de Elementos
 
 O posicionamento de elementos HTML é uma das principais maneiras de controlar o layout e a aparência de uma página. Existem vários tipos de posicionamento disponíveis em HTML e cada um tem sua própria função e uso específico.
 
-## Posicionamento Estático
+### Posicionamento Estático
 
 O posicionamento estático é o tipo de posicionamento padrão em HTML. Os elementos com posicionamento estático são posicionados na ordem em que aparecem no código HTML. O posicionamento estático é definido implicitamente em todos os elementos.
 
@@ -10,7 +10,7 @@ O posicionamento estático é o tipo de posicionamento padrão em HTML. Os eleme
   <div>Este é um elemento com posicionamento estático</div>
 ```
 
-## Posicionamento Relativo
+### Posicionamento Relativo
 
 Com o posicionamento relativo, é possível posicionar um elemento em relação à sua posição original. É possível usar as propriedades "top", "right", "bottom" e "left" para especificar a distância em pixels do elemento em relação à sua posição original.
 
@@ -20,7 +20,7 @@ Com o posicionamento relativo, é possível posicionar um elemento em relação 
   </div>
 ```
 
-## Posicionamento Absoluto
+### Posicionamento Absoluto
 
 Com o posicionamento absoluto, é possível posicionar um elemento em relação à sua posição ancestral mais próxima que tenha posicionamento relativo ou absoluto. É possível usar as propriedades "top", "right", "bottom" e "left" para especificar a distância em pixels do elemento em relação à sua posição ancestral.
 
@@ -32,7 +32,7 @@ Com o posicionamento absoluto, é possível posicionar um elemento em relação 
   </div>
 ```
 
-## Posicionamento Fixo
+### Posicionamento Fixo
 
 Com o posicionamento fixo, é possível posicionar um elemento em relação à janela do navegador. O elemento permanecerá fixo em sua posição, mesmo quando a página for rolada. É possível usar as propriedades "top", "right", "bottom" e "left" para especificar a distância em pixels do elemento em relação à borda da janela do navegador.
 
@@ -42,7 +42,7 @@ Com o posicionamento fixo, é possível posicionar um elemento em relação à j
   </div>
 ```
 
-## Posicionamento em Grade
+### Posicionamento em Grade
 
 Com o posicionamento em grade, é possível criar uma estrutura de linhas e colunas em uma página e posicionar elementos nessa estrutura. O posicionamento em grade é definido usando as propriedades "display: grid" e "grid-template-rows", "grid-template-columns" e "grid-gap".
 

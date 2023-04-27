@@ -1,4 +1,4 @@
-# Introdução a CSS
+## Introdução a CSS
 
 CSS (Cascading Style Sheets) é uma linguagem de estilo utilizada para descrever a aparência e o layout de páginas da web. Ele trabalha em conjunto com HTML e JavaScript para criar efeitos visuais, como cores, fontes, tamanhos, margens, espaçamentos, posicionamentos e outros elementos de design.
 
@@ -40,7 +40,7 @@ Também  é possível incluir estilos CSS diretamente na página HTML usando a t
 
 Neste exemplo, a tag `<style>` é usada para definir as regras CSS para os elementos HTML na página. O atributo "style" é usado para definir o estilo diretamente em um elemento HTML específico.
 
-## Importando arquivos css
+### Importando arquivos css
 
 Para importar um arquivo CSS em uma página HTML, é necessário incluir uma tag `<link>` no cabeçalho da página HTML. A tag `<link>` é usada para carregar um arquivo externo, como um arquivo CSS, e conectá-lo à página HTML.
 
@@ -75,11 +75,11 @@ Essa tag `<link>` deve ser adicionada dentro da seção `<head>` da página HTML
 
 Dessa forma, a página HTML pode ser estilizada com as regras CSS definidas no arquivo importado.
 
-## Identificação de elementos
+### Identificação de elementos
 
 Existem várias maneiras de identificar um elemento HTML, como nome da tag, classe e ID, e cada uma delas tem sua própria forma de referência em CSS.
 
-### Identificação por nome de tag
+#### Identificação por nome de tag
 
 Para identificar um elemento usando a tag, basta referenciar o nome da tag.
 
@@ -98,7 +98,7 @@ Para referenciar um elemento HTML por nome de tag em CSS, basta escrever o nome 
 
 O código acima define um estilo para todos os elementos `<p>` da página.
 
-### Identificação por classe
+#### Identificação por classe
 
  A classe é um atributo que pode ser atribuído a um elemento e permite que os elementos sejam agrupados e estilizados em conjunto. Para identificar um elemento usando a classe, basta referenciar o nome da classe.
 
@@ -117,7 +117,7 @@ O código acima define um estilo para todos os elementos `<p>` da página.
 
 O código acima define um estilo para todos os elementos com a classe "destaque".
 
-### Identificação por ID
+#### Identificação por ID
 
 O ID é um atributo que é atribuído a um único elemento e é usado para identificá-lo de forma exclusiva. Para identificar um elemento usando o ID, basta referenciar o nome do ID
 

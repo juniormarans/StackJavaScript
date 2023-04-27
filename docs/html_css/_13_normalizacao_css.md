@@ -1,4 +1,4 @@
-# Normalização de Css
+## Normalização de Css
 
 Normalização de css é um conjunto de regras que redefine as propriedades de todos os elementos HTML para um estado consistente em diferentes navegadores. Isso ajuda a garantir que a aparência do site seja consistente em diferentes plataformas e navegadores.
 

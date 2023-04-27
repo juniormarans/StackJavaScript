@@ -1,4 +1,4 @@
-# Formulário
+## Formulário
 
 É possível criar formulários para coletar informações do usuário. Os formulários são criados usando a tag `<form>` e podem conter vários tipos de campos, como campos de texto, botões, caixas de seleção e botões de opção.
 
@@ -23,7 +23,7 @@ O botão de envio é criado usando a tag `<input>` com o atributo "type" definid
 
 É possível estilizar os formulários usando CSS, e também é possível adicionar validação de formulário usando JavaScript para garantir que os usuários preencham os campos corretamente antes de enviar o formulário.
 
-## Exercícios de Fixação
+### Exercícios de Fixação
 
 - 08 - Crie um formulário de cadastro de usuário com os seguintes campos: nome, sobrenome, e-mail, telefone e senha. Adicione um botão para enviar o formulário e outro para limpar os campos.
 

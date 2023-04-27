@@ -1,4 +1,4 @@
-# Propriedade do CSS
+## Propriedade do CSS
 
 As propriedades CSS são utilizadas para definir o estilo e layout dos elementos HTML em uma página web. Cada propriedade define um aspecto específico do elemento, como cor, tamanho, posição, entre outros.
 
@@ -19,7 +19,7 @@ As propriedades CSS são utilizadas para definir o estilo e layout dos elementos
 Para mais propriedades segue o link de referencia:
 [https://developer.mozilla.org/pt-BR/docs/Web/CSS/Reference]
 
-## Exercícios de Fixação
+### Exercícios de Fixação
 
 - 13 - Crie um elemento com altura de 300px e largura de 500px, com margem de 20px em todas as direções e preenchimento de 10px em todas as direções.
 

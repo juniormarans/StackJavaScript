@@ -1,8 +1,8 @@
-# Navegação
+## Navegação
 
 A navegação em HTML é uma parte importante da criação de sites e permite que os usuários acessem diferentes páginas e seções do site com facilidade. Existem várias maneiras de criar navegação em HTML, incluindo links de texto, menus de navegação e barras de navegação. Aqui estão alguns exemplos de como criar navegação em HTML.
 
-## Links de texto
+### Links de texto
 
 Links de texto são usados para criar links clicáveis para outras páginas ou seções do site. Eles são criados usando a tag `<a>` e o atributo href para especificar o URL da página de destino.
 
@@ -12,7 +12,7 @@ Links de texto são usados para criar links clicáveis para outras páginas ou s
 
 O código acima cria um link de texto clicável que leva o usuário para a página principal do site exemplo
 
-## Menus de navegação
+### Menus de navegação
 
 Menus de navegação são usados para mostrar uma lista de links de texto para diferentes seções do site, geralmente na parte superior ou na lateral da página. Eles são criados usando a tag `<ul>` e as tags `<li>` para cada item de menu, junto com as tags `<a>` e href para criar links clicáveis.
 
@@ -27,7 +27,7 @@ Menus de navegação são usados para mostrar uma lista de links de texto para d
 
 O código acima cria um menu de navegação com quatro links de texto para diferentes seções do site.
 
-## Barras de navegação
+### Barras de navegação
 
 Barras de navegação são semelhantes aos menus de navegação, mas geralmente incluem mais elementos, como um logotipo e um formulário de pesquisa. Elas são criadas usando a tag `<nav>` e as mesmas tags `<ul>`, `<li>`, `<a>` e href usadas em menus de navegação.
 
@@ -53,7 +53,7 @@ O código acima cria uma barra de navegação com um logotipo, links de texto pa
 
 A navegação pode ser personalizada com CSS para mudar a aparência dos links de texto, menus e barras de navegação.
 
-## Exercícios de Fixação
+### Exercícios de Fixação
 
 - 06 - Criando um menu horizontal: Crie um menu horizontal com links para outras páginas. Use a tag display para transformar a lista de links em uma barra horizontal e a tag text-align para alinhar o texto ao centro da barra.
 

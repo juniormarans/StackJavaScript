@@ -1,4 +1,4 @@
-# HTML
+## HTML
 
 HTML, ou Hypertext Markup Language, é uma linguagem de marcação utilizada para criar e estruturar documentos na World Wide Web. Essa linguagem é composta por uma série de elementos que definem como o conteúdo de um documento deve ser exibido em um navegador da web.
 
@@ -8,7 +8,7 @@ A estrutura e o conteúdo de um documento HTML são interpretados por um navegad
 
 Em resumo, HTML é uma linguagem de marcação fundamental para a criação de páginas da web, permitindo que os desenvolvedores criem documentos bem estruturados e formatados para serem visualizados em navegadores da web.
 
-## Como funciona uma página web
+### Como funciona uma página web
 
 Uma página web é composta por uma série de elementos interconectados que trabalham em conjunto para fornecer uma experiência de usuário consistente e interativa. Esses elementos incluem o código HTML que define a estrutura e o conteúdo da página, o CSS que define a aparência visual da página e o JavaScript que fornece interatividade e dinamicidade à página.
 
@@ -22,7 +22,7 @@ Finalmente, o navegador exibe a página na tela do usuário, combinando todos os
 
 Uma página web funciona através de uma combinação de elementos HTML, CSS e JavaScript que são processados pelo navegador da web para fornecer uma experiência interativa e consistente aos usuários.
 
-## Os fundamentos do HTML
+### Os fundamentos do HTML
 
 HTML é uma linguagem de marcação usada para definir a estrutura e o conteúdo de páginas da web. O HTML é composto por três conceitos fundamentais: tags, elementos e atributos.
 
@@ -34,7 +34,7 @@ Os atributos são usados para definir as propriedades de um elemento. Eles são 
 
 Tags, elementos e atributos são conceitos fundamentais do HTML que permitem aos desenvolvedores criar e estruturar páginas da web de forma consistente e padronizada. Tags são blocos básicos de construção do HTML, elementos são as estruturas de dados que compõem a página e atributos definem as propriedades e comportamentos desses elementos.
 
-## Estrutura básica de uma página html
+### Estrutura básica de uma página html
 
 A estrutura básica de uma página HTML é composta por uma série de elementos que definem a estrutura e o conteúdo da página. Essa estrutura segue um padrão comum, que inclui as seguintes seções principais:
 
@@ -64,7 +64,7 @@ A estrutura básica de uma página HTML é essencial para garantir a correta ren
 
 Nesse exemplo, a página começa com a declaração do doctype, seguida da tag HTML, que define o idioma da página como português do Brasil. A seção head inclui a meta tag que define o conjunto de caracteres da página como UTF-8 e o título da página. A seção body inclui o conteúdo real da página, que consiste em um cabeçalho h1 e um parágrafo simples.
 
-## Como Rodar um código html
+### Como Rodar um código html
 
 Para rodar um código HTML, você precisa de um navegador da web, como o Google Chrome, Mozilla Firefox, Safari, ou outro.
 

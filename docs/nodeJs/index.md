@@ -2,7 +2,7 @@
 
 O Node.js é uma plataforma de desenvolvimento de software criada para permitir que os desenvolvedores possam escrever aplicativos em JavaScript tanto no lado do cliente quanto no lado do servidor. Ele usa a linguagem JavaScript, originalmente desenvolvida para navegadores web, para criar aplicativos web escaláveis e em tempo real, bem como aplicativos de rede complexos.
 
-## Casos de uso comuns do Node.js
+## Apliações típicas do Node.js
 
 O Node.js é capaz de lidar com uma ampla gama de casos de uso, incluindo:
 

@@ -1,8 +1,8 @@
-# Unidades do CSS
+## Unidades do CSS
 
 As unidades de medida em CSS são usadas para definir o tamanho e a posição dos elementos na página. Existem vários tipos de unidades, cada um com um propósito específico
 
-## Pixels (px)
+### Pixels (px)
 
 O pixel é a unidade de medida mais comum em CSS. É uma unidade fixa e refere-se a um único pixel na tela. Por exemplo, a propriedade font-size: 16px; define o tamanho da fonte como 16 pixels.
 
@@ -14,7 +14,7 @@ O pixel é a unidade de medida mais comum em CSS. É uma unidade fixa e refere-s
   }
 ```
 
-## Porcentagem (%)
+### Porcentagem (%)
 
 A unidade de medida em porcentagem é relativa ao tamanho do elemento pai. Por exemplo, a propriedade width: 50%; define a largura do elemento como metade do tamanho do elemento pai.
 
@@ -30,7 +30,7 @@ A unidade de medida em porcentagem é relativa ao tamanho do elemento pai. Por e
   }
 ```
 
-## Em (em)
+### Em (em)
 
 O "em" é uma unidade de medida relativa ao tamanho da fonte do elemento pai. Por exemplo, font-size: 1.2em; define a fonte do elemento como 1,2 vezes maior do que a fonte do elemento pai.
 
@@ -44,7 +44,7 @@ O "em" é uma unidade de medida relativa ao tamanho da fonte do elemento pai. Po
   }
 ```
 
-## Rem (rem)
+### Rem (rem)
 
 O "rem" é uma unidade de medida relativa ao tamanho da fonte do elemento raiz, geralmente o elemento HTML. Por exemplo, font-size: 1.2rem; define a fonte do elemento como 1,2 vezes maior do que a fonte do elemento raiz.
 
@@ -58,7 +58,7 @@ O "rem" é uma unidade de medida relativa ao tamanho da fonte do elemento raiz, 
   }
 ```
 
-## Viewport Width (vw) e Viewport Height (vh)
+### Viewport Width (vw) e Viewport Height (vh)
 
 Essas unidades de medida são relativas ao tamanho da janela do navegador. Por exemplo, width: 50vw; define a largura do elemento como metade da largura da janela do navegador.
 
@@ -69,7 +69,7 @@ Essas unidades de medida são relativas ao tamanho da janela do navegador. Por e
   }
 ```
 
-## Unidades Absolutas (cm, mm, in, pt)
+### Unidades Absolutas (cm, mm, in, pt)
 
 Essas unidades são absolutas e são baseadas em medidas físicas, como polegadas (in), centímetros (cm) e pontos (pt). No entanto, essas unidades podem ser menos úteis para a web, pois as medidas físicas podem variar em diferentes dispositivos.
 

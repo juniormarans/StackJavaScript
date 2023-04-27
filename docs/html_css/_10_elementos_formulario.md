@@ -1,8 +1,8 @@
-# Elementos de Formulário
+## Elementos de Formulário
 
 Elementos de formulário HTML são usados ​​para coletar informações do usuário, como nome, endereço, senha, etc.
 
-## Rótulo
+### Rótulo
 
 A tag `<label>` em HTML é usada para associar um rótulo descritivo a um elemento de formulário, como um campo de texto ou uma caixa de seleção. Isso ajuda a tornar os formulários mais acessíveis e fáceis de usar para usuários com deficiência visual, pois permite que o rótulo seja lido em conjunto com o elemento de formulário correspondente.
 
@@ -13,11 +13,11 @@ O atributo "for" deve ser usado para especificar o ID do elemento de formulário
   <input type="text" id="nome" name="nome">
 ```
 
-## Campo de Entrada de Dados
+### Campo de Entrada de Dados
 
 O elemento HTML `<input>` é usado para coletar informações do usuário por meio de campos de entrada, como texto, senha, caixa de seleção, botão de opção, etc.
 
-### Campo de texto
+#### Campo de texto
 
 O campo de texto é usado para permitir que o usuário insira texto.
 
@@ -25,7 +25,7 @@ O campo de texto é usado para permitir que o usuário insira texto.
   <input type="text" name="nome" placeholder="Digite seu nome">
 ```
 
-### Campo de senha
+#### Campo de senha
 
 O campo de senha é usado para coletar senhas do usuário. Os caracteres digitados são mascarados para impedir que sejam vistos por outras pessoas.
 
@@ -33,7 +33,7 @@ O campo de senha é usado para coletar senhas do usuário. Os caracteres digitad
   <input type="password" name="senha" placeholder="Digite sua senha">
 ```
 
-### Caixa de seleção
+#### Caixa de seleção
 
 A caixa de seleção é usada para permitir que o usuário selecione uma ou mais opções de uma lista de opções.
 
@@ -42,7 +42,7 @@ A caixa de seleção é usada para permitir que o usuário selecione uma ou mais
   <label for="aceitar-termos">Eu aceito os termos e condições</label>
 ```
 
-### Botão de opção
+#### Botão de opção
 
 O botão de opção é usado para permitir que o usuário selecione uma opção de uma lista de opções.
 
@@ -53,7 +53,7 @@ O botão de opção é usado para permitir que o usuário selecione uma opção 
   <label for="feminino">Feminino</label>
 ```
 
-### Botão de Verificação
+#### Botão de Verificação
 
 O atributo "type" deve ser definido como "checkbox" para indicar que é um campo de seleção de caixa de verificação. O atributo "name" é usado para identificar o campo de entrada quando o formulário é enviado, e o atributo "value" é usado para especificar o valor que será enviado junto com o nome do campo.
 
@@ -67,7 +67,7 @@ O atributo "type" deve ser definido como "checkbox" para indicar que é um campo
 
 Quando o formulário é enviado, o nome da caixa de seleção selecionada será enviado junto com o valor correspondente. Se a caixa de seleção não estiver marcada, o nome da caixa de seleção não será enviado.
 
-### Botão Input
+#### Botão Input
 
 O botão é usado para criar botões clicáveis.
 
@@ -75,7 +75,7 @@ O botão é usado para criar botões clicáveis.
   <input type="submit" value="Enviar">
 ```
 
-## Area de Texto
+### Area de Texto
 
 O elemento HTML `<textarea>` é usado para permitir que o usuário insira várias linhas de texto.
 
@@ -89,41 +89,41 @@ Neste exemplo, o elemento `<textarea>` cria uma caixa de texto com 5 linhas e 40
 
 O atributo name é usado para identificar o campo de texto ao enviar o formulário. Quando o formulário é enviado, o valor da caixa de texto é enviado como parte dos dados do formulário com o nome especificado no atributo name.
 
-## Botão
+### Botão
 
 Em HTML, existem vários tipos de botões que podem ser criados usando a tag `<button>`.
 
-### Botão padrão
+#### Botão padrão
 
 ```html
   <button>Enviar</button>
 ```
 
-### Botão com imagem
+#### Botão com imagem
 
 ```html
   <button><img src="icone.png" alt="Ícone">Enviar</button>
 ```
 
-### Botão com ícone
+#### Botão com ícone
 
 ```html
   <button><i class="fas fa-envelope"></i>Enviar</button>
 ```
 
-### Botão de envio de formulário
+#### Botão de envio de formulário
 
 ```html
   <input type="submit" value="Enviar">
 ```
 
-### Botão de resetar formulário
+#### Botão de resetar formulário
 
 ```html
   <input type="reset" value="Limpar">
 ```
 
-### Botão com função JavaScript
+#### Botão com função JavaScript
 
 ```html
   <button onclick="alert('Botão clicado')">Clique aqui</button>

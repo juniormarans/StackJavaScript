@@ -34,3 +34,7 @@
     transform: translateY(-5px);
     cursor: pointer;
 }
+
+p {
+    text-align: justify;
+  }

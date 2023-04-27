@@ -1,4 +1,4 @@
-# Tags e Elementos
+## Tags e Elementos
 
 A marcação é feita através de tags, que são elementos com nomes específicos e que envolvem o conteúdo da página para atribuir um significado específico. Cada tag pode ter atributos, que fornecem informações adicionais sobre a tag e seu conteúdo.
 
@@ -14,7 +14,7 @@ Para mais informações de tags acesse o link:
 Para mais informações de atributos acesse o link:
 [https://developer.mozilla.org/pt-BR/docs/Web/HTML/Attributes]
 
-## Títulos e Sub-títulos
+### Títulos e Sub-títulos
 
 Para organizar e estruturar o conteúdo de uma página, é comum utilizar os títulos e sub-títulos HTML.
 
@@ -31,7 +31,7 @@ Existem seis níveis de títulos HTML, que vão do `<h1>` ao `<h6>`. O `<h1>` é
 
 Ao utilizar os títulos e sub-títulos HTML, é importante lembrar que eles não devem ser usados apenas para mudar o tamanho ou estilo do texto. Eles devem ser utilizados para indicar a importância e a hierarquia do conteúdo da página.
 
-## Parágrafo
+### Parágrafo
 
 Em HTML, o parágrafo é definido pela tag `<p>`. Essa tag é usada para separar blocos de texto e criar parágrafos na página. Os navegadores geralmente exibem o texto dentro de uma tag `<p>` com um espaço em branco antes e depois do parágrafo.
 
@@ -41,7 +41,7 @@ Em HTML, o parágrafo é definido pela tag `<p>`. Essa tag é usada para separar
 
 Os parágrafos em HTML são úteis para separar e organizar o conteúdo em uma página. É importante lembrar que, para garantir a acessibilidade da página, é recomendável usar parágrafos curtos e dividir o conteúdo em seções bem definidas. Além disso, é importante usar a tag `<p>` para criar parágrafos, em vez de adicionar quebras de linha ou espaços em branco, para garantir que o conteúdo seja apresentado de forma consistente em diferentes dispositivos e navegadores.
 
-## Comentários
+### Comentários
 
 Em HTML, é possível adicionar comentários no código para fornecer informações adicionais ou anotações que não são exibidas na página web. Os comentários em HTML são úteis para documentar o código e explicar sua funcionalidade para outros desenvolvedores ou para si mesmo no futuro.
 
@@ -53,7 +53,7 @@ Para adicionar um comentário em HTML, você pode usar a tag `<!-- -->`. Tudo o 
 
 Os comentários em HTML são úteis para tornar o código mais fácil de entender e manter. Eles podem ser usados para explicar o propósito de uma seção de código, fornecer anotações para outros desenvolvedores ou para si mesmo no futuro, ou para desativar temporariamente uma seção de código sem precisar removê-la completamente.
 
-## Identação
+### Identação
 
 A identação em HTML é a prática de adicionar espaços em branco e quebras de linha para organizar e estruturar o código. A identação em HTML é uma boa prática de codificação e pode ajudar a tornar o código mais fácil de entender e manter.
 

@@ -1,8 +1,8 @@
-# Posicionamento de Texto
+## Posicionamento de Texto
 
 O posicionamento de texto em uma página HTML é tão importante quanto o posicionamento de elementos, pois pode afetar a legibilidade e o fluxo visual da página. Existem várias maneiras de posicionar o texto em uma página HTML.
 
-## Texto Alinhado
+### Texto Alinhado
 
 O alinhamento do texto é a maneira mais comum de posicioná-lo em uma página HTML. O texto pode ser alinhado à esquerda, à direita, ao centro ou justificado (onde o espaço entre as palavras é ajustado para que as linhas de texto fiquem alinhadas nas bordas esquerda e direita da página).
 
@@ -13,7 +13,7 @@ O alinhamento do texto é a maneira mais comum de posicioná-lo em uma página H
   <p style="text-align: justify;">Este é um texto justificado.</p>
 ```
 
-## Texto em Colunas
+### Texto em Colunas
 
 O texto em colunas é usado para dividir o conteúdo de um parágrafo ou uma seção em várias colunas. Isso é útil para manter um layout organizado e aumentar a legibilidade.
 
@@ -24,7 +24,7 @@ O texto em colunas é usado para dividir o conteúdo de um parágrafo ou uma se�
   </div>
 ```
 
-## Texto Flutuante
+### Texto Flutuante
 
 O texto flutuante é usado para posicionar o texto ao lado de uma imagem ou outro elemento. O texto flutuante pode ser alinhado à esquerda ou à direita do elemento em que está flutuando.
 
