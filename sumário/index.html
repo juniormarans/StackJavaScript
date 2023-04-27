@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html class="no-js" lang="pt">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <link href=".." rel="prev"/>
+  <link href="../html_css/" rel="next"/>
+  <link href="../assets/logo.png" rel="icon"/>
+  <meta content="mkdocs-1.4.2, mkdocs-material-9.1.7" name="generator"/>
+  <title>
+   Sumário - Full-Stack-JavaScript
+  </title>
+  <link href="../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
+  <link href="../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+  <style>
+   :root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}
+  </style>
+  <link href="../assets/_mkdocstrings.css" rel="stylesheet"/>
+  <link href="../stylesheets/extra.css" rel="stylesheet"/>
+  <link href="../stylesheets/material.css" rel="stylesheet"/>
+  <link href="../stylesheets/mkdocstrings.css" rel="stylesheet"/>
+  <script>
+   __md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}
+  </script>
+ </head>
+ <body data-md-color-accent="indigo" data-md-color-primary="yellow" data-md-color-scheme="default" dir="ltr">
+  <script>
+   var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])
+  </script>
+  <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+  <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+  <label class="md-overlay" for="__drawer">
+  </label>
+  <div data-md-component="skip">
+   <a class="md-skip" href="#_1">
+    Pular para conteúdo
+   </a>
+  </div>
+  <div data-md-component="announce">
+  </div>
+  <header class="md-header md-header--shadow" data-md-component="header">
+   <nav aria-label="Cabeçalho" class="md-header__inner md-grid">
+    <a aria-label="Full-Stack-JavaScript" class="md-header__button md-logo" data-md-component="logo" href=".." title="Full-Stack-JavaScript">
+     <img alt="logo" src="../assets/logo.png"/>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z">
+      </path>
+     </svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+     <div class="md-header__ellipsis">
+      <div class="md-header__topic">
+       <span class="md-ellipsis">
+        Full-Stack-JavaScript
+       </span>
+      </div>
+      <div class="md-header__topic" data-md-component="header-topic">
+       <span class="md-ellipsis">
+        Sumário
+       </span>
+      </div>
+     </div>
+    </div>
+    <form class="md-header__option" data-md-component="palette">
+     <input aria-hidden="true" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="yellow" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+     <input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_2" name="__palette" type="radio"/>
+     <label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z">
+       </path>
+      </svg>
+     </label>
+     <input aria-label="Switch to light mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_3" name="__palette" type="radio"/>
+     <label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to light mode">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z">
+       </path>
+      </svg>
+     </label>
+    </form>
+    <label class="md-header__button md-icon" for="__search">
+     <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z">
+      </path>
+     </svg>
+    </label>
+    <div class="md-search" data-md-component="search" role="dialog">
+     <label class="md-search__overlay" for="__search">
+     </label>
+     <div class="md-search__inner" role="search">
+      <form class="md-search__form" name="search">
+       <input aria-label="Buscar" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Buscar" required="" spellcheck="false" type="text"/>
+       <label class="md-search__icon md-icon" for="__search">
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z">
+         </path>
+        </svg>
+        <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z">
+         </path>
+        </svg>
+       </label>
+       <nav aria-label="Pesquisar" class="md-search__options">
+        <button aria-label="Limpar" class="md-search__icon md-icon" tabindex="-1" title="Limpar" type="reset">
+         <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z">
+          </path>
+         </svg>
+        </button>
+       </nav>
+      </form>
+      <div class="md-search__output">
+       <div class="md-search__scrollwrap" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+         <div class="md-search-result__meta">
+          Inicializando busca
+         </div>
+         <ol class="md-search-result__list" role="presentation">
+         </ol>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="md-header__source">
+     <a class="md-source" data-md-component="source" href="https://github.com/juniormarans/StackJavaScript/tree/main" title="Ir para repositório">
+      <div class="md-source__icon md-icon">
+       <svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+        <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.-->
+        <path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z">
+        </path>
+       </svg>
+      </div>
+      <div class="md-source__repository">
+       Full-Stack-JavaScript
+      </div>
+     </a>
+    </div>
+   </nav>
+  </header>
+  <div class="md-container" data-md-component="container">
+   <main class="md-main" data-md-component="main">
+    <div class="md-main__inner md-grid">
+     <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+        <nav aria-label="Navegação" class="md-nav md-nav--primary" data-md-level="0">
+         <label class="md-nav__title" for="__drawer">
+          <a aria-label="Full-Stack-JavaScript" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Full-Stack-JavaScript">
+           <img alt="logo" src="../assets/logo.png"/>
+          </a>
+          Full-Stack-JavaScript
+         </label>
+         <div class="md-nav__source">
+          <a class="md-source" data-md-component="source" href="https://github.com/juniormarans/StackJavaScript/tree/main" title="Ir para repositório">
+           <div class="md-source__icon md-icon">
+            <svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+             <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.-->
+             <path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z">
+             </path>
+            </svg>
+           </div>
+           <div class="md-source__repository">
+            Full-Stack-JavaScript
+           </div>
+          </a>
+         </div>
+         <ul class="md-nav__list" data-md-scrollfix="">
+          <li class="md-nav__item">
+           <a class="md-nav__link" href="..">
+            Visão Geral
+           </a>
+          </li>
+          <li class="md-nav__item md-nav__item--active">
+           <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+           <label class="md-nav__link md-nav__link--active" for="__toc">
+            Sumário
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <a class="md-nav__link md-nav__link--active" href="./">
+            Sumário
+           </a>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            Html css
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_3">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Html css
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../html_css/">
+               HTML e CSS
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../html_css/_01_visao-geral/">
+               01 visao geral
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../html_css/_02_tags_elementos/">
+               02 tags elementos
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../html_css/_03_div/">
+               03 div
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../html_css/_04_introdu%C3%A7%C3%A3o-css/">
+               04 introdução css
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../html_css/_05_posicionamento_elementos/">
+               05 posicionamento elementos
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../html_css/_06_posicionamento_texto/">
+               06 posicionamento texto
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../html_css/_07_posicionamento_imagem/">
+               07 posicionamento imagem
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../html_css/_08_listas/">
+               08 listas
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../html_css/_09_navegacao/">
+               09 navegacao
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../html_css/_10_elementos_formulario/">
+               10 elementos formulario
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../html_css/_11_formulario/">
+               11 formulario
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../html_css/_12_tabelas/">
+               12 tabelas
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../html_css/_13_normalizacao_css/">
+               13 normalizacao css
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../html_css/_14_unidades_css/">
+               14 unidades css
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../html_css/_15_propriedades_css/">
+               15 propriedades css
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../html_css/_99_Respostas/">
+               99 Respostas
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            Javascript
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_4">
+             <span class="md-nav__icon md-icon">
+             </span>
+             Javascript
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../javascript/">
+               Introdução ao JavaScript
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../javascript/_01_conceitos-basicos/">
+               01 conceitos basicos
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../javascript/_02_estruturas-de-decis%C3%A3o-e-repeti%C3%A7%C3%A3o/">
+               02 estruturas de decisão e repetição
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../javascript/_03_tipos-de-fun%C3%A7%C3%B5es-e-manipula%C3%A7%C3%A3o-de-dados/">
+               03 tipos de funções e manipulação de dados
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../javascript/_04_typescript/">
+               04 typescript
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../javascript/_12_desafio/">
+               12 desafio
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../javascript/_99_resolucao-desafio/">
+               99 resolucao desafio
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
+          <li class="md-nav__item md-nav__item--nested">
+           <input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            nodeJs
+            <span class="md-nav__icon md-icon">
+            </span>
+           </label>
+           <nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+            <label class="md-nav__title" for="__nav_5">
+             <span class="md-nav__icon md-icon">
+             </span>
+             nodeJs
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix="">
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../nodeJs/">
+               Introdução ao Node.js
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../nodeJs/_01_visao-geral/">
+               01 visao geral
+              </a>
+             </li>
+             <li class="md-nav__item">
+              <a class="md-nav__link" href="../nodeJs/_02_Iniciando-projeto-nodejs/">
+               02 Iniciando projeto nodejs
+              </a>
+             </li>
+            </ul>
+           </nav>
+          </li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+      <div class="md-sidebar__scrollwrap">
+       <div class="md-sidebar__inner">
+       </div>
+      </div>
+     </div>
+     <div class="md-content" data-md-component="content">
+      <article class="md-content__inner md-typeset">
+       <!-- ====================== TOC ====================== -->
+       <!-- Generated by mkdocs-toc-md plugin -->
+       <!-- ================================================= -->
+       <h1 id="_1">
+        <a class="headerlink" href="#_1" title="Permanent link">
+         #
+        </a>
+       </h1>
+       <h2 id="visao-geral">
+        <a href="../#visao-geral">
+         Visão Geral
+        </a>
+        <a class="headerlink" href="#visao-geral" title="Permanent link">
+         #
+        </a>
+       </h2>
+       <h2 id="html-e-css">
+        <a href="../html_css/#html-e-css">
+         HTML e CSS
+        </a>
+        <a class="headerlink" href="#html-e-css" title="Permanent link">
+         #
+        </a>
+       </h2>
+       <h3 id="introducao-html-e-css">
+        <a href="../html_css/#introducao-html-e-css">
+         Introdução HTML e CSS
+        </a>
+        <a class="headerlink" href="#introducao-html-e-css" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <h3 id="html">
+        <a href="../html_css/_01_visao-geral/#html">
+         HTML
+        </a>
+        <a class="headerlink" href="#html" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../html_css/_01_visao-geral/#como-funciona-uma-pagina-web">
+          Como funciona uma página web
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_01_visao-geral/#os-fundamentos-do-html">
+          Os fundamentos do HTML
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_01_visao-geral/#estrutura-basica-de-uma-pagina-html">
+          Estrutura básica de uma página html
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_01_visao-geral/#como-rodar-um-codigo-html">
+          Como Rodar um código html
+         </a>
+        </li>
+       </ul>
+       <h3 id="tags-e-elementos">
+        <a href="../html_css/_02_tags_elementos/#tags-e-elementos">
+         Tags e Elementos
+        </a>
+        <a class="headerlink" href="#tags-e-elementos" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../html_css/_02_tags_elementos/#titulos-e-sub-titulos">
+          Títulos e Sub-títulos
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_02_tags_elementos/#paragrafo">
+          Parágrafo
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_02_tags_elementos/#comentarios">
+          Comentários
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_02_tags_elementos/#identacao">
+          Identação
+         </a>
+        </li>
+       </ul>
+       <h3 id="div">
+        <a href="../html_css/_03_div/#div">
+         Div
+        </a>
+        <a class="headerlink" href="#div" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../html_css/_03_div/#exercicios-de-fixacao">
+          Exercícios de Fixação
+         </a>
+        </li>
+       </ul>
+       <h3 id="introducao-a-css">
+        <a href="../html_css/_04_introdu%C3%A7%C3%A3o-css/#introducao-a-css">
+         Introdução a CSS
+        </a>
+        <a class="headerlink" href="#introducao-a-css" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../html_css/_04_introdu%C3%A7%C3%A3o-css/#importando-arquivos-css">
+          Importando arquivos css
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_04_introdu%C3%A7%C3%A3o-css/#identificacao-de-elementos">
+          Identificação de elementos
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_04_introdu%C3%A7%C3%A3o-css/#identificacao-por-nome-de-tag">
+          Identificação por nome de tag
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_04_introdu%C3%A7%C3%A3o-css/#identificacao-por-classe">
+          Identificação por classe
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_04_introdu%C3%A7%C3%A3o-css/#identificacao-por-id">
+          Identificação por ID
+         </a>
+        </li>
+       </ul>
+       <h3 id="posicionamento-de-elementos">
+        <a href="../html_css/_05_posicionamento_elementos/#posicionamento-de-elementos">
+         Posicionamento de Elementos
+        </a>
+        <a class="headerlink" href="#posicionamento-de-elementos" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../html_css/_05_posicionamento_elementos/#posicionamento-estatico">
+          Posicionamento Estático
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_05_posicionamento_elementos/#posicionamento-relativo">
+          Posicionamento Relativo
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_05_posicionamento_elementos/#posicionamento-absoluto">
+          Posicionamento Absoluto
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_05_posicionamento_elementos/#posicionamento-fixo">
+          Posicionamento Fixo
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_05_posicionamento_elementos/#posicionamento-em-grade">
+          Posicionamento em Grade
+         </a>
+        </li>
+       </ul>
+       <h3 id="posicionamento-de-texto">
+        <a href="../html_css/_06_posicionamento_texto/#posicionamento-de-texto">
+         Posicionamento de Texto
+        </a>
+        <a class="headerlink" href="#posicionamento-de-texto" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../html_css/_06_posicionamento_texto/#texto-alinhado">
+          Texto Alinhado
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_06_posicionamento_texto/#texto-em-colunas">
+          Texto em Colunas
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_06_posicionamento_texto/#texto-flutuante">
+          Texto Flutuante
+         </a>
+        </li>
+       </ul>
+       <h3 id="posicionando">
+        <a href="../html_css/_07_posicionamento_imagem/#posicionando">
+         Posicionando
+        </a>
+        <a class="headerlink" href="#posicionando" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../html_css/_07_posicionamento_imagem/#imagem-alinhada">
+          Imagem Alinhada
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_07_posicionamento_imagem/#imagem-como-fundo">
+          Imagem como Fundo
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_07_posicionamento_imagem/#imagem-como-link">
+          Imagem como Link
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_07_posicionamento_imagem/#exercicios-de-fixacao">
+          Exercícios de Fixação
+         </a>
+        </li>
+       </ul>
+       <h3 id="tipos-de-listas">
+        <a href="../html_css/_08_listas/#tipos-de-listas">
+         Tipos de Listas
+        </a>
+        <a class="headerlink" href="#tipos-de-listas" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../html_css/_08_listas/#lista-ordenada">
+          Lista ordenada
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_08_listas/#lista-nao-ordenada">
+          Lista não ordenada
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_08_listas/#lista-de-definicao">
+          Lista de definição
+         </a>
+        </li>
+       </ul>
+       <h3 id="navegacao">
+        <a href="../html_css/_09_navegacao/#navegacao">
+         Navegação
+        </a>
+        <a class="headerlink" href="#navegacao" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../html_css/_09_navegacao/#links-de-texto">
+          Links de texto
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_09_navegacao/#menus-de-navegacao">
+          Menus de navegação
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_09_navegacao/#barras-de-navegacao">
+          Barras de navegação
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_09_navegacao/#exercicios-de-fixacao">
+          Exercícios de Fixação
+         </a>
+        </li>
+       </ul>
+       <h3 id="elementos-de-formulario">
+        <a href="../html_css/_10_elementos_formulario/#elementos-de-formulario">
+         Elementos de Formulário
+        </a>
+        <a class="headerlink" href="#elementos-de-formulario" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../html_css/_10_elementos_formulario/#rotulo">
+          Rótulo
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_10_elementos_formulario/#campo-de-entrada-de-dados">
+          Campo de Entrada de Dados
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_10_elementos_formulario/#campo-de-texto">
+          Campo de texto
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_10_elementos_formulario/#campo-de-senha">
+          Campo de senha
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_10_elementos_formulario/#caixa-de-selecao">
+          Caixa de seleção
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_10_elementos_formulario/#botao-de-opcao">
+          Botão de opção
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_10_elementos_formulario/#botao-de-verificacao">
+          Botão de Verificação
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_10_elementos_formulario/#botao-input">
+          Botão Input
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_10_elementos_formulario/#area-de-texto">
+          Area de Texto
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_10_elementos_formulario/#botao">
+          Botão
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_10_elementos_formulario/#botao-padrao">
+          Botão padrão
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_10_elementos_formulario/#botao-com-imagem">
+          Botão com imagem
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_10_elementos_formulario/#botao-com-icone">
+          Botão com ícone
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_10_elementos_formulario/#botao-de-envio-de-formulario">
+          Botão de envio de formulário
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_10_elementos_formulario/#botao-de-resetar-formulario">
+          Botão de resetar formulário
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_10_elementos_formulario/#botao-com-funcao-javascript">
+          Botão com função JavaScript
+         </a>
+        </li>
+       </ul>
+       <h3 id="formulario">
+        <a href="../html_css/_11_formulario/#formulario">
+         Formulário
+        </a>
+        <a class="headerlink" href="#formulario" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../html_css/_11_formulario/#exercicios-de-fixacao">
+          Exercícios de Fixação
+         </a>
+        </li>
+       </ul>
+       <h3 id="tabelas">
+        <a href="../html_css/_12_tabelas/#tabelas">
+         Tabelas
+        </a>
+        <a class="headerlink" href="#tabelas" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../html_css/_12_tabelas/#mais-tags-de-tabelas">
+          Mais tags de tabelas
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_12_tabelas/#exercicios-de-fixacao">
+          Exercícios de Fixação
+         </a>
+        </li>
+       </ul>
+       <h3 id="normalizacao-de-css">
+        <a href="../html_css/_13_normalizacao_css/#normalizacao-de-css">
+         Normalização de Css
+        </a>
+        <a class="headerlink" href="#normalizacao-de-css" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <h3 id="unidades-do-css">
+        <a href="../html_css/_14_unidades_css/#unidades-do-css">
+         Unidades do CSS
+        </a>
+        <a class="headerlink" href="#unidades-do-css" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../html_css/_14_unidades_css/#pixels-px">
+          Pixels (px)
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_14_unidades_css/#porcentagem">
+          Porcentagem (%)
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_14_unidades_css/#em-em">
+          Em (em)
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_14_unidades_css/#rem-rem">
+          Rem (rem)
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_14_unidades_css/#viewport-width-vw-e-viewport-height-vh">
+          Viewport Width (vw) e Viewport Height (vh)
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_14_unidades_css/#unidades-absolutas-cm-mm-in-pt">
+          Unidades Absolutas (cm, mm, in, pt)
+         </a>
+        </li>
+       </ul>
+       <h3 id="propriedade-do-css">
+        <a href="../html_css/_15_propriedades_css/#propriedade-do-css">
+         Propriedade do CSS
+        </a>
+        <a class="headerlink" href="#propriedade-do-css" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../html_css/_15_propriedades_css/#exercicios-de-fixacao">
+          Exercícios de Fixação
+         </a>
+        </li>
+       </ul>
+       <h3 id="respostas">
+        <a href="../html_css/_99_Respostas/#respostas">
+         Respostas
+        </a>
+        <a class="headerlink" href="#respostas" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../html_css/_99_Respostas/#atividade-01">
+          Atividade 01
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_99_Respostas/#atividade-02">
+          Atividade 02
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_99_Respostas/#atividade-03">
+          Atividade 03
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_99_Respostas/#atividade-04">
+          Atividade 04
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_99_Respostas/#atividade-05">
+          Atividade 05
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_99_Respostas/#atividade-06">
+          Atividade 06
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_99_Respostas/#atividade-07">
+          Atividade 07
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_99_Respostas/#atividade-08">
+          Atividade 08
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_99_Respostas/#atividade-09">
+          Atividade 09
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_99_Respostas/#atividade-10">
+          Atividade 10
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_99_Respostas/#atividade-11">
+          Atividade 11
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_99_Respostas/#atividade-12">
+          Atividade 12
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_99_Respostas/#atividade-13">
+          Atividade 13
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_99_Respostas/#atividade-14">
+          Atividade 14
+         </a>
+        </li>
+        <li>
+         <a href="../html_css/_99_Respostas/#atividade-15">
+          Atividade 15
+         </a>
+        </li>
+       </ul>
+       <h2 id="introducao-ao-javascript">
+        <a href="../javascript/#introducao-ao-javascript">
+         Introdução ao JavaScript
+        </a>
+        <a class="headerlink" href="#introducao-ao-javascript" title="Permanent link">
+         #
+        </a>
+       </h2>
+       <h3 id="conceitos-basicos">
+        <a href="../javascript/_01_conceitos-basicos/#conceitos-basicos">
+         Conceitos Básicos
+        </a>
+        <a class="headerlink" href="#conceitos-basicos" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../javascript/_01_conceitos-basicos/#como-rodar-um-codigo-javascript">
+          Como Rodar Um Código JavaScript
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_01_conceitos-basicos/#executar-javascript-com-o-nodejs">
+          executar JavaScript com o Node.js
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_01_conceitos-basicos/#tipos-de-variaveis-em-javascript">
+          Tipos de Variáveis em JavaScript
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_01_conceitos-basicos/#escopo-de-variaveis-em-javascript">
+          Escopo de Variáveis em JavaScript
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_01_conceitos-basicos/#palavras-reservadas">
+          Palavras Reservadas
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_01_conceitos-basicos/#tipos-de-dados-em-javascript">
+          Tipos de dados em JavaScript
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_01_conceitos-basicos/#tipos-de-dados-primitivos">
+          Tipos de dados primitivos
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_01_conceitos-basicos/#tipos-de-dados-nao-primitivos">
+          Tipos de dados não primitivos
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_01_conceitos-basicos/#formatacao-e-indentacao-de-codigo-em-javascript">
+          Formatação e Indentação de Código em JavaScript
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_01_conceitos-basicos/#principios-de-formatacao-de-codigo-em-javascript">
+          Princípios de Formatação de Código em JavaScript
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_01_conceitos-basicos/#principios-de-indentacao-de-codigo-em-javascript">
+          Princípios de Indentação de Código em JavaScript
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_01_conceitos-basicos/#tipos-de-comentarios-em-javascript-e-sua-aplicacao">
+          Tipos de comentários em JavaScript e sua aplicação
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_01_conceitos-basicos/#operadores-javascript">
+          Operadores JavaScript
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_01_conceitos-basicos/#operadores-aritmeticos">
+          Operadores Aritméticos
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_01_conceitos-basicos/#precedencia-de-operadores-aritmeticos">
+          Precedência de Operadores Aritméticos
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_01_conceitos-basicos/#operadores-de-atribuicao-em-javascript">
+          Operadores de Atribuição em JavaScript
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_01_conceitos-basicos/#operadores-de-comparacao">
+          Operadores de Comparação
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_01_conceitos-basicos/#operadores-logicos">
+          Operadores Lógicos
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_01_conceitos-basicos/#operadores-de-incremento-e-decremento">
+          Operadores de Incremento e Decremento
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_01_conceitos-basicos/#exercicios-de-fixacao">
+          Exercicios de fixação
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_01_conceitos-basicos/#respostas-exercicios-de-fixacao">
+          Respostas exercicios de fixação
+         </a>
+        </li>
+       </ul>
+       <h3 id="estruturas-de-decisao-e-repeticao">
+        <a href="../javascript/_02_estruturas-de-decis%C3%A3o-e-repeti%C3%A7%C3%A3o/#estruturas-de-decisao-e-repeticao">
+         Estruturas de decisão e repetição
+        </a>
+        <a class="headerlink" href="#estruturas-de-decisao-e-repeticao" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../javascript/_02_estruturas-de-decis%C3%A3o-e-repeti%C3%A7%C3%A3o/#estrutura-de-decisao">
+          Estrutura de Decisão
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_02_estruturas-de-decis%C3%A3o-e-repeti%C3%A7%C3%A3o/#if">
+          if
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_02_estruturas-de-decis%C3%A3o-e-repeti%C3%A7%C3%A3o/#switch-case">
+          switch-case
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_02_estruturas-de-decis%C3%A3o-e-repeti%C3%A7%C3%A3o/#ternario">
+          ternário
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_02_estruturas-de-decis%C3%A3o-e-repeti%C3%A7%C3%A3o/#trycatchfinally">
+          try/catch/finally
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_02_estruturas-de-decis%C3%A3o-e-repeti%C3%A7%C3%A3o/#estruturas-de-repeticao">
+          Estruturas de Repetição
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_02_estruturas-de-decis%C3%A3o-e-repeti%C3%A7%C3%A3o/#while">
+          WHILE
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_02_estruturas-de-decis%C3%A3o-e-repeti%C3%A7%C3%A3o/#for">
+          FOR
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_02_estruturas-de-decis%C3%A3o-e-repeti%C3%A7%C3%A3o/#condicao">
+          Condição
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_02_estruturas-de-decis%C3%A3o-e-repeti%C3%A7%C3%A3o/#incrementodecremento">
+          Incremento/Decremento
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_02_estruturas-de-decis%C3%A3o-e-repeti%C3%A7%C3%A3o/#for-of">
+          For of
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_02_estruturas-de-decis%C3%A3o-e-repeti%C3%A7%C3%A3o/#for-in">
+          FOR IN
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_02_estruturas-de-decis%C3%A3o-e-repeti%C3%A7%C3%A3o/#exercicios-de-fixacao">
+          Exercicios de fixação
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_02_estruturas-de-decis%C3%A3o-e-repeti%C3%A7%C3%A3o/#exercicio-de-estruturas-de-decisao">
+          Exercicio de Estruturas de decisão
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_02_estruturas-de-decis%C3%A3o-e-repeti%C3%A7%C3%A3o/#exercicio-de-estruturas-de-repeticao">
+          Exercicio de Estruturas de repetição
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_02_estruturas-de-decis%C3%A3o-e-repeti%C3%A7%C3%A3o/#respostas-exercicios-de-fixacao">
+          Respostas Exercicios de fixação
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_02_estruturas-de-decis%C3%A3o-e-repeti%C3%A7%C3%A3o/#estruturas-de-decisao">
+          Estruturas de decisão
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_02_estruturas-de-decis%C3%A3o-e-repeti%C3%A7%C3%A3o/#resposta-estruturas-de-repeticao">
+          Resposta Estruturas de repetição
+         </a>
+        </li>
+       </ul>
+       <h3 id="funcoes">
+        <a href="../javascript/_03_tipos-de-fun%C3%A7%C3%B5es-e-manipula%C3%A7%C3%A3o-de-dados/#funcoes">
+         Funções
+        </a>
+        <a class="headerlink" href="#funcoes" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../javascript/_03_tipos-de-fun%C3%A7%C3%B5es-e-manipula%C3%A7%C3%A3o-de-dados/#introducao-a-funcoes-em-javascript">
+          Introdução a Funções em Javascript
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_03_tipos-de-fun%C3%A7%C3%B5es-e-manipula%C3%A7%C3%A3o-de-dados/#funcoes-anonimas-em-javascript">
+          Funções Anônimas em JavaScript
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_03_tipos-de-fun%C3%A7%C3%B5es-e-manipula%C3%A7%C3%A3o-de-dados/#callback">
+          CALLBACK
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_03_tipos-de-fun%C3%A7%C3%B5es-e-manipula%C3%A7%C3%A3o-de-dados/#promise">
+          PROMISE
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_03_tipos-de-fun%C3%A7%C3%B5es-e-manipula%C3%A7%C3%A3o-de-dados/#asyncawait">
+          ASYNC/AWAIT
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_03_tipos-de-fun%C3%A7%C3%B5es-e-manipula%C3%A7%C3%A3o-de-dados/#conversoes-e-manipulacao-de-dados">
+          Conversões e manipulação de dados
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_03_tipos-de-fun%C3%A7%C3%B5es-e-manipula%C3%A7%C3%A3o-de-dados/#conversao-de-tipos-de-dados-em-javascript">
+          Conversão de tipos de dados em JavaScript
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_03_tipos-de-fun%C3%A7%C3%B5es-e-manipula%C3%A7%C3%A3o-de-dados/#manipulacao-de-arrays-em-javascript">
+          Manipulação de arrays em JavaScript
+         </a>
+        </li>
+       </ul>
+       <h3 id="typescript">
+        <a href="../javascript/_04_typescript/#typescript">
+         TypeScript
+        </a>
+        <a class="headerlink" href="#typescript" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../javascript/_04_typescript/#configuracao">
+          Configuração
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_04_typescript/#tipos-basicos">
+          Tipos básicos
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_04_typescript/#funcoes">
+          Funções
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_04_typescript/#interfaces">
+          Interfaces
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_04_typescript/#classes">
+          Classes
+         </a>
+        </li>
+       </ul>
+       <h3 id="desafio">
+        <a href="../javascript/_12_desafio/#desafio">
+         Desafio
+        </a>
+        <a class="headerlink" href="#desafio" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../javascript/_12_desafio/#projeto-pratico">
+          Projeto Prático
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_12_desafio/#calculadora">
+          Calculadora
+         </a>
+        </li>
+        <li>
+         <a href="../javascript/_12_desafio/#proposta">
+          Proposta
+         </a>
+        </li>
+       </ul>
+       <h3 id="resolucao-desafio">
+        <a href="../javascript/_99_resolucao-desafio/#resolucao-desafio">
+         Resolução desafio
+        </a>
+        <a class="headerlink" href="#resolucao-desafio" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <h2 id="introducao-ao-nodejs">
+        <a href="../nodeJs/#introducao-ao-nodejs">
+         Introdução ao Node.js
+        </a>
+        <a class="headerlink" href="#introducao-ao-nodejs" title="Permanent link">
+         #
+        </a>
+       </h2>
+       <h3 id="apliacoes-tipicas-do-nodejs">
+        <a href="../nodeJs/#apliacoes-tipicas-do-nodejs">
+         Apliações típicas do Node.js
+        </a>
+        <a class="headerlink" href="#apliacoes-tipicas-do-nodejs" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../nodeJs/#desenvolvimento-de-aplicativos-web">
+          Desenvolvimento de aplicativos web
+         </a>
+        </li>
+        <li>
+         <a href="../nodeJs/#desenvolvimento-de-aplicativos-de-rede">
+          Desenvolvimento de aplicativos de rede
+         </a>
+        </li>
+        <li>
+         <a href="../nodeJs/#automacao-de-tarefas">
+          Automação de tarefas
+         </a>
+        </li>
+        <li>
+         <a href="../nodeJs/#desenvolvimento-de-aplicativos-de-desktop">
+          Desenvolvimento de aplicativos de desktop
+         </a>
+        </li>
+       </ul>
+       <h3 id="introducao-a-api">
+        <a href="../nodeJs/_01_visao-geral/#introducao-a-api">
+         Introdução a API
+        </a>
+        <a class="headerlink" href="#introducao-a-api" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../nodeJs/_01_visao-geral/#tipos-de-apis">
+          Tipos de APIs
+         </a>
+        </li>
+        <li>
+         <a href="../nodeJs/_01_visao-geral/#api-de-servico-da-web-webservice">
+          API de Serviço da Web (Webservice)
+         </a>
+        </li>
+        <li>
+         <a href="../nodeJs/_01_visao-geral/#api-restful">
+          API RESTful
+         </a>
+        </li>
+        <li>
+         <a href="../nodeJs/_01_visao-geral/#api-soap">
+          API SOAP
+         </a>
+        </li>
+       </ul>
+       <h3 id="api-restful-com-nodejs">
+        <a href="../nodeJs/_01_visao-geral/#api-restful-com-nodejs">
+         API RESTful com Node.js
+        </a>
+        <a class="headerlink" href="#api-restful-com-nodejs" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <h3 id="instalando-nodejs">
+        <a href="../nodeJs/_01_visao-geral/#instalando-nodejs">
+         Instalando Node.js
+        </a>
+        <a class="headerlink" href="#instalando-nodejs" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../nodeJs/_01_visao-geral/#passo-1-abra-o-terminal">
+          Passo 1: Abra o terminal
+         </a>
+        </li>
+        <li>
+         <a href="../nodeJs/_01_visao-geral/#passo-2-atualize-o-gerenciador-de-pacotes">
+          Passo 2: Atualize o gerenciador de pacotes
+         </a>
+        </li>
+        <li>
+         <a href="../nodeJs/_01_visao-geral/#passo-3-instale-o-nodejs">
+          Passo 3: Instale o Node.js
+         </a>
+        </li>
+        <li>
+         <a href="../nodeJs/_01_visao-geral/#passo-4-verifique-a-instalacao">
+          Passo 4: Verifique a instalação
+         </a>
+        </li>
+       </ul>
+       <h3 id="iniciando-um-projeto-no-nodejs">
+        <a href="../nodeJs/_02_Iniciando-projeto-nodejs/#iniciando-um-projeto-no-nodejs">
+         Iniciando um projeto no Node.js
+        </a>
+        <a class="headerlink" href="#iniciando-um-projeto-no-nodejs" title="Permanent link">
+         #
+        </a>
+       </h3>
+       <ul>
+        <li>
+         <a href="../nodeJs/_02_Iniciando-projeto-nodejs/#passo-1-crie-um-diretorio-para-o-projeto-e-navegue-ate-ele">
+          Passo 1 Crie um diretório para o projeto e navegue até ele
+         </a>
+        </li>
+        <li>
+         <a href="../nodeJs/_02_Iniciando-projeto-nodejs/#passo-2-inicialize-o-projeto-nodejs-com-o-npm">
+          Passo 2 Inicialize o projeto Node.js com o npm
+         </a>
+        </li>
+        <li>
+         <a href="../nodeJs/_02_Iniciando-projeto-nodejs/#passo-3-instale-os-pacotes-necessarios-para-criar-uma-api-restful-em-nodejs">
+          Passo 3 Instale os pacotes necessários para criar uma API RESTful em Node.js
+         </a>
+        </li>
+        <li>
+         <a href="../nodeJs/_02_Iniciando-projeto-nodejs/#passo-4-crie-um-arquivo-indexjs-no-diretorio-do-projeto-e-configure-o-servidor-express">
+          Passo 4 Crie um arquivo index.js no diretório do projeto e configure o servidor express
+         </a>
+        </li>
+        <li>
+         <a href="../nodeJs/_02_Iniciando-projeto-nodejs/#passo-5-teste-o-servidor">
+          Passo 5 Teste o servidor
+         </a>
+        </li>
+        <li>
+         <a href="../nodeJs/_02_Iniciando-projeto-nodejs/#parametros">
+          Parâmetros
+         </a>
+        </li>
+        <li>
+         <a href="../nodeJs/_02_Iniciando-projeto-nodejs/#parametros-de-rota">
+          Parâmetros de rota
+         </a>
+        </li>
+        <li>
+         <a href="../nodeJs/_02_Iniciando-projeto-nodejs/#parametros-de-query-string">
+          Parâmetros de Query String
+         </a>
+        </li>
+       </ul>
+      </article>
+     </div>
+    </div>
+   </main>
+   <footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+     <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+       Made with
+       <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+        Material for MkDocs
+       </a>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <div class="md-dialog" data-md-component="dialog">
+   <div class="md-dialog__inner md-typeset">
+   </div>
+  </div>
+  <script id="__config" type="application/json">
+   {"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}
+  </script>
+  <script src="../assets/javascripts/bundle.51198bba.min.js">
+  </script>
+ </body>
+</html>

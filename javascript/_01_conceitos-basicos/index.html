@@ -1,0 +1,2821 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../_02_estruturas-de-decis%C3%A3o-e-repeti%C3%A7%C3%A3o/">
+      
+      <link rel="icon" href="../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.7">
+    
+    
+      
+        <title>01 conceitos basicos - Full-Stack-JavaScript</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/material.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="yellow" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#conceitos-basicos" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Full-Stack-JavaScript" class="md-header__button md-logo" aria-label="Full-Stack-JavaScript" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Full-Stack-JavaScript
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+               01 conceitos basicos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="yellow" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_3">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/juniormarans/StackJavaScript/tree/main" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Full-Stack-JavaScript
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Full-Stack-JavaScript" class="md-nav__button md-logo" aria-label="Full-Stack-JavaScript" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Full-Stack-JavaScript
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/juniormarans/StackJavaScript/tree/main" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Full-Stack-JavaScript
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Visão Geral
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sum%C3%A1rio/" class="md-nav__link">
+        Sumário
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Html css
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Html css
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/" class="md-nav__link">
+        HTML e CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_01_visao-geral/" class="md-nav__link">
+         01 visao geral
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_02_tags_elementos/" class="md-nav__link">
+         02 tags elementos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_03_div/" class="md-nav__link">
+         03 div
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_04_introdu%C3%A7%C3%A3o-css/" class="md-nav__link">
+         04 introdução css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_05_posicionamento_elementos/" class="md-nav__link">
+         05 posicionamento elementos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_06_posicionamento_texto/" class="md-nav__link">
+         06 posicionamento texto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_07_posicionamento_imagem/" class="md-nav__link">
+         07 posicionamento imagem
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_08_listas/" class="md-nav__link">
+         08 listas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_09_navegacao/" class="md-nav__link">
+         09 navegacao
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_10_elementos_formulario/" class="md-nav__link">
+         10 elementos formulario
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_11_formulario/" class="md-nav__link">
+         11 formulario
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_12_tabelas/" class="md-nav__link">
+         12 tabelas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_13_normalizacao_css/" class="md-nav__link">
+         13 normalizacao css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_14_unidades_css/" class="md-nav__link">
+         14 unidades css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_15_propriedades_css/" class="md-nav__link">
+         15 propriedades css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_99_Respostas/" class="md-nav__link">
+         99 Respostas
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Javascript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Javascript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Introdução ao JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+           01 conceitos basicos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+         01 conceitos basicos
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conceitos-basicos" class="md-nav__link">
+    Conceitos Básicos
+  </a>
+  
+    <nav class="md-nav" aria-label="Conceitos Básicos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-rodar-um-codigo-javascript" class="md-nav__link">
+    Como Rodar Um Código JavaScript
+  </a>
+  
+    <nav class="md-nav" aria-label="Como Rodar Um Código JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#utilizando-o-console-do-navegador" class="md-nav__link">
+    Utilizando o console do navegador
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executar-javascript-com-o-nodejs" class="md-nav__link">
+    executar JavaScript com o Node.js
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-variaveis-em-javascript" class="md-nav__link">
+    Tipos de Variáveis em JavaScript
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de Variáveis em JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#escopo-de-variaveis-em-javascript" class="md-nav__link">
+    Escopo de Variáveis em JavaScript
+  </a>
+  
+    <nav class="md-nav" aria-label="Escopo de Variáveis em JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#escopo-global" class="md-nav__link">
+    Escopo Global
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escopo-local" class="md-nav__link">
+    Escopo Local
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-com-escopo-global-e-local" class="md-nav__link">
+    Exemplo com Escopo global e local
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#palavras-reservadas" class="md-nav__link">
+    Palavras Reservadas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-dados-em-javascript" class="md-nav__link">
+    Tipos de dados em JavaScript
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de dados em JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-dados-primitivos" class="md-nav__link">
+    Tipos de dados primitivos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-dados-nao-primitivos" class="md-nav__link">
+    Tipos de dados não primitivos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatacao-e-indentacao-de-codigo-em-javascript" class="md-nav__link">
+    Formatação e Indentação de Código em JavaScript
+  </a>
+  
+    <nav class="md-nav" aria-label="Formatação e Indentação de Código em JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principios-de-formatacao-de-codigo-em-javascript" class="md-nav__link">
+    Princípios de Formatação de Código em JavaScript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#principios-de-indentacao-de-codigo-em-javascript" class="md-nav__link">
+    Princípios de Indentação de Código em JavaScript
+  </a>
+  
+    <nav class="md-nav" aria-label="Princípios de Indentação de Código em JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplos-praticos" class="md-nav__link">
+    Exemplos Práticos
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplos Práticos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-1-formatacao-de-codigo" class="md-nav__link">
+    Exemplo 1: Formatação de código
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-2-indentacao-de-codigo" class="md-nav__link">
+    Exemplo 2: Indentação de código
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-comentarios-em-javascript-e-sua-aplicacao" class="md-nav__link">
+    Tipos de comentários em JavaScript e sua aplicação
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de comentários em JavaScript e sua aplicação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comentarios-de-uma-linha" class="md-nav__link">
+    Comentários de uma linha
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comentarios-de-varias-linhas" class="md-nav__link">
+    Comentários de várias linhas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comentarios-jsdoc" class="md-nav__link">
+    Comentários JSDoc
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-javascript" class="md-nav__link">
+    Operadores JavaScript
+  </a>
+  
+    <nav class="md-nav" aria-label="Operadores JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operadores-aritmeticos" class="md-nav__link">
+    Operadores Aritméticos
+  </a>
+  
+    <nav class="md-nav" aria-label="Operadores Aritméticos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operador-de-adicao" class="md-nav__link">
+    Operador de Adição (+)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-de-subtracao-" class="md-nav__link">
+    Operador de Subtração (-)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-de-multiplicacao" class="md-nav__link">
+    Operador de Multiplicação (*)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-de-divisao" class="md-nav__link">
+    Operador de Divisão (/)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-de-resto" class="md-nav__link">
+    Operador de Resto (%)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-de-exponenciacao" class="md-nav__link">
+    Operador de Exponenciação (**)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#precedencia-de-operadores-aritmeticos" class="md-nav__link">
+    Precedência de Operadores Aritméticos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-de-atribuicao-em-javascript" class="md-nav__link">
+    Operadores de Atribuição em JavaScript
+  </a>
+  
+    <nav class="md-nav" aria-label="Operadores de Atribuição em JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atribuicao-simples" class="md-nav__link">
+    Atribuição Simples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atribuicao-com-adicao" class="md-nav__link">
+    Atribuição com Adição
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atribuicao-com-subtracao" class="md-nav__link">
+    Atribuição com Subtração
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atribuicao-com-multiplicacao" class="md-nav__link">
+    Atribuição com Multiplicação
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atribuicao-com-divisao" class="md-nav__link">
+    Atribuição com Divisão
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atribuicao-com-resto-da-divisao" class="md-nav__link">
+    Atribuição com Resto da Divisão
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atribuicao-com-exponenciacao" class="md-nav__link">
+    Atribuição com Exponenciação
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atribuicao-com-deslocamento-a-esquerda" class="md-nav__link">
+    Atribuição com Deslocamento à Esquerda
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atribuicao-com-deslocamento-a-direita" class="md-nav__link">
+    Atribuição com Deslocamento à Direita
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atribuicao-com-deslocamento-sem-sinal" class="md-nav__link">
+    Atribuição com Deslocamento Sem Sinal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atribuicao-com-and-bit-a-bit" class="md-nav__link">
+    Atribuição com AND Bit a Bit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-de-comparacao" class="md-nav__link">
+    Operadores de Comparação
+  </a>
+  
+    <nav class="md-nav" aria-label="Operadores de Comparação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#igualdade" class="md-nav__link">
+    Igualdade (==)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#igualdade-estrita" class="md-nav__link">
+    Igualdade Estrita (===)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desigualdade" class="md-nav__link">
+    Desigualdade (!=)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desigualdade-estrita" class="md-nav__link">
+    Desigualdade Estrita (!==)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maior-que" class="md-nav__link">
+    Maior que (&gt;)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#menor-que" class="md-nav__link">
+    Menor que (&lt;)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maior-ou-igual-que" class="md-nav__link">
+    Maior ou igual que (&gt;=)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#menor-ou-igual-que" class="md-nav__link">
+    Menor ou igual que (&lt;=)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-ternario" class="md-nav__link">
+    Operador Ternário (?)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-logicos" class="md-nav__link">
+    Operadores Lógicos
+  </a>
+  
+    <nav class="md-nav" aria-label="Operadores Lógicos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operador-e" class="md-nav__link">
+    Operador "E" (&amp;&amp;)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-ou" class="md-nav__link">
+    Operador "OU" (||)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-nao" class="md-nav__link">
+    Operador "NÃO" (!)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-de-incremento-e-decremento" class="md-nav__link">
+    Operadores de Incremento e Decremento
+  </a>
+  
+    <nav class="md-nav" aria-label="Operadores de Incremento e Decremento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operador-de-incremento" class="md-nav__link">
+    Operador de Incremento (++)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-de-decremento-" class="md-nav__link">
+    Operador de Decremento (--)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilizando-operadores-em-expressoes" class="md-nav__link">
+    Utilizando Operadores em Expressões
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicios-de-fixacao" class="md-nav__link">
+    Exercicios de fixação
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#respostas-exercicios-de-fixacao" class="md-nav__link">
+    Respostas exercicios de fixação
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_02_estruturas-de-decis%C3%A3o-e-repeti%C3%A7%C3%A3o/" class="md-nav__link">
+         02 estruturas de decisão e repetição
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_03_tipos-de-fun%C3%A7%C3%B5es-e-manipula%C3%A7%C3%A3o-de-dados/" class="md-nav__link">
+         03 tipos de funções e manipulação de dados
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_04_typescript/" class="md-nav__link">
+         04 typescript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_12_desafio/" class="md-nav__link">
+         12 desafio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_99_resolucao-desafio/" class="md-nav__link">
+         99 resolucao desafio
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          nodeJs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          nodeJs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nodeJs/" class="md-nav__link">
+        Introdução ao Node.js
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nodeJs/_01_visao-geral/" class="md-nav__link">
+         01 visao geral
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nodeJs/_02_Iniciando-projeto-nodejs/" class="md-nav__link">
+         02 Iniciando projeto nodejs
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conceitos-basicos" class="md-nav__link">
+    Conceitos Básicos
+  </a>
+  
+    <nav class="md-nav" aria-label="Conceitos Básicos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-rodar-um-codigo-javascript" class="md-nav__link">
+    Como Rodar Um Código JavaScript
+  </a>
+  
+    <nav class="md-nav" aria-label="Como Rodar Um Código JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#utilizando-o-console-do-navegador" class="md-nav__link">
+    Utilizando o console do navegador
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executar-javascript-com-o-nodejs" class="md-nav__link">
+    executar JavaScript com o Node.js
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-variaveis-em-javascript" class="md-nav__link">
+    Tipos de Variáveis em JavaScript
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de Variáveis em JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#escopo-de-variaveis-em-javascript" class="md-nav__link">
+    Escopo de Variáveis em JavaScript
+  </a>
+  
+    <nav class="md-nav" aria-label="Escopo de Variáveis em JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#escopo-global" class="md-nav__link">
+    Escopo Global
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escopo-local" class="md-nav__link">
+    Escopo Local
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-com-escopo-global-e-local" class="md-nav__link">
+    Exemplo com Escopo global e local
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#palavras-reservadas" class="md-nav__link">
+    Palavras Reservadas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-dados-em-javascript" class="md-nav__link">
+    Tipos de dados em JavaScript
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de dados em JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-dados-primitivos" class="md-nav__link">
+    Tipos de dados primitivos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-dados-nao-primitivos" class="md-nav__link">
+    Tipos de dados não primitivos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatacao-e-indentacao-de-codigo-em-javascript" class="md-nav__link">
+    Formatação e Indentação de Código em JavaScript
+  </a>
+  
+    <nav class="md-nav" aria-label="Formatação e Indentação de Código em JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principios-de-formatacao-de-codigo-em-javascript" class="md-nav__link">
+    Princípios de Formatação de Código em JavaScript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#principios-de-indentacao-de-codigo-em-javascript" class="md-nav__link">
+    Princípios de Indentação de Código em JavaScript
+  </a>
+  
+    <nav class="md-nav" aria-label="Princípios de Indentação de Código em JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplos-praticos" class="md-nav__link">
+    Exemplos Práticos
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplos Práticos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-1-formatacao-de-codigo" class="md-nav__link">
+    Exemplo 1: Formatação de código
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-2-indentacao-de-codigo" class="md-nav__link">
+    Exemplo 2: Indentação de código
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-comentarios-em-javascript-e-sua-aplicacao" class="md-nav__link">
+    Tipos de comentários em JavaScript e sua aplicação
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de comentários em JavaScript e sua aplicação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comentarios-de-uma-linha" class="md-nav__link">
+    Comentários de uma linha
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comentarios-de-varias-linhas" class="md-nav__link">
+    Comentários de várias linhas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comentarios-jsdoc" class="md-nav__link">
+    Comentários JSDoc
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-javascript" class="md-nav__link">
+    Operadores JavaScript
+  </a>
+  
+    <nav class="md-nav" aria-label="Operadores JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operadores-aritmeticos" class="md-nav__link">
+    Operadores Aritméticos
+  </a>
+  
+    <nav class="md-nav" aria-label="Operadores Aritméticos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operador-de-adicao" class="md-nav__link">
+    Operador de Adição (+)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-de-subtracao-" class="md-nav__link">
+    Operador de Subtração (-)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-de-multiplicacao" class="md-nav__link">
+    Operador de Multiplicação (*)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-de-divisao" class="md-nav__link">
+    Operador de Divisão (/)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-de-resto" class="md-nav__link">
+    Operador de Resto (%)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-de-exponenciacao" class="md-nav__link">
+    Operador de Exponenciação (**)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#precedencia-de-operadores-aritmeticos" class="md-nav__link">
+    Precedência de Operadores Aritméticos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-de-atribuicao-em-javascript" class="md-nav__link">
+    Operadores de Atribuição em JavaScript
+  </a>
+  
+    <nav class="md-nav" aria-label="Operadores de Atribuição em JavaScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atribuicao-simples" class="md-nav__link">
+    Atribuição Simples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atribuicao-com-adicao" class="md-nav__link">
+    Atribuição com Adição
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atribuicao-com-subtracao" class="md-nav__link">
+    Atribuição com Subtração
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atribuicao-com-multiplicacao" class="md-nav__link">
+    Atribuição com Multiplicação
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atribuicao-com-divisao" class="md-nav__link">
+    Atribuição com Divisão
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atribuicao-com-resto-da-divisao" class="md-nav__link">
+    Atribuição com Resto da Divisão
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atribuicao-com-exponenciacao" class="md-nav__link">
+    Atribuição com Exponenciação
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atribuicao-com-deslocamento-a-esquerda" class="md-nav__link">
+    Atribuição com Deslocamento à Esquerda
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atribuicao-com-deslocamento-a-direita" class="md-nav__link">
+    Atribuição com Deslocamento à Direita
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atribuicao-com-deslocamento-sem-sinal" class="md-nav__link">
+    Atribuição com Deslocamento Sem Sinal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atribuicao-com-and-bit-a-bit" class="md-nav__link">
+    Atribuição com AND Bit a Bit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-de-comparacao" class="md-nav__link">
+    Operadores de Comparação
+  </a>
+  
+    <nav class="md-nav" aria-label="Operadores de Comparação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#igualdade" class="md-nav__link">
+    Igualdade (==)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#igualdade-estrita" class="md-nav__link">
+    Igualdade Estrita (===)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desigualdade" class="md-nav__link">
+    Desigualdade (!=)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desigualdade-estrita" class="md-nav__link">
+    Desigualdade Estrita (!==)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maior-que" class="md-nav__link">
+    Maior que (&gt;)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#menor-que" class="md-nav__link">
+    Menor que (&lt;)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maior-ou-igual-que" class="md-nav__link">
+    Maior ou igual que (&gt;=)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#menor-ou-igual-que" class="md-nav__link">
+    Menor ou igual que (&lt;=)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-ternario" class="md-nav__link">
+    Operador Ternário (?)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-logicos" class="md-nav__link">
+    Operadores Lógicos
+  </a>
+  
+    <nav class="md-nav" aria-label="Operadores Lógicos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operador-e" class="md-nav__link">
+    Operador "E" (&amp;&amp;)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-ou" class="md-nav__link">
+    Operador "OU" (||)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-nao" class="md-nav__link">
+    Operador "NÃO" (!)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operadores-de-incremento-e-decremento" class="md-nav__link">
+    Operadores de Incremento e Decremento
+  </a>
+  
+    <nav class="md-nav" aria-label="Operadores de Incremento e Decremento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operador-de-incremento" class="md-nav__link">
+    Operador de Incremento (++)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operador-de-decremento-" class="md-nav__link">
+    Operador de Decremento (--)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilizando-operadores-em-expressoes" class="md-nav__link">
+    Utilizando Operadores em Expressões
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercicios-de-fixacao" class="md-nav__link">
+    Exercicios de fixação
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#respostas-exercicios-de-fixacao" class="md-nav__link">
+    Respostas exercicios de fixação
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1> 01 conceitos basicos</h1>
+
+<h2 id="conceitos-basicos">Conceitos Básicos<a class="headerlink" href="#conceitos-basicos" title="Permanent link">#</a></h2>
+<hr />
+<h4 id="como-rodar-um-codigo-javascript">Como Rodar Um Código JavaScript<a class="headerlink" href="#como-rodar-um-codigo-javascript" title="Permanent link">#</a></h4>
+<p>Escolha um ambiente para rodar seu código JavaScript. Existem várias opções para rodar um código JavaScript, dependendo do seu propósito. Algumas opções incluem:</p>
+<ul>
+<li>Usar o console do navegador: Para rodar código JavaScript no navegador, abra o console de desenvolvedor pressionando F12 e selecione a guia "Console". Digite seu código JavaScript diretamente no console e pressione Enter para rodar.</li>
+<li>Usar o Node.js: O Node.js é uma plataforma para rodar código JavaScript no lado do servidor. Para usar o Node.js, você precisa instalar o software primeiro.</li>
+<li>Usar um ambiente de desenvolvimento integrado (IDE): Existem muitos IDEs disponíveis para programação em JavaScript, como Visual Studio Code, Atom, Sublime Text, etc. Eles têm recursos avançados de depuração e autocompletar.</li>
+</ul>
+<h5 id="utilizando-o-console-do-navegador">Utilizando o console do navegador<a class="headerlink" href="#utilizando-o-console-do-navegador" title="Permanent link">#</a></h5>
+<p>Passo 1: Crie um arquivo HTML
+Crie um novo arquivo HTML em qualquer editor de texto. Cole o seguinte código HTML no arquivo:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Meu tutorial JavaScript<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Meu tutorial JavaScript<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="c1">// Seu código JavaScript aqui</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Salve o arquivo com o nome descritivo do que ele faz, por exemplo "saudacao.html".</p>
+<p>Passo 2: Adicione seu código JavaScript
+dentro da tag <code>&lt;script&gt;</code> no arquivo HTML, adicione seu código JavaScript. Por exemplo, o seguinte código exibe um alerta na tela:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Meu tutorial JavaScript<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Meu tutorial JavaScript<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Olá, mundo!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Salve o arquivo.</p>
+<p>Passo 3: Abra o arquivo HTML no navegador
+Abra o arquivo HTML no navegador, clicando duas vezes no arquivo, arrastando e soltando sobre um navegador ou usando o menu "Abrir arquivo" do navegador. O código JavaScript será executado automaticamente.</p>
+<h4 id="executar-javascript-com-o-nodejs">executar JavaScript com o Node.js<a class="headerlink" href="#executar-javascript-com-o-nodejs" title="Permanent link">#</a></h4>
+<p>Passo 1: Abra o terminal do seu sistema operacional.</p>
+<p>Passo 2: Navegue até o diretório onde o seu arquivo JavaScript está localizado usando o comando <code>cd</code>.</p>
+<p>Por exemplo, se o seu arquivo está na pasta <code>Documentos</code> dentro do diretório pessoal do seu usuário, você pode navegar até lá com o seguinte comando:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/Documentos
+</code></pre></div>
+<p>Passo 3: Execute o código JavaScript usando o comando <code>node</code> seguido do nome do arquivo.</p>
+<p>Por exemplo, se o seu arquivo se chama <code>meuCodigo.js</code>, o comando para executá-lo seria:</p>
+<div class="highlight"><pre><span></span><code>node<span class="w"> </span>meuCodigo.js
+</code></pre></div>
+<p>Passo 4: O resultado da execução do código será exibido no terminal.</p>
+<p>Se o seu código tem saída de dados usando <code>console.log</code>, ela será exibida no terminal após a execução do comando.</p>
+<p>Por exemplo, se o seu código contém o seguinte comando:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>A saída será exibida no terminal assim que o comando <code>node meuCodigo.js</code> for executado:</p>
+<div class="highlight"><pre><span></span><code>Hello,<span class="w"> </span>world!
+</code></pre></div>
+<p>Pronto! Agora você já sabe como executar um código JavaScript com o Node.js. É importante lembrar que, para usar módulos externos em seu código, você precisa instalar as dependências com o gerenciador de pacotes do Node.js, o <code>npm</code>.</p>
+<h3 id="tipos-de-variaveis-em-javascript">Tipos de Variáveis em JavaScript<a class="headerlink" href="#tipos-de-variaveis-em-javascript" title="Permanent link">#</a></h3>
+<p>Variáveis e constantes são elementos fundamentais em qualquer linguagem de programação, incluindo JavaScript. Variáveis são usadas para armazenar valores que podem ser alterados durante a execução do programa, enquanto as constantes são usadas para armazenar valores que não podem ser alterados.</p>
+<p><code>var</code>, <code>let</code> e <code>const</code> são palavras-chave usadas para declarar variáveis em JavaScript.</p>
+<p><code>let</code> e <code>const</code> foram introduzidas no ES6 (ECMAScript 2015). Ambas têm escopo de bloco, o que significa que uma variável declarada com <code>let</code> ou <code>const</code> só é acessível dentro do bloco em que foi declarada (um bloco é qualquer coisa cercada por chaves, como um loop, uma instrução if ou uma função).</p>
+<p>A diferença entre <code>let</code> e <code>const</code> é que as variáveis ​​<code>let</code> podem ser reatribuídas dentro do seu escopo, enquanto as variáveis ​​<code>const</code> não podem ser reatribuídas. Isso torna <code>const</code> útil para declarar constantes ou valores que não devem ser alterados.</p>
+<p>Para declarar uma variável em JavaScript, você pode usar a palavra-chave <code>var</code>, <code>let</code> ou <code>const</code>, seguida pelo nome da variável e, opcionalmente, um valor inicial. Aqui estão alguns exemplos:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// variável declarada com &quot;var&quot;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">texto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// variável declarada com &quot;let&quot;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="p">;</span><span class="w"> </span><span class="c1">// constante declarada com &quot;const&quot;</span>
+</code></pre></div>
+<p>Observe que o valor da variável pode ser alterado a qualquer momento usando a atribuição de valor:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// numero agora tem o valor 10</span>
+<span class="nx">texto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;World&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// texto agora tem o valor &quot;World&quot;</span>
+</code></pre></div>
+<p>No entanto, o valor de uma constante não pode ser alterado depois de ser definido:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.71</span><span class="p">;</span><span class="w"> </span><span class="c1">// isso causaria um erro porque &quot;pi&quot; é uma constante</span>
+</code></pre></div>
+<p>É uma boa prática usar constantes sempre que o valor não precisa ser alterado e variáveis quando o valor pode mudar durante a execução do programa. Além disso, o uso de "let" em vez de "var" é recomendado em versões mais recentes do JavaScript para evitar problemas com escopo de variáveis.</p>
+<h4 id="escopo-de-variaveis-em-javascript">Escopo de Variáveis em JavaScript<a class="headerlink" href="#escopo-de-variaveis-em-javascript" title="Permanent link">#</a></h4>
+<p>O escopo de variáveis em JavaScript define a visibilidade de uma variável dentro de um determinado bloco de código. Em outras palavras, o escopo determina onde a variável pode ser acessada e modificada dentro do programa.</p>
+<p>Existem dois tipos de escopo de variáveis em JavaScript: escopo global e escopo local.</p>
+<p>O escopo global é o escopo mais amplo, onde as variáveis são definidas fora de qualquer bloco de código, como funções ou loops. Variáveis globais podem ser acessadas e modificadas em qualquer parte do programa, o que pode levar a erros difíceis de depurar. Aqui está um exemplo de variável global:</p>
+<h5 id="escopo-global">Escopo Global<a class="headerlink" href="#escopo-global" title="Permanent link">#</a></h5>
+<p>A variável <code>var</code> foi o primeiro tipo de variável introduzido em JavaScript. Ela é global por padrão, o que significa que ela pode ser acessada de qualquer lugar do código. Além disso, a variável <code>var</code> pode ser declarada várias vezes no mesmo escopo sem gerar erro. No entanto, seu escopo é limitado ao escopo da função em que ela foi declarada, se houver.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Variáveis globais devem ter nomes descritivos e ser declaradas fora de qualquer bloco de código</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">contadorGlobal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">addContadorGlobal</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">contadorGlobal</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">// A variável contadorGlobal pode ser acessada e modificada dentro da função</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Contador global é agora: </span><span class="si">${</span><span class="nx">contadorGlobal</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">addContadorGlobal</span><span class="p">();</span><span class="w"> </span><span class="c1">// Chama a função para incrementar a variável globalCount</span>
+</code></pre></div>
+<h5 id="escopo-local">Escopo Local<a class="headerlink" href="#escopo-local" title="Permanent link">#</a></h5>
+<p>O <strong>escopo local</strong> é o escopo dentro de um bloco de código, como uma <code>função</code> ou um <code>loop</code>. <strong>Variáveis locais</strong> só podem ser acessadas dentro do bloco onde foram definidas e podem ter o mesmo nome de variáveis globais ou de outros escopos locais sem conflitos. Aqui está um exemplo de variável local:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">calculoAreaCirculo</span><span class="p">(</span><span class="nx">raio</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Variáveis locais devem ter nomes descritivos e ser declaradas dentro do bloco de código onde são usadas</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">raio</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">raio</span><span class="p">;</span><span class="w"> </span><span class="c1">// A variável area só pode ser acessada dentro desta função</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`A área do circulo de raio </span><span class="si">${</span><span class="nx">raio</span><span class="si">}</span><span class="sb"> é </span><span class="si">${</span><span class="nx">area</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">calculoAreaCirculo</span><span class="p">(</span><span class="mf">5</span><span class="p">);</span><span class="w"> </span><span class="c1">// Chama a função para calcular a área de um círculo com raio 5</span>
+</code></pre></div>
+<h5 id="exemplo-com-escopo-global-e-local">Exemplo com Escopo global e local<a class="headerlink" href="#exemplo-com-escopo-global-e-local" title="Permanent link">#</a></h5>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">exemplo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">variavelEscopoGlobal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">variavelEscopoLimitado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">variavelEscopoGlobal</span><span class="p">);</span><span class="w"> </span><span class="c1">// imprime &quot;1&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">variavelEscopoLimitado</span><span class="p">);</span><span class="w"> </span><span class="c1">// gera um erro: &quot;Uncaught ReferenceError: variavelEscopoLimitado is not defined&quot;</span>
+<span class="p">}</span>
+
+<span class="nx">exemplo</span><span class="p">();</span>
+</code></pre></div>
+<p>No exemplo acima, a variável <code>variavelEscopoGlobal</code> tem escopo global, enquanto a variável <code>variavelEscopoLimitado</code> tem escopo limitado ao bloco de código <code>if</code>. A tentativa de acessar a variável <code>variavelEscopoLimitado</code> fora do bloco de código resulta em um erro.</p>
+<h3 id="palavras-reservadas">Palavras Reservadas<a class="headerlink" href="#palavras-reservadas" title="Permanent link">#</a></h3>
+<p><strong>Palavras reservadas</strong> em JavaScript são termos que possuem significado especial na linguagem e que não podem ser utilizados como identificadores (nomes de variáveis, funções ou outros elementos do código). Essas palavras são reservadas para fins específicos, como estruturas de controle, declaração de variáveis, declaração de funções, entre outros.</p>
+<p>As palavras reservadas em JavaScript incluem:</p>
+<ul>
+<li><code>break</code>: usado para interromper a execução de um loop ou switch statement.</li>
+<li><code>case</code>: usado em conjunto com o switch statement para avaliar uma expressão e executar o bloco de código correspondente.</li>
+<li><code>catch</code>: usado em conjunto com o try statement para capturar exceções lançadas pelo bloco de código.</li>
+<li><code>class</code>: introduz uma declaração de classe.</li>
+<li><code>const</code>: define uma constante com um valor que não pode ser alterado.</li>
+<li><code>continue</code>: usado para pular uma iteração de um loop.</li>
+<li><code>debugger</code>: interrompe a execução do código para fins de depuração.</li>
+<li><code>default</code>: usado em conjunto com o switch statement para executar um bloco de código padrão quando nenhuma das condições é atendida.</li>
+<li><code>delete</code>: exclui uma propriedade de um objeto.</li>
+<li><code>do</code>: inicia um loop do/while.</li>
+<li><code>else</code>: usado em conjunto com um if statement para executar um bloco de código alternativo quando a condição não é atendida.</li>
+<li><code>export</code>: exporta uma variável, função ou objeto de um módulo.</li>
+<li><code>extends</code>: especifica uma classe pai para uma classe filho.</li>
+<li><code>false</code>: representa o valor lógico falso.</li>
+<li><code>finally</code>: usado em conjunto com o try statement para executar um bloco de código após a conclusão do bloco try/catch.</li>
+<li><code>for</code>: inicia um loop for.</li>
+<li><code>function</code>: define uma função.</li>
+<li><code>if</code>: inicia um bloco de código condicional.</li>
+<li><code>import</code>: importa uma variável, função ou objeto de outro módulo.</li>
+<li><code>in</code>: usado para verificar se uma propriedade existe em um objeto.</li>
+<li><code>instanceof</code>: usado para verificar se um objeto é uma instância de uma classe.</li>
+<li><code>let</code>: define uma variável com escopo de bloco.</li>
+<li><code>new</code>: cria uma nova instância de um objeto.</li>
+<li><code>null</code>: representa um valor nulo.</li>
+<li><code>return</code>: especifica o valor de retorno de uma função.</li>
+<li><code>super</code>: chama um método na classe pai.</li>
+<li><code>switch</code>: inicia um bloco de código de seleção múltipla.</li>
+<li><code>this</code>: refere-se ao objeto atual.</li>
+<li><code>throw</code>: lança uma exceção.</li>
+<li><code>true</code>: representa o valor lógico verdadeiro.</li>
+<li><code>try</code>: inicia um bloco de código que pode gerar exceções.</li>
+<li><code>typeof</code>: retorna o tipo de uma variável ou expressão.</li>
+<li><code>var</code>: define uma variável com escopo de função.</li>
+<li><code>void</code>: retorna um valor vazio.</li>
+<li><code>while</code>: inicia um loop while.</li>
+<li><code>with</code>: adiciona um objeto ao escopo atual.</li>
+</ul>
+<p>Ao criar código JavaScript, é importante evitar o uso de <code>palavras reservadas</code> como identificadores, pois isso pode causar erros e tornar o código mais difícil de entender.</p>
+<h3 id="tipos-de-dados-em-javascript">Tipos de dados em JavaScript<a class="headerlink" href="#tipos-de-dados-em-javascript" title="Permanent link">#</a></h3>
+<p>JavaScript possui vários tipos de dados, como números, strings, booleanos, arrays, objetos e muito mais. Cada tipo de dado é usado para representar um conjunto específico de valores e tem um conjunto específico de operações que podem ser realizadas com ele.</p>
+<h4 id="tipos-de-dados-primitivos">Tipos de dados primitivos<a class="headerlink" href="#tipos-de-dados-primitivos" title="Permanent link">#</a></h4>
+<p>Os tipos de dados primitivos são aqueles que são diretamente suportados pela linguagem. Eles são imutáveis, o que significa que seus valores não podem ser alterados depois de definidos. Os tipos de dados primitivos em JavaScript são:</p>
+<ul>
+<li>Number: são usados para representar valores numéricos. Podem ser inteiros ou decimais. Exemplo:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">idade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span><span class="p">;</span><span class="w"> </span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">altura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.75</span><span class="p">;</span>
+<span class="ow">typeof</span><span class="w"> </span><span class="nx">idade</span><span class="p">;</span><span class="w"> </span><span class="c1">// imprime number</span>
+</code></pre></div>
+<ul>
+<li>Strings: são usados para representar valores de texto. Podem ser definidos usando aspas simples ou duplas. Exemplo:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;João&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">sobrenome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Silva&#39;</span><span class="p">;</span>
+<span class="ow">typeof</span><span class="w"> </span><span class="nx">nome</span><span class="p">;</span><span class="w"> </span><span class="c1">// imprime string</span>
+</code></pre></div>
+<ul>
+<li>Booleanos: são usados para representar valores verdadeiro ou falso. Exemplo:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">aprovado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">reprovado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="ow">typeof</span><span class="w"> </span><span class="nx">aprovado</span><span class="p">;</span><span class="w"> </span><span class="c1">// imprime boolean</span>
+</code></pre></div>
+<ul>
+<li>Null: é usado para representar um valor nulo ou vazio. Exemplo:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+</code></pre></div>
+<ul>
+<li>Undefined: é usado para representar uma variável que ainda não foi definida. Exemplo:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">x</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// imprime &quot;undefined&quot;</span>
+</code></pre></div>
+<ul>
+<li>Symbol: é usado para criar valores únicos e não modificáveis. Exemplo:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Symbol</span><span class="p">();</span>
+</code></pre></div>
+<h4 id="tipos-de-dados-nao-primitivos">Tipos de dados não primitivos<a class="headerlink" href="#tipos-de-dados-nao-primitivos" title="Permanent link">#</a></h4>
+<p>Os tipos de dados não primitivos são aqueles que são definidos pelo usuário ou são objetos. Eles são mutáveis, o que significa que seus valores podem ser alterados depois de definidos. Os tipos de dados não primitivos em JavaScript são:</p>
+<ul>
+<li>Arrays: são usados para representar coleções ordenadas de valores. Podem conter qualquer tipo de dado, inclusive outros arrays. Exemplo:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">numeros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">nomes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;João&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Maria&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Pedro&quot;</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">misto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;João&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Maria&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Pedro&quot;</span><span class="p">],</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Marcos&quot;</span><span class="p">];</span>
+</code></pre></div>
+<ul>
+<li>Objetos: são usados para representar coleções de propriedades e valores relacionados. Cada propriedade é uma chave que aponta para um valor. Exemplo:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">pessoa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">  </span><span class="nx">nome</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;João&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="nx">idade</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="nx">altura</span><span class="o">:</span><span class="w"> </span><span class="mf">1.75</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div>
+<ul>
+<li>Funções: são usadas para agrupar um conjunto de ações em um bloco de código reutilizável. Podem ser declaradas com ou sem parâmetros. Exemplo:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">saudacao</span><span class="p">(</span><span class="nx">nome</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Olá, &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">nome</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">saudacao</span><span class="p">(</span><span class="s2">&quot;João&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// imprime &quot;Olá, João!&quot;</span>
+</code></pre></div>
+<p>Em resumo, JavaScript possui vários tipos de dados que são usados para representar diferentes tipos de valores. É importante entender os diferentes tipos de dados para poder trabalhar com eles corretamente em seus programas.</p>
+<h3 id="formatacao-e-indentacao-de-codigo-em-javascript">Formatação e Indentação de Código em JavaScript<a class="headerlink" href="#formatacao-e-indentacao-de-codigo-em-javascript" title="Permanent link">#</a></h3>
+<p>A <code>formatação</code> e <code>indentação</code> de código em JavaScript são importantes para a <code>legibilidade</code> e <code>manutenção</code> do código. Quando o código é organizado de maneira consistente e estruturada, é mais fácil para outros desenvolvedores entenderem o código e fazerem alterações.</p>
+<h4 id="principios-de-formatacao-de-codigo-em-javascript">Princípios de Formatação de Código em JavaScript<a class="headerlink" href="#principios-de-formatacao-de-codigo-em-javascript" title="Permanent link">#</a></h4>
+<p>Os <code>princípios de formatação</code> de código em JavaScript incluem a <code>consistência</code>, a <code>clareza</code> e a <code>simplicidade</code>. A <code>consistência</code> é importante para que o código seja organizado de maneira previsível e fácil de entender. Isso pode ser alcançado usando um conjunto de regras de formatação que se aplicam a todo o código. A <code>clareza</code> refere-se à legibilidade do código, ou seja, a facilidade de compreender o que cada instrução faz. Isso pode ser alcançado usando nomes de variáveis descritivos, comentários claros e código bem organizado. A <code>simplicidade</code> envolve manter o código o mais simples possível, eliminando instruções desnecessárias e mantendo o código fácil de entender.</p>
+<p>A escolha de <code>nomes descritivos</code> para variáveis em JavaScript é uma prática importante que ajuda a tornar o código mais <code>legível</code> e <code>fácil</code> de entender. Uma <code>variável descritiva</code> é aquela que possui um nome que descreve claramente o que a variável representa ou armazena.</p>
+<p>A seguir, estão alguns exemplos de <code>variáveis descritivas</code> em JavaScript, demonstrando como a escolha de nomes pode ser significativa para a compreensão do código:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Exemplo 1: Variáveis descritivas para armazenar dados do usuário</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">nomeUsuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Maria&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// variável para armazenar o nome do usuário</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">idadeUsuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span><span class="p">;</span><span class="w"> </span><span class="c1">// variável para armazenar a idade do usuário</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">emailUsuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;maria@email.com&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// variável para armazenar o e-mail do usuário</span>
+</code></pre></div>
+<p>No exemplo acima, os nomes das <code>variáveis</code> são claramente <code>descritivos</code> e indicam o tipo de informação que cada variável está armazenando. Isso torna o código mais fácil de entender, especialmente para outros desenvolvedores que podem precisar trabalhar com esse código.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Exemplo 2: Variáveis descritivas para cálculos matemáticos</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valorTotal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">50.00</span><span class="p">;</span><span class="w"> </span><span class="c1">// variável para armazenar o valor total da compra</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">quantidadeProdutos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"> </span><span class="c1">// variável para armazenar a quantidade de produtos comprados</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valorFrete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10.00</span><span class="p">;</span><span class="w"> </span><span class="c1">// variável para armazenar o valor do frete</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">valorFinal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valorTotal</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="nx">quantidadeProdutos</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">valorFrete</span><span class="p">;</span><span class="w"> </span><span class="c1">// cálculo do valor final</span>
+</code></pre></div>
+<p>Nesse exemplo, os <code>nomes das variáveis</code> refletem as informações que elas representam, tornando o código mais <code>fácil de entender</code>. Além disso, a escolha de nomes <code>descritivos</code> ajuda a <code>prevenir erros</code>, como a utilização incorreta de uma variável.</p>
+<p>Em resumo, a escolha de <code>nomes descritivos</code> para variáveis em JavaScript é uma <code>prática importante</code> que pode ajudar a tornar o código mais <code>legível</code> e <code>fácil</code> de entender. Ao escolher <code>nomes descritivos</code>, os desenvolvedores podem facilitar o processo de <code>leitura</code> e <code>manutenção</code> do código, bem como prevenir erros de programação.</p>
+<h4 id="principios-de-indentacao-de-codigo-em-javascript">Princípios de Indentação de Código em JavaScript<a class="headerlink" href="#principios-de-indentacao-de-codigo-em-javascript" title="Permanent link">#</a></h4>
+<p>Os princípios de <code>indentação</code> de código em JavaScript incluem a <code>hierarquia</code> e a <code>clareza</code>. A <code>hierarquia</code> refere-se à estruturação do código em blocos, funções e outras estruturas. Cada <code>nível da hierarquia</code> deve ser indentado para que seja fácil de entender a estrutura do código. A <code>clareza</code> refere-se à legibilidade do código, ou seja, a facilidade de entender a relação entre as instruções. Isso pode ser alcançado usando uma <code>indentação</code> consistente e adequada, que torne claro quais instruções pertencem a quais blocos de código.</p>
+<h5 id="exemplos-praticos">Exemplos Práticos<a class="headerlink" href="#exemplos-praticos" title="Permanent link">#</a></h5>
+<p>Aqui estão alguns exemplos práticos de formatação e indentação de código em JavaScript:</p>
+<h6 id="exemplo-1-formatacao-de-codigo">Exemplo 1: Formatação de código<a class="headerlink" href="#exemplo-1-formatacao-de-codigo" title="Permanent link">#</a></h6>
+<div class="highlight"><pre><span></span><code><span class="c1">// código sem formatação</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="o">=</span><span class="mf">2</span><span class="p">;</span><span class="kd">let</span><span class="w"> </span><span class="nx">b</span><span class="o">=</span><span class="mf">3</span><span class="p">;</span><span class="kd">let</span><span class="w"> </span><span class="nx">c</span><span class="o">=</span><span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span>
+
+<span class="c1">// código com formatação e usando nomes de variáveis descritivos</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valorInicial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valorRecebido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valorTotal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valorInicial</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">valorRecebido</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">valorTotal</span><span class="p">);</span>
+</code></pre></div>
+<p>O código formatado usando nomes de variáveis descritivos é muito mais fácil de ler e entender, com instruções separadas por linhas e com espaçamento adequado.</p>
+<h6 id="exemplo-2-indentacao-de-codigo">Exemplo 2: Indentação de código<a class="headerlink" href="#exemplo-2-indentacao-de-codigo" title="Permanent link">#</a></h6>
+<div class="highlight"><pre><span></span><code><span class="c1">// código sem indentação</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">saldo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">emprestimo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">emprestimo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">divida</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">divida</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// código com indentação</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">saldo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">emprestimo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">emprestimo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">divida</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">divida</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>O <code>código indentado</code> torna a hierarquia mais clara, indicando qual bloco de código pertence a qual nível da hierarquia.</p>
+<p>A <code>formatação</code> e <code>indentação</code> adequadas de código são importantes para que o código seja mais <code>legível</code> e <code>fácil</code> de entender. Quando o código é organizado de maneira <code>consistente</code> e <code>estruturada</code>, é mais fácil para outros desenvolvedores entenderem o código e fazerem alterações. Além disso, a <code>formatação</code> e a <code>indentação</code> adequadas podem ajudar a prevenir erros de sintaxe e tornar o processo de depuração mais fácil. Em resumo, a <code>formatação</code> e a <code>indentação</code> adequadas são fundamentais para um código JavaScript de qualidade.</p>
+<h4 id="tipos-de-comentarios-em-javascript-e-sua-aplicacao">Tipos de comentários em JavaScript e sua aplicação<a class="headerlink" href="#tipos-de-comentarios-em-javascript-e-sua-aplicacao" title="Permanent link">#</a></h4>
+<p><code>Comentários</code> são uma parte importante da programação em JavaScript. Eles ajudam os desenvolvedores a entender o código e a manter a <code>documentação</code> do projeto. Existem dois tipos principais de comentários em JavaScript: <code>comentários de uma linha</code> e <code>comentários de várias linhas</code>. Além disso, existem comentários especiais chamados <code>JSDoc</code> que são usados para documentar o código e gerar documentação automática.</p>
+<h5 id="comentarios-de-uma-linha">Comentários de uma linha<a class="headerlink" href="#comentarios-de-uma-linha" title="Permanent link">#</a></h5>
+<p><code>Comentários de uma linha</code> são usados para incluir anotações curtas em uma única linha de código. Eles começam com <code>//</code> e são ignorados pelo interpretador JavaScript. Os comentários de uma linha são usados para explicar o que o código faz, ou para deixar uma nota para outro desenvolvedor. Veja o exemplo abaixo:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Define uma variável chamada &#39;idade&#39; com o valor de 20</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">idade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">20</span><span class="p">;</span>
+</code></pre></div>
+<h5 id="comentarios-de-varias-linhas">Comentários de várias linhas<a class="headerlink" href="#comentarios-de-varias-linhas" title="Permanent link">#</a></h5>
+<p><code>Comentários de várias linhas</code> são usados para comentar blocos de código ou para incluir anotações mais longas. Eles começam com <code>/*</code> e terminam com <code>*/</code>. Comentários de várias linhas são úteis para explicar em mais detalhes como o código funciona. Veja o exemplo abaixo:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/*</span>
+<span class="cm">Esta função calcula o cubo de um número.</span>
+<span class="cm">Para calcular o cubo, o número é multiplicado por si mesmo três vezes.</span>
+<span class="cm">*/</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">calcularCubo</span><span class="p">(</span><span class="nx">numero</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">numero</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">numero</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">numero</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="comentarios-jsdoc">Comentários JSDoc<a class="headerlink" href="#comentarios-jsdoc" title="Permanent link">#</a></h5>
+<p><code>Comentários JSDoc</code> são uma forma especializada de comentários em JavaScript que são usados para documentar o código. Eles são usados para documentar funções, variáveis, parâmetros e valores de retorno. Os comentários JSDoc começam com <code>/**</code> e terminam com <code>*/</code>. Os comentários JSDoc possuem uma sintaxe específica que permite especificar informações sobre as funções, variáveis e outros elementos do código.</p>
+<p>Veja o exemplo abaixo:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm"> * Calcula a média de um conjunto de números.</span>
+<span class="cm"> *</span>
+<span class="cm"> * @param {number[]} numeros - O conjunto de números para calcular a média.</span>
+<span class="cm"> * @returns {number} A média dos números fornecidos.</span>
+<span class="cm"> */</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">calcularMedia</span><span class="p">(</span><span class="nx">numeros</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numeros</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">soma</span><span class="p">,</span><span class="w"> </span><span class="nx">numero</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">soma</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">numero</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">numeros</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>O exemplo acima usa comentários JSDoc para documentar uma função que calcula a média de um conjunto de números. O comentário começa com <code>/**</code> e termina com <code>*/</code>. Os comentários JSDoc incluem informações sobre os parâmetros da função (<code>@param</code>) e o valor de retorno (<code>@returns</code>). Essas informações são usadas por ferramentas de documentação, como o JSDoc ou o DocumentJS, para gerar documentação automatizada para o código.</p>
+<p><code>Comentários</code> são uma parte importante da programação em JavaScript. Eles ajudam os desenvolvedores a entender o código e a manter a documentação do projeto. Existem dois tipos principais de comentários em JavaScript: <code>comentários de uma linha</code> e <code>comentários de várias linhas</code>. Além disso, existem comentários especiais chamados <code>comentários JSDoc</code>.</p>
+<h3 id="operadores-javascript">Operadores JavaScript<a class="headerlink" href="#operadores-javascript" title="Permanent link">#</a></h3>
+<p>Introdução</p>
+<p>Operadores em JavaScript são usados para realizar operações matemáticas, lógicas e de atribuição em variáveis. Eles são ferramentas essenciais para escrever um código limpo e eficiente.</p>
+<h4 id="operadores-aritmeticos">Operadores Aritméticos<a class="headerlink" href="#operadores-aritmeticos" title="Permanent link">#</a></h4>
+<p>Os operadores aritméticos em JavaScript são utilizados para realizar operações matemáticas em variáveis. Abaixo segue uma lista dos operadores aritméticos em JavaScript:</p>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>Operador de adição</td>
+</tr>
+<tr>
+<td>-</td>
+<td>Operador de subtração</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Operador de multiplicação</td>
+</tr>
+<tr>
+<td>/</td>
+<td>Operador de divisão</td>
+</tr>
+<tr>
+<td>%</td>
+<td>Operador de resto</td>
+</tr>
+<tr>
+<td>**</td>
+<td>Operador de exponenciação</td>
+</tr>
+</tbody>
+</table>
+<p>E aqui estão exemplos de uso de cada um desses operadores:</p>
+<h5 id="operador-de-adicao">Operador de Adição (+)<a class="headerlink" href="#operador-de-adicao" title="Permanent link">#</a></h5>
+<p>O operador de adição (<code>+</code>) é usado para adicionar dois valores.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valor2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">valor2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resultado</span><span class="p">);</span><span class="w"> </span><span class="c1">// Saída: 7</span>
+</code></pre></div>
+<p>Neste exemplo, <code>valor1</code> e <code>valor2</code> são adicionados através do operador <code>+</code>, resultando em <code>resultado</code> com valor 7.</p>
+<h5 id="operador-de-subtracao-">Operador de Subtração (-)<a class="headerlink" href="#operador-de-subtracao-" title="Permanent link">#</a></h5>
+<p>O operador de subtração (<code>-</code>) é usado para subtrair um valor de outro.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valor2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">valor2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resultado</span><span class="p">);</span><span class="w"> </span><span class="c1">// Saída: 3</span>
+</code></pre></div>
+<p>Neste exemplo, <code>valor2</code> é subtraído de <code>valor1</code> através do operador <code>-</code>, resultando em <code>resultado</code> com valor 3.</p>
+<h5 id="operador-de-multiplicacao">Operador de Multiplicação (*)<a class="headerlink" href="#operador-de-multiplicacao" title="Permanent link">#</a></h5>
+<p>O operador de multiplicação (<code>*</code>) é usado para multiplicar dois valores.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valor2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">valor2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resultado</span><span class="p">);</span><span class="w"> </span><span class="c1">// Saída: 10</span>
+</code></pre></div>
+<p>Neste exemplo, <code>valor1</code> e <code>valor2</code> são multiplicados através do operador <code>*</code>, resultando em <code>resultado</code> com valor 10.</p>
+<h5 id="operador-de-divisao">Operador de Divisão (/)<a class="headerlink" href="#operador-de-divisao" title="Permanent link">#</a></h5>
+<p>O operador de divisão (<code>/</code>) é usado para dividir um valor por outro.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valor2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">valor2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resultado</span><span class="p">);</span><span class="w"> </span><span class="c1">// Saída: 2</span>
+</code></pre></div>
+<p>Neste exemplo, <code>valor1</code> é dividido por <code>valor2</code> através do operador <code>/</code>, resultando em <code>resultado</code> com valor 2.</p>
+<h5 id="operador-de-resto">Operador de Resto (%)<a class="headerlink" href="#operador-de-resto" title="Permanent link">#</a></h5>
+<p>O operador de resto (<code>%</code>) é usado para obter o resto da divisão de um valor por outro.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valor2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="nx">valor2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resultado</span><span class="p">);</span><span class="w"> </span><span class="c1">// Saída: 1</span>
+</code></pre></div>
+<p>Neste exemplo, <code>valor1</code> é dividido por <code>valor2</code> através do operador <code>%</code>, resultando em <code>resultado</code> com valor 1, que é o resto da divisão.</p>
+<h5 id="operador-de-exponenciacao">Operador de Exponenciação (**)<a class="headerlink" href="#operador-de-exponenciacao" title="Permanent link">#</a></h5>
+<p>O operador de exponenciação (<code>**</code>) é usado para elevar um valor a uma potência.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valor2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="nx">valor2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resultado</span><span class="p">);</span><span class="w"> </span><span class="c1">// Saída: 8</span>
+</code></pre></div>
+<p>Neste exemplo, <code>valor1</code> é elevado à potência de <code>valor2</code> através do operador <code>**</code>, resultando em <code>resultado</code> com valor 8.</p>
+<p>Os operadores aritméticos são muito úteis em JavaScript e podem ser usados em diversas situações para realizar cálculos. É importante, no entanto, usá-los com cuidado para evitar erros ou comportamentos inesper</p>
+<h4 id="precedencia-de-operadores-aritmeticos">Precedência de Operadores Aritméticos<a class="headerlink" href="#precedencia-de-operadores-aritmeticos" title="Permanent link">#</a></h4>
+<p>Os operadores aritméticos têm uma precedência definida em JavaScript, o que significa que algumas operações serão realizadas antes de outras, mesmo que não estejam entre parênteses. Abaixo segue uma tabela com a ordem de precedência dos operadores aritméticos em JavaScript:</p>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>**</td>
+<td>Exponenciação</td>
+</tr>
+<tr>
+<td>* / %</td>
+<td>Multiplicação, divisão e resto da divisão</td>
+</tr>
+<tr>
+<td>+ -</td>
+<td>Adição e subtração</td>
+</tr>
+</tbody>
+</table>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valor2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valor3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">valor2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">valor3</span><span class="p">;</span><span class="w"> </span><span class="c1">// resultado = 20</span>
+</code></pre></div>
+<p>Nesse exemplo, a multiplicação entre <code>valor2</code> e <code>valor3</code> é realizada primeiro, devido à sua maior precedência em relação à adição entre <code>valor1</code> e o resultado da multiplicação.</p>
+<p>É importante lembrar que, se necessário, é possível alterar a ordem de precedência utilizando parênteses. Por exemplo, se quisermos que a adição seja realizada antes da multiplicação no exemplo anterior, podemos escrever da seguinte forma:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">valor1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">valor2</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">valor3</span><span class="p">;</span><span class="w"> </span><span class="c1">// resultado = 30</span>
+</code></pre></div>
+<p>Os operadores aritméticos em JavaScript são muito importantes para realizar cálculos matemáticos em variáveis. Além disso, entender a precedência dos operadores aritméticos é fundamental para escrever códigos corretos e eficientes. Por isso, é importante seguir as convenções de boas práticas de código, utilizar nomes descritivos para as variáveis e utilizar parênteses quando necessário para garantir a ordem correta de execução das operações.</p>
+<h4 id="operadores-de-atribuicao-em-javascript">Operadores de Atribuição em JavaScript<a class="headerlink" href="#operadores-de-atribuicao-em-javascript" title="Permanent link">#</a></h4>
+<p>Os operadores de atribuição em JavaScript são utilizados para atribuir valores a variáveis. Abaixo segue uma lista dos operadores de atribuição em JavaScript:</p>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=</td>
+<td>Atribuição simples</td>
+</tr>
+<tr>
+<td>+=</td>
+<td>Atribuição com adição</td>
+</tr>
+<tr>
+<td>-=</td>
+<td>Atribuição com subtração</td>
+</tr>
+<tr>
+<td>*=</td>
+<td>Atribuição com multiplicação</td>
+</tr>
+<tr>
+<td>/=</td>
+<td>Atribuição com divisão</td>
+</tr>
+<tr>
+<td>%=</td>
+<td>Atribuição com resto da divisão</td>
+</tr>
+<tr>
+<td>**=</td>
+<td>Atribuição com exponenciação</td>
+</tr>
+<tr>
+<td>&lt;&lt;=</td>
+<td>Atribuição com deslocamento à esquerda</td>
+</tr>
+<tr>
+<td>&gt;&gt;=</td>
+<td>Atribuição com deslocamento à direita</td>
+</tr>
+<tr>
+<td>&gt;&gt;&gt;=</td>
+<td>Atribuição com deslocamento sem sinal</td>
+</tr>
+<tr>
+<td>&amp;=</td>
+<td>Atribuição com AND bit a bit</td>
+</tr>
+<tr>
+<td>^=</td>
+<td>Atribuição com XOR bit a bit</td>
+</tr>
+<tr>
+<td>|=</td>
+<td>Atribuição com OR bit a bit</td>
+</tr>
+</tbody>
+</table>
+<h5 id="atribuicao-simples">Atribuição Simples<a class="headerlink" href="#atribuicao-simples" title="Permanent link">#</a></h5>
+<p>O operador de atribuição simples (<code>=</code>) é utilizado para atribuir um valor a uma variável.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+</code></pre></div>
+<h5 id="atribuicao-com-adicao">Atribuição com Adição<a class="headerlink" href="#atribuicao-com-adicao" title="Permanent link">#</a></h5>
+<p>O operador de atribuição com adição (<code>+=</code>) é utilizado para somar um valor a uma variável.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="nx">valor</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// valor = 15</span>
+</code></pre></div>
+<h5 id="atribuicao-com-subtracao">Atribuição com Subtração<a class="headerlink" href="#atribuicao-com-subtracao" title="Permanent link">#</a></h5>
+<p>O operador de atribuição com subtração (<code>-=</code>) é utilizado para subtrair um valor de uma variável.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="nx">valor</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"> </span><span class="c1">// valor = 7</span>
+</code></pre></div>
+<h5 id="atribuicao-com-multiplicacao">Atribuição com Multiplicação<a class="headerlink" href="#atribuicao-com-multiplicacao" title="Permanent link">#</a></h5>
+<p>O operador de atribuição com multiplicação (<code>*=</code>) é utilizado para multiplicar uma variável por um valor.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="nx">valor</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// valor = 20</span>
+</code></pre></div>
+<h5 id="atribuicao-com-divisao">Atribuição com Divisão<a class="headerlink" href="#atribuicao-com-divisao" title="Permanent link">#</a></h5>
+<p>O operador de atribuição com divisão (<code>/=</code>) é utilizado para dividir uma variável por um valor.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="nx">valor</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mf">4</span><span class="p">;</span><span class="w"> </span><span class="c1">// valor = 2.5</span>
+</code></pre></div>
+<h5 id="atribuicao-com-resto-da-divisao">Atribuição com Resto da Divisão<a class="headerlink" href="#atribuicao-com-resto-da-divisao" title="Permanent link">#</a></h5>
+<p>O operador de atribuição com resto da divisão (<code>%=</code>) é utilizado para obter o resto da divisão de uma variável por um valor.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="nx">valor</span><span class="w"> </span><span class="o">%=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"> </span><span class="c1">// valor = 1</span>
+</code></pre></div>
+<h5 id="atribuicao-com-exponenciacao">Atribuição com Exponenciação<a class="headerlink" href="#atribuicao-com-exponenciacao" title="Permanent link">#</a></h5>
+<p>O operador de atribuição com exponenciação (<code>**=</code>) é utilizado para elevar uma variável a uma potência.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="nx">valor</span><span class="w"> </span><span class="o">**=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"> </span><span class="c1">// valor = 8</span>
+</code></pre></div>
+<h5 id="atribuicao-com-deslocamento-a-esquerda">Atribuição com Deslocamento à Esquerda<a class="headerlink" href="#atribuicao-com-deslocamento-a-esquerda" title="Permanent link">#</a></h5>
+<p>O operador de atribuição com deslocamento à esquerda (<code>&lt;&lt;=</code>) é utilizado para deslocar os bits de uma variável para a esquerda.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="nx">valor</span><span class="w"> </span><span class="o">&lt;&lt;=</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span><span class="w"> </span><span class="c1">// valor = 40</span>
+</code></pre></div>
+<h5 id="atribuicao-com-deslocamento-a-direita">Atribuição com Deslocamento à Direita<a class="headerlink" href="#atribuicao-com-deslocamento-a-direita" title="Permanent link">#</a></h5>
+<p>O operador de atribuição com deslocamento à direita (<code>&gt;&gt;=</code>) é utilizado para deslocar os bits de uma variável para a direita.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="nx">valor</span><span class="w"> </span><span class="o">&gt;&gt;=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// valor = 5</span>
+</code></pre></div>
+<h5 id="atribuicao-com-deslocamento-sem-sinal">Atribuição com Deslocamento Sem Sinal<a class="headerlink" href="#atribuicao-com-deslocamento-sem-sinal" title="Permanent link">#</a></h5>
+<p>O operador de atribuição com deslocamento sem sinal (<code>&gt;&gt;&gt;=</code>) é utilizado para deslocar os bits de uma variável para a direita, preenchendo os bits mais significativos com zero.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mf">10</span><span class="p">;</span>
+<span class="nx">valor</span><span class="w"> </span><span class="o">&gt;&gt;&gt;=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// valor = 2147483643</span>
+</code></pre></div>
+<h5 id="atribuicao-com-and-bit-a-bit">Atribuição com AND Bit a Bit<a class="headerlink" href="#atribuicao-com-and-bit-a-bit" title="Permanent link">#</a></h5>
+<p>O operador de atribuição com AND bit a bit (<code>&amp;=</code>) é utilizado para realizar uma operação AND bit a bit entre uma variável e um valor.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="nx">valor</span><span class="w"> </span><span class="o">&amp;=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span><span class="w"> </span><span class="c1">// valor = 2</span>
+</code></pre></div>
+<h4 id="operadores-de-comparacao">Operadores de Comparação<a class="headerlink" href="#operadores-de-comparacao" title="Permanent link">#</a></h4>
+<p>Os operadores de comparação em JavaScript permitem que você compare dois valores e verifique se eles são iguais ou diferentes, maiores ou menores que um determinado valor. Eles retornam um valor booleano (<code>true</code> ou <code>false</code>) dependendo do resultado da comparação.</p>
+<p>Tabela com os operadores de comparação em JavaScript:</p>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>==</td>
+<td>Verifica se os valores são iguais, sem levar em conta o tipo de dado.</td>
+</tr>
+<tr>
+<td>===</td>
+<td>Verifica se os valores são iguais, levando em conta o tipo de dado.</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>Verifica se os valores são diferentes, sem levar em conta o tipo de dado.</td>
+</tr>
+<tr>
+<td>!==</td>
+<td>Verifica se os valores são diferentes, levando em conta o tipo de dado.</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>Verifica se o valor da esquerda é maior que o da direita.</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>Verifica se o valor da esquerda é menor que o da direita.</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>Verifica se o valor da esquerda é maior ou igual ao da direita.</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>Verifica se o valor da esquerda é menor ou igual ao da direita.</td>
+</tr>
+</tbody>
+</table>
+<p>É importante lembrar que a utilização correta dos operadores de comparação em JavaScript é essencial para o bom funcionamento do programa e para evitar possíveis erros e bugs.</p>
+<h5 id="igualdade">Igualdade (==)<a class="headerlink" href="#igualdade" title="Permanent link">#</a></h5>
+<p>O operador de igualdade (<code>==</code>) é utilizado para comparar se dois valores são iguais. Ele realiza uma conversão de tipo antes da comparação, o que pode levar a resultados inesperados em alguns casos.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valor2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">valor1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">valor2</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</code></pre></div>
+<p>Neste exemplo, o operador <code>==</code> compara se <code>valor1</code> é igual a <code>valor2</code>, mesmo que <code>valor2</code> seja uma string. Como o valor numérico da string "10" é igual a 10, a comparação retorna verdadeiro.</p>
+<p>Para evitar resultados inesperados como este, é recomendado utilizar o operador de igualdade estrita (<code>===</code>) que não realiza conversão de tipo antes da comparação.</p>
+<h5 id="igualdade-estrita">Igualdade Estrita (===)<a class="headerlink" href="#igualdade-estrita" title="Permanent link">#</a></h5>
+<p>O operador de igualdade estrita (<code>===</code>) é utilizado para comparar se dois valores são iguais, sem realizar conversão de tipo antes da comparação. Ele leva em consideração tanto o valor quanto o tipo dos valores.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valor2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">valor1</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">valor2</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+</code></pre></div>
+<p>Neste exemplo, o operador <code>===</code> compara se <code>valor1</code> é igual a <code>valor2</code>, levando em consideração o tipo dos valores. Como <code>valor1</code> é do tipo <code>number</code> e <code>valor2</code> é do tipo <code>string</code>, a comparação retorna falso.</p>
+<h5 id="desigualdade">Desigualdade (!=)<a class="headerlink" href="#desigualdade" title="Permanent link">#</a></h5>
+<p>O operador de desigualdade (<code>!=</code>) é utilizado para comparar se dois valores são diferentes. Assim como o operador de igualdade, ele realiza uma conversão de tipo antes da comparação.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valor2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">valor1</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nx">valor2</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+</code></pre></div>
+<p>Neste exemplo, o operador <code>!=</code> compara se <code>valor1</code> é diferente de <code>valor2</code>. Como o valor numérico da string "10" é igual a 10, a comparação retorna falso.</p>
+<h5 id="desigualdade-estrita">Desigualdade Estrita (!==)<a class="headerlink" href="#desigualdade-estrita" title="Permanent link">#</a></h5>
+<p>O operador de desigualdade estrita (<code>!==</code>) é utilizado para comparar se dois valores são diferentes, sem realizar conversão de tipo antes da comparação. Ele leva em consideração tanto o valor quanto o tipo dos valores.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valor2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">valor1</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">valor2</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</code></pre></div>
+<p>Neste exemplo, o operador <code>!==</code> compara se <code>valor1</code> é diferente de <code>valor2</code>, levando em consideração o tipo dos valores. Como <code>valor1</code> é do tipo <code>number</code> e <code>valor2</code> é do tipo <code>string</code>, a comparação retorna verdadeiro.</p>
+<h5 id="maior-que">Maior que (&gt;)<a class="headerlink" href="#maior-que" title="Permanent link">#</a></h5>
+<p>O operador de maior que (<code>&gt;</code>) é utilizado para comparar se um valor é maior do que outro.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valor2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">valor1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">valor2</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</code></pre></div>
+<p>Neste exemplo, o operador <code>&gt;</code> compara se <code>valor1</code> é maior do que <code>valor2</code>, retornando verdadeiro.</p>
+<h5 id="menor-que">Menor que (&lt;)<a class="headerlink" href="#menor-que" title="Permanent link">#</a></h5>
+<p>O operador de menor que (<code>&lt;</code>) é utilizado para comparar se um valor é menor do que outro.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valor2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">valor1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">valor2</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+</code></pre></div>
+<p>Neste exemplo, o operador <code>&lt;</code> compara se <code>valor1</code> é menor do que <code>valor2</code>, retornando falso.</p>
+<h5 id="maior-ou-igual-que">Maior ou igual que (&gt;=)<a class="headerlink" href="#maior-ou-igual-que" title="Permanent link">#</a></h5>
+<p>O operador de maior ou igual que (<code>&gt;=</code>) é utilizado para comparar se um valor é maior ou igual a outro.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valor2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">valor1</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">valor2</span><span class="p">);</span><span class="w"> </span><span class="c1">// true</span>
+</code></pre></div>
+<p>Neste exemplo, o operador <code>&gt;=</code> compara se <code>valor1</code> é maior ou igual a <code>valor2</code>, retornando verdadeiro.</p>
+<h5 id="menor-ou-igual-que">Menor ou igual que (&lt;=)<a class="headerlink" href="#menor-ou-igual-que" title="Permanent link">#</a></h5>
+<p>O operador de menor ou igual que (<code>&lt;=</code>) é utilizado para comparar se um valor é menor ou igual a outro.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valor2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">valor1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nx">valor2</span><span class="p">);</span><span class="w"> </span><span class="c1">// false</span>
+</code></pre></div>
+<p>Neste exemplo, o operador <code>&lt;=</code> compara se <code>valor1</code> é menor ou igual a <code>valor2</code>, retornando falso.</p>
+<h5 id="operador-ternario">Operador Ternário (?)<a class="headerlink" href="#operador-ternario" title="Permanent link">#</a></h5>
+<p>O operador ternário (<code>?</code>) é utilizado para realizar uma operação condicional, retornando um valor de acordo com uma condição. Ele é uma forma simplificada de escrever uma estrutura condicional if-else.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">idade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">18</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">podeDirigir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">idade</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">18</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;Pode dirigir&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Não pode dirigir&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">podeDirigir</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;Pode dirigir&quot;</span>
+</code></pre></div>
+<p>Neste exemplo, o operador ternário <code>?</code> verifica se a <code>idade</code> é maior ou igual a 18. Se for, retorna a string "Pode dirigir". Caso contrário, retorna a string "Não pode dirigir".</p>
+<p>Os operadores de comparação em JavaScript são fundamentais para a criação de expressões condicionais e tomada de decisões em um programa. É importante utilizá-los corretamente e de acordo com as boas práticas de código, visando garantir a legibilidade e manutenção do código.</p>
+<h4 id="operadores-logicos">Operadores Lógicos<a class="headerlink" href="#operadores-logicos" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp;&amp;</td>
+<td>Operador "E". Retorna verdadeiro se ambos os operandos são verdadeiros.</td>
+</tr>
+<tr>
+<td>||</td>
+<td>Operador "OU". Retorna verdadeiro se um dos operandos é verdadeiro.</td>
+</tr>
+<tr>
+<td>!</td>
+<td>Operador "NÃO". Inverte o valor do operando. Retorna verdadeiro se o operando é falso e vice-versa.</td>
+</tr>
+</tbody>
+</table>
+<p>E aqui estão exemplos de uso de cada um desses operadores:</p>
+<h5 id="operador-e">Operador "E" (&amp;&amp;)<a class="headerlink" href="#operador-e" title="Permanent link">#</a></h5>
+<p>O operador "E" (<code>&amp;&amp;</code>) é utilizado para avaliar se duas ou mais expressões são verdadeiras.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valor2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">valor1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">valor2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;valor1 é maior que 5 e valor2 é menor que 10&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Neste exemplo, o operador <code>&amp;&amp;</code> avalia se <code>valor1</code> é maior que 5 e se <code>valor2</code> é menor que 10. Se as duas condições forem verdadeiras, a mensagem "valor1 é maior que 5 e valor2 é menor que 10" é exibida no console.</p>
+<h5 id="operador-ou">Operador "OU" (||)<a class="headerlink" href="#operador-ou" title="Permanent link">#</a></h5>
+<p>O operador "OU" (<code>||</code>) é utilizado para avaliar se pelo menos uma das expressões é verdadeira.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valor2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">valor1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">valor2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Pelo menos uma das condições é verdadeira&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Neste exemplo, o operador <code>||</code> avalia se <code>valor1</code> é maior que 10 ou se <code>valor2</code> é menor que 10. Se pelo menos uma das condições for verdadeira, a mensagem "Pelo menos uma das condições é verdadeira" é exibida no console.</p>
+<h5 id="operador-nao">Operador "NÃO" (!)<a class="headerlink" href="#operador-nao" title="Permanent link">#</a></h5>
+<p>O operador "NÃO" (<code>!</code>) é utilizado para inverter o valor de uma expressão.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valor2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">valor1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">valor2</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;valor1 não é menor que valor2&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Neste exemplo, o operador <code>!</code> inverte o resultado da expressão <code>valor1 &lt; valor2</code>, que seria falsa neste caso. Dessa forma, a mensagem "x não é menor que y" é exibida no console.</p>
+<p>Os operadores lógicos em JavaScript são fundamentais para a criação de expressões condicionais mais complexas, que envolvem a avaliação de múltiplas condições. É importante utilizá-los corretamente e de acordo com as boas práticas de código, visando garantir a legibilidade e manutenção do código.</p>
+<h4 id="operadores-de-incremento-e-decremento">Operadores de Incremento e Decremento<a class="headerlink" href="#operadores-de-incremento-e-decremento" title="Permanent link">#</a></h4>
+<p>Os operadores de incremento e decremento em JavaScript permitem que você adicione ou subtraia um valor de uma variável em uma unidade, são eles:</p>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>++</td>
+<td>Operador de incremento, adiciona 1 ao valor da variável</td>
+</tr>
+<tr>
+<td>--</td>
+<td>Operador de decremento, subtrai 1 do valor da variável</td>
+</tr>
+</tbody>
+</table>
+<h5 id="operador-de-incremento">Operador de Incremento (++)<a class="headerlink" href="#operador-de-incremento" title="Permanent link">#</a></h5>
+<p>O operador de incremento (<code>++</code>) é usado para adicionar 1 ao valor de uma variável.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="nx">valor1</span><span class="o">++</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">valor1</span><span class="p">);</span><span class="w"> </span><span class="c1">// Saída: 6</span>
+</code></pre></div>
+<p>Neste exemplo, o valor de <code>valor1</code> é incrementado em 1 através do operador <code>++</code>.</p>
+<h5 id="operador-de-decremento-">Operador de Decremento (--)<a class="headerlink" href="#operador-de-decremento-" title="Permanent link">#</a></h5>
+<p>O operador de decremento (<code>--</code>) é usado para subtrair 1 do valor de uma variável.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="nx">valor1</span><span class="o">--</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">valor1</span><span class="p">);</span><span class="w"> </span><span class="c1">// Saída: 4</span>
+</code></pre></div>
+<p>Neste exemplo, o valor de <code>valor1</code> é decrementado em 1 através do operador <code>--</code>.</p>
+<h5 id="utilizando-operadores-em-expressoes">Utilizando Operadores em Expressões<a class="headerlink" href="#utilizando-operadores-em-expressoes" title="Permanent link">#</a></h5>
+<p>Os operadores de incremento e decremento também podem ser usados em expressões.</p>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valor2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor1</span><span class="o">++</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">valor2</span><span class="p">);</span><span class="w"> </span><span class="c1">// Saída: 7</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">valor1</span><span class="p">);</span><span class="w"> </span><span class="c1">// Saída: 6</span>
+</code></pre></div>
+<p>Neste exemplo, o operador de incremento <code>++</code> é usado após a variável <code>valor1</code> na expressão <code>valor1++ + 2</code>. O valor de <code>valor1</code> é incrementado em 1, mas a adição é realizada antes do incremento, resultando em <code>valor2</code> com valor 7 e <code>valor1</code> com valor 6.</p>
+<p>Os operadores de incremento e decremento são muito úteis em JavaScript e podem ser usados para facilitar a escrita de código e melhorar sua legibilidade. É importante, no entanto, usá-los com moderação e ter cuidado com seu uso em expressões mais complexas, para evitar erros ou comportamentos inesperados. Além disso, é importante seguir as convenções de boas práticas de código em relação à nomenclatura das variáveis e à clareza do código.
+Os operadores em JavaScript são fundamentais para escrever um código limpo e eficiente. Eles permitem que você realize operações matemáticas, lógicas e de atribuição em variáveis. Lembre-se, o uso de nomes descritivos para as variáveis ajuda a tornar o código mais legível e fácil de entender.</p>
+<h3 id="exercicios-de-fixacao">Exercicios de fixação<a class="headerlink" href="#exercicios-de-fixacao" title="Permanent link">#</a></h3>
+<ol>
+<li>
+<p>Crie um programa que verifique se um número é par ou ímpar e imprima na tela.</p>
+</li>
+<li>
+<p>Crie um programa que verifique se um número é positivo, negativo ou zero e imprima na tela.</p>
+</li>
+<li>
+<p>Crie um programa que calcule a área de um triângulo com base e altura informadas pelo usuário e imprima na tela.</p>
+</li>
+<li>
+<p>Crie um programa que calcule o perímetro de um quadrado com lado informado pelo usuário e imprima na tela.</p>
+</li>
+<li>
+<p>Crie um programa que concatene duas strings informadas pelo usuário e imprima na tela.</p>
+</li>
+</ol>
+<p>Espero que esses exercícios sejam úteis para você praticar suas habilidades em JavaScript com declaração de variaveis, operadores lógicos, comparação, atribuição e aritméticos!</p>
+<h3 id="respostas-exercicios-de-fixacao">Respostas exercicios de fixação<a class="headerlink" href="#respostas-exercicios-de-fixacao" title="Permanent link">#</a></h3>
+<ol>
+<li>
+<p>Crie um programa que verifique se um número é par ou ímpar e imprima na tela.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">resto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numero</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">resto</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="s1">&#39;par&#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;ímpar&#39;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resultado</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Crie um programa que verifique se um número é positivo, negativo ou zero e imprima na tela.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numero</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="s1">&#39;positivo&#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">numero</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="s1">&#39;negativo&#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;zero&#39;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resultado</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Crie um programa que calcule a área de um triângulo com base e altura informadas pelo usuário e imprima na tela.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">altura</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">base</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">altura</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">area</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Crie um programa que calcule o perímetro de um quadrado com lado informado pelo usuário e imprima na tela.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">lado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">perimetro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">lado</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">4</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">perimetro</span><span class="p">);</span>
+</code></pre></div>
+</li>
+<li>
+<p>Crie um programa que concatene duas strings informadas pelo usuário e imprima na tela.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">string1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Olá, &#39;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">string2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mundo!&#39;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">string1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">string2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resultado</span><span class="p">);</span>
+</code></pre></div>
+</li>
+</ol>
+<p>Espero que esses exercícios sejam úteis para você praticar suas habilidades em JavaScript com declaração de variaveis, operadores lógicos, comparação, atribuição e aritméticos!</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+    
+  </body>
+</html>
