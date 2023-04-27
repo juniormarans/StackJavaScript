@@ -1,4 +1,4 @@
-## Funções
+## Tipos de Funções e Manipulação de Dados
 
 ---
 

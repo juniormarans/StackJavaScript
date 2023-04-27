@@ -1,4 +1,4 @@
-## Estruturas de decisão e repetição
+## Estruturas de Decisão e Repetição
 
 ---
 

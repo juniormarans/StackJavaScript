@@ -1,7 +1,7 @@
-site_name: Full-Stack-JavaScript
+site_name: Stack-JavaScript
 repo_url: "https://github.com/juniormarans/StackJavaScript/tree/main"
 
-repo_name: "Full-Stack-JavaScript"
+repo_name: "Stack-JavaScript"
 edit_uri: "tree/main/backend/docs"
 
 theme:
@@ -42,7 +42,7 @@ extra_css:
 
 plugins:
 - toc-md:
-    toc_page_title: ''
+    toc_page_title: 'Sumário'
     header_level: 4
     pickup_description_meta: false
     pickup_description_class: false

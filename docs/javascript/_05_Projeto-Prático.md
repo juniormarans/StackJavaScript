@@ -1,14 +1,12 @@
-## Desafio
+## Projeto Prático
 
 JavaScript é uma das linguagens de programação mais utilizadas no mundo, principalmente no desenvolvimento de aplicações web. Como programador(a) em JavaScript, é importante sempre buscar desafios para melhorar suas habilidades e aprimorar seus conhecimentos na linguagem.
-
-### Projeto Prático
 
 Implemente uma calculadora simples em JavaScript que pode realizar operações básicas, como adição, subtração, multiplicação e divisão, e ao final imprima em tela o resultado da operação.
 
 Exemplos:
 
-#### Calculadora
+### Calculadora
 
 O código a seguir define a função `calcular` que recebe dois números (`valor1` e `valor2`) e um operador (`operador`) e retorna o resultado da operação especificada pelo operador. O código usa um `switch` para verificar qual é o operador e realizar a operação apropriada.
 
@@ -94,6 +92,6 @@ Além disso, a variável `resultado` agora pode ser do tipo `number` ou `string`
 
 Note que este código também precisa ser compilado antes de ser executado em um ambiente JavaScript. Você pode fazer isso usando o compilador TypeScript, que pode ser instalado usando o comando `npm install -g typescript` no terminal. Em seguida, execute o comando `tsc arquivo.ts` para compilar o código TypeScript e gerar um arquivo JavaScript. Depois disso, você pode executar o arquivo JavaScript normalmente em um ambiente Node.js ou em um navegador.
 
-### Proposta
+### Desafio
 
 Crie uma alternativa ao código da calculadora em JavaScript utilizando `if` em vez de `switch`

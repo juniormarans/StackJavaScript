@@ -1,4 +1,4 @@
-## Iniciando um projeto no Node.js
+## Iniciando projeto Node.js
 
 Após a instalação do Node.js e do npm, o próximo passo para criar um projeto de API RESTful em Node.js é seguir os seguintes passos:
 
