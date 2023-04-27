@@ -33,15 +33,3 @@ Para se tornar um desenvolvedor Full Stack JavaScript, é necessário adquirir h
 Seguindo esses passos, você pode se tornar um desenvolvedor Full Stack JavaScript competente e pronto para criar aplicativos web de ponta a ponta. Para ajudar na sua jornada separamos nos tópicos a seguir algumas dicas.
 
 ---
-Tópicos:
-
- 1. [HTML CSS](/html_css/_01_visao-geral/)
-    1. [Elaborar após revisão](/html_css/_01_visao-geral/)
- 2. [JavaScript](/javascript/_01_conceitos-basicos/_01_visao-geral/)
-    1. [Elaborar após revisão](/javascript/_01_conceitos-basicos/_01_visao-geral/)
- 3. [Node.js](/nodeJs/_01_visao-geral/)
-    1. [Elaborar após revisão](/nodeJs/_01_visao-geral/)
- 4. [React](index)
-    1. [Elaborar após revisão](index)
-
----

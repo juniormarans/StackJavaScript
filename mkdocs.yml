@@ -32,13 +32,24 @@ markdown_extensions:
     custom_fences:
       - name: mermaid
         class: mermaid
-
+- toc:
+    permalink: "#"
+    baselevel: 2
 extra_css:
 - stylesheets/extra.css
 - stylesheets/material.css
 - stylesheets/mkdocstrings.css
 
 plugins:
+- toc-md:
+    toc_page_title: Sumário
+    header_level: 3
+    pickup_description_meta: false
+    pickup_description_class: false
+    output_path: summary.md
+    output_log: true
+    ignore_page_pattern: summary.md
+    remove_navigation_page_pattern: summary.md
 - search
 - mkdocstrings:
     default_handler: python

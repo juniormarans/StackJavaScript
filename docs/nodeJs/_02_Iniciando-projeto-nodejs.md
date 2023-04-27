@@ -1,17 +1,17 @@
-# Iniciando no Node.js
+## Iniciando um projeto no Node.js
 
 Após a instalação do Node.js e do npm, o próximo passo para criar um projeto de API RESTful em Node.js é seguir os seguintes passos:
 
-## Passo 1 Crie um diretório para o projeto e navegue até ele
+### Passo 1 Crie um diretório para o projeto e navegue até ele
 
 ```bash
 mkdir projetos/nome-do-projeto #cria um diretório
-cd projetos/nome-do-projeto # move até o diretório
+cd projetos/nome-do-projeto ## move até o diretório
 ```
 
 Lembre-se organizar seu ambiente de desenvolvimento é uma parte importante para garantir uma experiência de programação eficiente e produtiva, neste caso criamos um diretório `projetos` onde armazenaremos nossas aplicaçoes.
 
-## Passo 2 Inicialize o projeto Node.js com o npm
+### Passo 2 Inicialize o projeto Node.js com o npm
 
 ```bash
 npm init -y
@@ -97,7 +97,7 @@ Vejamos agora o que cada um desses campos significa:
 Essas são algumas das principais propriedades que podem ser encontradas em um arquivo package.json. Além dessas, existem outras propriedades que podem ser definidas, dependendo das necessidades do projeto.
 Em resumo, o arquivo package.json é fundamental em projetos Node.js, pois ele ajuda a gerenciar dependências, configurar scripts e outras configurações importantes para o projeto.
 
-## Passo 3 Instale os pacotes necessários para criar uma API RESTful em Node.js
+### Passo 3 Instale os pacotes necessários para criar uma API RESTful em Node.js
 
    ```bash
    npm i express body-parser cors 
@@ -106,7 +106,7 @@ Em resumo, o arquivo package.json é fundamental em projetos Node.js, pois ele a
 
    O pacote `express` é o framework para criação de aplicações Node.js, `body-parser` é usado para analisar o corpo das requisições HTTP e `cors` é utilizado para habilitar o acesso de outras origens (como outros servidores) à API.
 
-## Passo 4 Crie um arquivo `index.js` no diretório do projeto e configure o servidor express
+### Passo 4 Crie um arquivo `index.js` no diretório do projeto e configure o servidor express
 
 ```js
 const express = require('express');
@@ -183,7 +183,7 @@ app.listen(port, () => {
 
 Finalmente, aqui estamos iniciando o servidor express na porta definida anteriormente e imprimindo uma mensagem de sucesso no console.
 
-## Passo 5 Teste o servidor
+### Passo 5 Teste o servidor
 
 Para rodar o codigo criado em `index.js` execute o seguinte comando:
 
@@ -195,11 +195,11 @@ Isso iniciará o servidor na porta 3000. Abra um navegador e acesse `http://loca
 
 A partir daqui, você pode começar a criar as rotas da API RESTful, definindo as operações HTTP, os **parametros** e as respostas esperadas. O express facilita muito a criação de rotas e manipulação de requisições e respostas HTTP. Com as rotas definidas, você pode criar a lógica de negócios da aplicação, que pode incluir acesso a banco de dados, autenticação e autorização, validação de dados, entre outros.
 
-## Parâmetros
+### Parâmetros
 
 Parâmetros de rotas, ou route parameters, são uma forma de passar informações dinâmicas para a sua aplicação através da URL. Eles são utilizados para identificar um recurso específico, como um usuário ou um produto, ou para passar  informações adicionais para a nossa aplicação. Podemos dividir os parâmetros em:
 
-### Parâmetros de rota
+#### Parâmetros de rota
 
 Em uma URL, os parâmetros de rota (Route Parameters) são definidos após a rota base e são indicados pelo caractere `:` seguido do nome do parâmetro. Por exemplo, considerando a rota `/users/:id`, o parâmetro `id` é um parâmetro de rota.
 
@@ -238,7 +238,7 @@ Nesse exemplo, criamos a rota `/usuario/:id` recebe um parâmetro de rota `id`. 
 
 Para testar essa rota, basta acessar `http://localhost:3000/usuario/123` no navegador, onde `123` é um exemplo de ID de usuário. A mensagem de resposta irá incluir esse ID na mensagem.
 
-### Parâmetros de Query String
+#### Parâmetros de Query String
 
 ```javascript
 const express = require('express');
