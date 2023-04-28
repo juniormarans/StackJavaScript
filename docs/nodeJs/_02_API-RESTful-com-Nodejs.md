@@ -1,8 +1,75 @@
-## Iniciando projeto Node.js
+## API RESTful com Node.js
 
-Após a instalação do Node.js e do npm, o próximo passo para criar um projeto de API RESTful em Node.js é seguir os seguintes passos:
+O Node.js é uma plataforma de desenvolvimento de software baseada em JavaScript. Ela permite que os desenvolvedores possam escrever aplicativos do lado do servidor usando a mesma linguagem de programação do lado do cliente.
 
-### Passo 1 Crie um diretório para o projeto e navegue até ele
+Para implementar uma API RESTful com Node.js, é necessário seguir alguns passos básicos:
+
+1. Instale o Node.js no seu sistema.
+2. Crie um projeto Node.js usando o npm (Node Package Manager).
+3. Instale os pacotes necessários para implementar a API RESTful, como o Express (um framework para construção de aplicativos web), o Body-parser (para análise de corpo de solicitação HTTP) e o CORS (para controle de acesso à API).
+4. Defina as rotas da API, definindo os métodos HTTP e as operações em torno dos recursos.
+5. Defina o modelo de dados e o esquema da API, usando ferramentas como o Mongoose (para bancos de dados NoSQL) ou o Sequelize (para bancos de dados SQL).
+6. Utilizar ferramentas como o Swagger para e documentar APIs de forma automatizada permitindo realizar  testes de solicitação HTTP.
+
+O Node.js é uma opção viável para implementar APIs RESTful, pois ele fornece um conjunto de recursos e ferramentas para construir aplicativos escaláveis e de alta performance. Ele também é compatível com diferentes bancos de dados e provedores de serviços de nuvem, o que o torna uma opção popular para construção de sistemas distribuídos.
+
+## Iniciando um projeto Node.js
+
+Para criar um projeto de API RESTful em Node.js siga as seguintes etapas:
+
+### 1 Instalando Node.js
+
+Para seguir este guia, recomendamos que você utilize Ubuntu 20.04. Antes de começar, você deve ter uma conta de usuário com privilégios  de ´sudo´ configurados em seu sistema.
+
+Para instalar o Node.js no Linux, siga os seguintes passos:
+
+#### Passo 1: Abra o terminal
+
+Abra o terminal no seu sistema Linux. O terminal pode ser encontrado no menu de aplicativos ou pressionando a tecla de atalho `Ctrl + Alt + T`.
+
+#### Passo 2: Atualize o gerenciador de pacotes
+
+Antes de instalar o Node.js, é recomendável atualizar o gerenciador de pacotes para garantir que você esteja baixando a versão mais recente. Use o seguinte comando no terminal:
+
+```bash
+sudo apt update
+```
+
+#### Passo 3: Instale o Node.js
+
+Existem diferentes formas de instalar o Node.js no Linux, mas neste exemplo, usaremos o gerenciador de pacotes `apt` no Ubuntu ou no Debian. Use o seguinte comando para instalar o Node.js:
+
+```bash
+sudo apt install nodejs
+```
+
+Além disso, você também precisa instalar o gerenciador de pacotes npm (Node Package Manager), que é usado para instalar pacotes e bibliotecas JavaScript. Use o seguinte comando para instalar o npm:
+
+```bash
+sudo apt install npm
+```
+
+#### Passo 4: Verifique a instalação
+
+Após a instalação do Node.js e npm, você pode verificar se tudo foi instalado corretamente executando o seguinte comando no terminal:
+
+```bash
+node -v
+```
+
+Este comando irá exibir a versão do Node.js instalada no seu sistema. Para verificar a versão do npm, use o seguinte comando:
+
+```bash
+npm -v
+```
+
+Instalar o Node.js no Linux é um processo simples e fácil, usando o gerenciador de pacotes `apt`. Certifique-se de atualizar o gerenciador de pacotes antes de instalar o Node.js e npm, e verifique se tudo foi instalado corretamente executando os comandos de verificação.
+
+O Node.js é uma plataforma versátil que pode ser usada para desenvolver uma ampla gama de aplicativos, desde aplicativos web simples até aplicativos de rede complexos em tempo real. Ele é mantido pela Node.js Foundation, uma organização sem fins lucrativos que é responsável por coordenar o desenvolvimento, promover a adoção, fornecer suporte e garantir a estabilidade e a segurança da plataforma. Com sua arquitetura orientada a eventos e I/O assíncrono, o Node.js é capaz de lidar com muitas conexões simultâneas e escalonar facilmente para lidar com grandes cargas de trabalho.
+
+### 2. Crie um projeto Node.js
+
+#### Passo 1 Crie um diretório para o projeto e navegue até ele
 
 ```bash
 mkdir projetos/nome-do-projeto #cria um diretório
@@ -11,7 +78,8 @@ cd projetos/nome-do-projeto ## move até o diretório
 
 Lembre-se organizar seu ambiente de desenvolvimento é uma parte importante para garantir uma experiência de programação eficiente e produtiva, neste caso criamos um diretório `projetos` onde armazenaremos nossas aplicaçoes.
 
-### Passo 2 Inicialize o projeto Node.js com o npm
+
+#### Passo 2 Inicialize o projeto Node.js com o npm
 
 ```bash
 npm init -y
@@ -97,7 +165,9 @@ Vejamos agora o que cada um desses campos significa:
 Essas são algumas das principais propriedades que podem ser encontradas em um arquivo package.json. Além dessas, existem outras propriedades que podem ser definidas, dependendo das necessidades do projeto.
 Em resumo, o arquivo package.json é fundamental em projetos Node.js, pois ele ajuda a gerenciar dependências, configurar scripts e outras configurações importantes para o projeto.
 
-### Passo 3 Instale os pacotes necessários para criar uma API RESTful em Node.js
+### 3. Instale os pacotes necessários
+
+#### Instale os pacotes necessários para criar uma API RESTful em Node.js
 
    ```bash
    npm i express body-parser cors 
@@ -106,7 +176,9 @@ Em resumo, o arquivo package.json é fundamental em projetos Node.js, pois ele a
 
    O pacote `express` é o framework para criação de aplicações Node.js, `body-parser` é usado para analisar o corpo das requisições HTTP e `cors` é utilizado para habilitar o acesso de outras origens (como outros servidores) à API.
 
-### Passo 4 Crie um arquivo `index.js` no diretório do projeto e configure o servidor express
+### 4. Defina as rotas da API
+
+#### Passo 1 Crie um arquivo `index.js` no diretório do projeto e configure o servidor express
 
 ```js
 const express = require('express');
@@ -183,7 +255,7 @@ app.listen(port, () => {
 
 Finalmente, aqui estamos iniciando o servidor express na porta definida anteriormente e imprimindo uma mensagem de sucesso no console.
 
-### Passo 5 Teste o servidor
+#### Passo 2 Teste o servidor
 
 Para rodar o codigo criado em `index.js` execute o seguinte comando:
 
@@ -195,11 +267,11 @@ Isso iniciará o servidor na porta 3000. Abra um navegador e acesse `http://loca
 
 A partir daqui, você pode começar a criar as rotas da API RESTful, definindo as operações HTTP, os **parametros** e as respostas esperadas. O express facilita muito a criação de rotas e manipulação de requisições e respostas HTTP. Com as rotas definidas, você pode criar a lógica de negócios da aplicação, que pode incluir acesso a banco de dados, autenticação e autorização, validação de dados, entre outros.
 
-### Parâmetros
+#### Parâmetros
 
 Parâmetros de rotas, ou route parameters, são uma forma de passar informações dinâmicas para a sua aplicação através da URL. Eles são utilizados para identificar um recurso específico, como um usuário ou um produto, ou para passar  informações adicionais para a nossa aplicação. Podemos dividir os parâmetros em:
 
-#### Parâmetros de rota
+##### Parâmetros de rota
 
 Em uma URL, os parâmetros de rota (Route Parameters) são definidos após a rota base e são indicados pelo caractere `:` seguido do nome do parâmetro. Por exemplo, considerando a rota `/users/:id`, o parâmetro `id` é um parâmetro de rota.
 
@@ -238,7 +310,7 @@ Nesse exemplo, criamos a rota `/usuario/:id` recebe um parâmetro de rota `id`. 
 
 Para testar essa rota, basta acessar `http://localhost:3000/usuario/123` no navegador, onde `123` é um exemplo de ID de usuário. A mensagem de resposta irá incluir esse ID na mensagem.
 
-#### Parâmetros de Query String
+##### Parâmetros de Query String
 
 ```javascript
 const express = require('express');
@@ -276,3 +348,5 @@ app.listen(port, () => {
 Nesse exemplo, a rota `/usuario` recebe os parâmetros `nome` e `idade` via query string. Esses parâmetros são acessados através do objeto `req.query`.
 
 Para testar essa rota, basta acessar `http://localhost:3000/usuario?nome=João&idade=30` no navegador.
+
+### 5. Defina o modelo de dados.

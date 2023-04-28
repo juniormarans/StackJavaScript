@@ -67,81 +67,47 @@ async function buscaEndereco(cep) {
 buscaEndereco(01310100)
 ```
 
-Esta função recebe um parâmetro `cep` contendo o CEP que desejamos buscar. Em seguida, montamos a URL da API utilizando o CEP como parâmetro e enviamos uma requisição HTTP GET utilizando a função `fetch`. Por fim, mostramos em tela o resultado, poderiamos tambem retornar os dados da resposta da API no formato JSON.
+Esta função recebe um parâmetro `cep` contendo o CEP que desejamos buscar. Em seguida, montamos a URL da API utilizando o CEP como parâmetro e enviamos uma requisição HTTP GET utilizando a função `fetch`. Por fim, mostramos em tela o resultado, poderiamos tambem retornar os dados da resposta da API no formato JSON, e utiliza-lo em nossos projetos.
 
 #### API RESTful
 
 Uma API RESTful é uma API que segue o estilo arquitetural REST (Representational State Transfer). O REST é um conjunto de princípios para projetar sistemas distribuídos na web. Ele é baseado na ideia de que um recurso na web deve ser identificado por uma URL única e que as operações em torno desse recurso devem ser definidas pelos métodos HTTP padrão (GET, POST, PUT, DELETE).
 
+Os métodos HTTP são utilizados para indicar qual ação deve ser realizada pelo servidor web quando um cliente envia uma requisição. Cada método possui uma finalidade específica e é utilizado de acordo com a operação que se deseja realizar.
+
+- GET: o método GET é utilizado para solicitar informações de um recurso específico. Em outras palavras, é utilizado para buscar dados em um servidor web. As requisições GET são geralmente enviadas através de URLs, e os dados retornados pelo servidor são geralmente exibidos em um navegador web.
+
+- POST: o método POST é utilizado para enviar dados de um cliente para um servidor web, geralmente com o objetivo de criar ou atualizar um recurso no servidor. Por exemplo, um formulário de cadastro pode enviar os dados preenchidos pelo usuário para o servidor utilizando o método POST.
+
+- PUT: o método PUT é utilizado para atualizar um recurso existente no servidor. Ele envia uma requisição para o servidor com os dados atualizados do recurso. Por exemplo, um formulário de edição pode enviar os dados atualizados de um usuário para o servidor utilizando o método PUT.
+
+- DELETE: o método DELETE é utilizado para excluir um recurso específico no servidor. Ele envia uma requisição para o servidor indicando qual recurso deve ser excluído. Por exemplo, um botão "excluir" em uma lista de usuários pode enviar uma requisição DELETE para o servidor para excluir o usuário selecionado.
+
+Cada método HTTP é utilizado para uma finalidade específica, e juntos eles permitem que os desenvolvedores criem APIs RESTful que sejam capazes de realizar operações de criação (Create), leitura (Read), atualização (Update) e exclusão (Delete) de recursos de forma clara e organizada, Essas quatros operações são comumente conhecida pelo acrônimo CRUD.
+
+| Letra do Acrônimo | Operação | Método HTTP | Descrição |
+| --- | --- | --- | --- |
+| C | Create | POST | Cria um novo recurso no servidor |
+| R | Read | GET | Lê os dados de um recurso específico no servidor |
+| U | Update | PUT/PATCH | Atualiza um recurso específico no servidor |
+| D | Delete | DELETE | Exclui um recurso específico no servidor |
+
 As APIs RESTful são muito populares na web, pois são simples de usar e escalonáveis. Elas permitem que as aplicações possam interagir com diferentes recursos na web, como bancos de dados, sistemas de pagamento, serviços de geolocalização, entre outros.
+
+Como referencia em API RESTful, podemos utilizar o [Swagger Petstore](https://petstore.swagger.io/)  que é um exemplo muito comum e utilizado para demonstrar as funcionalidades  de uma ferramenta popular para documentação de APIs RESTful (Swagger). Ele consiste em uma API RESTful que permite gerenciar uma loja virtual de animais de estimação, como cachorros, gatos, pássaros, entre outros.
+
+A pagina inicial do Swagger Petstore pode se acessada em:
+
+```url
+https://petstore.swagger.io/
+```
+
+Lá você ira encontrar várias rotas, como "Adicionar um novo animal", "Buscar animais por status" e "Atualizar o status de um animal". Cada rota é documentada utilizando a especificação Swagger, que define os métodos HTTP suportados, os parâmetros necessários, os exemplos de entrada e saída, além de outras informações relevantes.
+
+O Swagger Petstore também inclui uma interface interativa do Swagger UI, que permite que os usuários visualizem a documentação da API, realizem testes e até mesmo experimentem as operações disponíveis diretamente da documentação.
 
 #### API SOAP
 
 Uma API SOAP é uma API que usa o protocolo SOAP (Simple Object Access Protocol) para fornecer serviços da web. O SOAP é um protocolo baseado em XML que define como as mensagens devem ser formatadas e transmitidas. Ele é um protocolo mais antigo e mais complexo que o REST, mas ainda é usado em algumas aplicações que exigem segurança e confiabilidade.
 
-sistemas operacionais e dispositivos de hardware, como câmeras, sensores, etc.
-
-## API RESTful com Node.js
-
-O Node.js é uma plataforma de desenvolvimento de software baseada em JavaScript. Ela permite que os desenvolvedores possam escrever aplicativos do lado do servidor usando a mesma linguagem de programação do lado do cliente.
-
-Para implementar uma API RESTful com Node.js, é necessário seguir alguns passos básicos:
-
-1. Instale o Node.js no seu sistema.
-2. Crie um projeto Node.js usando o npm (Node Package Manager).
-3. Instale os pacotes necessários para implementar a API RESTful, como o Express (um framework para construção de aplicativos web), o Body-parser (para análise de corpo de solicitação HTTP) e o CORS (para controle de acesso à API).
-4. Defina as rotas da API, definindo os métodos HTTP e as operações em torno dos recursos.
-5. Defina o modelo de dados e o esquema da API, usando ferramentas como o Mongoose (para bancos de dados NoSQL) ou o Sequelize (para bancos de dados SQL).
-6. Utilizar ferramentas como o Swagger para e documentar APIs de forma automatizada permitindo realizar  testes de solicitação HTTP.
-
-O Node.js é uma opção viável para implementar APIs RESTful, pois ele fornece um conjunto de recursos e ferramentas para construir aplicativos escaláveis e de alta performance. Ele também é compatível com diferentes bancos de dados e provedores de serviços de nuvem, o que o torna uma opção popular para construção de sistemas distribuídos.
-
-## Instalando Node.js
-
-Para seguir este guia, recomendamos que você utilize Ubuntu 20.04. Antes de começar, você deve ter uma conta de usuário com privilégios  de ´sudo´ configurados em seu sistema.
-
-Para instalar o Node.js no Linux, siga os seguintes passos:
-
-### Passo 1: Abra o terminal
-
-Abra o terminal no seu sistema Linux. O terminal pode ser encontrado no menu de aplicativos ou pressionando a tecla de atalho `Ctrl + Alt + T`.
-
-### Passo 2: Atualize o gerenciador de pacotes
-
-Antes de instalar o Node.js, é recomendável atualizar o gerenciador de pacotes para garantir que você esteja baixando a versão mais recente. Use o seguinte comando no terminal:
-
-```bash
-sudo apt update
-```
-
-### Passo 3: Instale o Node.js
-
-Existem diferentes formas de instalar o Node.js no Linux, mas neste exemplo, usaremos o gerenciador de pacotes `apt` no Ubuntu ou no Debian. Use o seguinte comando para instalar o Node.js:
-
-```bash
-sudo apt install nodejs
-```
-
-Além disso, você também precisa instalar o gerenciador de pacotes npm (Node Package Manager), que é usado para instalar pacotes e bibliotecas JavaScript. Use o seguinte comando para instalar o npm:
-
-```bash
-sudo apt install npm
-```
-
-### Passo 4: Verifique a instalação
-
-Após a instalação do Node.js e npm, você pode verificar se tudo foi instalado corretamente executando o seguinte comando no terminal:
-
-```bash
-node -v
-```
-
-Este comando irá exibir a versão do Node.js instalada no seu sistema. Para verificar a versão do npm, use o seguinte comando:
-
-```bash
-npm -v
-```
-
-Instalar o Node.js no Linux é um processo simples e fácil, usando o gerenciador de pacotes `apt`. Certifique-se de atualizar o gerenciador de pacotes antes de instalar o Node.js e npm, e verifique se tudo foi instalado corretamente executando os comandos de verificação.
-
-O Node.js é uma plataforma versátil que pode ser usada para desenvolver uma ampla gama de aplicativos, desde aplicativos web simples até aplicativos de rede complexos em tempo real. Ele é mantido pela Node.js Foundation, uma organização sem fins lucrativos que é responsável por coordenar o desenvolvimento, promover a adoção, fornecer suporte e garantir a estabilidade e a segurança da plataforma. Com sua arquitetura orientada a eventos e I/O assíncrono, o Node.js é capaz de lidar com muitas conexões simultâneas e escalonar facilmente para lidar com grandes cargas de trabalho.
+Em geral, as APIs SOAP são mais complexas e verbosas do que as APIs RESTful, mas oferecem recursos mais avançados, como autenticação, segurança e transações. No entanto, elas também podem ser mais difíceis de implementar e manter devido à sua complexidade.
