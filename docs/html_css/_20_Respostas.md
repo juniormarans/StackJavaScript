@@ -431,3 +431,145 @@
         border-radius: 10px;
       }
     ```
+
+16. Atividade
+
+    ```html
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>Atividade de Cores CSS</title>
+          <link rel="stylesheet" href="estilos.css">
+        </head>
+        <body>
+          <div>
+            <p>Esta é uma atividade de cores em CSS.</p>
+          </div>
+        </body>
+      </html>
+    ```
+
+    ```css
+      div {
+        background-color: yellow;
+        color: green;
+        border: 1px solid blue;
+      }
+    ```
+
+17. Atividade
+
+    ```html
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>Atividade de Backgrounds CSS</title>
+          <link rel="stylesheet" href="estilos.css">
+        </head>
+        <body>
+          <div>
+            <p>Esta é uma atividade de backgrounds em CSS.</p>
+          </div>
+        </body>
+      </html>
+    ```
+
+    ```css
+      div {
+        background-image: url("background.jpg");
+        background-repeat: repeat-x;
+        background-position: center;
+        height: 300px;
+      }
+    ```
+
+18. Atividade
+
+    ```html
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>Atividade de Bordas CSS</title>
+          <link rel="stylesheet" href="estilos.css">
+        </head>
+        <body>
+          <div>
+            <p>Esta é uma atividade de bordas em CSS.</p>
+          </div>
+        </body>
+      </html>
+    ```
+
+    ```css
+      div {
+        border: 2px solid red;
+        border-radius: 10px;
+        padding: 20px;
+      }
+    ```
+
+19. Atividade
+
+    ```html
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>Atividade de Gradiente Linear</title>
+          <link rel="stylesheet" type="text/css" href="estilos.css">
+        </head>
+        <body>
+          <h1>Gradiente Linear</h1>
+          <p>Esta é uma atividade de um gradiente linear em CSS.</p>
+        </body>
+      </html>
+    ```
+
+    ```css
+      body {
+        background: linear-gradient(to bottom, #ffcccc, #ff6666);
+      }
+    ```
+
+20. Atividade
+
+    ```html
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>Atividade de Gradiente Radial</title>
+          <link rel="stylesheet" type="text/css" href="estilos.css">
+        </head>
+        <body>
+          <h1>Gradiente Radial</h1>
+          <p>Esta é uma atividade de um gradiente radial em CSS.</p>
+        </body>
+      </html>
+    ```
+
+    ```css
+      body {
+        background: radial-gradient(circle, #f9f9f9, #333333);
+      }
+    ```
+
+21. Atividade
+
+    ```html
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>Atividade de Sombra</title>
+          <link rel="stylesheet" type="text/css" href="estilos.css">
+        </head>
+        <body>
+          <h1>Atividade de Sombra</h1>
+          <p>Esta é uma atividade de uma sombra em CSS.</p>
+        </body>
+      </html>
+    ```
+
+    ```css
+      h1 {
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      }
+    ```
