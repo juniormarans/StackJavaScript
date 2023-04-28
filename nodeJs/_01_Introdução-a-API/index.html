@@ -12,7 +12,7 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../_02_Iniciando-Projeto-Nodejs/">
+        <link rel="next" href="../_02_API-RESTful-com-Nodejs/">
       
       <link rel="icon" href="../../assets/logo.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.7">
@@ -827,54 +827,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#api-restful-com-nodejs" class="md-nav__link">
-    API RESTful com Node.js
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalando-nodejs" class="md-nav__link">
-    Instalando Node.js
-  </a>
-  
-    <nav class="md-nav" aria-label="Instalando Node.js">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#passo-1-abra-o-terminal" class="md-nav__link">
-    Passo 1: Abra o terminal
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#passo-2-atualize-o-gerenciador-de-pacotes" class="md-nav__link">
-    Passo 2: Atualize o gerenciador de pacotes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#passo-3-instale-o-nodejs" class="md-nav__link">
-    Passo 3: Instale o Node.js
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#passo-4-verifique-a-instalacao" class="md-nav__link">
-    Passo 4: Verifique a instalação
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -890,8 +842,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../_02_Iniciando-Projeto-Nodejs/" class="md-nav__link">
-         02 Iniciando Projeto Nodejs
+      <a href="../_02_API-RESTful-com-Nodejs/" class="md-nav__link">
+         02 API RESTful com Nodejs
       </a>
     </li>
   
@@ -995,54 +947,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#api-restful-com-nodejs" class="md-nav__link">
-    API RESTful com Node.js
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instalando-nodejs" class="md-nav__link">
-    Instalando Node.js
-  </a>
-  
-    <nav class="md-nav" aria-label="Instalando Node.js">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#passo-1-abra-o-terminal" class="md-nav__link">
-    Passo 1: Abra o terminal
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#passo-2-atualize-o-gerenciador-de-pacotes" class="md-nav__link">
-    Passo 2: Atualize o gerenciador de pacotes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#passo-3-instale-o-nodejs" class="md-nav__link">
-    Passo 3: Instale o Node.js
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#passo-4-verifique-a-instalacao" class="md-nav__link">
-    Passo 4: Verifique a instalação
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1109,50 +1013,71 @@
 
 <span class="nx">buscaEndereco</span><span class="p">(</span><span class="mo">01310100</span><span class="p">)</span>
 </code></pre></div>
-<p>Esta função recebe um parâmetro <code>cep</code> contendo o CEP que desejamos buscar. Em seguida, montamos a URL da API utilizando o CEP como parâmetro e enviamos uma requisição HTTP GET utilizando a função <code>fetch</code>. Por fim, mostramos em tela o resultado, poderiamos tambem retornar os dados da resposta da API no formato JSON.</p>
+<p>Esta função recebe um parâmetro <code>cep</code> contendo o CEP que desejamos buscar. Em seguida, montamos a URL da API utilizando o CEP como parâmetro e enviamos uma requisição HTTP GET utilizando a função <code>fetch</code>. Por fim, mostramos em tela o resultado, poderiamos tambem retornar os dados da resposta da API no formato JSON, e utiliza-lo em nossos projetos.</p>
 <h4 id="api-restful">API RESTful<a class="headerlink" href="#api-restful" title="Permanent link">#</a></h4>
 <p>Uma API RESTful é uma API que segue o estilo arquitetural REST (Representational State Transfer). O REST é um conjunto de princípios para projetar sistemas distribuídos na web. Ele é baseado na ideia de que um recurso na web deve ser identificado por uma URL única e que as operações em torno desse recurso devem ser definidas pelos métodos HTTP padrão (GET, POST, PUT, DELETE).</p>
+<p>Os métodos HTTP são utilizados para indicar qual ação deve ser realizada pelo servidor web quando um cliente envia uma requisição. Cada método possui uma finalidade específica e é utilizado de acordo com a operação que se deseja realizar.</p>
+<ul>
+<li>
+<p>GET: o método GET é utilizado para solicitar informações de um recurso específico. Em outras palavras, é utilizado para buscar dados em um servidor web. As requisições GET são geralmente enviadas através de URLs, e os dados retornados pelo servidor são geralmente exibidos em um navegador web.</p>
+</li>
+<li>
+<p>POST: o método POST é utilizado para enviar dados de um cliente para um servidor web, geralmente com o objetivo de criar ou atualizar um recurso no servidor. Por exemplo, um formulário de cadastro pode enviar os dados preenchidos pelo usuário para o servidor utilizando o método POST.</p>
+</li>
+<li>
+<p>PUT: o método PUT é utilizado para atualizar um recurso existente no servidor. Ele envia uma requisição para o servidor com os dados atualizados do recurso. Por exemplo, um formulário de edição pode enviar os dados atualizados de um usuário para o servidor utilizando o método PUT.</p>
+</li>
+<li>
+<p>DELETE: o método DELETE é utilizado para excluir um recurso específico no servidor. Ele envia uma requisição para o servidor indicando qual recurso deve ser excluído. Por exemplo, um botão "excluir" em uma lista de usuários pode enviar uma requisição DELETE para o servidor para excluir o usuário selecionado.</p>
+</li>
+</ul>
+<p>Cada método HTTP é utilizado para uma finalidade específica, e juntos eles permitem que os desenvolvedores criem APIs RESTful que sejam capazes de realizar operações de criação (Create), leitura (Read), atualização (Update) e exclusão (Delete) de recursos de forma clara e organizada, Essas quatros operações são comumente conhecida pelo acrônimo CRUD.</p>
+<table>
+<thead>
+<tr>
+<th>Letra do Acrônimo</th>
+<th>Operação</th>
+<th>Método HTTP</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C</td>
+<td>Create</td>
+<td>POST</td>
+<td>Cria um novo recurso no servidor</td>
+</tr>
+<tr>
+<td>R</td>
+<td>Read</td>
+<td>GET</td>
+<td>Lê os dados de um recurso específico no servidor</td>
+</tr>
+<tr>
+<td>U</td>
+<td>Update</td>
+<td>PUT/PATCH</td>
+<td>Atualiza um recurso específico no servidor</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Delete</td>
+<td>DELETE</td>
+<td>Exclui um recurso específico no servidor</td>
+</tr>
+</tbody>
+</table>
 <p>As APIs RESTful são muito populares na web, pois são simples de usar e escalonáveis. Elas permitem que as aplicações possam interagir com diferentes recursos na web, como bancos de dados, sistemas de pagamento, serviços de geolocalização, entre outros.</p>
+<p>Como referencia em API RESTful, podemos utilizar o <a href="https://petstore.swagger.io/">Swagger Petstore</a>  que é um exemplo muito comum e utilizado para demonstrar as funcionalidades  de uma ferramenta popular para documentação de APIs RESTful (Swagger). Ele consiste em uma API RESTful que permite gerenciar uma loja virtual de animais de estimação, como cachorros, gatos, pássaros, entre outros.</p>
+<p>A pagina inicial do Swagger Petstore pode se acessada em:</p>
+<div class="highlight"><pre><span></span><code>https://petstore.swagger.io/
+</code></pre></div>
+<p>Lá você ira encontrar várias rotas, como "Adicionar um novo animal", "Buscar animais por status" e "Atualizar o status de um animal". Cada rota é documentada utilizando a especificação Swagger, que define os métodos HTTP suportados, os parâmetros necessários, os exemplos de entrada e saída, além de outras informações relevantes.</p>
+<p>O Swagger Petstore também inclui uma interface interativa do Swagger UI, que permite que os usuários visualizem a documentação da API, realizem testes e até mesmo experimentem as operações disponíveis diretamente da documentação.</p>
 <h4 id="api-soap">API SOAP<a class="headerlink" href="#api-soap" title="Permanent link">#</a></h4>
 <p>Uma API SOAP é uma API que usa o protocolo SOAP (Simple Object Access Protocol) para fornecer serviços da web. O SOAP é um protocolo baseado em XML que define como as mensagens devem ser formatadas e transmitidas. Ele é um protocolo mais antigo e mais complexo que o REST, mas ainda é usado em algumas aplicações que exigem segurança e confiabilidade.</p>
-<p>sistemas operacionais e dispositivos de hardware, como câmeras, sensores, etc.</p>
-<h2 id="api-restful-com-nodejs">API RESTful com Node.js<a class="headerlink" href="#api-restful-com-nodejs" title="Permanent link">#</a></h2>
-<p>O Node.js é uma plataforma de desenvolvimento de software baseada em JavaScript. Ela permite que os desenvolvedores possam escrever aplicativos do lado do servidor usando a mesma linguagem de programação do lado do cliente.</p>
-<p>Para implementar uma API RESTful com Node.js, é necessário seguir alguns passos básicos:</p>
-<ol>
-<li>Instale o Node.js no seu sistema.</li>
-<li>Crie um projeto Node.js usando o npm (Node Package Manager).</li>
-<li>Instale os pacotes necessários para implementar a API RESTful, como o Express (um framework para construção de aplicativos web), o Body-parser (para análise de corpo de solicitação HTTP) e o CORS (para controle de acesso à API).</li>
-<li>Defina as rotas da API, definindo os métodos HTTP e as operações em torno dos recursos.</li>
-<li>Defina o modelo de dados e o esquema da API, usando ferramentas como o Mongoose (para bancos de dados NoSQL) ou o Sequelize (para bancos de dados SQL).</li>
-<li>Utilizar ferramentas como o Swagger para e documentar APIs de forma automatizada permitindo realizar  testes de solicitação HTTP.</li>
-</ol>
-<p>O Node.js é uma opção viável para implementar APIs RESTful, pois ele fornece um conjunto de recursos e ferramentas para construir aplicativos escaláveis e de alta performance. Ele também é compatível com diferentes bancos de dados e provedores de serviços de nuvem, o que o torna uma opção popular para construção de sistemas distribuídos.</p>
-<h2 id="instalando-nodejs">Instalando Node.js<a class="headerlink" href="#instalando-nodejs" title="Permanent link">#</a></h2>
-<p>Para seguir este guia, recomendamos que você utilize Ubuntu 20.04. Antes de começar, você deve ter uma conta de usuário com privilégios  de ´sudo´ configurados em seu sistema.</p>
-<p>Para instalar o Node.js no Linux, siga os seguintes passos:</p>
-<h3 id="passo-1-abra-o-terminal">Passo 1: Abra o terminal<a class="headerlink" href="#passo-1-abra-o-terminal" title="Permanent link">#</a></h3>
-<p>Abra o terminal no seu sistema Linux. O terminal pode ser encontrado no menu de aplicativos ou pressionando a tecla de atalho <code>Ctrl + Alt + T</code>.</p>
-<h3 id="passo-2-atualize-o-gerenciador-de-pacotes">Passo 2: Atualize o gerenciador de pacotes<a class="headerlink" href="#passo-2-atualize-o-gerenciador-de-pacotes" title="Permanent link">#</a></h3>
-<p>Antes de instalar o Node.js, é recomendável atualizar o gerenciador de pacotes para garantir que você esteja baixando a versão mais recente. Use o seguinte comando no terminal:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
-</code></pre></div>
-<h3 id="passo-3-instale-o-nodejs">Passo 3: Instale o Node.js<a class="headerlink" href="#passo-3-instale-o-nodejs" title="Permanent link">#</a></h3>
-<p>Existem diferentes formas de instalar o Node.js no Linux, mas neste exemplo, usaremos o gerenciador de pacotes <code>apt</code> no Ubuntu ou no Debian. Use o seguinte comando para instalar o Node.js:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nodejs
-</code></pre></div>
-<p>Além disso, você também precisa instalar o gerenciador de pacotes npm (Node Package Manager), que é usado para instalar pacotes e bibliotecas JavaScript. Use o seguinte comando para instalar o npm:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>npm
-</code></pre></div>
-<h3 id="passo-4-verifique-a-instalacao">Passo 4: Verifique a instalação<a class="headerlink" href="#passo-4-verifique-a-instalacao" title="Permanent link">#</a></h3>
-<p>Após a instalação do Node.js e npm, você pode verificar se tudo foi instalado corretamente executando o seguinte comando no terminal:</p>
-<div class="highlight"><pre><span></span><code>node<span class="w"> </span>-v
-</code></pre></div>
-<p>Este comando irá exibir a versão do Node.js instalada no seu sistema. Para verificar a versão do npm, use o seguinte comando:</p>
-<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>-v
-</code></pre></div>
-<p>Instalar o Node.js no Linux é um processo simples e fácil, usando o gerenciador de pacotes <code>apt</code>. Certifique-se de atualizar o gerenciador de pacotes antes de instalar o Node.js e npm, e verifique se tudo foi instalado corretamente executando os comandos de verificação.</p>
-<p>O Node.js é uma plataforma versátil que pode ser usada para desenvolver uma ampla gama de aplicativos, desde aplicativos web simples até aplicativos de rede complexos em tempo real. Ele é mantido pela Node.js Foundation, uma organização sem fins lucrativos que é responsável por coordenar o desenvolvimento, promover a adoção, fornecer suporte e garantir a estabilidade e a segurança da plataforma. Com sua arquitetura orientada a eventos e I/O assíncrono, o Node.js é capaz de lidar com muitas conexões simultâneas e escalonar facilmente para lidar com grandes cargas de trabalho.</p>
+<p>Em geral, as APIs SOAP são mais complexas e verbosas do que as APIs RESTful, mas oferecem recursos mais avançados, como autenticação, segurança e transações. No entanto, elas também podem ser mais difíceis de implementar e manter devido à sua complexidade.</p>
 
 
 

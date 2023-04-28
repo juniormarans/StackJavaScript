@@ -17,7 +17,7 @@
     
     
       
-        <title>02 Iniciando Projeto Nodejs - Stack-JavaScript</title>
+        <title>02 API RESTful com Nodejs - Stack-JavaScript</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#iniciando-projeto-nodejs" class="md-skip">
+        <a href="#api-restful-com-nodejs" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-               02 Iniciando Projeto Nodejs
+               02 API RESTful com Nodejs
             
           </span>
         </div>
@@ -751,12 +751,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-           02 Iniciando Projeto Nodejs
+           02 API RESTful com Nodejs
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-         02 Iniciando Projeto Nodejs
+         02 API RESTful com Nodejs
       </a>
       
         
@@ -773,11 +773,67 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#iniciando-projeto-nodejs" class="md-nav__link">
-    Iniciando projeto Node.js
+  <a href="#api-restful-com-nodejs" class="md-nav__link">
+    API RESTful com Node.js
   </a>
   
-    <nav class="md-nav" aria-label="Iniciando projeto Node.js">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iniciando-um-projeto-nodejs" class="md-nav__link">
+    Iniciando um projeto Node.js
+  </a>
+  
+    <nav class="md-nav" aria-label="Iniciando um projeto Node.js">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-instalando-nodejs" class="md-nav__link">
+    1 Instalando Node.js
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Instalando Node.js">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passo-1-abra-o-terminal" class="md-nav__link">
+    Passo 1: Abra o terminal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-2-atualize-o-gerenciador-de-pacotes" class="md-nav__link">
+    Passo 2: Atualize o gerenciador de pacotes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-3-instale-o-nodejs" class="md-nav__link">
+    Passo 3: Instale o Node.js
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-4-verifique-a-instalacao" class="md-nav__link">
+    Passo 4: Verifique a instalação
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-crie-um-projeto-nodejs" class="md-nav__link">
+    2. Crie um projeto Node.js
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Crie um projeto Node.js">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -794,23 +850,49 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
-  <a href="#passo-3-instale-os-pacotes-necessarios-para-criar-uma-api-restful-em-nodejs" class="md-nav__link">
-    Passo 3 Instale os pacotes necessários para criar uma API RESTful em Node.js
+  <a href="#3-instale-os-pacotes-necessarios" class="md-nav__link">
+    3. Instale os pacotes necessários
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Instale os pacotes necessários">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instale-os-pacotes-necessarios-para-criar-uma-api-restful-em-nodejs" class="md-nav__link">
+    Instale os pacotes necessários para criar uma API RESTful em Node.js
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-defina-as-rotas-da-api" class="md-nav__link">
+    4. Defina as rotas da API
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Defina as rotas da API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passo-1-crie-um-arquivo-indexjs-no-diretorio-do-projeto-e-configure-o-servidor-express" class="md-nav__link">
+    Passo 1 Crie um arquivo index.js no diretório do projeto e configure o servidor express
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#passo-4-crie-um-arquivo-indexjs-no-diretorio-do-projeto-e-configure-o-servidor-express" class="md-nav__link">
-    Passo 4 Crie um arquivo index.js no diretório do projeto e configure o servidor express
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#passo-5-teste-o-servidor" class="md-nav__link">
-    Passo 5 Teste o servidor
+  <a href="#passo-2-teste-o-servidor" class="md-nav__link">
+    Passo 2 Teste o servidor
   </a>
   
 </li>
@@ -839,6 +921,18 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-defina-o-modelo-de-dados" class="md-nav__link">
+    5. Defina o modelo de dados.
+  </a>
   
 </li>
         
@@ -887,11 +981,67 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#iniciando-projeto-nodejs" class="md-nav__link">
-    Iniciando projeto Node.js
+  <a href="#api-restful-com-nodejs" class="md-nav__link">
+    API RESTful com Node.js
   </a>
   
-    <nav class="md-nav" aria-label="Iniciando projeto Node.js">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iniciando-um-projeto-nodejs" class="md-nav__link">
+    Iniciando um projeto Node.js
+  </a>
+  
+    <nav class="md-nav" aria-label="Iniciando um projeto Node.js">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-instalando-nodejs" class="md-nav__link">
+    1 Instalando Node.js
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Instalando Node.js">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passo-1-abra-o-terminal" class="md-nav__link">
+    Passo 1: Abra o terminal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-2-atualize-o-gerenciador-de-pacotes" class="md-nav__link">
+    Passo 2: Atualize o gerenciador de pacotes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-3-instale-o-nodejs" class="md-nav__link">
+    Passo 3: Instale o Node.js
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-4-verifique-a-instalacao" class="md-nav__link">
+    Passo 4: Verifique a instalação
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-crie-um-projeto-nodejs" class="md-nav__link">
+    2. Crie um projeto Node.js
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Crie um projeto Node.js">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -908,23 +1058,49 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
-  <a href="#passo-3-instale-os-pacotes-necessarios-para-criar-uma-api-restful-em-nodejs" class="md-nav__link">
-    Passo 3 Instale os pacotes necessários para criar uma API RESTful em Node.js
+  <a href="#3-instale-os-pacotes-necessarios" class="md-nav__link">
+    3. Instale os pacotes necessários
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Instale os pacotes necessários">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instale-os-pacotes-necessarios-para-criar-uma-api-restful-em-nodejs" class="md-nav__link">
+    Instale os pacotes necessários para criar uma API RESTful em Node.js
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-defina-as-rotas-da-api" class="md-nav__link">
+    4. Defina as rotas da API
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Defina as rotas da API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passo-1-crie-um-arquivo-indexjs-no-diretorio-do-projeto-e-configure-o-servidor-express" class="md-nav__link">
+    Passo 1 Crie um arquivo index.js no diretório do projeto e configure o servidor express
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#passo-4-crie-um-arquivo-indexjs-no-diretorio-do-projeto-e-configure-o-servidor-express" class="md-nav__link">
-    Passo 4 Crie um arquivo index.js no diretório do projeto e configure o servidor express
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#passo-5-teste-o-servidor" class="md-nav__link">
-    Passo 5 Teste o servidor
+  <a href="#passo-2-teste-o-servidor" class="md-nav__link">
+    Passo 2 Teste o servidor
   </a>
   
 </li>
@@ -960,6 +1136,18 @@
     </nav>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#5-defina-o-modelo-de-dados" class="md-nav__link">
+    5. Defina o modelo de dados.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
     </ul>
   
@@ -979,16 +1167,54 @@
   
 
 
-  <h1> 02 Iniciando Projeto Nodejs</h1>
+  <h1> 02 API RESTful com Nodejs</h1>
 
-<h2 id="iniciando-projeto-nodejs">Iniciando projeto Node.js<a class="headerlink" href="#iniciando-projeto-nodejs" title="Permanent link">#</a></h2>
-<p>Após a instalação do Node.js e do npm, o próximo passo para criar um projeto de API RESTful em Node.js é seguir os seguintes passos:</p>
-<h3 id="passo-1-crie-um-diretorio-para-o-projeto-e-navegue-ate-ele">Passo 1 Crie um diretório para o projeto e navegue até ele<a class="headerlink" href="#passo-1-crie-um-diretorio-para-o-projeto-e-navegue-ate-ele" title="Permanent link">#</a></h3>
+<h2 id="api-restful-com-nodejs">API RESTful com Node.js<a class="headerlink" href="#api-restful-com-nodejs" title="Permanent link">#</a></h2>
+<p>O Node.js é uma plataforma de desenvolvimento de software baseada em JavaScript. Ela permite que os desenvolvedores possam escrever aplicativos do lado do servidor usando a mesma linguagem de programação do lado do cliente.</p>
+<p>Para implementar uma API RESTful com Node.js, é necessário seguir alguns passos básicos:</p>
+<ol>
+<li>Instale o Node.js no seu sistema.</li>
+<li>Crie um projeto Node.js usando o npm (Node Package Manager).</li>
+<li>Instale os pacotes necessários para implementar a API RESTful, como o Express (um framework para construção de aplicativos web), o Body-parser (para análise de corpo de solicitação HTTP) e o CORS (para controle de acesso à API).</li>
+<li>Defina as rotas da API, definindo os métodos HTTP e as operações em torno dos recursos.</li>
+<li>Defina o modelo de dados e o esquema da API, usando ferramentas como o Mongoose (para bancos de dados NoSQL) ou o Sequelize (para bancos de dados SQL).</li>
+<li>Utilizar ferramentas como o Swagger para e documentar APIs de forma automatizada permitindo realizar  testes de solicitação HTTP.</li>
+</ol>
+<p>O Node.js é uma opção viável para implementar APIs RESTful, pois ele fornece um conjunto de recursos e ferramentas para construir aplicativos escaláveis e de alta performance. Ele também é compatível com diferentes bancos de dados e provedores de serviços de nuvem, o que o torna uma opção popular para construção de sistemas distribuídos.</p>
+<h2 id="iniciando-um-projeto-nodejs">Iniciando um projeto Node.js<a class="headerlink" href="#iniciando-um-projeto-nodejs" title="Permanent link">#</a></h2>
+<p>Para criar um projeto de API RESTful em Node.js siga as seguintes etapas:</p>
+<h3 id="1-instalando-nodejs">1 Instalando Node.js<a class="headerlink" href="#1-instalando-nodejs" title="Permanent link">#</a></h3>
+<p>Para seguir este guia, recomendamos que você utilize Ubuntu 20.04. Antes de começar, você deve ter uma conta de usuário com privilégios  de ´sudo´ configurados em seu sistema.</p>
+<p>Para instalar o Node.js no Linux, siga os seguintes passos:</p>
+<h4 id="passo-1-abra-o-terminal">Passo 1: Abra o terminal<a class="headerlink" href="#passo-1-abra-o-terminal" title="Permanent link">#</a></h4>
+<p>Abra o terminal no seu sistema Linux. O terminal pode ser encontrado no menu de aplicativos ou pressionando a tecla de atalho <code>Ctrl + Alt + T</code>.</p>
+<h4 id="passo-2-atualize-o-gerenciador-de-pacotes">Passo 2: Atualize o gerenciador de pacotes<a class="headerlink" href="#passo-2-atualize-o-gerenciador-de-pacotes" title="Permanent link">#</a></h4>
+<p>Antes de instalar o Node.js, é recomendável atualizar o gerenciador de pacotes para garantir que você esteja baixando a versão mais recente. Use o seguinte comando no terminal:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</code></pre></div>
+<h4 id="passo-3-instale-o-nodejs">Passo 3: Instale o Node.js<a class="headerlink" href="#passo-3-instale-o-nodejs" title="Permanent link">#</a></h4>
+<p>Existem diferentes formas de instalar o Node.js no Linux, mas neste exemplo, usaremos o gerenciador de pacotes <code>apt</code> no Ubuntu ou no Debian. Use o seguinte comando para instalar o Node.js:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nodejs
+</code></pre></div>
+<p>Além disso, você também precisa instalar o gerenciador de pacotes npm (Node Package Manager), que é usado para instalar pacotes e bibliotecas JavaScript. Use o seguinte comando para instalar o npm:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>npm
+</code></pre></div>
+<h4 id="passo-4-verifique-a-instalacao">Passo 4: Verifique a instalação<a class="headerlink" href="#passo-4-verifique-a-instalacao" title="Permanent link">#</a></h4>
+<p>Após a instalação do Node.js e npm, você pode verificar se tudo foi instalado corretamente executando o seguinte comando no terminal:</p>
+<div class="highlight"><pre><span></span><code>node<span class="w"> </span>-v
+</code></pre></div>
+<p>Este comando irá exibir a versão do Node.js instalada no seu sistema. Para verificar a versão do npm, use o seguinte comando:</p>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>-v
+</code></pre></div>
+<p>Instalar o Node.js no Linux é um processo simples e fácil, usando o gerenciador de pacotes <code>apt</code>. Certifique-se de atualizar o gerenciador de pacotes antes de instalar o Node.js e npm, e verifique se tudo foi instalado corretamente executando os comandos de verificação.</p>
+<p>O Node.js é uma plataforma versátil que pode ser usada para desenvolver uma ampla gama de aplicativos, desde aplicativos web simples até aplicativos de rede complexos em tempo real. Ele é mantido pela Node.js Foundation, uma organização sem fins lucrativos que é responsável por coordenar o desenvolvimento, promover a adoção, fornecer suporte e garantir a estabilidade e a segurança da plataforma. Com sua arquitetura orientada a eventos e I/O assíncrono, o Node.js é capaz de lidar com muitas conexões simultâneas e escalonar facilmente para lidar com grandes cargas de trabalho.</p>
+<h3 id="2-crie-um-projeto-nodejs">2. Crie um projeto Node.js<a class="headerlink" href="#2-crie-um-projeto-nodejs" title="Permanent link">#</a></h3>
+<h4 id="passo-1-crie-um-diretorio-para-o-projeto-e-navegue-ate-ele">Passo 1 Crie um diretório para o projeto e navegue até ele<a class="headerlink" href="#passo-1-crie-um-diretorio-para-o-projeto-e-navegue-ate-ele" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>projetos/nome-do-projeto<span class="w"> </span><span class="c1">#cria um diretório</span>
 <span class="nb">cd</span><span class="w"> </span>projetos/nome-do-projeto<span class="w"> </span><span class="c1">## move até o diretório</span>
 </code></pre></div>
 <p>Lembre-se organizar seu ambiente de desenvolvimento é uma parte importante para garantir uma experiência de programação eficiente e produtiva, neste caso criamos um diretório <code>projetos</code> onde armazenaremos nossas aplicaçoes.</p>
-<h3 id="passo-2-inicialize-o-projeto-nodejs-com-o-npm">Passo 2 Inicialize o projeto Node.js com o npm<a class="headerlink" href="#passo-2-inicialize-o-projeto-nodejs-com-o-npm" title="Permanent link">#</a></h3>
+<h4 id="passo-2-inicialize-o-projeto-nodejs-com-o-npm">Passo 2 Inicialize o projeto Node.js com o npm<a class="headerlink" href="#passo-2-inicialize-o-projeto-nodejs-com-o-npm" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>init<span class="w"> </span>-y
 </code></pre></div>
 <p>Isso irá criar um arquivo <code>package.json</code> no diretório do projeto, que contém informações sobre o projeto e suas dependências. O arquivo package.json é um arquivo em formato JSON que contém metadados sobre o projeto e suas dependências.</p>
@@ -1079,11 +1305,13 @@
 </ul>
 <p>Essas são algumas das principais propriedades que podem ser encontradas em um arquivo package.json. Além dessas, existem outras propriedades que podem ser definidas, dependendo das necessidades do projeto.
 Em resumo, o arquivo package.json é fundamental em projetos Node.js, pois ele ajuda a gerenciar dependências, configurar scripts e outras configurações importantes para o projeto.</p>
-<h3 id="passo-3-instale-os-pacotes-necessarios-para-criar-uma-api-restful-em-nodejs">Passo 3 Instale os pacotes necessários para criar uma API RESTful em Node.js<a class="headerlink" href="#passo-3-instale-os-pacotes-necessarios-para-criar-uma-api-restful-em-nodejs" title="Permanent link">#</a></h3>
+<h3 id="3-instale-os-pacotes-necessarios">3. Instale os pacotes necessários<a class="headerlink" href="#3-instale-os-pacotes-necessarios" title="Permanent link">#</a></h3>
+<h4 id="instale-os-pacotes-necessarios-para-criar-uma-api-restful-em-nodejs">Instale os pacotes necessários para criar uma API RESTful em Node.js<a class="headerlink" href="#instale-os-pacotes-necessarios-para-criar-uma-api-restful-em-nodejs" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>i<span class="w"> </span>express<span class="w"> </span>body-parser<span class="w"> </span>cors<span class="w"> </span>
 </code></pre></div>
 <p>O pacote <code>express</code> é o framework para criação de aplicações Node.js, <code>body-parser</code> é usado para analisar o corpo das requisições HTTP e <code>cors</code> é utilizado para habilitar o acesso de outras origens (como outros servidores) à API.</p>
-<h3 id="passo-4-crie-um-arquivo-indexjs-no-diretorio-do-projeto-e-configure-o-servidor-express">Passo 4 Crie um arquivo <code>index.js</code> no diretório do projeto e configure o servidor express<a class="headerlink" href="#passo-4-crie-um-arquivo-indexjs-no-diretorio-do-projeto-e-configure-o-servidor-express" title="Permanent link">#</a></h3>
+<h3 id="4-defina-as-rotas-da-api">4. Defina as rotas da API<a class="headerlink" href="#4-defina-as-rotas-da-api" title="Permanent link">#</a></h3>
+<h4 id="passo-1-crie-um-arquivo-indexjs-no-diretorio-do-projeto-e-configure-o-servidor-express">Passo 1 Crie um arquivo <code>index.js</code> no diretório do projeto e configure o servidor express<a class="headerlink" href="#passo-1-crie-um-arquivo-indexjs-no-diretorio-do-projeto-e-configure-o-servidor-express" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">bodyParser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;body-parser&#39;</span><span class="p">);</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">cors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cors&#39;</span><span class="p">);</span>
@@ -1132,15 +1360,15 @@ Em resumo, o arquivo package.json é fundamental em projetos Node.js, pois ele a
 <span class="p">});</span>
 </code></pre></div>
 <p>Finalmente, aqui estamos iniciando o servidor express na porta definida anteriormente e imprimindo uma mensagem de sucesso no console.</p>
-<h3 id="passo-5-teste-o-servidor">Passo 5 Teste o servidor<a class="headerlink" href="#passo-5-teste-o-servidor" title="Permanent link">#</a></h3>
+<h4 id="passo-2-teste-o-servidor">Passo 2 Teste o servidor<a class="headerlink" href="#passo-2-teste-o-servidor" title="Permanent link">#</a></h4>
 <p>Para rodar o codigo criado em <code>index.js</code> execute o seguinte comando:</p>
 <div class="highlight"><pre><span></span><code>node<span class="w"> </span>index.js
 </code></pre></div>
 <p>Isso iniciará o servidor na porta 3000. Abra um navegador e acesse <code>http://localhost:3000</code>. Você deve ver a mensagem "Bem-vindo à API RESTful".</p>
 <p>A partir daqui, você pode começar a criar as rotas da API RESTful, definindo as operações HTTP, os <strong>parametros</strong> e as respostas esperadas. O express facilita muito a criação de rotas e manipulação de requisições e respostas HTTP. Com as rotas definidas, você pode criar a lógica de negócios da aplicação, que pode incluir acesso a banco de dados, autenticação e autorização, validação de dados, entre outros.</p>
-<h3 id="parametros">Parâmetros<a class="headerlink" href="#parametros" title="Permanent link">#</a></h3>
+<h4 id="parametros">Parâmetros<a class="headerlink" href="#parametros" title="Permanent link">#</a></h4>
 <p>Parâmetros de rotas, ou route parameters, são uma forma de passar informações dinâmicas para a sua aplicação através da URL. Eles são utilizados para identificar um recurso específico, como um usuário ou um produto, ou para passar  informações adicionais para a nossa aplicação. Podemos dividir os parâmetros em:</p>
-<h4 id="parametros-de-rota">Parâmetros de rota<a class="headerlink" href="#parametros-de-rota" title="Permanent link">#</a></h4>
+<h5 id="parametros-de-rota">Parâmetros de rota<a class="headerlink" href="#parametros-de-rota" title="Permanent link">#</a></h5>
 <p>Em uma URL, os parâmetros de rota (Route Parameters) são definidos após a rota base e são indicados pelo caractere <code>:</code> seguido do nome do parâmetro. Por exemplo, considerando a rota <code>/users/:id</code>, o parâmetro <code>id</code> é um parâmetro de rota.</p>
 <p>Ao receber uma requisição contendo um parâmetro de rota, o Express armazena o valor desse parâmetro em um objeto chamado <code>params</code>, que é uma propriedade do objeto <code>request</code> (ou <code>req</code>, para abreviar). O valor do parâmetro pode ser acessado através desse objeto.</p>
 <p>Aqui está um exemplo de como usar parâmetros de rota em uma aplicação Node.js com Express:</p>
@@ -1171,7 +1399,7 @@ Em resumo, o arquivo package.json é fundamental em projetos Node.js, pois ele a
 </code></pre></div>
 <p>Nesse exemplo, criamos a rota <code>/usuario/:id</code> recebe um parâmetro de rota <code>id</code>. Quando um usuário acessa essa rota com um ID específico, o Express armazena esse ID no objeto <code>params</code> e podemos acessá-lo através da propriedade <code>id</code>. Em seguida, podemos usar esse ID para buscar informações específicas do usuário com esse ID em um banco de dados, por exemplo.</p>
 <p>Para testar essa rota, basta acessar <code>http://localhost:3000/usuario/123</code> no navegador, onde <code>123</code> é um exemplo de ID de usuário. A mensagem de resposta irá incluir esse ID na mensagem.</p>
-<h4 id="parametros-de-query-string">Parâmetros de Query String<a class="headerlink" href="#parametros-de-query-string" title="Permanent link">#</a></h4>
+<h5 id="parametros-de-query-string">Parâmetros de Query String<a class="headerlink" href="#parametros-de-query-string" title="Permanent link">#</a></h5>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">bodyParser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;body-parser&#39;</span><span class="p">);</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">cors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cors&#39;</span><span class="p">);</span>
@@ -1205,6 +1433,7 @@ Em resumo, o arquivo package.json é fundamental em projetos Node.js, pois ele a
 </code></pre></div>
 <p>Nesse exemplo, a rota <code>/usuario</code> recebe os parâmetros <code>nome</code> e <code>idade</code> via query string. Esses parâmetros são acessados através do objeto <code>req.query</code>.</p>
 <p>Para testar essa rota, basta acessar <code>http://localhost:3000/usuario?nome=João&amp;idade=30</code> no navegador.</p>
+<h3 id="5-defina-o-modelo-de-dados">5. Defina o modelo de dados.<a class="headerlink" href="#5-defina-o-modelo-de-dados" title="Permanent link">#</a></h3>
 
 
 
