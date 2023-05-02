@@ -17,7 +17,7 @@ As propriedades CSS são utilizadas para definir o estilo e layout dos elementos
 - padding: define o preenchimento interno de um elemento. Exemplo: padding: 20px; (define um preenchimento interno de 20 pixels em todos os lados do elemento).
 
 Para mais propriedades segue o link de referencia:
-[https://developer.mozilla.org/pt-BR/docs/Web/CSS/Reference]
+[Propriedades](https://developer.mozilla.org/pt-BR/docs/Web/CSS/Reference)
 
 ### Exercícios de Fixação
 

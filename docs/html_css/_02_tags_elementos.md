@@ -9,10 +9,10 @@ Os atributos permitem que os desenvolvedores controlem vários aspectos do compo
 Os desenvolvedores web usam tags e atributos HTML para criar documentos que possam ser interpretados e renderizados pelos navegadores. A linguagem HTML é essencial para a criação de páginas web, pois fornece a estrutura básica para a exibição de conteúdo em um navegador da web.
 
 Para mais informações de tags acesse o link:
-[https://developer.mozilla.org/en-US/docs/Web/HTML/Element]
+[Elementos](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
 
 Para mais informações de atributos acesse o link:
-[https://developer.mozilla.org/pt-BR/docs/Web/HTML/Attributes]
+[Atributos](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Attributes)
 
 ### Títulos e Sub-títulos
 
