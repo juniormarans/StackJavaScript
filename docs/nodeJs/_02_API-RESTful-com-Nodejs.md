@@ -225,9 +225,8 @@ Um diagrama ER simples para este modelo de dados seria:
 
 ```mermaid
 erDiagram
-    PRODUTO ||--|{ CATEGORIA : pertence_a
-    PRODUTO ||--|| ITEM_PEDIDO : aparece_em
-    CATEGORIA ||--o{ ITEM_PEDIDO : contem
+    PRODUTO ||--|| CATEGORIA : pertence_a
+    PRODUTO ||--|{ ITEM_PEDIDO : aparece_em
     CLIENTE ||--o{ ENDERECO : possui
     CLIENTE ||--o{ PEDIDO : faz
     PEDIDO ||--|{ ITEM_PEDIDO : contem
