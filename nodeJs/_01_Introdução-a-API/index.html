@@ -855,15 +855,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#passo-1-entendendo-a-api-viacep" class="md-nav__link">
-    Passo 1: Entendendo a API ViaCEP
+  <a href="#api-viacep" class="md-nav__link">
+    API ViaCEP
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#passo-2-criando-uma-funcao-para-buscar-informacoes-de-um-endereco-a-partir-do-cep" class="md-nav__link">
-    Passo 2: Criando uma função para buscar informações de um endereço a partir do CEP
+  <a href="#criando-uma-funcao-para-buscar-informacoes-de-um-endereco-a-partir-do-cep" class="md-nav__link">
+    Criando uma função para buscar informações de um endereço a partir do CEP
   </a>
   
 </li>
@@ -1052,15 +1052,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#passo-1-entendendo-a-api-viacep" class="md-nav__link">
-    Passo 1: Entendendo a API ViaCEP
+  <a href="#api-viacep" class="md-nav__link">
+    API ViaCEP
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#passo-2-criando-uma-funcao-para-buscar-informacoes-de-um-endereco-a-partir-do-cep" class="md-nav__link">
-    Passo 2: Criando uma função para buscar informações de um endereço a partir do CEP
+  <a href="#criando-uma-funcao-para-buscar-informacoes-de-um-endereco-a-partir-do-cep" class="md-nav__link">
+    Criando uma função para buscar informações de um endereço a partir do CEP
   </a>
   
 </li>
@@ -1116,6 +1116,24 @@
 
 <h2 id="introducao-a-api">Introdução a API<a class="headerlink" href="#introducao-a-api" title="Permanent link">#</a></h2>
 <p>Uma API (Application Programming Interface) é uma interface que permite a comunicação entre diferentes componentes de software. Ela fornece um conjunto de regras, protocolos e ferramentas para que as aplicações possam interagir entre si, consumindo dados, serviços ou recursos.</p>
+<p>É bastante comum utilizar uma API para consultar uma base de dados. Muitos aplicativos e serviços utilizam APIs para acessar informações de bancos de dados e disponibilizá-las para outros aplicativos.</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant Cliente
+    participant API
+    participant Database
+    Cliente-&gt;&gt;API: Envio de requisição
+    API-&gt;&gt;Database: Processamento da requisição
+    Database-&gt;&gt;API: Resposta da requisição
+    API-&gt;&gt;Cliente: Envio da resposta</code></pre>
+<ul>
+<li>O <strong>Cliente</strong> envia uma requisição para a API, representado pela seta "Envio de requisição" que vai até a API.</li>
+<li>
+<p>A <strong>API</strong>, por sua vez, processa a requisição e a envia para o Database (um servidor de dados), representado pela seta "Processamento da requisição" que vai da API até o Database.</p>
+</li>
+<li>
+<p>O <strong>Database</strong> processa a requisição e envia uma resposta para a API, representado pela seta "Resposta da requisição" que vai do Database até a API. Finalmente, a API envia a resposta de volta para o cliente, representado pela seta "Envio da resposta" que vai da API até o cliente.</p>
+</li>
+</ul>
 <p>A importância das APIs tem crescido exponencialmente com a evolução da web e a proliferação de plataformas e dispositivos diferentes. Hoje, existem milhões de APIs disponíveis publicamente, que oferecem uma variedade de serviços e recursos, desde dados meteorológicos até transações financeiras.</p>
 <p>Vamos explorar o conceito de API em mais detalhes, analisando as diferentes categorias de APIs e suas características. Também vamos discutir como as APIs podem ser usadas para criar sistemas distribuídos e como o Node.js pode ser uma opção viável para implementar APIs RESTful.</p>
 <h3 id="tipos-de-apis">Tipos de APIs<a class="headerlink" href="#tipos-de-apis" title="Permanent link">#</a></h3>
@@ -1124,7 +1142,7 @@
 <p>Uma API de serviço da web é uma API que fornece acesso a serviços da web, geralmente usando o protocolo HTTP. Ela pode ser implementada usando diferentes tecnologias, como XML-RPC, JSON-RPC, SOAP ou REST.</p>
 <p>O protocolo HTTP é amplamente utilizado na internet para transferência de dados entre clientes e servidores. Ele usa uma abordagem de solicitação-resposta, onde o cliente envia uma solicitação ao servidor e espera uma resposta. Essa abordagem é bastante simples e pode ser facilmente implementada por diferentes plataformas e linguagens de programação.</p>
 <p>Como exemplo de API Webservice temos a <a href="https://viacep.com.br/">ViaCEP</a>, a API ViaCEP é um serviço gratuito que permite a consulta de endereços brasileiros utilizando o CEP como parâmetro. A seguir vou mostrar como utilizar a API ViaCEP em uma aplicação JavaScript para buscar informações de um endereço.</p>
-<h5 id="passo-1-entendendo-a-api-viacep">Passo 1: Entendendo a API ViaCEP<a class="headerlink" href="#passo-1-entendendo-a-api-viacep" title="Permanent link">#</a></h5>
+<h5 id="api-viacep">API ViaCEP<a class="headerlink" href="#api-viacep" title="Permanent link">#</a></h5>
 <p>A API ViaCEP oferece diferentes formas de consulta, incluindo busca por CEP, endereço ou logradouro. Neste tutorial, vamos utilizar a busca por CEP.</p>
 <p>A URL base da API ViaCEP é <code>https://viacep.com.br/ws/</code>. Para buscar informações de um endereço a partir do CEP, basta adicionar o CEP à URL e enviar uma requisição HTTP GET.</p>
 <p>Por exemplo, para buscar informações do endereço correspondente ao CEP 01310-100, a URL seria:</p>
@@ -1144,7 +1162,7 @@
 <span class="w">  </span><span class="nt">&quot;siafi&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7107&quot;</span>
 <span class="p">}</span><span class="w"> </span>
 </code></pre></div>
-<h5 id="passo-2-criando-uma-funcao-para-buscar-informacoes-de-um-endereco-a-partir-do-cep">Passo 2: Criando uma função para buscar informações de um endereço a partir do CEP<a class="headerlink" href="#passo-2-criando-uma-funcao-para-buscar-informacoes-de-um-endereco-a-partir-do-cep" title="Permanent link">#</a></h5>
+<h5 id="criando-uma-funcao-para-buscar-informacoes-de-um-endereco-a-partir-do-cep">Criando uma função para buscar informações de um endereço a partir do CEP<a class="headerlink" href="#criando-uma-funcao-para-buscar-informacoes-de-um-endereco-a-partir-do-cep" title="Permanent link">#</a></h5>
 <p>Agora que entendemos como funciona a API ViaCEP, podemos criar uma função para buscar informações de um endereço a partir do CEP.</p>
 <div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">buscaEndereco</span><span class="p">(</span><span class="nx">cep</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
@@ -1221,7 +1239,7 @@
 <div class="highlight"><pre><span></span><code>https://petstore.swagger.io/
 </code></pre></div>
 <p>Lá você ira encontrar várias rotas, como "Adicionar um novo animal", "Buscar animais por status" e "Atualizar o status de um animal". Cada rota é documentada utilizando a especificação Swagger, que define os métodos HTTP suportados, os parâmetros necessários, os exemplos de entrada e saída, além de outras informações relevantes.</p>
-<p>O Swagger Petstore também inclui uma interface interativa do Swagger UI, que permite que os usuários visualizem a documentação da API, realizem testes e até mesmo experimentem as operações disponíveis diretamente da documentação.</p>
+<p>O Swagger Petstore também inclui uma interface interativa do <strong>Swagger UI</strong>, que permite que os usuários visualizem a documentação da API, realizem testes e até mesmo experimentem as operações disponíveis diretamente da documentação.</p>
 <h4 id="api-soap">API SOAP<a class="headerlink" href="#api-soap" title="Permanent link">#</a></h4>
 <p>Uma API SOAP é uma API que usa o protocolo SOAP (Simple Object Access Protocol) para fornecer serviços da web. O SOAP é um protocolo baseado em XML que define como as mensagens devem ser formatadas e transmitidas. Ele é um protocolo mais antigo e mais complexo que o REST, mas ainda é usado em algumas aplicações que exigem segurança e confiabilidade.</p>
 <p>Em geral, as APIs SOAP são mais complexas e verbosas do que as APIs RESTful, mas oferecem recursos mais avançados, como autenticação, segurança e transações. No entanto, elas também podem ser mais difíceis de implementar e manter devido à sua complexidade.</p>
