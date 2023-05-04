@@ -242,7 +242,7 @@ nome-do-projeto/
 - `node_modules/`: é o diretório onde os pacotes de terceiros instalados pelo npm são armazenados.
 - `package-lock.json`: é um arquivo gerado automaticamente pelo npm para garantir que as dependências do projeto sejam instaladas com a mesma versão, mesmo que o arquivo `package.json` tenha um caractere curinga `^` em suas dependências.
 
-### 4. Defina ou Receba o modelo dados
+### 4. Modelo dados
 
 O processo de modelagem de dados em desenvolvimento de uma API é indispensável, geralmente é dividido em várias etapas, que podem variar dependendo da metodologia de desenvolvimento de software adotada, podendo ter um time responsável somente por esses processos. Aqui está uma possível divisão desse processo em etapas:
 
@@ -291,11 +291,11 @@ Nesse diagrama, cada tabela é representada por um retângulo, e os relacionamen
 
 Uma vez definido o modelo conceitual de dados, podemos utilizá-lo para criar o modelo de dados em Node.js que ira realizar operações no banco de dados, como inserir novos registros, atualizar informações existentes ou recuperar dados para exibir na interface do usuário. Isso é feito através de um ORM, que traduz as operações de banco de dados em chamadas a métodos do modelo correspondente.
 
-#### 5 Modelo lógico: e ORM Sequelize
+#### Modelo lógico: e ORM Sequelize
 
 Em resumo, um modelo lógico é uma representação mais detalhada do sistema, que utiliza uma linguagem formal para definir as entidades, atributos, relacionamentos e regras de negócio. Nessa etapa, o modelo conceitual é traduzido para o modelo lógico, que pode ser implementado em um banco de dados. O modelo lógico é independente de tecnologia, ou seja, pode ser implementado em diferentes sistemas gerenciadores de banco de dados.
 
-##### ORM
+#### ORM
 
 ORM (Object-Relational Mapping) é uma técnica de programação que permite mapear objetos de um modelo lógico para uma tabela em um banco de dados relacional. Isso permite que o desenvolvedor trabalhe com objetos em vez de escrever diretamente SQL para interagir com o banco de dados.
 
@@ -310,15 +310,98 @@ Embora possam ter um impacto positivo no desenvolvimento de aplicativos, Os ORMs
 O Sequelize é um Object-Relational Mapping (ORM) para Node.js, que permite trabalhar com bancos de dados relacionais de forma mais fácil e produtiva. O Sequelize é uma ferramenta poderosa e fácil de usar, que oferece suporte a vários bancos de dados relacionais e recursos avançados, como migrações de banco de dados.Para utilizar o Sequelize em um projeto Node.js, é necessário instalá-lo através do NPM (Node Package Manager). Abaixo está o comando para instalar o `Sequelize`:
 
 ```bash
-npm i sequelize pg
+npm i sequelize
 ```
 
-O pacote `pg` é utilizado para a comunicação entre o `Sequelize` e o SGBD PostgreSQL.
+- O `sequelize` é um pacote que permite a realização de operações de banco de dados em um projeto Node.js, fornecendo uma interface simples e poderosa para interagir com bancos de dados relacionais. Ao utilizar o comando `npm i sequelize`, o pacote `sequelize` será instalado no diretório `node_modules` do projeto, e sua referência será adicionada ao arquivo `package.json`, na seção `dependencies`. A instalação do `sequelize` é necessária para que a aplicação possa utilizar as funcionalidades do ORM e interagir com o banco de dados de forma eficiente e segura.
 
-Após a instalação, é necessário configurar a conexão com o banco de dados PostgreSQL. Para isso, podemos criar um arquivo `database.js` com as informações necessárias para a conexão, é uma boa prática em uma aplicação Node.js separar os arquivos de configuração em um diretório config. Essa separação ajuda a manter o código organizado e facilita a manutenção, uma vez que as configurações estão centralizadas em um só lugar.
+```bash
+npm i pg-hstore
+```
+
+- O `pg` é um pacote que fornece uma interface Node.js para interagir com o PostgreSQL. Ele permite que o Sequelize se conecte ao banco de dados e execute operações de leitura e gravação de dados de forma segura e eficiente.
+
+- O `pg-hstore` é um pacote que permite a conversão de objetos JavaScript para a representação de texto hstore do PostgreSQL, que é usado para armazenar pares de chave-valor em uma coluna de banco de dados. Ele é necessário quando se deseja utilizar a funcionalidade hstore do PostgreSQL com o Sequelize.
+
+A instalação desses pacotes é necessária para que a aplicação possa se conectar ao banco de dados PostgreSQL e realizar operações de leitura e gravação de dados de forma segura e eficiente, utilizando o Sequelize como ORM, para outros bancos consulte a documentção do [Sequelize](https://sequelize.org/docs/v6/getting-started/).
+
+```bash
+npm i sequelize-cli -D
+```
+
+- O `sequelize-cli` é uma ferramenta de linha de comando que facilita a criação de migrações de banco de dados, a geração de modelos e a criação de arquivos de configuração para o Sequelize. Ele é uma extensão do pacote `sequelize`, que é utilizado para realizar operações de banco de dados em um projeto Node.js. Ao utilizar o comando `npm i sequelize-cli -D`, o pacote `sequelize-cli` será instalado no diretório `node_modules` do projeto, e sua referência será adicionada ao arquivo `package.json`, na seção `devDependencies`. A opção `-D` indica que a dependência será instalada como uma dependência de desenvolvimento, ou seja, ela não será necessária para a execução da aplicação em produção, apenas para o desenvolvimento e testes.
+
+Após a instalação, é necessário configurar a conexão com o banco de dados PostgreSQL. Para isso, iremos criar dois arquivos:
+
+---
+
+#### sequelizerc
+
+- `.sequelizerc`: arquivo de configuração do Sequelize que permite personalizar o comportamento do CLI do Sequelize. Ele é usado para especificar diretórios e arquivos personalizados que podem ser usados pelo Sequelize para gerar código automaticamente, como arquivos de migração, modelos, seeders, etc.
+
+O arquivo `.sequelizerc` é um arquivo no formato JavaScript (sem extenção .js) que pode exportar um objeto com as seguintes propriedades:
 
 ```javascript
-// config/database.js
+const { resolve } = require("path");
+
+module.exports = {
+  config: resolve(__dirname, "src", "config", "database.js"),
+  "models-path": resolve(__dirname, "src", "app", "models"),
+  "migrations-path": resolve(__dirname, "src", "database", "migrations"),
+  "seeders-path": resolve(__dirname, "src", "database", "seeds"),
+};
+
+```
+
+Entenda melhor linha a linha do arquivo `.sequelizerc`:
+
+```javascript
+const { resolve } = require("path");
+```
+
+Esta linha está importando o método `resolve` do módulo `path` do Node.js. O método `resolve` é usado para resolver caminhos de arquivos e diretórios, garantindo que os caminhos sejam corretamente concatenados e formatados independentemente do sistema operacional.
+
+```javascript
+module.exports = {
+```
+
+Aqui estamos exportando um objeto que contém as configurações do Sequelize. Isso permite que outras partes do código possam acessar as configurações exportadas.
+
+```javascript
+  config: resolve(__dirname, "src", "config", "database.js"),
+```
+
+Definindo o caminho para o arquivo de configuração do Sequelize `src/config/database.js`.
+
+```javascript
+  "models-path": resolve(__dirname, "src", "app", "models"),
+```
+
+Caminho para o diretório que contém os modelos do Sequelize `src/app/models`.
+
+```javascript
+  "migrations-path": resolve(__dirname, "src", "database", "migrations"),
+```
+
+Definindo o caminho para o diretório que contém as migrações do Sequelize `src/database/migrations`.
+
+```javascript
+  "seeders-path": resolve(__dirname, "src", "database", "seeds"),
+};
+```
+
+Por fim, aqui estamos definindo o caminho para o diretório que contém os seeders do Sequelize`src/database/seeds`.
+
+Com essas configurações em `.sequelizerc`, o Sequelize será capaz de encontrar os arquivos necessários nos diretórios corretos para executar as operações de banco de dados.
+
+---
+
+#### database.js
+
+`database.js` com as informações necessárias para a conexão, é uma boa prática em uma aplicação Node.js separar os os arquivos de código em diretorios, é comum encontrarmos um `src` e dentro um diretório de configuração `config`. Essa separação ajuda a manter o código organizado e facilita a manutenção, uma vez que as configurações estão centralizadas em um só lugar.
+
+```javascript
+// src/config/database.js
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize('nome_do_banco', 'usuário', 'senha', {
   host: 'localhost',
@@ -331,14 +414,14 @@ module.exports = sequelize;
 O codigo acima define uma conexão com o banco de dados. Vou comentar cada linha do código para que você possa entender melhor:
 
 ```javascript
-// config/database.js
+// src/config/database.js
 const Sequelize = require('sequelize');
 ```
 
 Nesta linha de código, o módulo Sequelize é importado e atribuído a uma constante chamada `Sequelize`.
 
 ```javascript
-// config/database.js
+// src/config/database.js
 const sequelize = new Sequelize('nome_do_banco', 'usuário', 'senha', {
   host: 'localhost',
   dialect: 'postgres'
@@ -353,7 +436,7 @@ Esta linha de código cria uma nova instância do objeto Sequelize, que represen
 - `{ host: 'localhost', dialect: 'postgres' }`: um objeto que contém informações adicionais sobre a conexão, como o host onde o banco de dados está localizado e o dialeto utilizado (neste caso, PostgreSQL).
 
 ```javascript
-// config/database.js
+// src/config/database.js
 module.exports = sequelize;
 ```
 
@@ -363,32 +446,47 @@ Ao final desta etapa você terá a seguinte estrutura de diretório:
 
 ```tree
 nome-do-projeto/
-  |- config/
-  |   |- database.js
-  |- node_modules/
-  |- package-lock.json
-  |- package.json
-
+├── src/
+|   ├── config/
+|   │   └── database.js
+├── node_modules/
+|   └── ... 
+├── .sequelizerc
+├── package-lock.json
+└── package.json
 ```
 
-- `config/`: lembre-se este diretório que contém arquivos de configuração para o seu aplicativo, incluindo arquivos de configuração de banco de dados e outros parâmetros globais.
+- `src/`: diretório que contém o código fonte do projeto.
 
-##### Criando Modelos e Tabelas
+- `src/config/`: lembre-se este diretório que contém arquivos de configuração para o seu aplicativo, incluindo arquivos de configuração de banco de dados e outros parâmetros globais.
+
+- `src/config/database.js`, que é responsável por definir as configurações de conexão com o banco de dados PostgreSQL, como nome do banco de dados, usuário, senha, host e porta.
+
+#### Criando Modelos e Tabelas
 
 Após a configuração da conexão com o banco de dados, podemos criar modelos para as tabelas que serão utilizadas na aplicação. Os modelos são definidos utilizando o Sequelize e representam as tabelas do banco de dados.
 
-Uma boa prática salvar os modelos de banco de dados em uma aplicação Node é em um diretório chamado "models". Isso ajuda a manter uma estrutura organizada do projeto, facilita a localização dos arquivos e ajuda a evitar confusão com outros tipos de arquivos, como rotas ou controladores.
+Uma boa prática salvar os modelos de banco de dados em uma aplicação Node é em um diretório chamado `src/models`. Isso ajuda a manter uma estrutura organizada do projeto, facilita a localização dos arquivos e ajuda a evitar confusão com outros tipos de arquivos, como rotas ou controladores.
 
-Ao salvar os modelos em um diretório separado, é possível também criar subdiretórios para organizar os modelos por categoria, se for necessário. Por exemplo, é possível ter um diretório "models/produtos/" para todos os modelos relacionados a produtos ou a um determinado subgrupo, más tenha cuidado para não se perder, mantenha o seu código o mais organizado possível, e lembre-se que outros desenvolvedores podem dar continuidade ao seu projeto.
+Ao salvar os modelos em um diretório separado, é possível também criar subdiretórios para organizar os modelos por categoria, se for necessário. Por exemplo, é possível ter um diretório `models/produtos/` para todos os modelos relacionados a produtos ou a um determinado subgrupo, más tenha cuidado para não se perder, mantenha o seu código o mais organizado possível, e lembre-se que outros desenvolvedores podem dar continuidade ao seu projeto.
 
 Com base no modelo conceitual de dados, podemos começar a criar o modelo de dados usando o Sequelize.
 
-Para cada entidade, precisamos criar um `ORM` correspondente no nosso diretorio `models`. Vamos criar um arquivo separado para cada modelo, seguindo o padrão de nomenclatura do Sequelize.
+Para cada entidade, precisamos criar um `ORM` correspondente no nosso diretorio `src/models`. Vamos criar um arquivo separado para cada modelo, seguindo o padrão de nomenclatura  do Sequelize.
+
+O Sequelize segue um padrão de nomenclatura para a criação de modelos, tabelas e colunas no banco de dados, e geralmente segue as seguintes convenções:
+
+- Os nomes das tabelas no banco de dados devem ser no plural e em letras minúsculas, underscore (`_`) para separar as palavras  (exemplo: `usuarios`, `itens_pedidos`).
+- Os nomes das colunas no banco de dados devem ser em letras minúsculas e separados por underscore `_` (exemplo: `primeiro_nome`, `ultimo_nome`).
+- Os nomes dos modelos no Sequelize devem seguir o padrão de nomenclatura "PascalCase". Isso significa que o nome do modelo deve ter a primeira letra de cada palavra em maiúscula, sem espaços ou caracteres especiais, (exemplo: `Usuario`, `ItemPedido`,).
+- As propriedades dos modelos no Sequelize devem seguir o mesmo padrão de nomenclatura das colunas no banco de dados (exemplo: `firstName`, `lastName`, `createdAt`).
+
+Essas convenções ajudam a manter a consistência e a legibilidade do código ao trabalhar com o Sequelize. No entanto, é possível personalizar o padrão de nomenclatura do Sequelize usando as configurações do modelo e do Sequelize.
 
 Começaremos criando a tabela "Categoria" com os seguintes campos: id, nome e descricao. O arquivo de modelo para Categoria deve ficar assim:
 
 ```javascript
-// models/categoria.js
+// src/models/categoria.js
 
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../database');
@@ -423,8 +521,8 @@ vamos entender melhor o que acontece à cada linha:
 1. `const { Model, DataTypes } = require('sequelize');`
     Nesta linha, importamos as classes `Model` e `DataTypes` do pacote `sequelize`. `Model` é uma classe base que define a estrutura de um modelo e `DataTypes` são os tipos de dados disponíveis no Sequelize.
 
-2. `const sequelize = require('../database');`
-    Aqui estamos importando a instância do Sequelize que foi criada e configurada no arquivo `database.js`, que está um nível acima no diretório.
+2. `const sequelize = require('../config/database');`
+    Aqui estamos importando a instância do Sequelize que foi criada e configurada no arquivo `database.js`, que está um nível acima no diretório `config`.
 
 3. `class Categoria extends Model {}`
     Nesta linha, estamos declarando a classe `Categoria`, que estende a classe `Model` do Sequelize. Isso significa que a classe `Categoria` terá acesso aos métodos e propriedades definidos na classe `Model`.
@@ -465,7 +563,7 @@ vamos entender melhor o que acontece à cada linha:
 15. `module.exports = Categoria;`
     Aqui estamos exportando a classe `Categoria` para que possa ser usada em outros arquivos.
 
-Podemos criar os modelos restantes seguindo o mesmo padrão, é possível criar um arquivo "index.js" que importa e define todos os modelos de uma vez, permitindo uma fácil inicialização do banco de dados. O arquivo "index.js" pode ter o seguinte formato:
+Podemos criar os modelos restantes seguindo o mesmo padrão, é possível criar um arquivo `src/models/index.js` que importa e define todos os modelos de uma vez, permitindo uma fácil inicialização do banco de dados. O arquivo "index.js" pode ter o seguinte formato:
 
 ```javascript
 // models/index.js
@@ -501,261 +599,6 @@ module.exports = models;
 Nesse exemplo, o arquivo "index.js" importa todos os modelos e define as associações entre eles. Ao final, o arquivo exporta um objeto com todos os modelos e as instâncias do Sequelize.
 
 Com as tabelas criadas no banco de dados, podemos utilizar o Sequelize para realizar operações de inserção, alteração e remoção de registros. Para isso, podemos utilizar os métodos `create`, `update
-
-### 5. Defina as rotas da API
-Ao final desta etapa você terá a seguinte estrutura de diretório:
-
-- `node_modules/`: é o diretório onde os pacotes de terceiros instalados pelo npm são armazenados.
-- `package-lock.json`: é um arquivo gerado automaticamente pelo npm para garantir que as dependências do projeto sejam instaladas com a mesma versão, mesmo que o arquivo package.json tenha um caractere curinga `^` em suas dependências.
-
-### 4. Modelo de dados
-
-Em resumo, o modelo de dados de uma API se baseia na estrutura dos recursos que a API disponibiliza e nos dados que são trocados entre a API e seus clientes. Ele é uma descrição estruturada que define como os dados devem ser formatados e estruturados para serem enviados e recebidos corretamente.
-
-O modelo de dados também pode incluir informações sobre os relacionamentos entre diferentes recursos, como um pedido que contém vários itens de produtos. Essas informações são importantes para garantir que os dados sejam trocados corretamente entre a API e seus clientes.
-
-#### Modelo conceitual de dados
-
-Um modelo conceitual de dados pode ser representado de diversas formas, dependendo do contexto de uso e das necessidades da aplicação. por exemplo um diagrama entidade-relacionamento (ER) que descreve as entidades (tabelas), os atributos (colunas) e os relacionamentos entre essas entidades.Imagine uma aplicação de e-commerce que precisa armazenar informações sobre produtos, clientes e pedidos. Para cada uma dessas entidades, é necessário criar um modelo de dados que defina os campos e as relações com outras entidades. O modelo de dados para a entidade "produto", por exemplo, pode incluir campos como nome, descrição, preço e quantidade em estoque. Por exemplo, em uma aplicação de e-commerce, podemos ter as seguintes entidades:
-
-- **Produto**: representa um item que está à venda na loja online. Pode ter atributos como nome, descrição, preço e quantidade em estoque.
-- **Categoria**: representa uma categoria na qual um produto pode ser classificado. Pode ter atributos como nome e descrição.
-- **Cliente**: representa um usuário que está navegando e comprando na loja online. Pode ter atributos como nome, e-mail e senha.
-- **Endereço**: representa o endereço de um cliente. Pode ter atributos como rua, número, complemento, cidade, estado e CEP.
-- **Pedido**: representa um pedido feito por um cliente. Pode ter atributos como data de criação, status e valor total.
-- **ItemPedido**: representa um item que foi adicionado a um pedido. Pode ter atributos como quantidade e valor unitário.
-- **Pagamento**: representa um pagamento feito por um cliente para um pedido. Pode ter atributos como data de criação, valor e status.
-- **Reembolso**: representa um reembolso que foi emitido para um cliente em relação a um pedido. Pode ter atributos como data de criação, valor e status.
-
-Um diagrama conceitual para este modelo de dados seria:
-
-```mermaid
-erDiagram
-    PRODUTO ||--|| CATEGORIA : pertence_a
-    PRODUTO ||--|| ITEM_PEDIDO : aparece_em
-    CLIENTE ||--o{ ENDERECO : possui
-    CLIENTE ||--o{ PEDIDO : faz
-    PEDIDO ||--|{ ITEM_PEDIDO : contem
-    PEDIDO ||--o{ PAGAMENTO : possui
-    PAGAMENTO ||--o{ REEMBOLSO : tem
-    PEDIDO ||--o{ REEMBOLSO : tem
-
-```
-
-Nesse diagrama, cada tabela é representada por um retângulo, e os relacionamentos entre as tabelas são indicados por linhas que conectam os retângulos. A cardinalidade do relacionamento é indicada por símbolos no final de cada linha.
-
-Uma vez definido o modelo conceitual de dados, podemos utilizá-lo para criar o modelo de dados em Node.js que ira realizar operações no banco de dados, como inserir novos registros, atualizar informações existentes ou recuperar dados para exibir na interface do usuário. Isso é feito através de um ORM, que traduz as operações de banco de dados em chamadas a métodos do modelo correspondente.
-
-### 5 Modelo de dados Node.js e ORM Sequelize
-
-Em resumo, os modelos de dados são uma abstração importante na arquitetura de uma aplicação Node que utiliza um banco de dados, pois permitem que os desenvolvedores trabalhem com os dados de forma estruturada e organizada, facilitando a manutenção e a evolução da aplicação ao longo do tempo.
-
-#### ORM
-
-ORM (Object-Relational Mapping) é uma técnica de programação que permite mapear objetos de um modelo de programação para uma tabela em um banco de dados relacional. Isso permite que o desenvolvedor trabalhe com objetos em vez de escrever diretamente SQL para interagir com o banco de dados.
-
-O ORM fornece uma camada de abstração entre o código da aplicação e o banco de dados, permitindo que as consultas SQL sejam geradas automaticamente com base nas operações feitas nos objetos. Isso torna o desenvolvimento de aplicativos mais produtivo e reduz a complexidade de escrever e manter o código SQL.
-
-Geralmente os ORMs têm a capacidade de realizar operações básicas de CRUD (criação, leitura, atualização e exclusão) em tabelas de banco de dados, bem como gerenciar as relações entre as tabelas. Alguns exemplos de ORMs populares incluem Sequelize para Node.js, Hibernate para Java e Entity Framework para .NET, SQLAlchemy para Python, entre outras.
-
-Embora possam ter um impacto positivo no desenvolvimento de aplicativos, Os ORMs também têm algumas desvantagens. Por exemplo, pode ser menos eficiente do que o SQL direto, pois a geração de SQL pode adicionar camadas adicionais de abstração e, portanto, diminuir a velocidade de execução. Além disso, os ORMs podem ser menos flexíveis do que o SQL direto, pois a geração automática de SQL pode ser limitada em alguns casos específicos.
-
-#### Sequelize
-
-O Sequelize é um Object-Relational Mapping (ORM) para Node.js, que permite trabalhar com bancos de dados relacionais de forma mais fácil e produtiva. O Sequelize é uma ferramenta poderosa e fácil de usar, que oferece suporte a vários bancos de dados relacionais e recursos avançados, como migrações de banco de dados.Para utilizar o Sequelize em um projeto Node.js, é necessário instalá-lo através do NPM (Node Package Manager). Abaixo está o comando para instalar o Sequelize:
-
-```bash
-npm i sequelize pg
-```
-
-O pacote pg é utilizado para a comunicação entre o Sequelize e o SGBD PostgreSQL.
-
-Após a instalação, é necessário configurar a conexão com o banco de dados PostgreSQL. Para isso, podemos criar um arquivo database.js com as informações necessárias para a conexão, é uma boa prática em uma aplicação Node.js separar os arquivos de configuração em um diretório config. Essa separação ajuda a manter o código organizado e facilita a manutenção, uma vez que as configurações estão centralizadas em um só lugar.
-
-```javascript
-// config/database.js
-const Sequelize = require('sequelize');
-const sequelize = new Sequelize('nome_do_banco', 'usuário', 'senha', {
-  host: 'localhost',
-  dialect: 'postgres'
-});
-
-module.exports = sequelize;
-```
-
-O codigo acima define uma conexão com o banco de dados. Vou comentar cada linha do código para que você possa entender melhor:
-
-```javascript
-// config/database.js
-const Sequelize = require('sequelize');
-```
-
-Nesta linha de código, o módulo Sequelize é importado e atribuído a uma constante chamada `Sequelize`.
-
-```javascript
-// config/database.js
-const sequelize = new Sequelize('nome_do_banco', 'usuário', 'senha', {
-  host: 'localhost',
-  dialect: 'postgres'
-});
-```
-
-Esta linha de código cria uma nova instância do objeto Sequelize, que representa uma conexão com o banco de dados. Os parâmetros passados na criação desta instância são:
-
-- 'nome_do_banco': o nome do banco de dados que se deseja conectar
-- 'usuário': o nome de usuário utilizado para acessar o banco de dados
-- 'senha': a senha utilizada para acessar o banco de dados
-- { host: 'localhost', dialect: 'postgres' }: um objeto que contém informações adicionais sobre a conexão, como o host onde o banco de dados está localizado e o dialeto utilizado (neste caso, PostgreSQL).
-
-```javascript
-// config/database.js
-module.exports = sequelize;
-```
-
-Por fim, a conexão criada é exportada como um módulo, permitindo que ela seja utilizada em outras partes da aplicação. Neste caso, a conexão será exportada como o objeto `sequelize`.
-
-Ao final desta etapa você terá a seguinte estrutura de diretório:
-
-```bash
-nome-do-projeto/
-  |- config/
-  |   |- database.js
-  |- node_modules/
-  |- package-lock.json
-  |- package.json
-```
-
-- `config/`: lembre-se este diretório que contém arquivos de configuração para o seu aplicativo, incluindo arquivos de configuração de banco de dados e outros parâmetros globais.
-
-#### Criando Modelos e Tabelas
-
-Após a configuração da conexão com o banco de dados, podemos criar modelos para as tabelas que serão utilizadas na aplicação. Os modelos são definidos utilizando o Sequelize e representam as tabelas do banco de dados.
-
-Uma boa prática salvar os modelos de banco de dados em uma aplicação Node é em um diretório chamado "models". Isso ajuda a manter uma estrutura organizada do projeto, facilita a localização dos arquivos e ajuda a evitar confusão com outros tipos de arquivos, como rotas ou controladores.
-
-Ao salvar os modelos em um diretório separado, é possível também criar subdiretórios para organizar os modelos por categoria, se for necessário. Por exemplo, é possível ter um diretório "models/produtos/" para todos os modelos relacionados a produtos ou a um determinado subgrupo, más tenha cuidado para não se perder, mantenha o seu código o mais organizado possível, e lembre-se que outros desenvolvedores podem dar continuidade ao seu projeto.
-
-Com base no modelo conceitual de dados, podemos começar a criar o modelo de dados usando o Sequelize.
-
-Para cada entidade, precisamos criar um **ORM** correspondente no nosso diretorio models. Vamos criar um arquivo separado para cada modelo, seguindo o padrão de nomenclatura do Sequelize.
-
-Começaremos criando a tabela "Categoria" com os seguintes campos: id, nome e descricao. O arquivo de modelo para Categoria deve ficar assim:
-
-```javascript
-// models/categoria.js
-
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../database');
-
-class Categoria extends Model {}
-
-Categoria.init({
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
-  },
-  nome: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  descricao: {
-    type: DataTypes.TEXT,
-    allowNull: true,
-  },
-}, {
-  sequelize,
-  modelName: 'Categoria',
-});
-
-module.exports = Categoria;
-```
-
-vamos entender melhor o que acontece à cada linha:
-
-Claro, aqui está a explicação linha a linha do código:
-
-1. `const { Model, DataTypes } = require('sequelize');`
-   - Nesta linha, importamos as classes `Model` e `DataTypes` do pacote `sequelize`. `Model` é uma classe base que define a estrutura de um modelo e `DataTypes` são os tipos de dados disponíveis no Sequelize.
-
-2. `const sequelize = require('../database');`
-   - Aqui estamos importando a instância do Sequelize que foi criada e configurada no arquivo `database.js`, que está um nível acima no diretório.
-
-3. `class Categoria extends Model {}`
-   - Nesta linha, estamos declarando a classe `Categoria`, que estende a classe `Model` do Sequelize. Isso significa que a classe `Categoria` terá acesso aos métodos e propriedades definidos na classe `Model`.
-
-4. `Categoria.init({`
-   - Aqui estamos iniciando a definição do modelo `Categoria`, especificando seus campos e configurações.
-
-5. `id: {`
-   - Esta linha define o campo `id` do modelo `Categoria`, que é uma chave primária e é do tipo `DataTypes.INTEGER`.
-
-6. `type: DataTypes.INTEGER,`
-   - Aqui estamos definindo o tipo de dados do campo `id` como `DataTypes.INTEGER`.
-
-7. `primaryKey: true,`
-   - Esta linha define que o campo `id` é uma chave primária.
-
-8. `autoIncrement: true,`
-   - Aqui estamos configurando o campo `id` para ser autoincrementável.
-
-9. `nome: {`
-   - Esta linha define o campo `nome` do modelo `Categoria`, que é do tipo `DataTypes.STRING` e não permite valores nulos (`allowNull: false`).
-
-10. `descricao: {`
-    - Aqui estamos definindo o campo `descricao` do modelo `Categoria`, que é do tipo `DataTypes.TEXT` e permite valores nulos (`allowNull: true`).
-
-11. `}, {`
-    - Aqui estamos fechando o objeto de definição dos campos e passando as opções de configuração para o modelo.
-
-12. `sequelize,`
-    - Esta linha configura a instância do Sequelize que será usada para definir o modelo.
-
-13. `modelName: 'Categoria',`
-    - Aqui estamos definindo o nome do modelo como `'Categoria'`.
-
-14. `});`
-    - Esta linha encerra a definição do modelo.
-
-15. `module.exports = Categoria;`
-    - Aqui estamos exportando a classe `Categoria` para que possa ser usada em outros arquivos.
-
-Podemos criar os modelos restantes seguindo o mesmo padrão, é possível criar um arquivo "index.js" que importa e define todos os modelos de uma vez, permitindo uma fácil inicialização do banco de dados. O arquivo "index.js" pode ter o seguinte formato:
-
-```javascript
-// models/index.js
-const Sequelize = require('sequelize');
-const sequelize = new Sequelize('nome_do_banco', 'usuário', 'senha', {
-  host: 'localhost',
-  dialect: 'postgres'
-});
-
-const models = {
-  Produto: sequelize.import('./Produto'),
-  Categoria: sequelize.import('./Categoria'),
-  Cliente: sequelize.import('./Cliente'),
-  Endereco: sequelize.import('./Endereco'),
-  Pedido: sequelize.import('./Pedido'),
-  ItemPedido: sequelize.import('./ItemPedido'),
-  Pagamento: sequelize.import('./Pagamento'),
-  Reembolso: sequelize.import('./Reembolso'),
-};
-
-Object.keys(models).forEach((modelName) => {
-  if ('associate' in models[modelName]) {
-    models[modelName].associate(models);
-  }
-});
-
-models.sequelize = sequelize;
-models.Sequelize = Sequelize;
-
-module.exports = models;
-```
-
-Nesse exemplo, o arquivo "index.js" importa todos os modelos e define as associações entre eles. Ao final, o arquivo exporta um objeto com todos os modelos e as instâncias do Sequelize.
-
-Com as tabelas criadas no banco de dados, podemos utilizar o Sequelize para realizar operações de inserção, alteração e remoção de registros. Para isso, podemos utilizar os métodos `create`, `update`
 
 ### 5. Defina as rotas da API
 
