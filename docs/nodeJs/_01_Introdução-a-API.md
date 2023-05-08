@@ -2,6 +2,24 @@
 
 Uma API (Application Programming Interface) é uma interface que permite a comunicação entre diferentes componentes de software. Ela fornece um conjunto de regras, protocolos e ferramentas para que as aplicações possam interagir entre si, consumindo dados, serviços ou recursos.
 
+É bastante comum utilizar uma API para consultar uma base de dados. Muitos aplicativos e serviços utilizam APIs para acessar informações de bancos de dados e disponibilizá-las para outros aplicativos.
+
+```mermaid
+sequenceDiagram
+    participant Cliente
+    participant API
+    participant Database
+    Cliente->>API: Envio de requisição
+    API->>Database: Processamento da requisição
+    Database->>API: Resposta da requisição
+    API->>Cliente: Envio da resposta
+```
+
+- O **Cliente** envia uma requisição para a API, representado pela seta "Envio de requisição" que vai até a API.
+- A **API**, por sua vez, processa a requisição e a envia para o Database (um servidor de dados), representado pela seta "Processamento da requisição" que vai da API até o Database.
+
+- O **Database** processa a requisição e envia uma resposta para a API, representado pela seta "Resposta da requisição" que vai do Database até a API. Finalmente, a API envia a resposta de volta para o cliente, representado pela seta "Envio da resposta" que vai da API até o cliente.
+
 A importância das APIs tem crescido exponencialmente com a evolução da web e a proliferação de plataformas e dispositivos diferentes. Hoje, existem milhões de APIs disponíveis publicamente, que oferecem uma variedade de serviços e recursos, desde dados meteorológicos até transações financeiras.
 
 Vamos explorar o conceito de API em mais detalhes, analisando as diferentes categorias de APIs e suas características. Também vamos discutir como as APIs podem ser usadas para criar sistemas distribuídos e como o Node.js pode ser uma opção viável para implementar APIs RESTful.
@@ -18,7 +36,7 @@ O protocolo HTTP é amplamente utilizado na internet para transferência de dado
 
 Como exemplo de API Webservice temos a [ViaCEP](https://viacep.com.br/), a API ViaCEP é um serviço gratuito que permite a consulta de endereços brasileiros utilizando o CEP como parâmetro. A seguir vou mostrar como utilizar a API ViaCEP em uma aplicação JavaScript para buscar informações de um endereço.
 
-##### Passo 1: Entendendo a API ViaCEP
+##### API ViaCEP
 
 A API ViaCEP oferece diferentes formas de consulta, incluindo busca por CEP, endereço ou logradouro. Neste tutorial, vamos utilizar a busca por CEP.
 
@@ -47,7 +65,7 @@ Caso seja um CEP valido a resposta da API será um objeto JSON contendo informa�
 } 
 ```
 
-##### Passo 2: Criando uma função para buscar informações de um endereço a partir do CEP
+##### Criando uma função para buscar informações de um endereço a partir do CEP
 
 Agora que entendemos como funciona a API ViaCEP, podemos criar uma função para buscar informações de um endereço a partir do CEP.
 
@@ -104,7 +122,7 @@ https://petstore.swagger.io/
 
 Lá você ira encontrar várias rotas, como "Adicionar um novo animal", "Buscar animais por status" e "Atualizar o status de um animal". Cada rota é documentada utilizando a especificação Swagger, que define os métodos HTTP suportados, os parâmetros necessários, os exemplos de entrada e saída, além de outras informações relevantes.
 
-O Swagger Petstore também inclui uma interface interativa do Swagger UI, que permite que os usuários visualizem a documentação da API, realizem testes e até mesmo experimentem as operações disponíveis diretamente da documentação.
+O Swagger Petstore também inclui uma interface interativa do **Swagger UI**, que permite que os usuários visualizem a documentação da API, realizem testes e até mesmo experimentem as operações disponíveis diretamente da documentação.
 
 #### API SOAP
 
