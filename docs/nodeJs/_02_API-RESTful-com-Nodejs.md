@@ -86,9 +86,27 @@ npm init -y
 
 Isso irá criar um arquivo `package.json` no diretório do projeto, que contém informações sobre o projeto e suas dependências. O arquivo package.json é um arquivo em formato JSON que contém metadados sobre o projeto e suas dependências.
 
+inicialmente o seu arquivo deve se parecer com isso:
+
+```json
+// package.json
+{
+  "name": "nome-do-projeto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+```
+
 Este arquivo é importante porque ele armazena informações sobre as dependências do projeto, scripts, configurações e outras informações importantes que serão utilizadas para gerenciar o projeto.
 
-Aqui está um exemplo de um arquivo package.json típico:
+Aqui está outro exemplo de um arquivo `package.json` típico:
 
 ```json
 {
@@ -161,7 +179,7 @@ Vejamos agora o que cada um desses campos significa:
 
 - `contributors`: é uma lista de contribuidores do projeto.
 
-Essas são algumas das principais propriedades que podem ser encontradas em um arquivo package.json. Além dessas, existem outras propriedades que podem ser definidas, dependendo das necessidades do projeto.
+Essas são algumas das principais propriedades que podem ser encontradas em um arquivo `package.json`. Além dessas, existem outras propriedades que podem ser definidas, dependendo das necessidades do projeto.
 Em resumo, o arquivo package.json é fundamental em projetos Node.js, pois ele ajuda a gerenciar dependências, configurar scripts e outras configurações importantes para o projeto.
 
 Ao final desta etapa você terá a seguinte estrutura de diretório:
@@ -264,9 +282,9 @@ Entre essas etapas iremos destacar:
 
 Um modelo conceitual de dados pode ser representado de diversas formas, dependendo do contexto de uso e das necessidades da aplicação. por exemplo um diagrama entidade-relacionamento (ER) que descreve as entidades (tabelas), os atributos (colunas) e os relacionamentos entre essas entidades.Imagine uma aplicação de e-commerce que precisa armazenar informações sobre produtos, clientes e pedidos. Para cada uma dessas entidades, é necessário criar um modelo de dados que defina os campos e as relações com outras entidades. O modelo de dados para a entidade "produto", por exemplo, pode incluir campos como nome, descrição, preço e quantidade em estoque. Por exemplo, em uma aplicação de e-commerce, podemos ter as seguintes entidades:
 
+- **Cliente**: representa um usuário que está navegando e comprando na loja online. Pode ter atributos como nome, e-mail e senha.
 - **Produto**: representa um item que está à venda na loja online. Pode ter atributos como nome, descrição, preço e quantidade em estoque.
 - **Categoria**: representa uma categoria na qual um produto pode ser classificado. Pode ter atributos como nome e descrição.
-- **Cliente**: representa um usuário que está navegando e comprando na loja online. Pode ter atributos como nome, e-mail e senha.
 - **Endereço**: representa o endereço de um cliente. Pode ter atributos como rua, número, complemento, cidade, estado e CEP.
 - **Pedido**: representa um pedido feito por um cliente. Pode ter atributos como data de criação, status e valor total.
 - **Item_Pedido**: representa um item que foi adicionado a um pedido. Pode ter atributos como quantidade e valor unitário.
