@@ -420,45 +420,31 @@ Com essas configurações em `.sequelizerc`, o Sequelize será capaz de encontra
 
 ```javascript
 // src/config/database.js
-const Sequelize = require('sequelize');
-const sequelize = new Sequelize('nome_do_banco', 'usuário', 'senha', {
-  host: 'localhost',
-  dialect: 'postgres'
-});
-
-module.exports = sequelize;
+module.exports = {
+  dialect: "postgres",
+  host: "localhost",
+  username: "postgres",
+  password: "123",
+  database: "node",
+  define: {
+    timestamp: true, // cria duas colunas: createdAt e updatedAt
+    underscored: true,
+    underscoredAll: true,
+  },
+};
 ```
 
-O codigo acima define uma conexão com o banco de dados. Vou comentar cada linha do código para que você possa entender melhor:
+- `dialect`: o tipo de banco de dados que você está usando, nesse caso PostgresSQL
+- `host`: o nome ou endereço IP do servidor do banco de dados
+- `username`: o nome de usuário usado para conectar-se ao banco de dados
+- `password`: a senha associada ao usuário
+- `database`: o nome do banco de dados que o aplicativo irá conectar
+- `define`: um objeto de configuração para definir as opções de modelagem do Sequelize, um ORM (Object-Relational Mapping) do Node.js que é frequentemente usado com o PostgresSQL. As opções definidas nesse objeto são:
+  - `timestamp`: cria duas colunas: `createdAt` e `updatedAt`, que registram a data e hora da criação e atualização de um registro.
+  - `underscored`: define se os nomes das tabelas e colunas do banco de dados devem usar letras minúsculas e sublinhados (_) para separar palavras (por exemplo, `nome_da_tabela` em vez de `NomeDaTabela`).
+  - `underscoredAll`: define se o mesmo padrão de nomenclatura deve ser aplicado aos nomes dos campos (colunas) dos modelos.
 
-```javascript
-// src/config/database.js
-const Sequelize = require('sequelize');
-```
-
-Nesta linha de código, o módulo Sequelize é importado e atribuído a uma constante chamada `Sequelize`.
-
-```javascript
-// src/config/database.js
-const sequelize = new Sequelize('nome_do_banco', 'usuário', 'senha', {
-  host: 'localhost',
-  dialect: 'postgres'
-});
-```
-
-Esta linha de código cria uma nova instância do objeto Sequelize, que representa uma conexão com o banco de dados. Os parâmetros passados na criação desta instância são:
-
-- `'nome_do_banco'`: o nome do banco de dados que se deseja conectar
-- `'usuário'`: o nome de usuário utilizado para acessar o banco de dados
-- `'senha'`: a senha utilizada para acessar o banco de dados
-- `{ host: 'localhost', dialect: 'postgres' }`: um objeto que contém informações adicionais sobre a conexão, como o host onde o banco de dados está localizado e o dialeto utilizado (neste caso, PostgreSQL).
-
-```javascript
-// src/config/database.js
-module.exports = sequelize;
-```
-
-Por fim, a conexão criada é exportada como um módulo, permitindo que ela seja utilizada em outras partes da aplicação. Neste caso, a conexão será exportada como o objeto `sequelize`.
+Essas configurações podem variar dependendo do banco de dados e do ORM que você está usando, mas em geral, um arquivo de configuração de banco de dados é usado para armazenar informações de conexão com o banco de dados e opções de configuração específicas do banco de dados e do ORM.
 
 Ao final desta etapa você terá a seguinte estrutura de diretório:
 
@@ -480,11 +466,23 @@ nome-do-projeto/
 
 - `src/config/database.js`, que é responsável por definir as configurações de conexão com o banco de dados PostgreSQL, como nome do banco de dados, usuário, senha, host e porta.
 
-#### Criando Modelos e Tabelas
+#### Modelos e Migrações
+
+No contexto de uma API Node.js com Sequelize, modelos e migrações são conceitos relacionados à definição e manipulação de dados no banco de dados.
+
+- **Modelos**: são **classes** que definem a estrutura dos dados que serão **manipulados** pelo aplicativo. Eles são tipicamente definidos com a ajuda do Sequelize, um ORM (Object-Relational Mapping) que fornece uma interface para mapear objetos JavaScript para tabelas de banco de dados relacionais. Os modelos do Sequelize geralmente contêm propriedades que correspondem às colunas da tabela do banco de dados, bem como métodos que permitem criar, ler, atualizar e excluir (CRUD) registros do banco de dados.
+
+- **Migrações**: são arquivos de script que **definem a estrutura da tabela** do banco de dados e as alterações na estrutura da tabela ao longo do tempo. As migrações são normalmente criadas usando uma biblioteca de migração, como o `Sequelize CLI` (Command-Line Interface). As migrações podem ser usadas para criar e alterar tabelas, colunas, índices e chaves estrangeiras. Elas garantem que a estrutura do banco de dados corresponda à estrutura definida pelo modelo do aplicativo.
+
+Na maioria das vezes, é recomendável criar os modelos primeiro e, em seguida, criar as migrações que definem a estrutura da tabela do banco de dados.
+
+Ao criar os modelos primeiro, você pode definir a estrutura de dados que será usada em seu aplicativo e usar esses modelos para gerar as migrações. Isso ajuda a garantir que a estrutura da tabela do banco de dados corresponda à estrutura de dados esperada pelo aplicativo. Além disso, a criação de modelos primeiro permite que você teste e depure sua lógica de negócios sem se preocupar com a estrutura do banco de dados subjacente.
+
+Depois de criar os modelos, você pode usar ferramentas como o Sequelize CLI para gerar automaticamente as migrações com base nesses modelos. As migrações geradas fornecem um ponto de partida sólido para definir a estrutura da tabela do banco de dados e podem ser personalizadas conforme necessário para atender às necessidades específicas do seu aplicativo.
 
 Após a configuração da conexão com o banco de dados, podemos criar modelos para as tabelas que serão utilizadas na aplicação. Os modelos são definidos utilizando o Sequelize e representam as tabelas do banco de dados.
 
-Uma boa prática salvar os modelos de banco de dados em uma aplicação Node é em um diretório chamado `src/models`. Isso ajuda a manter uma estrutura organizada do projeto, facilita a localização dos arquivos e ajuda a evitar confusão com outros tipos de arquivos, como rotas ou controladores.
+Uma boa prática é salvar os modelos de banco de dados em um diretório chamado `src/models`. Isso ajuda a manter uma estrutura organizada do projeto, facilita a localização dos arquivos e ajuda a evitar confusão com outros tipos de arquivos, como rotas ou controladores.
 
 Ao salvar os modelos em um diretório separado, é possível também criar subdiretórios para organizar os modelos por categoria, se for necessário. Por exemplo, é possível ter um diretório `models/produtos/` para todos os modelos relacionados a produtos ou a um determinado subgrupo, más tenha cuidado para não se perder, mantenha o seu código o mais organizado possível, e lembre-se que outros desenvolvedores podem dar continuidade ao seu projeto.
 
@@ -501,87 +499,268 @@ O Sequelize segue um padrão de nomenclatura para a criação de modelos, tabela
 
 Essas convenções ajudam a manter a consistência e a legibilidade do código ao trabalhar com o Sequelize. No entanto, é possível personalizar o padrão de nomenclatura do Sequelize usando as configurações do modelo e do Sequelize.
 
-Começaremos criando a tabela "Categoria" com os seguintes campos: id, nome e descricao. O arquivo de modelo para Categoria deve ficar assim:
+Começaremos criando O Modelo "Clientes" com os seguintes campos: **nome**, **emal** e **senha**. O arquivo de modelo para Clientes deve ficar assim:
 
 ```javascript
-// src/models/categoria.js
+// src/models/Clientes.js
 
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../database');
+// Importa as classes Sequelize e Model do pacote Sequelize
+const { Sequelize, Model } = require('sequelize');
 
-class Categoria extends Model {}
+// Define a classe Clientes, que estende a classe Model
+class Clientes extends Model {
 
-Categoria.init({
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
-  },
-  nome: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  descricao: {
-    type: DataTypes.TEXT,
-    allowNull: true,
-  },
-}, {
-  sequelize,
-  modelName: 'Categoria',
-});
-
-module.exports = Categoria;
+  // Define o método init, que é chamado para inicializar a classe com as colunas da tabela do banco de dados
+  static init(sequelize) {
+    // Chama o construtor da classe Model para definir as colunas da tabela
+    super.init(
+      {
+        nome: Sequelize.STRING, // Coluna "nome" do tipo STRING
+        email: Sequelize.STRING, // Coluna "email" do tipo STRING
+        senha: Sequelize.STRING, // Coluna "senha" do tipo STRING
+      },
+      {
+        sequelize, // Objeto de conexão com o banco de dados
+      }
+    );
+  }
+  // Define o método associate, que é chamado para definir as associações entre as tabelas do banco de dados
+  static associate(models) {
+    // Define a associação "hasMany" entre a tabela Clientes e a tabela Enderecos
+    // Isso significa que um cliente pode ter vários endereços
+    this.hasMany(models.Enderecos);
+  }
+}
+// Exporta a classe Clientes para uso em outros módulos
+module.exports = Clientes;
 
 ```
 
-vamos entender melhor o que acontece à cada linha:
+```javascript
+// src/models/Clientes.js
 
-1. `const { Model, DataTypes } = require('sequelize');`
-    Nesta linha, importamos as classes `Model` e `DataTypes` do pacote `sequelize`. `Model` é uma classe base que define a estrutura de um modelo e `DataTypes` são os tipos de dados disponíveis no Sequelize.
+// Importa as classes Sequelize e Model do pacote Sequelize
+const { Sequelize, Model } = require('sequelize');
 
-2. `const sequelize = require('../config/database');`
-    Aqui estamos importando a instância do Sequelize que foi criada e configurada no arquivo `database.js`, que está um nível acima no diretório `config`.
+// Define a classe Enderecos, que estende a classe Model
+class Enderecos extends Model {
 
-3. `class Categoria extends Model {}`
-    Nesta linha, estamos declarando a classe `Categoria`, que estende a classe `Model` do Sequelize. Isso significa que a classe `Categoria` terá acesso aos métodos e propriedades definidos na classe `Model`.
+  // Define o método init, que é chamado para inicializar a classe com as colunas da tabela do banco de dados
+  static init(sequelize) {
+    // Chama o construtor da classe Model para definir as colunas da tabela
+    super.init(
+      {
+        cep: Sequelize.STRING, // Coluna "cep" do tipo STRING
+        logradouro: Sequelize.STRING, // Coluna "logradouro" do tipo STRING
+        complemento: Sequelize.STRING, // Coluna "complemento" do tipo STRING
+        bairro: Sequelize.STRING, // Coluna "bairro" do tipo STRING
+        localidade: Sequelize.STRING, // Coluna "localidade" do tipo STRING
+        uf: Sequelize.STRING, // Coluna "uf" do tipo STRING
+        cliente_id:  Sequelize.INTEGER // Coluna "cliente_id" do tipo INTEGER, que armazena a chave estrangeira da tabela Clientes
+      },
+      {
+        sequelize, // Objeto de conexão com o banco de dados
+      }
+    );
+  }
 
-4. `Categoria.init({`
-    Aqui estamos iniciando a definição do modelo `Categoria`, especificando seus campos e configurações.
+  // Define o método associate, que é chamado para definir as associações entre as tabelas do banco de dados
+  static associate(models) {
+    // Define a associação "belongsTo" entre a tabela Enderecos e a tabela Clientes
+    // Isso significa que um endereço pertence a um cliente
+    this.belongsTo(models.Clientes, { foreignKey: "cliente_id" }); // Define a chave estrangeira da tabela Clientes
+  }
+}
 
-5. `id: {`
-    Esta linha define o campo `id` do modelo `Categoria`, que é uma chave primária e é do tipo `DataTypes.INTEGER`.
+// Exporta a classe Enderecos para uso em outros módulos
+module.exports = Enderecos;
+```
 
-6. `type: DataTypes.INTEGER,`
-    Aqui estamos definindo o tipo de dados do campo `id` como `DataTypes.INTEGER`.
+Podemos criar os modelos restantes seguindo o mesmo padrão, ao final desta etapa vc tera a seguinte estrutura de diretorio:
 
-7. `primaryKey: true,`
-    Esta linha define que o campo `id` é uma chave primária.
+```tree
+nome-do-projeto/
+├── src/
+|   ├── config/
+|   │   └── database.js
+|   ├── models
+|   |   └── Clientes.js
+|   |   └── Enderecos.js
+|   |   └── ...
+├── node_modules/
+|   └── ... 
+├── .sequelizerc
+├── package-lock.json
+└── package.json
+```
 
-8. `autoIncrement: true,`
-    Aqui estamos configurando o campo `id` para ser autoincrementável.
+Agora podemos construir as **migrations**, podemos criar um diretorio `database/migratios`, que ja referenciamos no `.sequelizerc` na linha `migrations-path`, apos a criação dos diretorio podemos utilizar o **sequelize-cli** para gerar um migration:
 
-9. `nome: {`
-    Esta linha define o campo `nome` do modelo `Categoria`, que é do tipo `DataTypes.STRING` e não permite valores nulos (`allowNull: false`).
+Para gerar uma migração usando o Sequelize CLI, você pode usar o comando `sequelize migration:generate`, seguido pelo nome da migração que você deseja criar. Por exemplo:
 
-10. `descricao: {`
-    Aqui estamos definindo o campo `descricao` do modelo `Categoria`, que é do tipo `DataTypes.TEXT` e permite valores nulos (`allowNull: true`).
+```bash
+sequelize migration:generate --name create_clientes
 
-11. `}, {`
-    Aqui estamos fechando o objeto de definição dos campos e passando as opções de configuração para o modelo.
+```
 
-12. `sequelize,`
-    Esta linha configura a instância do Sequelize que será usada para definir o modelo.
+O comando acima irá gerar um novo arquivo de migração com o nome composto pela `data da migraçao` e o nome `create_clientes`. Dentro do arquivo gerado, você pode definir as operações que serão executadas na tabela do banco de dados, como criar uma nova tabela, adicionar ou remover colunas, entre outras, no exemplo abaixo iremos criar a tabela cliente:
 
-13. `modelName: 'Categoria',`
-    Aqui estamos definindo o nome do modelo como `'Categoria'`.
+```javaScript
+// src/database/migrations/{numero-migration}-create_clientes.js
+// Exporta um objeto com os métodos up e down
+module.exports = {
+  // Método up é responsável por criar a tabela "clientes"
+  up: (queryInterface, Sequelize) => {
+    // Utiliza o objeto queryInterface para criar a tabela "clientes"
+    return queryInterface.createTable("clientes", {
+      // Coluna "id", do tipo INTEGER, não pode ser nula, é auto-incremental e chave primária
+      id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+      },
+      // Coluna "nome", do tipo STRING, não pode ser nula
+      nome: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      // Coluna "email", do tipo STRING, não pode ser nula e é única (não permite repetições)
+      email: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true,
+      },
+      // Coluna "senha", do tipo STRING, não pode ser nula
+      senha: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      // Coluna "created_at", do tipo DATE, não pode ser nula
+      created_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      // Coluna "updated_at", do tipo DATE, não pode ser nula
+      updated_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+    });
+  },
 
-14. `});`
-    Esta linha encerra a definição do modelo.
+  // Método down é responsável por remover a tabela "clientes"
+  down: (queryInterface) => {
+    // Utiliza o objeto queryInterface para remover a tabela "clientes"
+    return queryInterface.dropTable("clientes");
+  },
+};
 
-15. `module.exports = Categoria;`
-    Aqui estamos exportando a classe `Categoria` para que possa ser usada em outros arquivos.
+```
 
-Podemos criar os modelos restantes seguindo o mesmo padrão, é possível criar um arquivo `src/models/index.js` que importa e define todos os modelos de uma vez, permitindo uma fácil inicialização do banco de dados. O arquivo "index.js" pode ter o seguinte formato:
+aplicando a migração:
+
+```bash
+sequelize db:migrate
+
+```
+
+Depois de definir as operações, você pode executar a migração usando o comando `sequelize db:migrate`. Isso irá aplicar as alterações no banco de dados.
+
+para gerar a migraçao do models `Enderecos` o processo e bem parecido:
+
+```bash
+sequelize migration:generate --name create_enderecos
+
+```
+
+Novamente  irá gerar um novo arquivo de migração com o nome composto pela `data da migraçao` e o nome `create_enderecos`. Dentro do arquivo gerado, defina a estrutura da `migrations` **Enderecos**:
+
+```javaScript
+// // src/database/migrations/{data}-create_enderecos.js
+module.exports = {
+  // Método up é responsável por criar a tabela "enderecos"
+  up: (queryInterface, Sequelize) => {
+    // Utiliza o objeto queryInterface para criar a tabela "enderecos"
+    return queryInterface.createTable("enderecos", {
+      id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+      },
+      cep: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      logradouro: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      complemento: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      bairro: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      localidade: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      uf: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      created_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      updated_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      cliente_id: { // coluna referenciando o id da tabela clientes
+        type: Sequelize.INTEGER,
+        references: { model: "clientes", key: "id" }, // faz referência à tabela clientes
+        onUpdate: "CASCADE", // quando o id do cliente for atualizado, atualiza também na tabela de endereços
+        onDelete: "CASCADE", // quando um cliente for deletado, deleta também todos os seus endereços
+        allowNull: false, // não permite valores nulos para essa coluna
+      },
+    });
+  },
+
+  down: queryInterface => {
+    return queryInterface.dropTable("enderecos"); // remove a tabela de endereços
+  },
+};
+```
+
+nao esqueça de aplicar a migração:
+
+```bash
+sequelize db:migrate
+
+```
+
+Além disso, você pode usar opções adicionais com o comando `sequelize migration:generate`, como `--help` para ver a lista completa de opções disponíveis.
+
+segue alguns comandos uteis do sequelize-cli:
+
+| Comando                                            | Descrição                                                             |
+| -------------------------------------------------- | --------------------------------------------------------------------- |
+| `sequelize init`                                   | Inicia um novo projeto do sequelize-cli no diretório atual            |
+| `sequelize model:generate --name User --attributes` | Gera um novo modelo de usuário com atributos especificados            |
+| `sequelize db:create`                              | Cria um novo banco de dados com base nas configurações do sequelize    |
+| `sequelize db:migrate`                             | Executa as migrações de banco de dados pendentes                       |
+| `sequelize db:seed:all`                            | Executa todos os arquivos de sementes disponíveis                      |
+| `sequelize db:drop`                                | Elimina todas as tabelas do banco de dados configurado                 |
+| `sequelize migration:create`                       | Cria um novo arquivo de migração vazio                                  |
+| `sequelize migration:run`                          | Executa todas as migrações de banco de dados pendentes                  |
+| `sequelize migration:undo`                         | Reverte a migração mais recente                                          |
+| `sequelize seed:generate --name User`              | Gera um novo arquivo de semente para a tabela de usuários especificada |
+
 
 ```javascript
 // models/index.js
