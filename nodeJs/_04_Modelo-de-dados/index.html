@@ -1269,7 +1269,10 @@
 <ul>
 <li><code>.sequelizerc</code>: arquivo de configuração do Sequelize que permite personalizar o comportamento do CLI do Sequelize. Ele é usado para especificar diretórios e arquivos personalizados que podem ser usados pelo Sequelize para gerar código automaticamente, como arquivos de migração, modelos, seeders, etc.</li>
 </ul>
-<p>O arquivo <code>.sequelizerc</code> é um arquivo no formato JavaScript (sem extenção .js) que pode exportar um objeto com as seguintes propriedades:</p>
+<p>podemos criar o arquivo com o comando:</p>
+<div class="highlight"><pre><span></span><code>touch<span class="w"> </span>.sequelizerc
+</code></pre></div>
+<p>O comando ira criar o  arquivo vazio <code>.sequelizerc</code>, que é um arquivo no formato JavaScript (sem extenção .js) adicione o seguinte codigo:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">resolve</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">);</span>
 
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
@@ -1302,7 +1305,13 @@
 <p>Com essas configurações em <code>.sequelizerc</code>, o Sequelize será capaz de encontrar os arquivos necessários nos diretórios corretos para executar as operações de banco de dados.</p>
 <hr />
 <h3 id="databasejs">database.js<a class="headerlink" href="#databasejs" title="Permanent link">#</a></h3>
-<p><code>database.js</code> com as informações necessárias para a conexão, é uma boa prática em uma aplicação Node.js separar os os arquivos de código em diretorios, é comum encontrarmos um <code>src</code> e dentro um diretório de configuração <code>config</code>. Essa separação ajuda a manter o código organizado e facilita a manutenção, uma vez que as configurações estão centralizadas em um só lugar.</p>
+<ul>
+<li><code>database.js</code>: com as informações necessárias para a conexão, é uma boa prática em uma aplicação Node.js separar os os arquivos de código em diretorios, é comum encontrarmos um <code>src</code> e dentro um diretório de configuração <code>config</code>. Essa separação ajuda a manter o código organizado e facilita a manutenção, uma vez que as configurações estão centralizadas em um só lugar.</li>
+</ul>
+<p>podemos criar o diretorio de config com o comando:</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>src/config/<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>touch<span class="w"> </span>src/config/database.js
+</code></pre></div>
+<p>isso ira criar um diretorio <code>src/config/</code>  e dentro de config um arquivo vazio com o nome <code>database.js</code>, para adicionar as configuraçoes do banco adicione o codigo a seguir em <code>database.js</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// src/config/database.js</span>
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">dialect</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;postgres&quot;</span><span class="p">,</span>
