@@ -1258,10 +1258,11 @@
 </li>
 </ul>
 <p>A instalação desses pacotes é necessária para que a aplicação possa se conectar ao banco de dados PostgreSQL e realizar operações de leitura e gravação de dados de forma segura e eficiente, utilizando o Sequelize como ORM, para outros bancos consulte a documentção do <a href="https://sequelize.org/docs/v6/getting-started/">Sequelize</a>.</p>
-<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>i<span class="w"> </span>sequelize-cli<span class="w"> </span>-D
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>npm<span class="w"> </span>i<span class="w"> </span>-g<span class="w"> </span>sequelize-cli<span class="w"> </span>-D
+<span class="c1"># entre com as credenciais de sudo</span>
 </code></pre></div>
 <ul>
-<li>O <code>sequelize-cli</code> é uma ferramenta de linha de comando que facilita a criação de migrações de banco de dados, a geração de modelos e a criação de arquivos de configuração para o Sequelize. Ele é uma extensão do pacote <code>sequelize</code>, que é utilizado para realizar operações de banco de dados em um projeto Node.js. Ao utilizar o comando <code>npm i sequelize-cli -D</code>, o pacote <code>sequelize-cli</code> será instalado no diretório <code>node_modules</code> do projeto, e sua referência será adicionada ao arquivo <code>package.json</code>, na seção <code>devDependencies</code>. A opção <code>-D</code> indica que a dependência será instalada como uma dependência de desenvolvimento, ou seja, ela não será necessária para a execução da aplicação em produção, apenas para o desenvolvimento e testes.</li>
+<li>O <code>sequelize-cli</code> é uma ferramenta de linha de comando que facilita a criação de migrações de banco de dados, a geração de modelos e a criação de arquivos de configuração para o Sequelize. Ele é uma extensão do pacote <code>sequelize</code>, que é utilizado para realizar operações de banco de dados em um projeto Node.js. Ao utilizar o comando <code>npm i -g sequelize-cli -D</code>, o pacote <code>sequelize-cli</code> será instalado no diretório <code>node_modules</code> do projeto, e sua referência será adicionada ao arquivo <code>package.json</code>, na seção <code>devDependencies</code>. A opção <code>-D</code> indica que a dependência será instalada como uma dependência de desenvolvimento, ou seja, ela não será necessária para a execução da aplicação em produção, apenas para o desenvolvimento e testes.</li>
 </ul>
 <p>Após a instalação, é necessário configurar a conexão com o banco de dados PostgreSQL. Para isso, iremos criar dois arquivos:</p>
 <hr />
@@ -1532,7 +1533,7 @@
 </code></pre></div>
 <p>Depois de definir as operações, você pode executar a migração usando o comando <code>sequelize db:migrate</code>. Isso irá aplicar as alterações no banco de dados.</p>
 <p>para gerar a migraçao do models <code>Enderecos</code> o processo e bem parecido:</p>
-<div class="highlight"><pre><span></span><code>sequelize<span class="w"> </span>migration:generate<span class="w"> </span>--name<span class="w"> </span>create_enderecos
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>sequelize-cli<span class="w"> </span>migration:generate<span class="w"> </span>--name<span class="w"> </span>create_enderecos
 </code></pre></div>
 <p>Novamente  irá gerar um novo arquivo de migração com o nome composto pela <code>data da migraçao</code> e o nome <code>create_enderecos</code>. Dentro do arquivo gerado, defina a estrutura da <code>migrations</code> <strong>Enderecos</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// // src/database/migrations/{data}-create_enderecos.js</span>
