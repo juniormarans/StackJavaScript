@@ -30,7 +30,7 @@ const express = require('express')
 const router = express.Router()
 
 // Importa o Models Cliente
-const Cliente = require("../../models/Clientes")
+const Cliente = require("../models/Clientes")
 
 // Define a rota para buscar todos os clientes
 router.get('/', async (req, res) => {
@@ -265,9 +265,9 @@ const clienteRouters = require("./clientes")
 const enderecoRouters = require("./enderecos")
 
 // Registra as rotas do arquivo "clientes.js" no path "/cliente"
-router.use("/cliente", clienteRouters);
+router.use("/clientes", clienteRouters);
 // Registra as rotas do arquivo "enderecos.js" no path "/endereco"
-router.use("/endereco", enderecoRouters);
+router.use("/enderecos", enderecoRouters);
 
 // Exporta as rotas registradas
 module.exports = router;

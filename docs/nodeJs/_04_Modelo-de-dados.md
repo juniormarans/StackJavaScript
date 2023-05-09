@@ -358,10 +358,10 @@ sequelize migration:generate --name create_clientes
 
 ```
 
-O comando acima irá gerar um novo arquivo de migração com o nome composto pela `data da migraçao` e o nome `create_clientes`. Dentro do arquivo gerado, você pode definir as operações que serão executadas na tabela do banco de dados, como criar uma nova tabela, adicionar ou remover colunas, entre outras, no exemplo abaixo iremos criar a tabela cliente:
+O comando acima irá gerar um novo arquivo de migração com o nome composto pela `data da migraçao` e o nome `create_clientes`. Dentro do arquivo gerado em `src/database/migrations/` , você pode definir as operações que serão executadas na tabela do banco de dados, como criar uma nova tabela, adicionar ou remover colunas, entre outras, no exemplo abaixo iremos criar a tabela cliente:
 
 ```javascript
-// src/database/migrations/{numero-migration}-create_clientes.js
+// src/database/migrations/{data-migração}-create_clientes.js
 // Exporta um objeto com os métodos up e down
 module.exports = {
   // Método up é responsável por criar a tabela "clientes"
@@ -432,7 +432,7 @@ npm sequelize-cli migration:generate --name create_enderecos
 Novamente  irá gerar um novo arquivo de migração com o nome composto pela `data da migraçao` e o nome `create_enderecos`. Dentro do arquivo gerado, defina a estrutura da `migrations` **Enderecos**:
 
 ```javascript
-// // src/database/migrations/{data}-create_enderecos.js
+// // src/database/migrations/{data-migração}-create_enderecos.js
 module.exports = {
   // Método up é responsável por criar a tabela "enderecos"
   up: (queryInterface, Sequelize) => {
@@ -508,8 +508,8 @@ nome-do-projeto/
 |   │   └── database.js
 |   ├── database
 |   |   ├── migrations/
-|   |   |   └── Enderecos.js
-|   |   |   └── Clientes.js
+|   |   |   └── data_migração_create_clientes.js
+|   |   |   └── data_migração_create_enderecos.js
 |   ├── models
 |   |   └── Clientes.js
 |   |   └── Enderecos.js
