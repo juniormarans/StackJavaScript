@@ -12,6 +12,8 @@
         <link rel="prev" href="../_02_Iniciando_ReactJS/">
       
       
+        <link rel="next" href="../_04_ReactRouterDom/">
+      
       <link rel="icon" href="../../assets/logo.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.7">
     
@@ -1025,6 +1027,62 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_04_ReactRouterDom/" class="md-nav__link">
+         04 ReactRouterDom
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_05_ReactHooks/" class="md-nav__link">
+         05 ReactHooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_06_RouterGuards/" class="md-nav__link">
+         06 RouterGuards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_07_ReactContext/" class="md-nav__link">
+         07 ReactContext
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1107,19 +1165,19 @@
 <h3 id="render">render<a class="headerlink" href="#render" title="Permanent link">#</a></h3>
 <p>O React DOM trabalha em conjunto com o React, permitindo que você crie componentes com código JSX e, em seguida, os renderize na página usando o método ReactDOM.render(). Esse método recebe dois argumentos: o primeiro é o componente React que você deseja renderizar, e o segundo é o elemento HTML na página em que você deseja renderizá-lo.</p>
 <p>O método render é usado para renderizar a aplicação React em um elemento HTML existente na página. Ele é tipicamente usado no lado do servidor, ou em casos em que o aplicativo é renderizado completamente do zero, sem qualquer pré-renderização.</p>
-<div class="highlight"><pre><span></span><code>  import React from &#39;react&#39;;
-  import ReactDOM from &#39;react-dom&#39;;
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-dom&#39;</span><span class="p">;</span>
 
-  function App() {
-    return (
-      &lt;div&gt;
-        &lt;h1&gt;Hello, world!&lt;/h1&gt;
-        &lt;p&gt;Welcome to my React app.&lt;/p&gt;
-      &lt;/div&gt;
-    );
-  }
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span><span class="w"> </span><span class="nx">world</span><span class="o">!&lt;</span><span class="err">/h1&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Welcome</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">my</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="nx">app</span><span class="p">.</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
 
-  ReactDOM.render(&lt;App /&gt;, document.getElementById(&#39;root&#39;));
+<span class="w">  </span><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">App</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">,</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">));</span>
 </code></pre></div>
 <p>Neste exemplo, o componente App é renderizado dentro do elemento HTML com o ID "root" usando o método ReactDOM.render(). Quando a página é carregada, o método render() é chamado para criar uma nova árvore de elementos HTML baseados no componente App e adicioná-la à árvore de elementos DOM do navegador.</p>
 <p>Além disso, o React DOM também oferece métodos para atualizar a interface do usuário quando o estado da aplicação muda. Por exemplo, o método ReactDOM.render() pode ser chamado novamente com um novo estado para atualizar a interface do usuário. Além disso, existem outros métodos, como ReactDOM.hydrate() e ReactDOM.unmountComponentAtNode(), que são usados para hidratar e remover componentes React do DOM, respectivamente.</p>
@@ -1127,27 +1185,27 @@
 <p>O método hydrate, por outro lado, é usado para fazer uma "reconstrução hidratada" da aplicação React em um elemento HTML existente na página. Ele é tipicamente usado quando a aplicação é pré-renderizada no servidor, mas precisa ser "hidratada" no cliente para torná-la interativa.</p>
 <p>A reconstrução hidratada é quando o React detecta o HTML pré-renderizado no servidor e "hidrata" os componentes, adicionando eventos e comportamentos interativos à aplicação. Isso é útil para melhorar a velocidade de carregamento e a experiência do usuário, pois a página pode ser visualizada instantaneamente com o HTML pré-renderizado enquanto o JavaScript é baixado e executado em segundo plano para tornar a aplicação completamente interativa.</p>
 <p>O método hydrate é semelhante ao método render, mas em vez de criar novos elementos HTML, ele adiciona comportamentos interativos aos elementos HTML existentes na página. Por exemplo, se você tiver um botão que deve exibir uma mensagem quando clicado, o método hydrate adicionaria um evento de clique a esse botão para exibir a mensagem quando necessário.</p>
-<div class="highlight"><pre><span></span><code>  import React from &#39;react&#39;;
-  import ReactDOM from &#39;react-dom&#39;;
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-dom&#39;</span><span class="p">;</span>
 
-  function App() {
-    const [count, setCount] = React.useState(0);
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">count</span><span class="p">,</span><span class="w"> </span><span class="nx">setCount</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">React</span><span class="p">.</span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
 
-    return (
-      &lt;div&gt;
-        &lt;h1&gt;Counter&lt;/h1&gt;
-        &lt;p&gt;Count: {count}&lt;/p&gt;
-        &lt;button onClick={() =&gt; setCount(count + 1)}&gt;Increment&lt;/button&gt;
-      &lt;/div&gt;
-    );
-  }
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Counter</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Count</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">count</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">)}</span><span class="o">&gt;</span><span class="nx">Increment</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
 
-  ReactDOM.hydrate(
-    &lt;React.StrictMode&gt;
-      &lt;App /&gt;
-    &lt;/React.StrictMode&gt;,
-    document.getElementById(&#39;root&#39;)
-  );
+<span class="w">  </span><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">hydrate</span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">React</span><span class="p">.</span><span class="nx">StrictMode</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">App</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/React.StrictMode&gt;,</span>
+<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">);</span>
 </code></pre></div>
 <p>Neste exemplo, o método ReactDOM.hydrate é usado para hidratar um componente App que foi pré-renderizado no servidor. O componente possui um contador que é atualizado quando um botão é clicado. O método hydrate adicionará os comportamentos interativos necessários ao HTML pré-renderizado, tornando-o totalmente interativo.</p>
 

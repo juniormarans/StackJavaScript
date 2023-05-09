@@ -943,6 +943,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#requisicoes-da-api" class="md-nav__link">
+    Requisições da Api
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1034,6 +1041,62 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reactJS/_04_ReactRouterDom/" class="md-nav__link">
+         04 ReactRouterDom
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reactJS/_05_ReactHooks/" class="md-nav__link">
+         05 ReactHooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reactJS/_06_RouterGuards/" class="md-nav__link">
+         06 RouterGuards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reactJS/_07_ReactContext/" class="md-nav__link">
+         07 ReactContext
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1089,6 +1152,13 @@
           <li class="md-nav__item">
   <a href="#salvar-e-importar-requisicoes" class="md-nav__link">
     Salvar e importar requisições
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requisicoes-da-api" class="md-nav__link">
+    Requisições da Api
   </a>
   
 </li>
@@ -1153,6 +1223,73 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w
 <p>Você pode adicionar mais cabeçalhos ou parâmetros de consulta, dependendo da API que estiver utilizando. Você também pode utilizar outros métodos HTTP, como POST, PUT ou DELETE. O Insomnia permite configurar todos esses detalhes na criação de sua requisição.</p>
 <h3 id="salvar-e-importar-requisicoes">Salvar e importar requisições<a class="headerlink" href="#salvar-e-importar-requisicoes" title="Permanent link">#</a></h3>
 <p>Se você precisa reutilizar uma requisição que já criou, pode salvá-la clicando em "Save" na barra superior do Insomnia. Para importar uma requisição, clique em "Import/Export" e selecione o arquivo JSON que contém a requisição.</p>
+<h3 id="requisicoes-da-api">Requisições da Api<a class="headerlink" href="#requisicoes-da-api" title="Permanent link">#</a></h3>
+<ol>
+<li>
+<p>Requisição do tipo get para retornar todos os clientes</p>
+</li>
+<li>
+<p>clique em "New Request" na barra lateral do Insomnia.</p>
+</li>
+<li>Selecione o metódo GET.</li>
+<li>
+<p>Insira a URL <a href="http://localhost:3000/api/v1/cliente/">http://localhost:3000/api/v1/cliente/</a>.</p>
+</li>
+<li>
+<p>Requisição do tipo get para retornar um clientes, nescessario passar o id</p>
+</li>
+<li>
+<p>clique em "New Request" na barra lateral do Insomnia.</p>
+</li>
+<li>Selecione o metódo GET.</li>
+<li>
+<p>Insira a URL <a href="http://localhost:3000/api/v1/cliente/1">http://localhost:3000/api/v1/cliente/1</a>.</p>
+</li>
+<li>
+<p>Requisição do tipo post para criar um clientes</p>
+</li>
+<li>
+<p>clique em "New Request" na barra lateral do Insomnia.</p>
+</li>
+<li>Selecione o metódo POST.</li>
+<li>Insira a URL <a href="http://localhost:3000/api/v1/cliente">http://localhost:3000/api/v1/cliente</a>.</li>
+<li>Selecione no body a opção json.</li>
+<li>Insira os dados no formato json.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;nome&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Maria&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jose@email&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">&quot;senha&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span>
+<span class="w">  </span><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>
+<p>Requisição do tipo put para editar um clientes, nescessario passar o id</p>
+</li>
+<li>
+<p>clique em "New Request" na barra lateral do Insomnia.</p>
+</li>
+<li>Selecione o metódo PUT.</li>
+<li>Insira a URL <a href="http://localhost:3000/api/v1/cliente/1">http://localhost:3000/api/v1/cliente/1</a>.</li>
+<li>Selecione no body a opção json.</li>
+<li>Insira os dados de edição no formato json.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;nome&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jose&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;maria@email&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">&quot;senha&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">123456</span>
+<span class="w">  </span><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>
+<p>Requisição do tipo delete para deletar um clientes, nescessario passar o id</p>
+</li>
+<li>
+<p>clique em "New Request" na barra lateral do Insomnia.</p>
+</li>
+<li>Selecione o metódo DELETE.</li>
+<li>Insira a URL <a href="http://localhost:3000/api/v1/cliente/1">http://localhost:3000/api/v1/cliente/1</a>.</li>
+</ol>
 
 
 
