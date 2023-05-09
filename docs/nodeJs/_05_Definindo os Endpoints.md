@@ -24,7 +24,7 @@ Cada arquivo de definição de endpoint deve exportar um objeto com as rotas cor
 
 Um exemplo de código para criar um endpoint `/clientes` usando o framework Express em um arquivo `clientes.js` dentro de um diretório `controllers` seria:
 
-```javaScript
+```javascript
 // src/controllers/clientes.js
 const express = require('express')
 const router = express.Router()
@@ -146,7 +146,7 @@ Esse arquivo define um roteador do Express que possui as rotas `/users`, `/users
 
 O mesmo padrão pode ser utilizado para criar o endpoint `/enderecos` usando o framework Express em um arquivo `usr/controllers/enderecos.js` :
 
-```javaScript
+```javascript
 // usr/controllers/enderecos.js
 const express = require('express')
 const router = express.Router()

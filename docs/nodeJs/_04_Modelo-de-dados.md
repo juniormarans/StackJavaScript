@@ -358,7 +358,7 @@ sequelize migration:generate --name create_clientes
 
 O comando acima irá gerar um novo arquivo de migração com o nome composto pela `data da migraçao` e o nome `create_clientes`. Dentro do arquivo gerado, você pode definir as operações que serão executadas na tabela do banco de dados, como criar uma nova tabela, adicionar ou remover colunas, entre outras, no exemplo abaixo iremos criar a tabela cliente:
 
-```javaScript
+```javascript
 // src/database/migrations/{numero-migration}-create_clientes.js
 // Exporta um objeto com os métodos up e down
 module.exports = {
@@ -429,7 +429,7 @@ npm sequelize-cli migration:generate --name create_enderecos
 
 Novamente  irá gerar um novo arquivo de migração com o nome composto pela `data da migraçao` e o nome `create_enderecos`. Dentro do arquivo gerado, defina a estrutura da `migrations` **Enderecos**:
 
-```javaScript
+```javascript
 // // src/database/migrations/{data}-create_enderecos.js
 module.exports = {
   // Método up é responsável por criar a tabela "enderecos"
@@ -542,7 +542,7 @@ Conectar os modelos (models) com o banco de dados utilizando Sequelize significa
 O Sequelize é responsável por mapear os objetos JavaScript definidos na aplicação para as tabelas do banco de dados. Para conectar os modelos com o banco de dados, é necessário definir os modelos utilizando a sintaxe do Sequelize, especificando os atributos e as relações entre os modelos, e em seguida, criar a conexão com o banco de dados utilizando as credenciais e as configurações necessárias.
 Para isso podemos cria um arquivo `src/database/index.js` para definir as configurações da conexão do Sequelize com o banco de dados. Esse arquivo pode conter o seguinte código:
 
-```javaScript
+```javascript
 // src/database/index.js
 const Sequelize = require("sequelize"); // Importa a biblioteca Sequelize
 const config = require("../config/database"); // Importa as configurações do banco de dados
@@ -572,7 +572,7 @@ As principais etapas do código são:
 
 1. Importar a biblioteca Sequelize, as configurações do banco de dados e os modelos da aplicação.
 
-    ```javaScript
+    ```javascript
     const Sequelize = require("sequelize"); // Importa a biblioteca Sequelize
     const config = require("../config/database"); // Importa as configurações do banco de dados
     const Clientes = require("../models/Clientes"); // Importa o modelo de Clientes
@@ -581,7 +581,7 @@ As principais etapas do código são:
 
 2. Definir um array com os modelos que serão sincronizados com o banco de dados.
 
-    ```javaScript
+    ```javascript
     const models = [Clientes, Enderecos]; // Array com os modelos que serão sincronizados
     ```
 
@@ -589,7 +589,7 @@ As principais etapas do código são:
 
 3. Criar uma classe `Database` que representa a conexão do Sequelize com o banco de dados e os modelos da aplicação.
 
-    ```javaScript
+    ```javascript
     class Database {
     constructor() {
         this.connection = new Sequelize(config); // Cria uma conexão com o banco de dados utilizando as configurações
@@ -604,7 +604,7 @@ As principais etapas do código são:
 
 4. Exportar uma instância da classe `Database` já inicializada. Isso garante que haja apenas uma instância da conexão em toda a aplicação.
 
-    ```javaScript
+    ```javascript
     module.exports = new Database();
     ```
 

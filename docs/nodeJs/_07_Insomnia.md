@@ -43,3 +43,55 @@ Você pode adicionar mais cabeçalhos ou parâmetros de consulta, dependendo da 
 ### Salvar e importar requisições
 
 Se você precisa reutilizar uma requisição que já criou, pode salvá-la clicando em "Save" na barra superior do Insomnia. Para importar uma requisição, clique em "Import/Export" e selecione o arquivo JSON que contém a requisição.
+
+### Requisições da Api
+
+1. Requisição do tipo get para retornar todos os clientes
+
+- clique em "New Request" na barra lateral do Insomnia.
+- Selecione o metódo GET.
+- Insira a URL <http://localhost:3000/api/v1/cliente/>.
+
+2. Requisição do tipo get para retornar um clientes, nescessario passar o id
+
+- clique em "New Request" na barra lateral do Insomnia.
+- Selecione o metódo GET.
+- Insira a URL <http://localhost:3000/api/v1/cliente/1>.
+
+3. Requisição do tipo post para criar um clientes
+
+- clique em "New Request" na barra lateral do Insomnia.
+- Selecione o metódo POST.
+- Insira a URL <http://localhost:3000/api/v1/cliente>.
+- Selecione no body a opção json.
+- Insira os dados no formato json.
+
+```json
+  {
+    "nome": "Maria", 
+    "email": "jose@email", 
+    "senha": 123
+  }
+```
+
+4. Requisição do tipo put para editar um clientes, nescessario passar o id
+
+- clique em "New Request" na barra lateral do Insomnia.
+- Selecione o metódo PUT.
+- Insira a URL <http://localhost:3000/api/v1/cliente/1>.
+- Selecione no body a opção json.
+- Insira os dados de edição no formato json.
+
+```json
+  {
+    "nome": "Jose", 
+    "email": "maria@email", 
+    "senha": 123456
+  }
+```
+
+5. Requisição do tipo delete para deletar um clientes, nescessario passar o id
+
+- clique em "New Request" na barra lateral do Insomnia.
+- Selecione o metódo DELETE.
+- Insira a URL <http://localhost:3000/api/v1/cliente/1>.

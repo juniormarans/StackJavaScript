@@ -10,7 +10,7 @@ Por fim, a instância do servidor é exportada como um módulo Node.js, que pode
 
 Um exemplo básico de como configurar um servidor HTTP utilizando o Express em Node.js:
 
-```javaScript
+```javascript
 // src/app.js
 // Importa o framework Express
 const express = require("express");

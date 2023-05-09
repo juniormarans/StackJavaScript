@@ -8,7 +8,7 @@ O React DOM trabalha em conjunto com o React, permitindo que você crie componen
 
 O método render é usado para renderizar a aplicação React em um elemento HTML existente na página. Ele é tipicamente usado no lado do servidor, ou em casos em que o aplicativo é renderizado completamente do zero, sem qualquer pré-renderização.
 
-```jsx
+```javascript
   import React from 'react';
   import ReactDOM from 'react-dom';
 
@@ -36,7 +36,7 @@ A reconstrução hidratada é quando o React detecta o HTML pré-renderizado no 
 
 O método hydrate é semelhante ao método render, mas em vez de criar novos elementos HTML, ele adiciona comportamentos interativos aos elementos HTML existentes na página. Por exemplo, se você tiver um botão que deve exibir uma mensagem quando clicado, o método hydrate adicionaria um evento de clique a esse botão para exibir a mensagem quando necessário.
 
-```jsx
+```javascript
   import React from 'react';
   import ReactDOM from 'react-dom';
 
