@@ -1476,7 +1476,8 @@
 <span class="c1">// Exporta a classe Clientes para uso em outros módulos</span>
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Clientes</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">// src/models/Clientes.js</span>
+<p>acima criamos o modelo <code>Clientes</code> com suas especificações, a seguir iremos criar o de <code>Enderecos</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// src/models/Enderecos.js</span>
 
 <span class="c1">// Importa as classes Sequelize e Model do pacote Sequelize</span>
 <span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">,</span><span class="w"> </span><span class="nx">Model</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;sequelize&#39;</span><span class="p">);</span>
@@ -1514,7 +1515,7 @@
 <span class="c1">// Exporta a classe Enderecos para uso em outros módulos</span>
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Enderecos</span><span class="p">;</span>
 </code></pre></div>
-<p>Podemos criar os modelos restantes seguindo o mesmo padrão, ao final desta etapa você tera a seguinte estrutura de diretorio:</p>
+<p>Podemos criar os modelos restantes seguindo o mesmo padrão, ao final desta etapa você tera a seguinte estrutura de diretório:</p>
 <div class="highlight"><pre><span></span><code>nome-do-projeto/
 ├── src/
 |   ├── config/
