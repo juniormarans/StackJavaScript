@@ -289,8 +289,10 @@ module.exports = Clientes;
 
 ```
 
+acima criamos o modelo `Clientes` com suas especificações, a seguir iremos criar o de `Enderecos`.
+
 ```javascript
-// src/models/Clientes.js
+// src/models/Enderecos.js
 
 // Importa as classes Sequelize e Model do pacote Sequelize
 const { Sequelize, Model } = require('sequelize');
@@ -329,7 +331,7 @@ class Enderecos extends Model {
 module.exports = Enderecos;
 ```
 
-Podemos criar os modelos restantes seguindo o mesmo padrão, ao final desta etapa você tera a seguinte estrutura de diretorio:
+Podemos criar os modelos restantes seguindo o mesmo padrão, ao final desta etapa você tera a seguinte estrutura de diretório:
 
 ```tree
 nome-do-projeto/
