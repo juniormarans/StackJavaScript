@@ -72,7 +72,7 @@ npm i sequelize
 - O `sequelize` é um pacote que permite a realização de operações de banco de dados em um projeto Node.js, fornecendo uma interface simples e poderosa para interagir com bancos de dados relacionais. Ao utilizar o comando `npm i sequelize`, o pacote `sequelize` será instalado no diretório `node_modules` do projeto, e sua referência será adicionada ao arquivo `package.json`, na seção `dependencies`. A instalação do `sequelize` é necessária para que a aplicação possa utilizar as funcionalidades do ORM e interagir com o banco de dados de forma eficiente e segura.
 
 ```bash
-npm i pg-hstore
+npm i pg-hstore pg
 ```
 
 - O `pg` é um pacote que fornece uma interface Node.js para interagir com o PostgreSQL. Ele permite que o Sequelize se conecte ao banco de dados e execute operações de leitura e gravação de dados de forma segura e eficiente.
