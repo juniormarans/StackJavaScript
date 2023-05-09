@@ -1,0 +1,1456 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../_04_Modelo-de-dados/">
+      
+      
+        <link rel="next" href="../_06_Configurando-Servidor-NodeJs/">
+      
+      <link rel="icon" href="../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.7">
+    
+    
+      
+        <title>05 Definindo os Endpoints - Stack-JavaScript</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/material.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="yellow" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introducao" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Stack-JavaScript" class="md-header__button md-logo" aria-label="Stack-JavaScript" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Stack-JavaScript
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+               05 Definindo os Endpoints
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="yellow" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_3">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/juniormarans/StackJavaScript/tree/main" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Stack-JavaScript
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Stack-JavaScript" class="md-nav__button md-logo" aria-label="Stack-JavaScript" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Stack-JavaScript
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/juniormarans/StackJavaScript/tree/main" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Stack-JavaScript
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Visão Geral
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sum%C3%A1rio/" class="md-nav__link">
+        Sumário
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Html css
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Html css
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/" class="md-nav__link">
+        HTML e CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_01_visao-geral/" class="md-nav__link">
+         01 visao geral
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_02_tags_elementos/" class="md-nav__link">
+         02 tags elementos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_03_div/" class="md-nav__link">
+         03 div
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_04_introdu%C3%A7%C3%A3o-css/" class="md-nav__link">
+         04 introdução css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_05_posicionamento_elementos/" class="md-nav__link">
+         05 posicionamento elementos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_06_posicionamento_texto/" class="md-nav__link">
+         06 posicionamento texto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_07_posicionamento_imagem/" class="md-nav__link">
+         07 posicionamento imagem
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_08_listas/" class="md-nav__link">
+         08 listas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_09_navegacao/" class="md-nav__link">
+         09 navegacao
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_10_elementos_formulario/" class="md-nav__link">
+         10 elementos formulario
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_11_formulario/" class="md-nav__link">
+         11 formulario
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_12_tabelas/" class="md-nav__link">
+         12 tabelas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_13_normalizacao_css/" class="md-nav__link">
+         13 normalizacao css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_14_unidades_css/" class="md-nav__link">
+         14 unidades css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_15_propriedades_css/" class="md-nav__link">
+         15 propriedades css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_16_seletores/" class="md-nav__link">
+         16 seletores
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_17_cores_css/" class="md-nav__link">
+         17 cores css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_18_background_css/" class="md-nav__link">
+         18 background css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_19_bordas_css/" class="md-nav__link">
+         19 bordas css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_20_fontes_gradientes_sombras/" class="md-nav__link">
+         20 fontes gradientes sombras
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_21_Respostas/" class="md-nav__link">
+         21 Respostas
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Javascript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Javascript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/" class="md-nav__link">
+        Introdução ao JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/_01_Conceitos-B%C3%A1sicos/" class="md-nav__link">
+         01 Conceitos Básicos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/_02_Estruturas-de-Decis%C3%A3o-e-Repeti%C3%A7%C3%A3o/" class="md-nav__link">
+         02 Estruturas de Decisão e Repetição
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/_03_Tipos-de-Fun%C3%A7%C3%B5es-e-Manipula%C3%A7%C3%A3o-de-Dados/" class="md-nav__link">
+         03 Tipos de Funções e Manipulação de Dados
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/_04_TypeScript/" class="md-nav__link">
+         04 TypeScript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/_05_Projeto-Pr%C3%A1tico/" class="md-nav__link">
+         05 Projeto Prático
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/_06_Resoluc%C3%A3o-desafio/" class="md-nav__link">
+         06 Resolucão desafio
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          nodeJs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          nodeJs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Introdução ao Node.js
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_01_Introdu%C3%A7%C3%A3o-a-API/" class="md-nav__link">
+         01 Introdução a API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_02_API-RESTful-com-Nodejs/" class="md-nav__link">
+         02 API RESTful com Nodejs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_03_Gerenciando-Pacotes/" class="md-nav__link">
+         03 Gerenciando Pacotes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_04_Modelo-de-dados/" class="md-nav__link">
+         04 Modelo de dados
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+           05 Definindo os Endpoints
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+         05 Definindo os Endpoints
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    Introdução
+  </a>
+  
+    <nav class="md-nav" aria-label="Introdução">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criando-endpoints" class="md-nav__link">
+    Criando Endpoints
+  </a>
+  
+    <nav class="md-nav" aria-label="Criando Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametros" class="md-nav__link">
+    Parâmetros
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_06_Configurando-Servidor-NodeJs/" class="md-nav__link">
+         06 Configurando Servidor NodeJs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_07_Insomnia/" class="md-nav__link">
+         07 Insomnia
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          reactJS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          reactJS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reactJS/_01_Introdu%C3%A7%C3%A3o/" class="md-nav__link">
+         01 Introdução
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reactJS/_02_Iniciando_ReactJS/" class="md-nav__link">
+         02 Iniciando ReactJS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reactJS/_03_ReactDom/" class="md-nav__link">
+         03 ReactDom
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    Introdução
+  </a>
+  
+    <nav class="md-nav" aria-label="Introdução">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criando-endpoints" class="md-nav__link">
+    Criando Endpoints
+  </a>
+  
+    <nav class="md-nav" aria-label="Criando Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametros" class="md-nav__link">
+    Parâmetros
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1> 05 Definindo os Endpoints</h1>
+
+<h2 id="introducao">Introdução<a class="headerlink" href="#introducao" title="Permanent link">#</a></h2>
+<p>Definir os endpoints de uma API é uma das etapas mais importantes no desenvolvimento de uma API RESTful. Os endpoints são as URLs da API que respondem a solicitações HTTP dos clientes.</p>
+<p>Algumas considerações na hora de definir os endpoints:</p>
+<ul>
+<li><strong>Identificar as operações que a API deve suportar</strong> - Determine quais operações a API deve suportar, como criar, ler, atualizar e excluir recursos.</li>
+<li><strong>Definir os recursos</strong> - Identifique os recursos que a API irá manipular, como "usuários", "produtos", "pedidos", etc. Cada recurso deve ter um endpoint associado.</li>
+<li><strong>Definir as URLs dos endpoints</strong> - As URLs dos endpoints devem ser claras e descritivas. Elas devem incluir o nome do recurso e a operação que está sendo realizada, conforme necessário. Por exemplo, se a API gerencia usuários e você deseja criar um novo usuário, o endpoint pode ser algo como <code>POST /usuario</code>.</li>
+<li><strong>Definir os métodos HTTP</strong> - Cada endpoint deve ser associado a um método HTTP específico que define a operação que está sendo realizada. Por exemplo, um endpoint para criar um novo recurso deve usar o método HTTP <code>POST</code>, enquanto um endpoint para atualizar um recurso existente deve usar o método HTTP <code>PUT</code> ou <code>PATCH</code>.</li>
+<li><strong>Definir os parâmetros</strong> - Os endpoints podem incluir parâmetros na URL, como IDs de recursos, ou como parte do corpo da solicitação HTTP. Certifique-se de definir claramente quais parâmetros são necessários para cada endpoint.</li>
+<li><strong>Documentar a API</strong> - Documente cada endpoint da API, incluindo sua URL, método HTTP, parâmetros, corpo da solicitação e resposta. A documentação deve ser clara e fácil de entender.</li>
+<li><strong>Testar a API</strong> - Teste cada endpoint da API para garantir que ele esteja funcionando corretamente e que esteja respondendo corretamente às solicitações HTTP.</li>
+</ul>
+<p>Ao seguir esses passos, é possível definir endpoints de API claros e fáceis de usar para os clientes, facilitando a integração de outras aplicações e serviços com sua API.</p>
+<h3 id="criando-endpoints">Criando Endpoints<a class="headerlink" href="#criando-endpoints" title="Permanent link">#</a></h3>
+<p>É comum organizar os endpoints em um diretório separado em uma API Node para manter uma estrutura de código mais organizada e escalável. Essa abordagem ajuda a separar a lógica de negócios da camada de infraestrutura e a facilitar a manutenção e a adição de novos endpoints à medida que a API cresce.</p>
+<p>Uma boa prática é criar um diretório chamado <code>routes</code> ou <code>controllers</code>, onde os arquivos contendo as definições dos endpoints são mantidos. Esses arquivos podem ser nomeados de acordo com a funcionalidade que eles oferecem, como <code>clientes.js</code>, <code>enderecos.js</code> ou <code>produtos.js</code>, por exemplo.</p>
+<p>Cada arquivo de definição de endpoint deve exportar um objeto com as rotas correspondentes ao endpoint. Por exemplo, um arquivo <code>clientes.js</code> pode conter as rotas <code>/clientes</code>, <code>/clientes/:id</code> etc.</p>
+<p>Um exemplo de código para criar um endpoint <code>/clientes</code> usando o framework Express em um arquivo <code>clientes.js</code> dentro de um diretório <code>controllers</code> seria:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// src/controllers/clientes.js</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">router</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">express</span><span class="p">.</span><span class="nx">Router</span><span class="p">()</span>
+
+<span class="c1">// Importa o Models Cliente</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">Cliente</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;../../models/Clientes&quot;</span><span class="p">)</span>
+
+<span class="c1">// Define a rota para buscar todos os clientes</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Busca todos os clientes, mas exclui a senha da resposta</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">clientes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Cliente</span><span class="p">.</span><span class="nx">findAll</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">attributes</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">exclude</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;senha&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// Atributos que devem ser excluídos da resposta</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="c1">// Envia a resposta como JSON com status 200 (OK)</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">200</span><span class="p">).</span><span class="nx">json</span><span class="p">(</span><span class="nx">clientes</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Em caso de erro, loga o erro no console e envia uma mensagem de erro com status 500 (Erro interno do servidor)</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">500</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;Erro interno do servidor&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// Define a rota para buscar um cliente pelo ID</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/:id&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Busca um cliente pelo ID, mas exclui a senha e o ID da resposta</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">cliente</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Cliente</span><span class="p">.</span><span class="nx">findByPk</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">attributes</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">exclude</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;senha&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// Atributos que devem ser excluídos da resposta</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="c1">// Envia a resposta como JSON com status 200 (OK)</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">200</span><span class="p">).</span><span class="nx">json</span><span class="p">(</span><span class="nx">cliente</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Em caso de erro, loga o erro no console e envia uma mensagem de erro com status 500 (Erro interno do servidor)</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">500</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;Erro interno do servidor&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// Define a rota para Criar um cliente</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Cria um novo cliente com os dados recebidos no corpo da requisição</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">cliente</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Cliente</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Envia a resposta como JSON com status 201 (Created)</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">201</span><span class="p">).</span><span class="nx">json</span><span class="p">(</span><span class="nx">cliente</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Em caso de erro, loga o erro no console e envia uma mensagem de erro com status 500 (Erro interno do servidor)</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">500</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;Erro interno do servidor&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// Define a rota para atualizar um cliente pelo ID</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="s1">&#39;/:id&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Busca o cliente pelo ID</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">cliente</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Cliente</span><span class="p">.</span><span class="nx">findByPk</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Verifica se o cliente foi encontrado</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">cliente</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">404</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Cliente não encontrado&#39;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Atualiza as informações do cliente</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">updatedCliente</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">cliente</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Retorna o cliente atualizado como resposta</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">updatedCliente</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Em caso de erro, loga o erro e retorna uma mensagem de erro ao cliente</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">500</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Erro ao atualizar o cliente&#39;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// Define a rota para apagar um cliente pelo ID</span>
+<span class="nx">router</span><span class="p">.</span><span class="ow">delete</span><span class="p">(</span><span class="s1">&#39;/:id&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Busca um cliente pelo ID</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">cliente</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Cliente</span><span class="p">.</span><span class="nx">findByPk</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Verifica se o cliente foi encontrado</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">cliente</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// Se o cliente não foi encontrado, envia uma mensagem de erro com status 404 (Não encontrado)</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">404</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;Cliente não encontrado&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// Remove o cliente do banco de dados</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">cliente</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
+<span class="w">    </span><span class="c1">// Envia a resposta com status 204 (No Content) para indicar que o cliente foi removido com sucesso</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">sendStatus</span><span class="p">(</span><span class="mf">204</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Em caso de erro, loga o erro no console e envia uma mensagem de erro com status 500 (Erro interno do servidor)</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">500</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;Erro interno do servidor&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">router</span>
+</code></pre></div>
+<p>O código apresentado é um arquivo de definição de rotas para uma API RESTful em Node.js. Primeiramente, ele importa o módulo 'express' e cria um novo objeto de roteador com o método 'Router()' desse módulo.</p>
+<p>Em seguida, ele importa o modelo de dados Cliente e define rotas para buscar, criar, atualizar e deletar clientes.</p>
+<ul>
+<li>
+<p>'/clientes' permite atravez do método HTTP GET a busca de todos os clientes no banco de dados, excluindo a senha dos clientes retornados na resposta.</p>
+</li>
+<li>
+<p>'/clientes/:id' permite a busca de um cliente específico no banco de dados pelo seu ID, também excluindo a senha e o ID do cliente na resposta.</p>
+</li>
+<li>
+<p>'/clientes' com método HTTP POST é utilizada para criar um novo cliente, recebendo os dados do cliente no corpo da requisição.</p>
+</li>
+<li>
+<p>'/clientes/:id' com método HTTP PUT é utilizada para atualizar as informações de um cliente específico pelo seu ID.</p>
+</li>
+<li>
+<p>'/clientes/:id' com método HTTP DELETE é utilizada para excluir um cliente do banco de dados pelo seu ID.</p>
+</li>
+</ul>
+<p>Em caso de erro em alguma dessas operações, a API retorna uma mensagem de erro com status 500 (Erro interno do servidor). Se algum cliente não for encontrado em operações de busca, retorna uma mensagem de erro com status 404 (Não encontrado).</p>
+<p>Esse arquivo define um roteador do Express que possui as rotas <code>/users</code>, <code>/users/:id</code>, <code>/users/:id/orders</code>, <code>/users/:id/orders/:orderId</code> etc. O código para cada rota pode ser definido dentro de cada manipulador de rota correspondente, como mostrado nos comentários acima.</p>
+<p>O mesmo padrão pode ser utilizado para criar o endpoint <code>/enderecos</code> usando o framework Express em um arquivo <code>usr/controllers/enderecos.js</code> :</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// usr/controllers/enderecos.js</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">router</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">express</span><span class="p">.</span><span class="nx">Router</span><span class="p">()</span>
+
+<span class="c1">// Importa o Models Endereco</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">Endereco</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;../../models/Enderecos&quot;</span><span class="p">)</span>
+
+<span class="c1">// Define a rota para buscar todos os enderecos</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Busca todos os enderecos</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">enderecos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Endereco</span><span class="p">.</span><span class="nx">findAll</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">attributes</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">exclude</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;senha&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// Atributos que devem ser excluídos da resposta</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="c1">// Envia a resposta como JSON com status 200 (OK)</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">200</span><span class="p">).</span><span class="nx">json</span><span class="p">(</span><span class="nx">enderecos</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Em caso de erro, loga o erro no console e envia uma mensagem de erro com status 500 (Erro interno do servidor)</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">500</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;Erro interno do servidor&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// Define a rota para buscar um endereco pelo ID</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/:id&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Busca um endereco pelo ID, mas exclui a senha e o ID da resposta</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">endereco</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Endereco</span><span class="p">.</span><span class="nx">findByPk</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">attributes</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">exclude</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;senha&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// Atributos que devem ser excluídos da resposta</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="c1">// Envia a resposta como JSON com status 200 (OK)</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">200</span><span class="p">).</span><span class="nx">json</span><span class="p">(</span><span class="nx">endereco</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Em caso de erro, loga o erro no console e envia uma mensagem de erro com status 500 (Erro interno do servidor)</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">500</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;Erro interno do servidor&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// Define a rota para Criar um endereco</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Cria um novo endereco com os dados recebidos no corpo da requisição</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">endereco</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Endereco</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Envia a resposta como JSON com status 201 (Created)</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">201</span><span class="p">).</span><span class="nx">json</span><span class="p">(</span><span class="nx">endereco</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Em caso de erro, loga o erro no console e envia uma mensagem de erro com status 500 (Erro interno do servidor)</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">500</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;Erro interno do servidor&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// Define a rota para atualizar um endereco pelo ID</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="s1">&#39;/:id&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Busca o endereco pelo ID</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">endereco</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Endereco</span><span class="p">.</span><span class="nx">findByPk</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Verifica se o endereco foi encontrado</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">endereco</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">404</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Endereco não encontrado&#39;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Atualiza as informações do endereco</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">updatedEndereco</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">endereco</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Retorna o endereco atualizado como resposta</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">updatedEndereco</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Em caso de erro, loga o erro e retorna uma mensagem de erro ao endereco</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">500</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span><span class="w"> </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Erro ao atualizar o endereco&#39;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// Define a rota para apagar um endereco pelo ID</span>
+<span class="nx">router</span><span class="p">.</span><span class="ow">delete</span><span class="p">(</span><span class="s1">&#39;/:id&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Busca um endereco pelo ID</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">endereco</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">Endereco</span><span class="p">.</span><span class="nx">findByPk</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Verifica se o endereco foi encontrado</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">endereco</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// Se o endereco não foi encontrado, envia uma mensagem de erro com status 404 (Não encontrado)</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">404</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;Endereco não encontrado&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// Remove o endereco do banco de dados</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">endereco</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
+<span class="w">    </span><span class="c1">// Envia a resposta com status 204 (No Content) para indicar que o endereco foi removido com sucesso</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">sendStatus</span><span class="p">(</span><span class="mf">204</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Em caso de erro, loga o erro no console e envia uma mensagem de erro com status 500 (Erro interno do servidor)</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mf">500</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;Erro interno do servidor&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">router</span>
+</code></pre></div>
+<p>Essa é apenas uma abordagem possível para criar endpoints em uma API Node, e existem várias outras maneiras de fazer isso, dependendo das necessidades específicas de cada API.</p>
+<p>para que essas rotas possam ser utilizadas por um servidor NodeJs temos que  instancia-las, é comum criar um arquivo separado para gerenciar as rotas. Nesse arquivo, geralmente são definidos os prefixos dos endpoints da API. Não há uma convenção oficial para o nome dos arquivos de configuração de rotas em Node.js, mas geralmente os desenvolvedores utilizam nomes como "routes.js", "controllers/index.js", "api.js", "apiRoutes.js", "router.js", entre outros.</p>
+<p>vamaos utilizar o <code>src/controllers/index.js</code>, que ficara com o seguinte codigo.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// src/controllers/index.js</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">router</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">express</span><span class="p">.</span><span class="nx">Router</span><span class="p">();</span>
+
+<span class="c1">// Importa as rotas do arquivo &quot;clientes.js&quot;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">clienteRouters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./clientes&quot;</span><span class="p">)</span>
+<span class="c1">// Importa as rotas do arquivo &quot;enderecos.js&quot;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">enderecoRouters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./enderecos&quot;</span><span class="p">)</span>
+
+<span class="c1">// Registra as rotas do arquivo &quot;clientes.js&quot; no path &quot;/cliente&quot;</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;/cliente&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">clienteRouters</span><span class="p">);</span>
+<span class="c1">// Registra as rotas do arquivo &quot;enderecos.js&quot; no path &quot;/endereco&quot;</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;/endereco&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">enderecoRouters</span><span class="p">);</span>
+
+<span class="c1">// Exporta as rotas registradas</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">router</span><span class="p">;</span>
+</code></pre></div>
+<p>Nesse código, um arquivo de rotas central é criado para importar todas as rotas da API. As rotas são separadas em arquivos específicos, onde cada arquivo contém as rotas para uma entidade ou recurso específico da API. As rotas são registradas usando o método <code>use()</code> do router do Express.</p>
+<p>A partir daqui, você pode começar a criar as rotas da API RESTful, definindo as operações HTTP, os <strong>parametros</strong> e as respostas esperadas. O express facilita muito a criação de rotas e manipulação de requisições e respostas HTTP. Com as rotas definidas, você pode criar a lógica de negócios da aplicação, que pode incluir acesso a banco de dados, autenticação e autorização, validação de dados, entre outros.</p>
+<h4 id="parametros">Parâmetros<a class="headerlink" href="#parametros" title="Permanent link">#</a></h4>
+<p>Parâmetros de rotas, ou route parameters, são uma forma de passar informações dinâmicas para a sua aplicação através da URL. Eles são utilizados para identificar um recurso específico, como um usuário ou um produto, ou para passar  informações adicionais para a nossa aplicação. Podemos dividir os parâmetros em:</p>
+<ul>
+<li><strong>Parâmetros de rota</strong> Em uma URL, os parâmetros de rota (Route Parameters) são definidos após a rota base e são indicados pelo caractere <code>:</code> seguido do nome do parâmetro. Por exemplo, considerando a rota <code>/users/:id</code>, o parâmetro <code>id</code> é um parâmetro de rota.</li>
+</ul>
+<p>Ao receber uma requisição contendo um parâmetro de rota, o Express armazena o valor desse parâmetro em um objeto chamado <code>params</code>, que é uma propriedade do objeto <code>request</code> (ou <code>req</code>, para abreviar). O valor do parâmetro pode ser acessado através desse objeto.</p>
+<p>Um exemplo de como usar parâmetros foi Definido na rota para buscar um endereco pelo ID mencionado no exemplo anterior.</p>
+<p>Ao final desta etapa você tera a seguinte estrutura de diretorio:</p>
+<div class="highlight"><pre><span></span><code>nome-do-projeto/
+├── src/
+|   ├── config/
+|   │   └── database.js
+|   ├── controllers
+|   |   └── clientes.js
+|   |   └── enderecos.js
+|   |   └── index.js
+|   ├── database
+|   |   ├── migrations/
+|   |   |   └── data-clientes.js
+|   |   |   └── data-enderecos.js
+|   |   └── index.js
+|   ├── models
+|   |   └── Clientes.js
+|   |   └── Enderecos.js
+|   |   └── ...
+├── node_modules/
+|   └── ... 
+├── .sequelizerc
+├── package-lock.json
+└── package.json
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+    
+  </body>
+</html>

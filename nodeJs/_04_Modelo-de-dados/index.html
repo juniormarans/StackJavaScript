@@ -1,0 +1,1791 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../_03_Gerenciando-Pacotes/">
+      
+      
+        <link rel="next" href="../_05_Definindo%20os%20Endpoints/">
+      
+      <link rel="icon" href="../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.7">
+    
+    
+      
+        <title>04 Modelo de dados - Stack-JavaScript</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/material.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="yellow" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4-modelo-dados" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Stack-JavaScript" class="md-header__button md-logo" aria-label="Stack-JavaScript" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Stack-JavaScript
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+               04 Modelo de dados
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="yellow" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_3">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/juniormarans/StackJavaScript/tree/main" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Stack-JavaScript
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Stack-JavaScript" class="md-nav__button md-logo" aria-label="Stack-JavaScript" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Stack-JavaScript
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/juniormarans/StackJavaScript/tree/main" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Stack-JavaScript
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Visão Geral
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sum%C3%A1rio/" class="md-nav__link">
+        Sumário
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Html css
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Html css
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/" class="md-nav__link">
+        HTML e CSS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_01_visao-geral/" class="md-nav__link">
+         01 visao geral
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_02_tags_elementos/" class="md-nav__link">
+         02 tags elementos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_03_div/" class="md-nav__link">
+         03 div
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_04_introdu%C3%A7%C3%A3o-css/" class="md-nav__link">
+         04 introdução css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_05_posicionamento_elementos/" class="md-nav__link">
+         05 posicionamento elementos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_06_posicionamento_texto/" class="md-nav__link">
+         06 posicionamento texto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_07_posicionamento_imagem/" class="md-nav__link">
+         07 posicionamento imagem
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_08_listas/" class="md-nav__link">
+         08 listas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_09_navegacao/" class="md-nav__link">
+         09 navegacao
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_10_elementos_formulario/" class="md-nav__link">
+         10 elementos formulario
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_11_formulario/" class="md-nav__link">
+         11 formulario
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_12_tabelas/" class="md-nav__link">
+         12 tabelas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_13_normalizacao_css/" class="md-nav__link">
+         13 normalizacao css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_14_unidades_css/" class="md-nav__link">
+         14 unidades css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_15_propriedades_css/" class="md-nav__link">
+         15 propriedades css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_16_seletores/" class="md-nav__link">
+         16 seletores
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_17_cores_css/" class="md-nav__link">
+         17 cores css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_18_background_css/" class="md-nav__link">
+         18 background css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_19_bordas_css/" class="md-nav__link">
+         19 bordas css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_20_fontes_gradientes_sombras/" class="md-nav__link">
+         20 fontes gradientes sombras
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../html_css/_21_Respostas/" class="md-nav__link">
+         21 Respostas
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Javascript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Javascript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/" class="md-nav__link">
+        Introdução ao JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/_01_Conceitos-B%C3%A1sicos/" class="md-nav__link">
+         01 Conceitos Básicos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/_02_Estruturas-de-Decis%C3%A3o-e-Repeti%C3%A7%C3%A3o/" class="md-nav__link">
+         02 Estruturas de Decisão e Repetição
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/_03_Tipos-de-Fun%C3%A7%C3%B5es-e-Manipula%C3%A7%C3%A3o-de-Dados/" class="md-nav__link">
+         03 Tipos de Funções e Manipulação de Dados
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/_04_TypeScript/" class="md-nav__link">
+         04 TypeScript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/_05_Projeto-Pr%C3%A1tico/" class="md-nav__link">
+         05 Projeto Prático
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javascript/_06_Resoluc%C3%A3o-desafio/" class="md-nav__link">
+         06 Resolucão desafio
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          nodeJs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          nodeJs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Introdução ao Node.js
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_01_Introdu%C3%A7%C3%A3o-a-API/" class="md-nav__link">
+         01 Introdução a API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_02_API-RESTful-com-Nodejs/" class="md-nav__link">
+         02 API RESTful com Nodejs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_03_Gerenciando-Pacotes/" class="md-nav__link">
+         03 Gerenciando Pacotes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+           04 Modelo de dados
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+         04 Modelo de dados
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#4-modelo-dados" class="md-nav__link">
+    4. Modelo dados
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Modelo dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modelo-conceitual" class="md-nav__link">
+    Modelo conceitual
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelo-logico-e-orm-sequelize" class="md-nav__link">
+    Modelo lógico: e ORM Sequelize
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orm" class="md-nav__link">
+    ORM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequelize" class="md-nav__link">
+    Sequelize
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequelizerc" class="md-nav__link">
+    sequelizerc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#databasejs" class="md-nav__link">
+    database.js
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelos-e-migracoes" class="md-nav__link">
+    Modelos e Migrações
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conectando-os-models" class="md-nav__link">
+    Conectando os Models
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_05_Definindo%20os%20Endpoints/" class="md-nav__link">
+         05 Definindo os Endpoints
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_06_Configurando-Servidor-NodeJs/" class="md-nav__link">
+         06 Configurando Servidor NodeJs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_07_Insomnia/" class="md-nav__link">
+         07 Insomnia
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          reactJS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          reactJS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reactJS/_01_Introdu%C3%A7%C3%A3o/" class="md-nav__link">
+         01 Introdução
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reactJS/_02_Iniciando_ReactJS/" class="md-nav__link">
+         02 Iniciando ReactJS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reactJS/_03_ReactDom/" class="md-nav__link">
+         03 ReactDom
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#4-modelo-dados" class="md-nav__link">
+    4. Modelo dados
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Modelo dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modelo-conceitual" class="md-nav__link">
+    Modelo conceitual
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelo-logico-e-orm-sequelize" class="md-nav__link">
+    Modelo lógico: e ORM Sequelize
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orm" class="md-nav__link">
+    ORM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequelize" class="md-nav__link">
+    Sequelize
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequelizerc" class="md-nav__link">
+    sequelizerc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#databasejs" class="md-nav__link">
+    database.js
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelos-e-migracoes" class="md-nav__link">
+    Modelos e Migrações
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conectando-os-models" class="md-nav__link">
+    Conectando os Models
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1> 04 Modelo de dados</h1>
+
+<h2 id="4-modelo-dados">4. Modelo dados<a class="headerlink" href="#4-modelo-dados" title="Permanent link">#</a></h2>
+<p>O processo de modelagem de dados em desenvolvimento de uma API é indispensável, geralmente é dividido em várias etapas, que podem variar dependendo da metodologia de desenvolvimento de software adotada, podendo ter um time responsável somente por esses processos. Aqui está uma possível divisão desse processo em etapas:</p>
+<ol>
+<li>
+<p><strong>Análise de requisitos:</strong> Nessa etapa, a equipe de desenvolvimento trabalha em conjunto com o cliente para entender as necessidades e objetivos do projeto. A equipe deve identificar as entidades e relações que farão parte do modelo de dados, bem como as regras de negócio que afetam o armazenamento e recuperação de informações.</p>
+</li>
+<li>
+<p><strong>Modelo conceitual:</strong> Com base na análise de requisitos, a equipe cria um modelo de dados conceitual, que descreve as entidades, atributos e relações que farão parte do modelo. Esse modelo geralmente é representado por meio de diagramas de entidade-relacionamento (ER), que mostram as entidades como caixas e as relações entre elas como linhas.</p>
+</li>
+<li>
+<p><strong>Modelo lógico:</strong> Nessa etapa, o modelo conceitual é refinado e transformado em um modelo de dados lógico, que representa como os dados serão armazenados em um banco de dados específico. O modelo lógico é projetado para atender aos requisitos de desempenho, segurança e integridade de dados, e geralmente é representado por meio de esquemas de tabelas e relacionamentos.</p>
+</li>
+<li>
+<p><strong>Modelo físico:</strong> Nessa etapa, o modelo de dados lógico é implementado em um banco de dados específico, levando em consideração as características físicas do hardware e do sistema de armazenamento. Isso inclui a escolha de índices, partições e outros recursos de otimização para maximizar a eficiência do acesso aos dados.</p>
+</li>
+<li>
+<p><strong>Teste e validação:</strong> Depois que o modelo de dados é implementado, a equipe realiza testes e validações para garantir que os dados sejam armazenados e recuperados corretamente. Isso inclui testes de integração, testes de desempenho e testes de segurança para garantir que o modelo de dados atenda aos requisitos do cliente e aos padrões de qualidade da empresa.</p>
+</li>
+</ol>
+<p>Essas etapas podem ser iterativas e podem ser realizadas em paralelo com outras etapas do processo de desenvolvimento de software, como design de interface de usuário, desenvolvimento de código e testes de unidade. A colaboração e comunicação efetiva entre os membros da equipe e as partes intereçadas são fundamentais para garantir que o modelo de dados atenda às necessidades do projeto e da empresa.</p>
+<p>Entre essas etapas iremos destacar:</p>
+<h3 id="modelo-conceitual">Modelo conceitual<a class="headerlink" href="#modelo-conceitual" title="Permanent link">#</a></h3>
+<p>Um modelo conceitual de dados pode ser representado de diversas formas, dependendo do contexto de uso e das necessidades da aplicação. por exemplo um diagrama entidade-relacionamento (ER) que descreve as entidades (tabelas), os atributos (colunas) e os relacionamentos entre essas entidades.Imagine uma aplicação de e-commerce que precisa armazenar informações sobre produtos, clientes e pedidos. Para cada uma dessas entidades, é necessário criar um modelo de dados que defina os campos e as relações com outras entidades. O modelo de dados para a entidade "produto", por exemplo, pode incluir campos como nome, descrição, preço e quantidade em estoque. Por exemplo, em uma aplicação de e-commerce, podemos ter as seguintes entidades:</p>
+<ul>
+<li><strong>Cliente</strong>: representa um usuário que está navegando e comprando na loja online. Pode ter atributos como nome, e-mail e senha.</li>
+<li><strong>Produto</strong>: representa um item que está à venda na loja online. Pode ter atributos como nome, descrição, preço e quantidade em estoque.</li>
+<li><strong>Categoria</strong>: representa uma categoria na qual um produto pode ser classificado. Pode ter atributos como nome e descrição.</li>
+<li><strong>Endereço</strong>: representa o endereço de um cliente. Pode ter atributos como rua, número, complemento, cidade, estado e CEP.</li>
+<li><strong>Pedido</strong>: representa um pedido feito por um cliente. Pode ter atributos como data de criação, status e valor total.</li>
+<li><strong>Item_Pedido</strong>: representa um item que foi adicionado a um pedido. Pode ter atributos como quantidade e valor unitário.</li>
+<li><strong>Pagamento</strong>: representa um pagamento feito por um cliente para um pedido. Pode ter atributos como data de criação, valor e status.</li>
+<li><strong>Reembolso</strong>: representa um reembolso que foi emitido para um cliente em relação a um pedido. Pode ter atributos como data de criação, valor e status.</li>
+</ul>
+<p>Um diagrama ER simples para este modelo de dados seria:</p>
+<pre class="mermaid"><code>erDiagram
+    PRODUTO ||--|| CATEGORIA : pertence_a
+    PRODUTO ||--|{ ITEM_PEDIDO : aparece_em
+    CLIENTE ||--o{ ENDERECO : possui
+    CLIENTE ||--o{ PEDIDO : faz
+    PEDIDO ||--|{ ITEM_PEDIDO : contem
+    PEDIDO ||--o{ PAGAMENTO : possui
+    PAGAMENTO ||--o{ REEMBOLSO : tem
+    PEDIDO ||--o{ REEMBOLSO : tem</code></pre>
+<p>Nesse diagrama, cada tabela é representada por um retângulo, e os relacionamentos entre as tabelas são indicados por linhas que conectam os retângulos. A cardinalidade do <strong>relacionamento</strong> é indicada por símbolos no final de cada linha.</p>
+<p>Uma vez definido o modelo conceitual de dados, podemos utilizá-lo para criar o modelo de dados em Node.js que ira realizar operações no banco de dados, como inserir novos registros, atualizar informações existentes ou recuperar dados para exibir na interface do usuário. Isso é feito através de um ORM, que traduz as operações de banco de dados em chamadas a métodos do modelo correspondente.</p>
+<h3 id="modelo-logico-e-orm-sequelize">Modelo lógico: e ORM Sequelize<a class="headerlink" href="#modelo-logico-e-orm-sequelize" title="Permanent link">#</a></h3>
+<p>Em resumo, um modelo lógico é uma representação mais detalhada do sistema, que utiliza uma linguagem formal para definir as entidades, atributos, relacionamentos e regras de negócio. Nessa etapa, o modelo conceitual é traduzido para o modelo lógico, que pode ser implementado em um banco de dados. O modelo lógico é independente de tecnologia, ou seja, pode ser implementado em diferentes sistemas gerenciadores de banco de dados.</p>
+<h3 id="orm">ORM<a class="headerlink" href="#orm" title="Permanent link">#</a></h3>
+<p>ORM (Object-Relational Mapping) é uma técnica de programação que permite mapear objetos de um modelo lógico para uma tabela em um banco de dados relacional. Isso permite que o desenvolvedor trabalhe com objetos em vez de escrever diretamente SQL para interagir com o banco de dados.</p>
+<p>O ORM fornece uma camada de abstração entre o código da aplicação e o banco de dados, permitindo que as consultas SQL sejam geradas automaticamente com base nas operações feitas nos objetos. Isso torna o desenvolvimento de aplicativos mais produtivo e reduz a complexidade de escrever e manter o código SQL.</p>
+<p>Geralmente os ORMs têm a capacidade de realizar operações básicas de CRUD (criação, leitura, atualização e exclusão) em tabelas de banco de dados, bem como gerenciar as relações entre as tabelas. Alguns exemplos de ORMs populares incluem Sequelize para Node.js, Hibernate para Java e Entity Framework para .NET, SQLAlchemy para Python, entre outras.</p>
+<p>Embora possam ter um impacto positivo no desenvolvimento de aplicativos, Os ORMs também têm algumas desvantagens. Por exemplo, pode ser menos eficiente do que o SQL direto, pois a geração de SQL pode adicionar camadas adicionais de abstração e, portanto, diminuir a velocidade de execução. Além disso, os ORMs podem ser menos flexíveis do que o SQL direto, pois a geração automática de SQL pode ser limitada em alguns casos específicos.</p>
+<h3 id="sequelize">Sequelize<a class="headerlink" href="#sequelize" title="Permanent link">#</a></h3>
+<p>O Sequelize é um Object-Relational Mapping (ORM) para Node.js, que permite trabalhar com bancos de dados relacionais de forma mais fácil e produtiva. O Sequelize é uma ferramenta poderosa e fácil de usar, que oferece suporte a vários bancos de dados relacionais e recursos avançados, como migrações de banco de dados.Para utilizar o Sequelize em um projeto Node.js, é necessário instalá-lo através do NPM (Node Package Manager). Abaixo está o comando para instalar o <code>Sequelize</code>:</p>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>i<span class="w"> </span>sequelize
+</code></pre></div>
+<ul>
+<li>O <code>sequelize</code> é um pacote que permite a realização de operações de banco de dados em um projeto Node.js, fornecendo uma interface simples e poderosa para interagir com bancos de dados relacionais. Ao utilizar o comando <code>npm i sequelize</code>, o pacote <code>sequelize</code> será instalado no diretório <code>node_modules</code> do projeto, e sua referência será adicionada ao arquivo <code>package.json</code>, na seção <code>dependencies</code>. A instalação do <code>sequelize</code> é necessária para que a aplicação possa utilizar as funcionalidades do ORM e interagir com o banco de dados de forma eficiente e segura.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>i<span class="w"> </span>pg-hstore
+</code></pre></div>
+<ul>
+<li>
+<p>O <code>pg</code> é um pacote que fornece uma interface Node.js para interagir com o PostgreSQL. Ele permite que o Sequelize se conecte ao banco de dados e execute operações de leitura e gravação de dados de forma segura e eficiente.</p>
+</li>
+<li>
+<p>O <code>pg-hstore</code> é um pacote que permite a conversão de objetos JavaScript para a representação de texto hstore do PostgreSQL, que é usado para armazenar pares de chave-valor em uma coluna de banco de dados. Ele é necessário quando se deseja utilizar a funcionalidade hstore do PostgreSQL com o Sequelize.</p>
+</li>
+</ul>
+<p>A instalação desses pacotes é necessária para que a aplicação possa se conectar ao banco de dados PostgreSQL e realizar operações de leitura e gravação de dados de forma segura e eficiente, utilizando o Sequelize como ORM, para outros bancos consulte a documentção do <a href="https://sequelize.org/docs/v6/getting-started/">Sequelize</a>.</p>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>i<span class="w"> </span>sequelize-cli<span class="w"> </span>-D
+</code></pre></div>
+<ul>
+<li>O <code>sequelize-cli</code> é uma ferramenta de linha de comando que facilita a criação de migrações de banco de dados, a geração de modelos e a criação de arquivos de configuração para o Sequelize. Ele é uma extensão do pacote <code>sequelize</code>, que é utilizado para realizar operações de banco de dados em um projeto Node.js. Ao utilizar o comando <code>npm i sequelize-cli -D</code>, o pacote <code>sequelize-cli</code> será instalado no diretório <code>node_modules</code> do projeto, e sua referência será adicionada ao arquivo <code>package.json</code>, na seção <code>devDependencies</code>. A opção <code>-D</code> indica que a dependência será instalada como uma dependência de desenvolvimento, ou seja, ela não será necessária para a execução da aplicação em produção, apenas para o desenvolvimento e testes.</li>
+</ul>
+<p>Após a instalação, é necessário configurar a conexão com o banco de dados PostgreSQL. Para isso, iremos criar dois arquivos:</p>
+<hr />
+<h3 id="sequelizerc">sequelizerc<a class="headerlink" href="#sequelizerc" title="Permanent link">#</a></h3>
+<ul>
+<li><code>.sequelizerc</code>: arquivo de configuração do Sequelize que permite personalizar o comportamento do CLI do Sequelize. Ele é usado para especificar diretórios e arquivos personalizados que podem ser usados pelo Sequelize para gerar código automaticamente, como arquivos de migração, modelos, seeders, etc.</li>
+</ul>
+<p>O arquivo <code>.sequelizerc</code> é um arquivo no formato JavaScript (sem extenção .js) que pode exportar um objeto com as seguintes propriedades:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">resolve</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">);</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;src&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;config&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;database.js&quot;</span><span class="p">),</span>
+<span class="w">  </span><span class="s2">&quot;models-path&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;src&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;app&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;models&quot;</span><span class="p">),</span>
+<span class="w">  </span><span class="s2">&quot;migrations-path&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;src&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;database&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;migrations&quot;</span><span class="p">),</span>
+<span class="w">  </span><span class="s2">&quot;seeders-path&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;src&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;database&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;seeds&quot;</span><span class="p">),</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Entenda melhor linha a linha do arquivo <code>.sequelizerc</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">resolve</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>Esta linha está importando o método <code>resolve</code> do módulo <code>path</code> do Node.js. O método <code>resolve</code> é usado para resolver caminhos de arquivos e diretórios, garantindo que os caminhos sejam corretamente concatenados e formatados independentemente do sistema operacional.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</code></pre></div>
+<p>Aqui estamos exportando um objeto que contém as configurações do Sequelize. Isso permite que outras partes do código possam acessar as configurações exportadas.</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;src&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;config&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;database.js&quot;</span><span class="p">),</span>
+</code></pre></div>
+<p>Definindo o caminho para o arquivo de configuração do Sequelize <code>src/config/database.js</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="s2">&quot;models-path&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;src&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;app&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;models&quot;</span><span class="p">),</span>
+</code></pre></div>
+<p>Caminho para o diretório que contém os modelos do Sequelize <code>src/app/models</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="s2">&quot;migrations-path&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;src&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;database&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;migrations&quot;</span><span class="p">),</span>
+</code></pre></div>
+<p>Definindo o caminho para o diretório que contém as migrações do Sequelize <code>src/database/migrations</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="s2">&quot;seeders-path&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;src&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;database&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;seeds&quot;</span><span class="p">),</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Por fim, aqui estamos definindo o caminho para o diretório que contém os seeders do Sequelize<code>src/database/seeds</code>.</p>
+<p>Com essas configurações em <code>.sequelizerc</code>, o Sequelize será capaz de encontrar os arquivos necessários nos diretórios corretos para executar as operações de banco de dados.</p>
+<hr />
+<h3 id="databasejs">database.js<a class="headerlink" href="#databasejs" title="Permanent link">#</a></h3>
+<p><code>database.js</code> com as informações necessárias para a conexão, é uma boa prática em uma aplicação Node.js separar os os arquivos de código em diretorios, é comum encontrarmos um <code>src</code> e dentro um diretório de configuração <code>config</code>. Essa separação ajuda a manter o código organizado e facilita a manutenção, uma vez que as configurações estão centralizadas em um só lugar.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// src/config/database.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">dialect</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;postgres&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">host</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;postgres&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;123&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">database</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;node&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">define</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">timestamp</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// cria duas colunas: createdAt e updatedAt</span>
+<span class="w">    </span><span class="nx">underscored</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">underscoredAll</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div>
+<ul>
+<li><code>dialect</code>: o tipo de banco de dados que você está usando, nesse caso PostgresSQL</li>
+<li><code>host</code>: o nome ou endereço IP do servidor do banco de dados</li>
+<li><code>username</code>: o nome de usuário usado para conectar-se ao banco de dados</li>
+<li><code>password</code>: a senha associada ao usuário</li>
+<li><code>database</code>: o nome do banco de dados que o aplicativo irá conectar</li>
+<li><code>define</code>: um objeto de configuração para definir as opções de modelagem do Sequelize, um ORM (Object-Relational Mapping) do Node.js que é frequentemente usado com o PostgresSQL. As opções definidas nesse objeto são:</li>
+<li><code>timestamp</code>: cria duas colunas: <code>createdAt</code> e <code>updatedAt</code>, que registram a data e hora da criação e atualização de um registro.</li>
+<li><code>underscored</code>: define se os nomes das tabelas e colunas do banco de dados devem usar letras minúsculas e sublinhados (_) para separar palavras (por exemplo, <code>nome_da_tabela</code> em vez de <code>NomeDaTabela</code>).</li>
+<li><code>underscoredAll</code>: define se o mesmo padrão de nomenclatura deve ser aplicado aos nomes dos campos (colunas) dos modelos.</li>
+</ul>
+<p>Essas configurações podem variar dependendo do banco de dados e do ORM que você está usando, mas em geral, um arquivo de configuração de banco de dados é usado para armazenar informações de conexão com o banco de dados e opções de configuração específicas do banco de dados e do ORM.</p>
+<p>Ao final desta etapa você terá a seguinte estrutura de diretório:</p>
+<div class="highlight"><pre><span></span><code>nome-do-projeto/
+├── src/
+|   ├── config/
+|   │   └── database.js
+├── node_modules/
+|   └── ... 
+├── .sequelizerc
+├── package-lock.json
+└── package.json
+</code></pre></div>
+<ul>
+<li>
+<p><code>src/</code>: diretório que contém o código fonte do projeto.</p>
+</li>
+<li>
+<p><code>src/config/</code>: lembre-se este diretório que contém arquivos de configuração para o seu aplicativo, incluindo arquivos de configuração de banco de dados e outros parâmetros globais.</p>
+</li>
+<li>
+<p><code>src/config/database.js</code>, que é responsável por definir as configurações de conexão com o banco de dados PostgreSQL, como nome do banco de dados, usuário, senha, host e porta.</p>
+</li>
+</ul>
+<h3 id="modelos-e-migracoes">Modelos e Migrações<a class="headerlink" href="#modelos-e-migracoes" title="Permanent link">#</a></h3>
+<p>No contexto de uma API Node.js com Sequelize, modelos e migrações são conceitos relacionados à definição e manipulação de dados no banco de dados.</p>
+<ul>
+<li>
+<p><strong>Modelos</strong>: são <strong>classes</strong> que definem a estrutura dos dados que serão <strong>manipulados</strong> pelo aplicativo. Eles são tipicamente definidos com a ajuda do Sequelize, um ORM (Object-Relational Mapping) que fornece uma interface para mapear objetos JavaScript para tabelas de banco de dados relacionais. Os modelos do Sequelize geralmente contêm propriedades que correspondem às colunas da tabela do banco de dados, bem como métodos que permitem criar, ler, atualizar e excluir (CRUD) registros do banco de dados.</p>
+</li>
+<li>
+<p><strong>Migrações</strong>: são arquivos de script que <strong>definem a estrutura da tabela</strong> do banco de dados e as alterações na estrutura da tabela ao longo do tempo. As migrações são normalmente criadas usando uma biblioteca de migração, como o <code>Sequelize CLI</code> (Command-Line Interface). As migrações podem ser usadas para criar e alterar tabelas, colunas, índices e chaves estrangeiras. Elas garantem que a estrutura do banco de dados corresponda à estrutura definida pelo modelo do aplicativo.</p>
+</li>
+</ul>
+<p>Na maioria das vezes, é recomendável criar os modelos primeiro e, em seguida, criar as migrações que definem a estrutura da tabela do banco de dados.</p>
+<p>Ao criar os modelos primeiro, você pode definir a estrutura de dados que será usada em seu aplicativo e usar esses modelos para gerar as migrações. Isso ajuda a garantir que a estrutura da tabela do banco de dados corresponda à estrutura de dados esperada pelo aplicativo. Além disso, a criação de modelos primeiro permite que você teste e depure sua lógica de negócios sem se preocupar com a estrutura do banco de dados subjacente.</p>
+<p>Depois de criar os modelos, você pode usar ferramentas como o Sequelize CLI para gerar automaticamente as migrações com base nesses modelos. As migrações geradas fornecem um ponto de partida sólido para definir a estrutura da tabela do banco de dados e podem ser personalizadas conforme necessário para atender às necessidades específicas do seu aplicativo.</p>
+<p>Após a configuração da conexão com o banco de dados, podemos criar modelos para as tabelas que serão utilizadas na aplicação. Os modelos são definidos utilizando o Sequelize e representam as tabelas do banco de dados.</p>
+<p>Uma boa prática é salvar os modelos de banco de dados em um diretório chamado <code>src/models</code>. Isso ajuda a manter uma estrutura organizada do projeto, facilita a localização dos arquivos e ajuda a evitar confusão com outros tipos de arquivos, como rotas ou controladores.</p>
+<p>Ao salvar os modelos em um diretório separado, é possível também criar subdiretórios para organizar os modelos por categoria, se for necessário. Por exemplo, é possível ter um diretório <code>models/produtos/</code> para todos os modelos relacionados a produtos ou a um determinado subgrupo, más tenha cuidado para não se perder, mantenha o seu código o mais organizado possível, e lembre-se que outros desenvolvedores podem dar continuidade ao seu projeto.</p>
+<p>Com base no modelo conceitual de dados, podemos começar a criar o modelo de dados usando o Sequelize.</p>
+<p>Para cada entidade, precisamos criar um <code>ORM</code> correspondente no nosso diretorio <code>src/models</code>. Vamos criar um arquivo separado para cada modelo, seguindo o padrão de nomenclatura  do Sequelize.</p>
+<p>O Sequelize segue um padrão de nomenclatura para a criação de modelos, tabelas e colunas no banco de dados, e geralmente segue as seguintes convenções:</p>
+<ul>
+<li>Os nomes das tabelas no banco de dados devem ser no plural e em letras minúsculas, underscore (<code>_</code>) para separar as palavras  (exemplo: <code>usuarios</code>, <code>itens_pedidos</code>).</li>
+<li>Os nomes das colunas no banco de dados devem ser em letras minúsculas e separados por underscore <code>_</code> (exemplo: <code>primeiro_nome</code>, <code>ultimo_nome</code>).</li>
+<li>Os nomes dos modelos no Sequelize devem seguir o padrão de nomenclatura "PascalCase". Isso significa que o nome do modelo deve ter a primeira letra de cada palavra em maiúscula, sem espaços ou caracteres especiais, (exemplo: <code>Usuario</code>, <code>ItemPedido</code>,).</li>
+<li>As propriedades dos modelos no Sequelize devem seguir o mesmo padrão de nomenclatura das colunas no banco de dados (exemplo: <code>firstName</code>, <code>lastName</code>, <code>createdAt</code>).</li>
+</ul>
+<p>Essas convenções ajudam a manter a consistência e a legibilidade do código ao trabalhar com o Sequelize. No entanto, é possível personalizar o padrão de nomenclatura do Sequelize usando as configurações do modelo e do Sequelize.</p>
+<p>Começaremos criando O Modelo "Clientes" com os seguintes campos: <strong>nome</strong>, <strong>emal</strong> e <strong>senha</strong>. O arquivo de modelo para Clientes deve ficar assim:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// src/models/Clientes.js</span>
+
+<span class="c1">// Importa as classes Sequelize e Model do pacote Sequelize</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">,</span><span class="w"> </span><span class="nx">Model</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;sequelize&#39;</span><span class="p">);</span>
+
+<span class="c1">// Define a classe Clientes, que estende a classe Model</span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">Clientes</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Model</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="c1">// Define o método init, que é chamado para inicializar a classe com as colunas da tabela do banco de dados</span>
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="nx">init</span><span class="p">(</span><span class="nx">sequelize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Chama o construtor da classe Model para definir as colunas da tabela</span>
+<span class="w">    </span><span class="k">super</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">nome</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span><span class="w"> </span><span class="c1">// Coluna &quot;nome&quot; do tipo STRING</span>
+<span class="w">        </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span><span class="w"> </span><span class="c1">// Coluna &quot;email&quot; do tipo STRING</span>
+<span class="w">        </span><span class="nx">senha</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span><span class="w"> </span><span class="c1">// Coluna &quot;senha&quot; do tipo STRING</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">sequelize</span><span class="p">,</span><span class="w"> </span><span class="c1">// Objeto de conexão com o banco de dados</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="c1">// Define o método associate, que é chamado para definir as associações entre as tabelas do banco de dados</span>
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="nx">associate</span><span class="p">(</span><span class="nx">models</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Define a associação &quot;hasMany&quot; entre a tabela Clientes e a tabela Enderecos</span>
+<span class="w">    </span><span class="c1">// Isso significa que um cliente pode ter vários endereços</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">hasMany</span><span class="p">(</span><span class="nx">models</span><span class="p">.</span><span class="nx">Enderecos</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// Exporta a classe Clientes para uso em outros módulos</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Clientes</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">// src/models/Clientes.js</span>
+
+<span class="c1">// Importa as classes Sequelize e Model do pacote Sequelize</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">,</span><span class="w"> </span><span class="nx">Model</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;sequelize&#39;</span><span class="p">);</span>
+
+<span class="c1">// Define a classe Enderecos, que estende a classe Model</span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">Enderecos</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Model</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="c1">// Define o método init, que é chamado para inicializar a classe com as colunas da tabela do banco de dados</span>
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="nx">init</span><span class="p">(</span><span class="nx">sequelize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Chama o construtor da classe Model para definir as colunas da tabela</span>
+<span class="w">    </span><span class="k">super</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">cep</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span><span class="w"> </span><span class="c1">// Coluna &quot;cep&quot; do tipo STRING</span>
+<span class="w">        </span><span class="nx">logradouro</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span><span class="w"> </span><span class="c1">// Coluna &quot;logradouro&quot; do tipo STRING</span>
+<span class="w">        </span><span class="nx">complemento</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span><span class="w"> </span><span class="c1">// Coluna &quot;complemento&quot; do tipo STRING</span>
+<span class="w">        </span><span class="nx">bairro</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span><span class="w"> </span><span class="c1">// Coluna &quot;bairro&quot; do tipo STRING</span>
+<span class="w">        </span><span class="nx">localidade</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span><span class="w"> </span><span class="c1">// Coluna &quot;localidade&quot; do tipo STRING</span>
+<span class="w">        </span><span class="nx">uf</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span><span class="w"> </span><span class="c1">// Coluna &quot;uf&quot; do tipo STRING</span>
+<span class="w">        </span><span class="nx">cliente_id</span><span class="o">:</span><span class="w">  </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">INTEGER</span><span class="w"> </span><span class="c1">// Coluna &quot;cliente_id&quot; do tipo INTEGER, que armazena a chave estrangeira da tabela Clientes</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">sequelize</span><span class="p">,</span><span class="w"> </span><span class="c1">// Objeto de conexão com o banco de dados</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Define o método associate, que é chamado para definir as associações entre as tabelas do banco de dados</span>
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="nx">associate</span><span class="p">(</span><span class="nx">models</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Define a associação &quot;belongsTo&quot; entre a tabela Enderecos e a tabela Clientes</span>
+<span class="w">    </span><span class="c1">// Isso significa que um endereço pertence a um cliente</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">belongsTo</span><span class="p">(</span><span class="nx">models</span><span class="p">.</span><span class="nx">Clientes</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">foreignKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cliente_id&quot;</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// Define a chave estrangeira da tabela Clientes</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Exporta a classe Enderecos para uso em outros módulos</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Enderecos</span><span class="p">;</span>
+</code></pre></div>
+<p>Podemos criar os modelos restantes seguindo o mesmo padrão, ao final desta etapa você tera a seguinte estrutura de diretorio:</p>
+<div class="highlight"><pre><span></span><code>nome-do-projeto/
+├── src/
+|   ├── config/
+|   │   └── database.js
+|   ├── models
+|   |   └── Clientes.js
+|   |   └── Enderecos.js
+|   |   └── ...
+├── node_modules/
+|   └── ... 
+├── .sequelizerc
+├── package-lock.json
+└── package.json
+</code></pre></div>
+<p>Agora podemos construir as <strong>migrations</strong>, podemos criar um diretorio <code>database/migratios</code>, que ja referenciamos no <code>.sequelizerc</code> na linha <code>migrations-path</code>, apos a criação dos diretorio podemos utilizar o <strong>sequelize-cli</strong> para gerar um migration:</p>
+<p>Para gerar uma migração usando o Sequelize CLI, você pode usar o comando <code>sequelize migration:generate</code>, seguido pelo nome da migração que você deseja criar. Por exemplo:</p>
+<div class="highlight"><pre><span></span><code>sequelize<span class="w"> </span>migration:generate<span class="w"> </span>--name<span class="w"> </span>create_clientes
+</code></pre></div>
+<p>O comando acima irá gerar um novo arquivo de migração com o nome composto pela <code>data da migraçao</code> e o nome <code>create_clientes</code>. Dentro do arquivo gerado, você pode definir as operações que serão executadas na tabela do banco de dados, como criar uma nova tabela, adicionar ou remover colunas, entre outras, no exemplo abaixo iremos criar a tabela cliente:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// src/database/migrations/{numero-migration}-create_clientes.js</span>
+<span class="c1">// Exporta um objeto com os métodos up e down</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Método up é responsável por criar a tabela &quot;clientes&quot;</span>
+<span class="w">  </span><span class="nx">up</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">queryInterface</span><span class="p">,</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Utiliza o objeto queryInterface para criar a tabela &quot;clientes&quot;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">queryInterface</span><span class="p">.</span><span class="nx">createTable</span><span class="p">(</span><span class="s2">&quot;clientes&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// Coluna &quot;id&quot;, do tipo INTEGER, não pode ser nula, é auto-incremental e chave primária</span>
+<span class="w">      </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">INTEGER</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">allowNull</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">autoIncrement</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">primaryKey</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="c1">// Coluna &quot;nome&quot;, do tipo STRING, não pode ser nula</span>
+<span class="w">      </span><span class="nx">nome</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">allowNull</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="c1">// Coluna &quot;email&quot;, do tipo STRING, não pode ser nula e é única (não permite repetições)</span>
+<span class="w">      </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">allowNull</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">unique</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="c1">// Coluna &quot;senha&quot;, do tipo STRING, não pode ser nula</span>
+<span class="w">      </span><span class="nx">senha</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">allowNull</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="c1">// Coluna &quot;created_at&quot;, do tipo DATE, não pode ser nula</span>
+<span class="w">      </span><span class="nx">created_at</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">DATE</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">allowNull</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="c1">// Coluna &quot;updated_at&quot;, do tipo DATE, não pode ser nula</span>
+<span class="w">      </span><span class="nx">updated_at</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">DATE</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">allowNull</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">},</span>
+
+<span class="w">  </span><span class="c1">// Método down é responsável por remover a tabela &quot;clientes&quot;</span>
+<span class="w">  </span><span class="nx">down</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">queryInterface</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Utiliza o objeto queryInterface para remover a tabela &quot;clientes&quot;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">queryInterface</span><span class="p">.</span><span class="nx">dropTable</span><span class="p">(</span><span class="s2">&quot;clientes&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>aplicando a migração:</p>
+<div class="highlight"><pre><span></span><code>sequelize<span class="w"> </span>db:migrate
+</code></pre></div>
+<p>Depois de definir as operações, você pode executar a migração usando o comando <code>sequelize db:migrate</code>. Isso irá aplicar as alterações no banco de dados.</p>
+<p>para gerar a migraçao do models <code>Enderecos</code> o processo e bem parecido:</p>
+<div class="highlight"><pre><span></span><code>sequelize<span class="w"> </span>migration:generate<span class="w"> </span>--name<span class="w"> </span>create_enderecos
+</code></pre></div>
+<p>Novamente  irá gerar um novo arquivo de migração com o nome composto pela <code>data da migraçao</code> e o nome <code>create_enderecos</code>. Dentro do arquivo gerado, defina a estrutura da <code>migrations</code> <strong>Enderecos</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// // src/database/migrations/{data}-create_enderecos.js</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Método up é responsável por criar a tabela &quot;enderecos&quot;</span>
+<span class="w">  </span><span class="nx">up</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">queryInterface</span><span class="p">,</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Utiliza o objeto queryInterface para criar a tabela &quot;enderecos&quot;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">queryInterface</span><span class="p">.</span><span class="nx">createTable</span><span class="p">(</span><span class="s2">&quot;enderecos&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">INTEGER</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">allowNull</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">autoIncrement</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">primaryKey</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">cep</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">allowNull</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">logradouro</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">allowNull</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">complemento</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">allowNull</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">bairro</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">allowNull</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">localidade</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">allowNull</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">uf</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">allowNull</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">created_at</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">DATE</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">allowNull</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">updated_at</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">DATE</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">allowNull</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">cliente_id</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// coluna referenciando o id da tabela clientes</span>
+<span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">INTEGER</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">references</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">model</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;clientes&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;id&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// faz referência à tabela clientes</span>
+<span class="w">        </span><span class="nx">onUpdate</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;CASCADE&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// quando o id do cliente for atualizado, atualiza também na tabela de endereços</span>
+<span class="w">        </span><span class="nx">onDelete</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;CASCADE&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// quando um cliente for deletado, deleta também todos os seus endereços</span>
+<span class="w">        </span><span class="nx">allowNull</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// não permite valores nulos para essa coluna</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">  </span><span class="p">},</span>
+
+<span class="w">  </span><span class="nx">down</span><span class="o">:</span><span class="w"> </span><span class="nx">queryInterface</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">queryInterface</span><span class="p">.</span><span class="nx">dropTable</span><span class="p">(</span><span class="s2">&quot;enderecos&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// remove a tabela de endereços</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>nao esqueça de aplicar a migração:</p>
+<div class="highlight"><pre><span></span><code>sequelize<span class="w"> </span>db:migrate
+</code></pre></div>
+<p>Ao final desta etapa você tera a seguinte estrutura de diretorio:</p>
+<div class="highlight"><pre><span></span><code>nome-do-projeto/
+├── src/
+|   ├── config/
+|   │   └── database.js
+|   ├── database
+|   |   ├── migrations/
+|   |   |   └── Enderecos.js
+|   |   |   └── Clientes.js
+|   ├── models
+|   |   └── Clientes.js
+|   |   └── Enderecos.js
+|   |   └── ...
+├── node_modules/
+|   └── ... 
+├── .sequelizerc
+├── package-lock.json
+└── package.json
+</code></pre></div>
+<p>Além disso, você pode usar opções adicionais com o comando <code>sequelize migration:generate</code>, como <code>--help</code> para ver a lista completa de opções disponíveis.</p>
+<p>segue alguns comandos uteis do sequelize-cli:</p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sequelize init</code></td>
+<td>Inicia um novo projeto do sequelize-cli no diretório atual</td>
+</tr>
+<tr>
+<td><code>sequelize model:generate --name User --attributes</code></td>
+<td>Gera um novo modelo de usuário com atributos especificados</td>
+</tr>
+<tr>
+<td><code>sequelize db:create</code></td>
+<td>Cria um novo banco de dados com base nas configurações do sequelize</td>
+</tr>
+<tr>
+<td><code>sequelize db:migrate</code></td>
+<td>Executa as migrações de banco de dados pendentes</td>
+</tr>
+<tr>
+<td><code>sequelize db:seed:all</code></td>
+<td>Executa todos os arquivos de sementes disponíveis</td>
+</tr>
+<tr>
+<td><code>sequelize db:drop</code></td>
+<td>Elimina todas as tabelas do banco de dados configurado</td>
+</tr>
+<tr>
+<td><code>sequelize migration:create</code></td>
+<td>Cria um novo arquivo de migração vazio</td>
+</tr>
+<tr>
+<td><code>sequelize migration:run</code></td>
+<td>Executa todas as migrações de banco de dados pendentes</td>
+</tr>
+<tr>
+<td><code>sequelize migration:undo</code></td>
+<td>Reverte a migração mais recente</td>
+</tr>
+<tr>
+<td><code>sequelize seed:generate --name User</code></td>
+<td>Gera um novo arquivo de semente para a tabela de usuários especificada</td>
+</tr>
+</tbody>
+</table>
+<h3 id="conectando-os-models">Conectando os Models<a class="headerlink" href="#conectando-os-models" title="Permanent link">#</a></h3>
+<p>Conectar os modelos (models) com o banco de dados utilizando Sequelize significa utilizar a biblioteca Sequelize para criar uma conexão entre a aplicação e o banco de dados relacional, além de definir e sincronizar os modelos com as tabelas do banco de dados.
+O Sequelize é responsável por mapear os objetos JavaScript definidos na aplicação para as tabelas do banco de dados. Para conectar os modelos com o banco de dados, é necessário definir os modelos utilizando a sintaxe do Sequelize, especificando os atributos e as relações entre os modelos, e em seguida, criar a conexão com o banco de dados utilizando as credenciais e as configurações necessárias.
+Para isso podemos cria um arquivo <code>src/database/index.js</code> para definir as configurações da conexão do Sequelize com o banco de dados. Esse arquivo pode conter o seguinte código:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// src/database/index.js</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">Sequelize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;sequelize&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Importa a biblioteca Sequelize</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;../config/database&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Importa as configurações do banco de dados</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">Clientes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;../models/Clientes&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Importa o modelo de Clientes</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">Enderecos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;../models/Enderecos&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Importa o modelo de Endereços</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">models</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">Clientes</span><span class="p">,</span><span class="w"> </span><span class="nx">Enderecos</span><span class="p">];</span><span class="w"> </span><span class="c1">// Array com os modelos que serão sincronizados</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nx">Database</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">connection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span><span class="w"> </span><span class="c1">// Cria uma conexão com o banco de dados utilizando as configurações</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span><span class="w"> </span><span class="c1">// Inicializa os modelos</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nx">init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">models</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">model</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">model</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">connection</span><span class="p">));</span><span class="w"> </span><span class="c1">// Inicializa cada modelo, passando a conexão como parâmetro</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Database</span><span class="p">();</span><span class="w"> </span><span class="c1">// Exporta a instância da classe Database já inicializada. Isso garante que haja apenas uma instância da conexão em toda a aplicação.</span>
+</code></pre></div>
+<p>O código contido em <code>src/database/index.js</code> é responsável por configurar a conexão do Sequelize com o banco de dados e inicializar os modelos definidos na aplicação.</p>
+<p>As principais etapas do código são:</p>
+<ol>
+<li>
+<p>Importar a biblioteca Sequelize, as configurações do banco de dados e os modelos da aplicação.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">Sequelize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;sequelize&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Importa a biblioteca Sequelize</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;../config/database&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Importa as configurações do banco de dados</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">Clientes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;../models/Clientes&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Importa o modelo de Clientes</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">Enderecos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;../models/Enderecos&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Importa o modelo de Endereços</span>
+</code></pre></div>
+</li>
+<li>
+<p>Definir um array com os modelos que serão sincronizados com o banco de dados.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">models</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">Clientes</span><span class="p">,</span><span class="w"> </span><span class="nx">Enderecos</span><span class="p">];</span><span class="w"> </span><span class="c1">// Array com os modelos que serão sincronizados</span>
+</code></pre></div>
+<ul>
+<li>Além de criar os modelos com as definições das tabelas, é preciso conectar os modelos ao banco de dados para que eles possam iteragir como tabelas e realizar as operações.</li>
+</ul>
+</li>
+<li>
+<p>Criar uma classe <code>Database</code> que representa a conexão do Sequelize com o banco de dados e os modelos da aplicação.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Database</span><span class="w"> </span><span class="p">{</span>
+<span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">connection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span><span class="w"> </span><span class="c1">// Cria uma conexão com o banco de dados utilizando as configurações</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span><span class="w"> </span><span class="c1">// Inicializa os modelos</span>
+<span class="p">}</span>
+
+<span class="nx">init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">models</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">model</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">model</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">connection</span><span class="p">));</span><span class="w"> </span><span class="c1">// Inicializa cada modelo, passando a conexão como parâmetro</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Exportar uma instância da classe <code>Database</code> já inicializada. Isso garante que haja apenas uma instância da conexão em toda a aplicação.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Database</span><span class="p">();</span>
+</code></pre></div>
+</li>
+</ol>
+<p>Em resumo, o código configura a conexão do Sequelize com o banco de dados e define os modelos que serão utilizados na aplicação, permitindo que eles sejam sincronizados com o banco de dados.</p>
+<p>Ao final desta etapa você tera a seguinte estrutura de diretorio:</p>
+<div class="highlight"><pre><span></span><code>nome-do-projeto/
+├── src/
+|   ├── config/
+|   │   └── database.js
+|   ├── database
+|   |   ├── migrations/
+|   |   |   └── data-clientes.js
+|   |   |   └── data-enderecos.js
+|   |   └── index.js
+|   ├── models
+|   |   └── Clientes.js
+|   |   └── Enderecos.js
+|   |   └── ...
+├── node_modules/
+|   └── ... 
+├── .sequelizerc
+├── package-lock.json
+└── package.json
+</code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+    
+  </body>
+</html>

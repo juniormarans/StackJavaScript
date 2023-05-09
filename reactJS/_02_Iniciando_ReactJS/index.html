@@ -821,6 +821,76 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nodeJs/_03_Gerenciando-Pacotes/" class="md-nav__link">
+         03 Gerenciando Pacotes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nodeJs/_04_Modelo-de-dados/" class="md-nav__link">
+         04 Modelo de dados
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nodeJs/_05_Definindo%20os%20Endpoints/" class="md-nav__link">
+         05 Definindo os Endpoints
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nodeJs/_06_Configurando-Servidor-NodeJs/" class="md-nav__link">
+         06 Configurando Servidor NodeJs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nodeJs/_07_Insomnia/" class="md-nav__link">
+         07 Insomnia
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -916,6 +986,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#estrutura-do-projeto" class="md-nav__link">
+    Estrutura do projeto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#selecione-template" class="md-nav__link">
     Selecione template
   </a>
@@ -989,6 +1066,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#estrutura-do-projeto" class="md-nav__link">
+    Estrutura do projeto
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#selecione-template" class="md-nav__link">
     Selecione template
   </a>
@@ -1038,6 +1122,42 @@
 <div class="highlight"><pre><span></span><code><span class="w">  </span>npm<span class="w"> </span>start
 </code></pre></div>
 <p>O servidor será iniciado em <code>http://localhost:3000</code> e qualquer alteração que você fizer no código será refletida automaticamente no navegador.</p>
+<h3 id="estrutura-do-projeto">Estrutura do projeto<a class="headerlink" href="#estrutura-do-projeto" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>  my-app/
+  ├── node_modules/
+  ├── public/
+  │   ├── index.html
+  │   ├── favicon.ico
+  │   └── manifest.json
+  ├── src/
+  │   ├── App.css
+  │   ├── App.js
+  │   ├── App.test.js
+  │   ├── index.css
+  │   ├── index.js
+  │   ├── logo.svg
+  │   ├── reportWebVitals.js
+  │   ├── setupTests.js
+  ├── .gitignore
+  ├── package-lock.json
+  ├── package.json
+  └── README.md
+</code></pre></div>
+<p><code>node_modules</code>: pasta que contém as dependências do projeto, instaladas automaticamente pelo npm ou yarn.
+<code>public</code>: pasta que contém os arquivos públicos da aplicação, como o arquivo HTML principal (index.html) e o arquivo de ícone (favicon.ico).
+<code>src</code>: pasta que contém o código-fonte da aplicação.
+<code>App.css</code>: arquivo CSS para estilização do componente App.
+<code>App.js</code>: arquivo JavaScript que define o componente principal App.
+<code>App.test.js</code>: arquivo de testes para o componente App.
+<code>index.css</code>: arquivo CSS global para estilização da aplicação.
+<code>index.js</code>: arquivo JavaScript que inicia a aplicação React.
+<code>logo.svg</code>: arquivo SVG com o logo do React, utilizado como exemplo no código.
+<code>reportWebVitals.js</code>: arquivo que contém a função reportWebVitals para medição de métricas de desempenho da aplicação.
+<code>setupTests.js</code>: arquivo de configuração para testes.
+<code>.gitignore</code>: arquivo que lista os arquivos e pastas que devem ser ignorados pelo controle de versão Git.
+<code>package-lock.json</code>: arquivo gerado automaticamente pelo npm ou yarn que contém informações detalhadas sobre as dependências instaladas no projeto.
+<code>package.json</code>: arquivo que contém informações sobre o projeto, como nome, descrição, versão e dependências, além de scripts para automatizar tarefas.
+<code>README.md</code>: arquivo com informações sobre o projeto, incluindo como executá-lo e como contribuir com ele.</p>
 <h3 id="selecione-template">Selecione template<a class="headerlink" href="#selecione-template" title="Permanent link">#</a></h3>
 <p>Ao iniciar um novo projeto em React, você pode usar o parâmetro <code>--template</code> para especificar um modelo personalizado para ser usado como ponto de partida. Isso pode ser útil se você já tem um modelo personalizado criado ou se deseja usar um modelo diferente do padrão fornecido pelo Create React App.</p>
 <div class="highlight"><pre><span></span><code><span class="w">  </span>npx<span class="w"> </span>create-react-app<span class="w"> </span>my-app<span class="w"> </span>--template<span class="w"> </span><span class="o">[</span>nome<span class="w"> </span><span class="k">do</span><span class="w"> </span>template<span class="o">]</span>
