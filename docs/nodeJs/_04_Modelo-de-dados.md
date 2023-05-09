@@ -95,7 +95,13 @@ Após a instalação, é necessário configurar a conexão com o banco de dados 
 
 - `.sequelizerc`: arquivo de configuração do Sequelize que permite personalizar o comportamento do CLI do Sequelize. Ele é usado para especificar diretórios e arquivos personalizados que podem ser usados pelo Sequelize para gerar código automaticamente, como arquivos de migração, modelos, seeders, etc.
 
-O arquivo `.sequelizerc` é um arquivo no formato JavaScript (sem extenção .js) que pode exportar um objeto com as seguintes propriedades:
+podemos criar o arquivo com o comando:
+
+```bash
+touch .sequelizerc
+```
+
+O comando ira criar o  arquivo vazio `.sequelizerc`, que é um arquivo no formato JavaScript (sem extenção .js) adicione o seguinte codigo:
 
 ```javascript
 const { resolve } = require("path");
@@ -154,7 +160,15 @@ Com essas configurações em `.sequelizerc`, o Sequelize será capaz de encontra
 
 ### database.js
 
-`database.js` com as informações necessárias para a conexão, é uma boa prática em uma aplicação Node.js separar os os arquivos de código em diretorios, é comum encontrarmos um `src` e dentro um diretório de configuração `config`. Essa separação ajuda a manter o código organizado e facilita a manutenção, uma vez que as configurações estão centralizadas em um só lugar.
+- `database.js`: com as informações necessárias para a conexão, é uma boa prática em uma aplicação Node.js separar os os arquivos de código em diretorios, é comum encontrarmos um `src` e dentro um diretório de configuração `config`. Essa separação ajuda a manter o código organizado e facilita a manutenção, uma vez que as configurações estão centralizadas em um só lugar.
+
+podemos criar o diretorio de config com o comando:
+
+```bash
+mkdir -p src/config/ && touch src/config/database.js
+```
+
+isso ira criar um diretorio `src/config/`  e dentro de config um arquivo vazio com o nome `database.js`, para adicionar as configuraçoes do banco adicione o codigo a seguir em `database.js`:
 
 ```javascript
 // src/config/database.js
