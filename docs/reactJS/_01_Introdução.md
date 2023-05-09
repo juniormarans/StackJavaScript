@@ -16,7 +16,7 @@ A programação funcional é um paradigma de programação que enfatiza a utiliz
 
 Os componentes funcionais são uma das principais características da programação funcional em React JS. Eles são criados como funções que retornam uma descrição da interface do usuário.
 
-```jsx
+```javascript
   function Welcome(props) {
     return <h1>Hello, {props.name}!</h1>;
   }
@@ -28,7 +28,7 @@ Este é um componente funcional que recebe um objeto props como parâmetro e ret
 
 React JS utiliza o conceito de imutabilidade para prevenir alterações acidentais nos dados da aplicação. Um exemplo disso pode ser visto ao atualizar o estado de um componente. Em vez de modificar diretamente o estado, você deve criar um novo objeto com as alterações desejadas.
 
-```jsx
+```javascript
   function Counter() {
     const [count, setCount] = useState(0);
     
