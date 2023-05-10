@@ -1534,8 +1534,8 @@
 <p>Para gerar uma migração usando o Sequelize CLI, você pode usar o comando <code>sequelize migration:generate</code>, seguido pelo nome da migração que você deseja criar. Por exemplo:</p>
 <div class="highlight"><pre><span></span><code>sequelize<span class="w"> </span>migration:generate<span class="w"> </span>--name<span class="w"> </span>create_clientes
 </code></pre></div>
-<p>O comando acima irá gerar um novo arquivo de migração com o nome composto pela <code>data da migraçao</code> e o nome <code>create_clientes</code>. Dentro do arquivo gerado, você pode definir as operações que serão executadas na tabela do banco de dados, como criar uma nova tabela, adicionar ou remover colunas, entre outras, no exemplo abaixo iremos criar a tabela cliente:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// src/database/migrations/{numero-migration}-create_clientes.js</span>
+<p>O comando acima irá gerar um novo arquivo de migração com o nome composto pela <code>data da migraçao</code> e o nome <code>create_clientes</code>. Dentro do arquivo gerado em <code>src/database/migrations/</code> , você pode definir as operações que serão executadas na tabela do banco de dados, como criar uma nova tabela, adicionar ou remover colunas, entre outras, no exemplo abaixo iremos criar a tabela cliente:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// src/database/migrations/{data-migração}-create_clientes.js</span>
 <span class="c1">// Exporta um objeto com os métodos up e down</span>
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="c1">// Método up é responsável por criar a tabela &quot;clientes&quot;</span>
@@ -1593,7 +1593,7 @@
 <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>sequelize-cli<span class="w"> </span>migration:generate<span class="w"> </span>--name<span class="w"> </span>create_enderecos
 </code></pre></div>
 <p>Novamente  irá gerar um novo arquivo de migração com o nome composto pela <code>data da migraçao</code> e o nome <code>create_enderecos</code>. Dentro do arquivo gerado, defina a estrutura da <code>migrations</code> <strong>Enderecos</strong>:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// // src/database/migrations/{data}-create_enderecos.js</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// // src/database/migrations/{data-migração}-create_enderecos.js</span>
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="c1">// Método up é responsável por criar a tabela &quot;enderecos&quot;</span>
 <span class="w">  </span><span class="nx">up</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">queryInterface</span><span class="p">,</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
@@ -1662,8 +1662,8 @@
 |   │   └── database.js
 |   ├── database
 |   |   ├── migrations/
-|   |   |   └── Enderecos.js
-|   |   |   └── Clientes.js
+|   |   |   └── data_migração_create_clientes.js
+|   |   |   └── data_migração_create_enderecos.js
 |   ├── models
 |   |   └── Clientes.js
 |   |   └── Enderecos.js
