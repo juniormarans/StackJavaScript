@@ -6,14 +6,16 @@ Insomnia é uma ferramenta de cliente REST que permite testar APIs HTTP. Com Ins
 
 Para começar, você precisa baixar e instalar o Insomnia em seu computador. Você pode fazer o download do Insomnia em seu [site oficial](https://insomnia.rest/download) ou através de gerenciadores de pacotes como o NPM.
 
-```bash
-# Add to sources
-echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" \
-    | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+adicionando repositorio Insomnia:
 
-# Refresh repository sources and install Insomnia
-sudo apt-get update
-sudo apt-get install insomnia
+```bash
+echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+```
+
+# Atualizando repositorios e instalando Insomnia
+
+```bash
+sudo apt-get update && sudo apt-get install insomnia
 ```
 
 ### Criando uma requisição
