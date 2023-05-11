@@ -788,6 +788,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pacotes" class="md-nav__link">
+    Pacotes
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1198,6 +1205,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pacotes" class="md-nav__link">
+    Pacotes
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1375,6 +1389,45 @@
 <ul>
 <li>A programação orientada a objetos é um paradigma importante para a escrita de código estruturado e reutilizável. Em JavaScript, podemos utilizar classes, herança, encapsulamento, polimorfismo e outros conceitos da orientação a objetos para criar código mais legível e organizado. Com esses conceitos em mente, podemos criar soluções mais eficientes e escaláveis para nossos projetos em JavaScript.</li>
 </ul>
+<hr />
+<h2 id="pacotes">Pacotes<a class="headerlink" href="#pacotes" title="Permanent link">#</a></h2>
+<p>Um pacote em JavaScript é um conjunto de código que pode ser facilmente compartilhado entre projetos. Se você está trabalhando em um projeto que usa um conjunto de funcionalidades que você gostaria de reutilizar em outros projetos, pode ser útil criar um pacote para essas funcionalidades. Neste artigo, vamos ver como criar um pacote em JavaScript para uso interno, ou seja, que não será publicado no registro de pacotes do NPM.</p>
+<p>O primeiro passo para criar um pacote em JavaScript é criar uma nova pasta com o nome que desejar para o seu pacote. Você pode criar essa pasta em qualquer lugar do seu computador. Por exemplo, você pode criar uma pasta chamada "meu-pacote" em sua área de trabalho.</p>
+<p>Dentro da pasta que você acabou de criar, execute o comando "npm init" no terminal. Isso irá criar um arquivo "package.json" para gerenciar as dependências do seu pacote. Siga as instruções na linha de comando para preencher as informações do seu pacote, como o nome, versão, descrição, etc. Essas informações podem ser alteradas posteriormente.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>meu-pacote
+npm<span class="w"> </span>init
+</code></pre></div>
+<p>Agora que o projeto está inicializado, é hora de começar a escrever o código que você deseja incluir no pacote. Este pode ser um único arquivo ou vários arquivos em um diretório. Para este exemplo, vamos criar uma função simples que calcula a soma de dois números.</p>
+<p>Crie um novo arquivo chamado "minhas-funcoes.js" dentro da pasta "meu-pacote" e adicione o seguinte código:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">soma</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Crie um arquivo "index.js" na raiz da pasta do seu pacote. Este arquivo será a entrada do seu pacote e irá exportar as funcionalidades que você deseja disponibilizar. No nosso caso, vamos exportar a função "soma" que acabamos de criar.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">minhasFuncoes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./minhas-funcoes&#39;</span><span class="p">);</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">soma</span><span class="o">:</span><span class="w"> </span><span class="nx">minhasFuncoes</span><span class="p">.</span><span class="nx">soma</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Agora que você criou o pacote, é hora de testá-lo. Para fazer isso, crie um novo projeto em um diretório separado e adicione o seu pacote como uma dependência.</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>meu-projeto
+<span class="nb">cd</span><span class="w"> </span>meu-projeto
+npm<span class="w"> </span>init
+npm<span class="w"> </span>install<span class="w"> </span>../meu-pacote
+</code></pre></div>
+<p>Em seguida, crie um arquivo "index.js" em seu novo projeto e importe a função "soma" do seu pacote.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">meuPacote</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;meu-pacote&#39;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">meuPacote</span><span class="p">.</span><span class="nx">soma</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">));</span><span class="w"> </span><span class="c1">// Output: 5</span>
+</code></pre></div>
+<p>Execute o arquivo "index.js" usando o Node.js.</p>
+<div class="highlight"><pre><span></span><code>node<span class="w"> </span>index.js
+</code></pre></div>
+<p>Se o output for "5", isso significa que o seu pacote está funcionando corretamente.</p>
+<p>Criar um pacote em JavaScript pode ser uma maneira útil de reutilizar código em vários projetos. Neste artigo, você aprendeu a criar um pacote em JavaScript para uso interno, sem publicá-lo no registro de pacotes do NPM. Lembre-se de que este é apenas um exemplo simples e que há muitas maneiras de criar pacotes mais complexos e robustos em JavaScript.</p>
 
 
 
