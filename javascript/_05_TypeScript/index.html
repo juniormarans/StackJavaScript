@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../_05_Projeto-Pr%C3%A1tico/">
+        <link rel="prev" href="../_04_Classes-e-objetos-defini%C3%A7%C3%A3o-e-instancia%C3%A7%C3%A3o/">
       
       
-        <link rel="next" href="../../nodeJs/">
+        <link rel="next" href="../_06_Projeto-Pr%C3%A1tico/">
       
       <link rel="icon" href="../../assets/logo.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.7">
     
     
       
-        <title>06 Resolucão desafio - Stack-JavaScript</title>
+        <title>05 TypeScript - Stack-JavaScript</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#resolucao-desafio" class="md-skip">
+        <a href="#typescript" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-               06 Resolucão desafio
+               05 TypeScript
             
           </span>
         </div>
@@ -710,22 +710,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../_04_TypeScript/" class="md-nav__link">
-         04 TypeScript
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../_05_Projeto-Pr%C3%A1tico/" class="md-nav__link">
-         05 Projeto Prático
+      <a href="../_04_Classes-e-objetos-defini%C3%A7%C3%A3o-e-instancia%C3%A7%C3%A3o/" class="md-nav__link">
+         04 Classes e objetos definição e instanciação
       </a>
     </li>
   
@@ -746,12 +732,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-           06 Resolucão desafio
+           05 TypeScript
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-         06 Resolucão desafio
+         05 TypeScript
       </a>
       
         
@@ -768,9 +754,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#resolucao-desafio" class="md-nav__link">
-    Resolução desafio
+  <a href="#typescript" class="md-nav__link">
+    TypeScript
   </a>
+  
+    <nav class="md-nav" aria-label="TypeScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracao" class="md-nav__link">
+    Configuração
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-basicos" class="md-nav__link">
+    Tipos básicos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcoes" class="md-nav__link">
+    Funções
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interfaces" class="md-nav__link">
+    Interfaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -778,6 +805,34 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_06_Projeto-Pr%C3%A1tico/" class="md-nav__link">
+         06 Projeto Prático
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_07_Resoluc%C3%A3o-desafio/" class="md-nav__link">
+         07 Resolucão desafio
+      </a>
     </li>
   
 
@@ -1094,9 +1149,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#resolucao-desafio" class="md-nav__link">
-    Resolução desafio
+  <a href="#typescript" class="md-nav__link">
+    TypeScript
   </a>
+  
+    <nav class="md-nav" aria-label="TypeScript">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracao" class="md-nav__link">
+    Configuração
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-basicos" class="md-nav__link">
+    Tipos básicos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcoes" class="md-nav__link">
+    Funções
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interfaces" class="md-nav__link">
+    Interfaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1118,40 +1214,97 @@
   
 
 
-  <h1> 06 Resolucão desafio</h1>
+  <h1> 05 TypeScript</h1>
 
-<h2 id="resolucao-desafio">Resolução desafio<a class="headerlink" href="#resolucao-desafio" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c1">// Define a função de cálculo</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">calcular</span><span class="p">(</span><span class="nx">valor1</span><span class="p">,</span><span class="w"> </span><span class="nx">valor2</span><span class="p">,</span><span class="w"> </span><span class="nx">operador</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">resultado</span><span class="p">;</span>
-
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">operador</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;+&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">valor2</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">operador</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;-&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">valor2</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">operador</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">valor2</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">operador</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">valor2</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Operador inválido&quot;</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
-
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">resultado</span><span class="p">;</span>
+<h2 id="typescript">TypeScript<a class="headerlink" href="#typescript" title="Permanent link">#</a></h2>
+<p>TypeScript é um superset do JavaScript que adiciona recursos de tipagem estática e outras funcionalidades à linguagem. Ele foi desenvolvido pela Microsoft e é uma escolha popular para grandes projetos JavaScript.</p>
+<h3 id="configuracao">Configuração<a class="headerlink" href="#configuracao" title="Permanent link">#</a></h3>
+<p>Para começar a usar TypeScript, você precisa configurar um ambiente de desenvolvimento. Você pode instalar o TypeScript globalmente usando o npm com o seguinte comando:</p>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>typescript
+</code></pre></div>
+<p>Depois de instalado, você pode criar um arquivo <code>.ts</code> e compilá-lo usando o comando <code>tsc</code>. Por exemplo, crie um arquivo <code>app.ts</code> com o seguinte código:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">dizerOla</span><span class="p">(</span><span class="nx">nome</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Olá, </span><span class="si">${</span><span class="nx">nome</span><span class="si">}</span><span class="sb">!`</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="c1">// Pede para o usuário digitar os números e o operador</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Digite o primeiro número:&quot;</span><span class="p">));</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">valor2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Digite o segundo número:&quot;</span><span class="p">));</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">operador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;Digite o operador (+, -, *, /):&quot;</span><span class="p">);</span>
-
-<span class="c1">// Chama a função de cálculo e imprime o resultado</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">calcular</span><span class="p">(</span><span class="nx">valor1</span><span class="p">,</span><span class="w"> </span><span class="nx">valor2</span><span class="p">,</span><span class="w"> </span><span class="nx">operador</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`O resultado da operação é: </span><span class="si">${</span><span class="nx">resultado</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="nx">dizerOla</span><span class="p">(</span><span class="s1">&#39;TypeScript&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Olá, TypeScript!</span>
 </code></pre></div>
-<p>Este código é semelhante aos exemplos anteriores, mas usa declarações <code>if</code> em vez de <code>switch</code> para verificar qual é o operador e realizar a operação apropriada.</p>
-<p>Note que a estrutura do código é um pouco diferente do código <code>switch</code> anterior, pois as declarações <code>if</code> são aninhadas em vez de estarem em um bloco único. Além disso, a declaração <code>else</code> é usada para tratar o caso em que o operador é inválido.</p>
-<p>Você pode personalizar este exemplo adicionando mais operações ou melhorando a interface do usuário para torná-la mais amigável.</p>
+<p>Em seguida, compile o arquivo <code>app.ts</code> usando o comando <code>tsc app.ts</code>. Isso irá gerar um arquivo <code>app.js</code> que pode ser executado normalmente no Node.js ou em um navegador.</p>
+<h3 id="tipos-basicos">Tipos básicos<a class="headerlink" href="#tipos-basicos" title="Permanent link">#</a></h3>
+<p>Uma das principais funcionalidades do TypeScript é a tipagem estática. Isso significa que você pode especificar o tipo de dados que uma variável pode armazenar e o TypeScript irá verificar se você está usando a variável corretamente em tempo de compilação. Aqui estão alguns tipos básicos em TypeScript:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Números</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">numero</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+
+<span class="c1">// Strings</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">texto</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Olá&#39;</span><span class="p">;</span>
+
+<span class="c1">// Booleanos</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">booleano</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+
+<span class="c1">// Arrays</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">lista</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">lista2</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;c&#39;</span><span class="p">];</span>
+
+<span class="c1">// Tuplas</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">tupla</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">number</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;olá&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">];</span>
+
+<span class="c1">// Enums</span>
+<span class="kd">enum</span><span class="w"> </span><span class="nx">Cor</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">Vermelho</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">Verde</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">Azul</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">cor</span><span class="o">:</span><span class="w"> </span><span class="kt">Cor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Cor</span><span class="p">.</span><span class="nx">Vermelho</span><span class="p">;</span>
+
+<span class="c1">// Any</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">qualquerValor</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;olá&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>Observe que você pode usar a sintaxe <code>let nomeVariavel: tipoVariavel = valor</code> para especificar o tipo de uma variável.</p>
+<h3 id="funcoes">Funções<a class="headerlink" href="#funcoes" title="Permanent link">#</a></h3>
+<p>As funções em TypeScript podem ter tipos de argumento e tipo de retorno especificados. Aqui está um exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">somar</span><span class="p">(</span><span class="nx">valor1</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">valor2</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">valor2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Observe que o tipo de retorno é especificado após os tipos dos argumentos usando a sintaxe <code>function nomeFuncao(arg1: tipoArg1, arg2: tipoArg2): tipoRetorno</code>.</p>
+<h3 id="interfaces">Interfaces<a class="headerlink" href="#interfaces" title="Permanent link">#</a></h3>
+<p>As interfaces são uma maneira de definir tipos personalizados em TypeScript. Por exemplo, você pode definir uma interface para um objeto com propriedades específicas:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">Pessoa</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">nome</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">idade</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">cumprimentar</span><span class="p">(</span><span class="nx">pessoa</span><span class="o">:</span><span class="w"> </span><span class="kt">Pessoa</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Olá, </span><span class="si">${</span><span class="nx">pessoa</span><span class="p">.</span><span class="nx">nome</span><span class="si">}</span><span class="sb">! Você tem </span><span class="si">${</span><span class="nx">pessoa</span><span class="p">.</span><span class="nx">idade</span><span class="si">}</span><span class="sb"> anos.`</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">alice</span><span class="o">:</span><span class="w"> </span><span class="kt">Pessoa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nome</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">idade</span><span class="o">:</span><span class="w"> </span><span class="kt">30</span><span class="w"> </span><span class="p">};</span>
+<span class="nx">cumprimentar</span><span class="p">(</span><span class="nx">alice</span><span class="p">);</span><span class="w"> </span><span class="c1">// Olá, Alice! Você tem 30 anos.</span>
+</code></pre></div>
+<p>Observe que a função <code>cumprimentar</code> espera um objeto do tipo <code>Pessoa</code>.</p>
+<h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">#</a></h3>
+<p>As classes em TypeScript permitem definir objetos com propriedades e métodos. Aqui está um exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">nome</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">nome</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nome</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nx">fazerBarulho</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Barulho genérico de animal&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nx">Cachorro</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">fazerBarulho</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Au au!&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">cachorro</span><span class="o">:</span><span class="w"> </span><span class="kt">Cachorro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Cachorro</span><span class="p">(</span><span class="s1">&#39;Rex&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">cachorro</span><span class="p">.</span><span class="nx">nome</span><span class="p">);</span><span class="w"> </span><span class="c1">// &#39;Rex&#39;</span>
+<span class="nx">cachorro</span><span class="p">.</span><span class="nx">fazerBarulho</span><span class="p">();</span><span class="w"> </span><span class="c1">// &#39;Au au!&#39;</span>
+</code></pre></div>
+<p>Observe que a classe <code>Cachorro</code> herda da classe <code>Animal</code> usando a sintaxe <code>class nomeClasse extends nomeClassePai</code>. A classe <code>Cachorro</code> sobrescreve o método <code>fazerBarulho</code> da classe <code>Animal</code>.</p>
 
 
 

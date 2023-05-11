@@ -12,14 +12,14 @@
         <link rel="prev" href="../_03_Tipos-de-Fun%C3%A7%C3%B5es-e-Manipula%C3%A7%C3%A3o-de-Dados/">
       
       
-        <link rel="next" href="../_05_Projeto-Pr%C3%A1tico/">
+        <link rel="next" href="../_05_TypeScript/">
       
       <link rel="icon" href="../../assets/logo.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.7">
     
     
       
-        <title>04 TypeScript - Stack-JavaScript</title>
+        <title>04 Classes e objetos definição e instanciação - Stack-JavaScript</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#typescript" class="md-skip">
+        <a href="#introducao" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-               04 TypeScript
+               04 Classes e objetos definição e instanciação
             
           </span>
         </div>
@@ -718,12 +718,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-           04 TypeScript
+           04 Classes e objetos definição e instanciação
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-         04 TypeScript
+         04 Classes e objetos definição e instanciação
       </a>
       
         
@@ -740,50 +740,51 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#typescript" class="md-nav__link">
-    TypeScript
-  </a>
-  
-    <nav class="md-nav" aria-label="TypeScript">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#configuracao" class="md-nav__link">
-    Configuração
+  <a href="#introducao" class="md-nav__link">
+    Introdução
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#tipos-basicos" class="md-nav__link">
-    Tipos básicos
+      
+        <li class="md-nav__item">
+  <a href="#definicao-de-classe" class="md-nav__link">
+    Definição de classe
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#funcoes" class="md-nav__link">
-    Funções
+      
+        <li class="md-nav__item">
+  <a href="#instanciacao-de-objetos" class="md-nav__link">
+    Instanciação de objetos
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#interfaces" class="md-nav__link">
-    Interfaces
+      
+        <li class="md-nav__item">
+  <a href="#encapsulamento" class="md-nav__link">
+    Encapsulamento
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#classes" class="md-nav__link">
-    Classes
+      
+        <li class="md-nav__item">
+  <a href="#heranca" class="md-nav__link">
+    Herança
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#polimorfismo" class="md-nav__link">
+    Polimorfismo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metodos-estaticos" class="md-nav__link">
+    Métodos estáticos
+  </a>
   
 </li>
       
@@ -802,8 +803,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../_05_Projeto-Pr%C3%A1tico/" class="md-nav__link">
-         05 Projeto Prático
+      <a href="../_05_TypeScript/" class="md-nav__link">
+         05 TypeScript
       </a>
     </li>
   
@@ -816,8 +817,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../_06_Resoluc%C3%A3o-desafio/" class="md-nav__link">
-         06 Resolucão desafio
+      <a href="../_06_Projeto-Pr%C3%A1tico/" class="md-nav__link">
+         06 Projeto Prático
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_07_Resoluc%C3%A3o-desafio/" class="md-nav__link">
+         07 Resolucão desafio
       </a>
     </li>
   
@@ -1135,50 +1150,51 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#typescript" class="md-nav__link">
-    TypeScript
-  </a>
-  
-    <nav class="md-nav" aria-label="TypeScript">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#configuracao" class="md-nav__link">
-    Configuração
+  <a href="#introducao" class="md-nav__link">
+    Introdução
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#tipos-basicos" class="md-nav__link">
-    Tipos básicos
+      
+        <li class="md-nav__item">
+  <a href="#definicao-de-classe" class="md-nav__link">
+    Definição de classe
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#funcoes" class="md-nav__link">
-    Funções
+      
+        <li class="md-nav__item">
+  <a href="#instanciacao-de-objetos" class="md-nav__link">
+    Instanciação de objetos
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#interfaces" class="md-nav__link">
-    Interfaces
+      
+        <li class="md-nav__item">
+  <a href="#encapsulamento" class="md-nav__link">
+    Encapsulamento
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#classes" class="md-nav__link">
-    Classes
+      
+        <li class="md-nav__item">
+  <a href="#heranca" class="md-nav__link">
+    Herança
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#polimorfismo" class="md-nav__link">
+    Polimorfismo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metodos-estaticos" class="md-nav__link">
+    Métodos estáticos
+  </a>
   
 </li>
       
@@ -1200,97 +1216,165 @@
   
 
 
-  <h1> 04 TypeScript</h1>
+  <h1> 04 Classes e objetos definição e instanciação</h1>
 
-<h2 id="typescript">TypeScript<a class="headerlink" href="#typescript" title="Permanent link">#</a></h2>
-<p>TypeScript é um superset do JavaScript que adiciona recursos de tipagem estática e outras funcionalidades à linguagem. Ele foi desenvolvido pela Microsoft e é uma escolha popular para grandes projetos JavaScript.</p>
-<h3 id="configuracao">Configuração<a class="headerlink" href="#configuracao" title="Permanent link">#</a></h3>
-<p>Para começar a usar TypeScript, você precisa configurar um ambiente de desenvolvimento. Você pode instalar o TypeScript globalmente usando o npm com o seguinte comando:</p>
-<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>typescript
-</code></pre></div>
-<p>Depois de instalado, você pode criar um arquivo <code>.ts</code> e compilá-lo usando o comando <code>tsc</code>. Por exemplo, crie um arquivo <code>app.ts</code> com o seguinte código:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">dizerOla</span><span class="p">(</span><span class="nx">nome</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Olá, </span><span class="si">${</span><span class="nx">nome</span><span class="si">}</span><span class="sb">!`</span><span class="p">);</span>
-<span class="p">}</span>
+<h2 id="introducao">Introdução<a class="headerlink" href="#introducao" title="Permanent link">#</a></h2>
+<p>A programação orientada a objetos (POO) é um paradigma de programação em que os objetos são os principais componentes. Em POO, os objetos são criados a partir de classes, que são como "plantas baixas" para os objetos. Uma classe define as propriedades e os métodos que um objeto pode ter. Em JavaScript, podemos criar classes e objetos usando a sintaxe de classe.</p>
+<h2 id="definicao-de-classe">Definição de classe<a class="headerlink" href="#definicao-de-classe" title="Permanent link">#</a></h2>
+<p>Para criar uma classe em JavaScript, usamos a palavra-chave <code>class</code>. No exemplo abaixo, definimos uma classe chamada <code>Carro</code>. A classe tem um construtor que inicializa as propriedades marca, modelo e ano. Também definimos um <strong>método</strong> acelerar, que simplesmente imprime uma mensagem no console.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Carro</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">marca</span><span class="p">,</span><span class="w"> </span><span class="nx">modelo</span><span class="p">,</span><span class="w"> </span><span class="nx">ano</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">marca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">marca</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">modelo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">modelo</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">ano</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ano</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
 
-<span class="nx">dizerOla</span><span class="p">(</span><span class="s1">&#39;TypeScript&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Olá, TypeScript!</span>
-</code></pre></div>
-<p>Em seguida, compile o arquivo <code>app.ts</code> usando o comando <code>tsc app.ts</code>. Isso irá gerar um arquivo <code>app.js</code> que pode ser executado normalmente no Node.js ou em um navegador.</p>
-<h3 id="tipos-basicos">Tipos básicos<a class="headerlink" href="#tipos-basicos" title="Permanent link">#</a></h3>
-<p>Uma das principais funcionalidades do TypeScript é a tipagem estática. Isso significa que você pode especificar o tipo de dados que uma variável pode armazenar e o TypeScript irá verificar se você está usando a variável corretamente em tempo de compilação. Aqui estão alguns tipos básicos em TypeScript:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Números</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">numero</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
-
-<span class="c1">// Strings</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">texto</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Olá&#39;</span><span class="p">;</span>
-
-<span class="c1">// Booleanos</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">booleano</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
-
-<span class="c1">// Arrays</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">lista</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">];</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">lista2</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;c&#39;</span><span class="p">];</span>
-
-<span class="c1">// Tuplas</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">tupla</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">number</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;olá&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">];</span>
-
-<span class="c1">// Enums</span>
-<span class="kd">enum</span><span class="w"> </span><span class="nx">Cor</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">Vermelho</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">Verde</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">Azul</span><span class="p">,</span>
-<span class="p">}</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">cor</span><span class="o">:</span><span class="w"> </span><span class="kt">Cor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Cor</span><span class="p">.</span><span class="nx">Vermelho</span><span class="p">;</span>
-
-<span class="c1">// Any</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">qualquerValor</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;olá&#39;</span><span class="p">;</span>
-</code></pre></div>
-<p>Observe que você pode usar a sintaxe <code>let nomeVariavel: tipoVariavel = valor</code> para especificar o tipo de uma variável.</p>
-<h3 id="funcoes">Funções<a class="headerlink" href="#funcoes" title="Permanent link">#</a></h3>
-<p>As funções em TypeScript podem ter tipos de argumento e tipo de retorno especificados. Aqui está um exemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">somar</span><span class="p">(</span><span class="nx">valor1</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">valor2</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">valor1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">valor2</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">acelerar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`O </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">modelo</span><span class="si">}</span><span class="sb"> está acelerando!`</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Observe que o tipo de retorno é especificado após os tipos dos argumentos usando a sintaxe <code>function nomeFuncao(arg1: tipoArg1, arg2: tipoArg2): tipoRetorno</code>.</p>
-<h3 id="interfaces">Interfaces<a class="headerlink" href="#interfaces" title="Permanent link">#</a></h3>
-<p>As interfaces são uma maneira de definir tipos personalizados em TypeScript. Por exemplo, você pode definir uma interface para um objeto com propriedades específicas:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">Pessoa</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">nome</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-<span class="w">  </span><span class="nx">idade</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kd">function</span><span class="w"> </span><span class="nx">cumprimentar</span><span class="p">(</span><span class="nx">pessoa</span><span class="o">:</span><span class="w"> </span><span class="kt">Pessoa</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Olá, </span><span class="si">${</span><span class="nx">pessoa</span><span class="p">.</span><span class="nx">nome</span><span class="si">}</span><span class="sb">! Você tem </span><span class="si">${</span><span class="nx">pessoa</span><span class="p">.</span><span class="nx">idade</span><span class="si">}</span><span class="sb"> anos.`</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">let</span><span class="w"> </span><span class="nx">alice</span><span class="o">:</span><span class="w"> </span><span class="kt">Pessoa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nome</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">idade</span><span class="o">:</span><span class="w"> </span><span class="kt">30</span><span class="w"> </span><span class="p">};</span>
-<span class="nx">cumprimentar</span><span class="p">(</span><span class="nx">alice</span><span class="p">);</span><span class="w"> </span><span class="c1">// Olá, Alice! Você tem 30 anos.</span>
+<p>Neste exemplo, definimos uma classe chamada <code>Carro</code>. A classe tem um construtor que inicializa as propriedades <code>marca</code>, <code>modelo</code> e <code>ano</code>. Também definimos um método <code>acelerar</code>, que simplesmente é uma função que é definida dentro de uma classe e pode ser invocada em instâncias dessa classe. As classes são uma sintaxe de programação orientada a objetos introduzida no ECMAScript 2015 (ES6) e fornecem uma maneira mais clara e fácil de criar objetos em JavaScript.</p>
+<h2 id="instanciacao-de-objetos">Instanciação de objetos<a class="headerlink" href="#instanciacao-de-objetos" title="Permanent link">#</a></h2>
+<p>Uma instância de classe em JavaScript é um <strong>objeto</strong> criado a partir de uma classe. Quando você instancia uma classe, você está criando um novo objeto que herda os métodos e propriedades da classe. Em outras palavras, uma instância de classe é uma cópia única da classe que contém seus próprios valores de propriedades.</p>
+<p>Para criar uma instância da classe <code>Carro</code>, usamos a palavra-chave <code>new</code>. Aqui está um exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">meuCarro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Carro</span><span class="p">(</span><span class="s2">&quot;Ford&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Mustang&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2022</span><span class="p">);</span>
 </code></pre></div>
-<p>Observe que a função <code>cumprimentar</code> espera um objeto do tipo <code>Pessoa</code>.</p>
-<h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">#</a></h3>
-<p>As classes em TypeScript permitem definir objetos com propriedades e métodos. Aqui está um exemplo:</p>
+<p>Neste exemplo, criamos um novo objeto <code>meuCarro</code> que é uma instância da classe <code>Carro</code>. Passamos três argumentos para o construtor da classe para definir as propriedades do carro.</p>
+<p>Podemos acessar as propriedades e métodos do objeto da seguinte maneira:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">meuCarro</span><span class="p">.</span><span class="nx">marca</span><span class="p">);</span><span class="w"> </span><span class="c1">// Ford</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">meuCarro</span><span class="p">.</span><span class="nx">acelerar</span><span class="p">());</span><span class="w"> </span><span class="c1">// O Mustang está acelerando!</span>
+</code></pre></div>
+<h2 id="encapsulamento">Encapsulamento<a class="headerlink" href="#encapsulamento" title="Permanent link">#</a></h2>
+<p>O encapsulamento é o conceito de ocultar a complexidade de implementação de um objeto e expor apenas o que é necessário para o uso externo. Em JavaScript, não há suporte nativo para encapsulamento, mas é possível simular esse conceito usando funções construtoras e closures.</p>
+<p>Aqui está um exemplo de como podemos simular o encapsulamento em JavaScript:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">ContaBancaria</span><span class="p">(</span><span class="nx">saldoInicial</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">saldo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">saldoInicial</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">this</span><span class="p">.</span><span class="nx">getSaldo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">saldo</span><span class="p">;</span>
+<span class="w">  </span><span class="p">};</span>
+
+<span class="w">  </span><span class="k">this</span><span class="p">.</span><span class="nx">depositar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">valor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">saldo</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">valor</span><span class="p">;</span>
+<span class="w">  </span><span class="p">};</span>
+
+<span class="w">  </span><span class="k">this</span><span class="p">.</span><span class="nx">sacar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">valor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">saldo</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nx">valor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">saldo</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="nx">valor</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Saldo insuficiente&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">minhaConta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ContaBancaria</span><span class="p">(</span><span class="mf">1000</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">minhaConta</span><span class="p">.</span><span class="nx">getSaldo</span><span class="p">());</span><span class="w"> </span><span class="c1">// 1000</span>
+
+<span class="nx">minhaConta</span><span class="p">.</span><span class="nx">depositar</span><span class="p">(</span><span class="mf">500</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">minhaConta</span><span class="p">.</span><span class="nx">getSaldo</span><span class="p">());</span><span class="w"> </span><span class="c1">// 1500</span>
+
+<span class="nx">minhaConta</span><span class="p">.</span><span class="nx">sacar</span><span class="p">(</span><span class="mf">2000</span><span class="p">);</span><span class="w"> </span><span class="c1">// Saldo insuficiente</span>
+
+<span class="nx">minhaConta</span><span class="p">.</span><span class="nx">sacar</span><span class="p">(</span><span class="mf">1000</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">minhaConta</span><span class="p">.</span><span class="nx">getSaldo</span><span class="p">());</span><span class="w"> </span><span class="c1">// 500</span>
+</code></pre></div>
+<p>Neste exemplo, temos uma função construtora <code>ContaBancaria</code> que simula uma conta bancária. A variável <code>saldo</code> é declarada dentro da função e não é exposta ao código externo. Em vez disso, expomos métodos públicos para acessar e manipular o saldo da conta bancária: <code>getSaldo</code>, <code>depositar</code> e <code>sacar</code>.</p>
+<h2 id="heranca">Herança<a class="headerlink" href="#heranca" title="Permanent link">#</a></h2>
+<p>Herança é um conceito importante na programação orientada a objetos, e em JavaScript podemos implementá-lo usando a palavra-chave <code>extends</code>. Quando uma classe estende outra classe, ela herda suas propriedades e métodos. Aqui está um exemplo:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Animal</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">nome</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
-<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">nome</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">nome</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nome</span><span class="p">;</span>
 <span class="w">  </span><span class="p">}</span>
+
 <span class="w">  </span><span class="nx">fazerBarulho</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Barulho genérico de animal&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">nome</span><span class="si">}</span><span class="sb"> está fazendo barulho.`</span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 
 <span class="kd">class</span><span class="w"> </span><span class="nx">Cachorro</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">nome</span><span class="p">,</span><span class="w"> </span><span class="nx">raca</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">super</span><span class="p">(</span><span class="nx">nome</span><span class="p">);</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">raca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">raca</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nx">latir</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">nome</span><span class="si">}</span><span class="sb"> (</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">raca</span><span class="si">}</span><span class="sb">) está latindo.`</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Neste exemplo, temos duas classes: <code>Animal</code> e <code>Cachorro</code>. A classe <code>Cachorro</code> estende a classe <code>Animal</code> usando a palavra-chave <code>extends</code>. Isso significa que a classe <code>Cachorro</code> herda a propriedade <code>nome</code> e o método <code>fazerBarulho</code> da classe <code>Animal</code>.</p>
+<p>Além disso, a classe <code>Cachorro</code> tem sua própria propriedade <code>raca</code> e seu próprio método <code>latir</code>. Observe que o método <code>latir</code> usa a propriedade <code>nome</code> da classe <code>Animal</code>, bem como a propriedade <code>raca</code> da classe <code>Cachorro</code>.</p>
+<p>Agora, vamos criar um objeto <code>meuCachorro</code> que é uma instância da classe <code>Cachorro</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">meuCachorro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Cachorro</span><span class="p">(</span><span class="s2">&quot;Fido&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Labrador Retriever&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>Podemos acessar as propriedades e métodos do objeto da seguinte maneira:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">meuCachorro</span><span class="p">.</span><span class="nx">nome</span><span class="p">);</span><span class="w"> </span><span class="c1">// Fido</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">meuCachorro</span><span class="p">.</span><span class="nx">raca</span><span class="p">);</span><span class="w"> </span><span class="c1">// Labrador Retriever</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">meuCachorro</span><span class="p">.</span><span class="nx">fazerBarulho</span><span class="p">());</span><span class="w"> </span><span class="c1">// Fido está fazendo barulho.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">meuCachorro</span><span class="p">.</span><span class="nx">latir</span><span class="p">());</span><span class="w"> </span><span class="c1">// Fido (Labrador Retriever) está latindo.</span>
+</code></pre></div>
+<h2 id="polimorfismo">Polimorfismo<a class="headerlink" href="#polimorfismo" title="Permanent link">#</a></h2>
+<p>Polimorfismo é outro conceito importante na programação orientada a objetos. Em JavaScript, podemos implementar o polimorfismo usando a mesma assinatura de método em várias classes diferentes. Aqui está um exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">nome</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nome</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
 <span class="w">  </span><span class="nx">fazerBarulho</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Au au!&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">nome</span><span class="si">}</span><span class="sb"> está fazendo barulho.`</span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="nx">cachorro</span><span class="o">:</span><span class="w"> </span><span class="kt">Cachorro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Cachorro</span><span class="p">(</span><span class="s1">&#39;Rex&#39;</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">cachorro</span><span class="p">.</span><span class="nx">nome</span><span class="p">);</span><span class="w"> </span><span class="c1">// &#39;Rex&#39;</span>
-<span class="nx">cachorro</span><span class="p">.</span><span class="nx">fazerBarulho</span><span class="p">();</span><span class="w"> </span><span class="c1">// &#39;Au au!&#39;</span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">Cachorro</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">nome</span><span class="p">,</span><span class="w"> </span><span class="nx">raca</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">super</span><span class="p">(</span><span class="nx">nome</span><span class="p">);</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">raca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">raca</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nx">fazerBarulho</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">nome</span><span class="si">}</span><span class="sb"> (</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">raca</span><span class="si">}</span><span class="sb">) está latindo.`</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nx">Gato</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">nome</span><span class="p">,</span><span class="w"> </span><span class="nx">cor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">super</span><span class="p">(</span><span class="nx">nome</span><span class="p">);</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">cor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cor</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nx">fazerBarulho</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">nome</span><span class="si">}</span><span class="sb"> (</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">cor</span><span class="si">}</span><span class="sb">) está miando.`</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
-<p>Observe que a classe <code>Cachorro</code> herda da classe <code>Animal</code> usando a sintaxe <code>class nomeClasse extends nomeClassePai</code>. A classe <code>Cachorro</code> sobrescreve o método <code>fazerBarulho</code> da classe <code>Animal</code>.</p>
+<p>Neste exemplo, temos três classes: <code>Animal</code>, <code>Cachorro</code> e <code>Gato</code>. Todas essas classes têm um método <code>fazerBarulho</code>, mas cada uma delas o implementa de maneira diferente. Quando chamamos o método <code>fazerBarulho</code> em um objeto, o JavaScript chama o método correto, dependendo do tipo do objeto.</p>
+<p>Agora, vamos criar um exemplo de uso do polimorfismo com as classes <code>Cachorro</code> e <code>Gato</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">cachorro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Cachorro</span><span class="p">(</span><span class="s1">&#39;Rex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Golden Retriever&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">gato</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Gato</span><span class="p">(</span><span class="s1">&#39;Miau&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;preto&#39;</span><span class="p">);</span>
+
+<span class="nx">cachorro</span><span class="p">.</span><span class="nx">fazerBarulho</span><span class="p">();</span><span class="w"> </span><span class="c1">// Saída: &quot;Rex (Golden Retriever) está latindo.&quot;</span>
+<span class="nx">gato</span><span class="p">.</span><span class="nx">fazerBarulho</span><span class="p">();</span><span class="w"> </span><span class="c1">// Saída: &quot;Miau (preto) está miando.&quot;</span>
+</code></pre></div>
+<p>Observe que mesmo chamando o mesmo método <code>fazerBarulho</code>, a saída é diferente para cada objeto, pois cada classe implementa esse método de forma diferente.</p>
+<h2 id="metodos-estaticos">Métodos estáticos<a class="headerlink" href="#metodos-estaticos" title="Permanent link">#</a></h2>
+<p>Em JavaScript, também podemos definir métodos estáticos em uma classe. Métodos estáticos são métodos que pertencem à classe em si, em vez de pertencerem a uma instância da classe. Aqui está um exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Utilitarios</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="nx">formatarNumero</span><span class="p">(</span><span class="nx">numero</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">numero</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">(</span><span class="s2">&quot;pt-BR&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Utilitarios</span><span class="p">.</span><span class="nx">formatarNumero</span><span class="p">(</span><span class="mf">1000</span><span class="p">));</span><span class="w"> </span><span class="c1">// 1.000</span>
+</code></pre></div>
+<p>Neste exemplo, definimos um método estático chamado <code>formatarNumero</code> na classe <code>Utilitarios</code>. Esse método não é acessível a partir de instâncias da classe, apenas a partir da própria classe.</p>
+<hr />
+<ul>
+<li>A programação orientada a objetos é um paradigma importante para a escrita de código estruturado e reutilizável. Em JavaScript, podemos utilizar classes, herança, encapsulamento, polimorfismo e outros conceitos da orientação a objetos para criar código mais legível e organizado. Com esses conceitos em mente, podemos criar soluções mais eficientes e escaláveis para nossos projetos em JavaScript.</li>
+</ul>
 
 
 
