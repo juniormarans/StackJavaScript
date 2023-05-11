@@ -2486,6 +2486,70 @@ Abra o arquivo HTML no navegador, clicando duas vezes no arquivo, arrastando e s
 
 <span class="nx">saudacao</span><span class="p">(</span><span class="s2">&quot;João&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// imprime &quot;Olá, João!&quot;</span>
 </code></pre></div>
+<ul>
+<li><strong>JSON</strong>: Embora o formato de dados JSON seja frequentemente usado em aplicações JavaScript e possa ser facilmente representado como objetos JavaScript, o JSON em si não é um tipo estruturado de JavaScript.</li>
+</ul>
+<p>O JSON (JavaScript Object Notation) é um formato de dados que pode ser usado por qualquer linguagem de programação que possa analisar texto. Enquanto isso, um objeto <code>{}</code> em JavaScript é um tipo de dados nativo da linguagem, que pode ser usado para representar dados estruturados de forma programática.</p>
+<ul>
+<li>
+<p>Sintaxe: O JSON tem uma sintaxe específica que é diferente da sintaxe usada para criar objetos JavaScript. Os objetos em JavaScript são definidos usando a sintaxe de chaves <code>{}</code> e pares de chave-valor, enquanto o JSON é definido usando apenas texto em um formato específico.</p>
+</li>
+<li>
+<p>Métodos: O JSON é um formato de dados independente que é usado para representar informações em diferentes linguagens de programação, incluindo JavaScript. Embora haja alguns métodos JavaScript nativos que permitem trabalhar com JSON (como <code>JSON.stringify()</code> e <code>JSON.parse()</code>), esses métodos não estão disponíveis para objetos JavaScript.</p>
+</li>
+<li>
+<p>Flexibilidade: Os objetos em JavaScript são muito mais flexíveis do que o JSON. Em um objeto JavaScript, você pode adicionar, remover e modificar propriedades e valores à vontade. No JSON, entretanto, você precisa seguir uma estrutura rígida e bem definida, para que possa ser interpretado corretamente por outras linguagens de programação.</p>
+</li>
+<li>
+<p>Armazenamento: Os objetos em JavaScript podem ser armazenados em variáveis, em memória ou em bancos de dados, enquanto o JSON é geralmente usado para transferir dados entre diferentes sistemas e aplicações. No entanto, o JSON também pode ser armazenado em arquivos, bancos de dados ou mesmo em variáveis JavaScript se necessário.</p>
+</li>
+</ul>
+<p>Suponha que temos um objeto JavaScript que representa um usuário:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">usuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">nome</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Ana&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">idade</span><span class="o">:</span><span class="w"> </span><span class="mf">28</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">endereco</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">rua</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Rua das Flores&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">numero</span><span class="o">:</span><span class="w"> </span><span class="mf">123</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">cidade</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;São Paulo&#39;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Este objeto é representado usando a sintaxe de chaves <code>{}</code> e pode ser facilmente manipulado no código JavaScript. Por exemplo, podemos adicionar uma nova propriedade <code>email</code> ao objeto da seguinte forma:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">usuario</span><span class="p">.</span><span class="nx">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ana@gmail.com&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>Agora, vamos supor que precisamos enviar os dados do usuário para um servidor. Nesse caso, podemos usar o formato JSON para representar esses dados em uma string de texto. Para fazer isso, podemos usar o método <code>JSON.stringify()</code> do JavaScript:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">usuarioJSON</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">usuario</span><span class="p">);</span>
+</code></pre></div>
+<p>Isso converterá o objeto JavaScript em uma string JSON:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;nome&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;idade&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;endereco&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;rua&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rua das Flores&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;numero&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;cidade&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;São Paulo&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ana@gmail.com&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Observe que a sintaxe é diferente da usada em objetos JavaScript. Além disso, a propriedade <code>email</code> que adicionamos ao objeto original agora está incluída na string JSON.</p>
+<p>Para converter a string JSON de volta para um objeto JavaScript, podemos usar o método <code>JSON.parse()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">usuarioDeJSON</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">usuarioJSON</span><span class="p">);</span>
+</code></pre></div>
+<p>Isso converterá a string JSON de volta para um objeto JavaScript que pode ser manipulado no código da mesma forma que o objeto original:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nx">nome</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Ana&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">idade</span><span class="o">:</span><span class="w"> </span><span class="mf">28</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">endereco</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">rua</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Rua das Flores&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">numero</span><span class="o">:</span><span class="w"> </span><span class="mf">123</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">cidade</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;São Paulo&#39;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ana@gmail.com&#39;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Em resumo, a principal diferença entre um objeto JavaScript e um objeto JSON é a sintaxe usada para representá-los e a forma como eles são manipulados no código. O objeto JavaScript é um tipo de dados nativos da linguagem, enquanto o JSON é um formato de dados independente usado para representar dados estruturados em várias linguagens de programação, é amplamente utilizado para transmitir dados entre o cliente e o servidor em aplicações web. Ele é especialmente útil quando se trabalha com APIs (Application Programming Interfaces), pois permite que as aplicações transmitam e recebam dados de forma eficiente e fácil de ler e manipular. O JSON também é comumente usado para armazenar dados em bancos de dados NoSQL e em arquivos de configuração de aplicações.</p>
 <p>Em resumo, JavaScript possui vários tipos de dados que são usados para representar diferentes tipos de valores. É importante entender os diferentes tipos de dados para poder trabalhar com eles corretamente em seus programas.</p>
 <h3 id="formatacao-e-indentacao-de-codigo-em-javascript">Formatação e Indentação de Código em JavaScript<a class="headerlink" href="#formatacao-e-indentacao-de-codigo-em-javascript" title="Permanent link">#</a></h3>
 <p>A <strong>formatação</strong> e <strong>indentação</strong> de código em JavaScript são importantes para a <strong>legibilidade</strong> e <strong>manutenção</strong> do código. Quando o código é organizado de maneira consistente e estruturada, é mais fácil para outros desenvolvedores entenderem o código e fazerem alterações.</p>
