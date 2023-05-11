@@ -951,6 +951,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#metodos-mais-comuns-da-interface-de-conexao-com-bd" class="md-nav__link">
+    Métodos mais comuns da interface de conexão com BD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#modelos-e-migracoes" class="md-nav__link">
     Modelos e Migrações
   </a>
@@ -960,6 +967,13 @@
           <li class="md-nav__item">
   <a href="#conectando-os-models" class="md-nav__link">
     Conectando os Models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-para-operacoes-crud-com-sequelize" class="md-nav__link">
+    Métodos para operações CRUD  com Sequelize.
   </a>
   
 </li>
@@ -1234,6 +1248,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#metodos-mais-comuns-da-interface-de-conexao-com-bd" class="md-nav__link">
+    Métodos mais comuns da interface de conexão com BD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#modelos-e-migracoes" class="md-nav__link">
     Modelos e Migrações
   </a>
@@ -1243,6 +1264,13 @@
           <li class="md-nav__item">
   <a href="#conectando-os-models" class="md-nav__link">
     Conectando os Models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-para-operacoes-crud-com-sequelize" class="md-nav__link">
+    Métodos para operações CRUD  com Sequelize.
   </a>
   
 </li>
@@ -1423,6 +1451,85 @@
 <li><code>underscoredAll</code>: define se o mesmo padrão de nomenclatura deve ser aplicado aos nomes dos campos (colunas) dos modelos.</li>
 </ul>
 <p>Essas configurações podem variar dependendo do banco de dados e do ORM que você está usando, mas em geral, um arquivo de configuração de banco de dados é usado para armazenar informações de conexão com o banco de dados e opções de configuração específicas do banco de dados e do ORM.</p>
+<h3 id="metodos-mais-comuns-da-interface-de-conexao-com-bd">Métodos mais comuns da interface de conexão com BD<a class="headerlink" href="#metodos-mais-comuns-da-interface-de-conexao-com-bd" title="Permanent link">#</a></h3>
+<ul>
+<li><code>sequelize.authenticate()</code>: Este método é usado para testar a conexão com o banco de dados. Ele retorna uma Promise que é resolvida se a conexão for bem-sucedida e rejeitada se a conexão falhar.</li>
+</ul>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">sequelize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">(</span><span class="s1">&#39;database&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;username&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;password&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">host</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">dialect</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;mysql&#39;</span>
+<span class="p">});</span>
+
+<span class="nx">sequelize</span><span class="p">.</span><span class="nx">authenticate</span><span class="p">()</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Conexão bem-sucedida!&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="w">  </span><span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Erro ao conectar ao banco de dados:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">  </span><span class="p">});</span>
+</code></pre></div>
+<ul>
+<li><code>sequelize.define()</code>: Este método é usado para definir um modelo que corresponde a uma tabela no banco de dados. Ele recebe o nome da tabela, um objeto que descreve os campos e as opções do modelo e retorna um objeto Model que pode ser usado para interagir com a tabela.</li>
+</ul>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">sequelize</span><span class="p">.</span><span class="nx">define</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">firstName</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">allowNull</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">lastName</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">allowNull</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">unique</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">allowNull</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">allowNull</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<ul>
+<li><code>sequelize.sync()</code>: Este método é usado para sincronizar os modelos definidos com o banco de dados. Ele cria as tabelas correspondentes se elas não existirem e atualiza as tabelas existentes se houver alterações no modelo.</li>
+</ul>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">sequelize</span><span class="p">.</span><span class="nx">sync</span><span class="p">()</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Modelos sincronizados com o banco de dados!&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="w">  </span><span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Erro ao sincronizar modelos com o banco de dados:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">  </span><span class="p">});</span>
+</code></pre></div>
+<ul>
+<li><code>Model.findAll()</code>: Este método é usado para consultar todos os registros em uma tabela. Ele retorna uma Promise que é resolvida com um array de objetos correspondentes aos registros da tabela.</li>
+</ul>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">User</span><span class="p">.</span><span class="nx">findAll</span><span class="p">()</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">users</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Todos os usuários:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">users</span><span class="p">);</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="w">  </span><span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Erro ao consultar usuários:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">  </span><span class="p">});</span>
+</code></pre></div>
+<ul>
+<li><code>Model.findOne()</code>: Este método é usado para consultar um único registro em uma tabela. Ele retorna uma Promise que é resolvida com um objeto correspondente ao registro da tabela ou null se nenhum registro for encontrado.</li>
+</ul>
+<p>Exemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">User</span><span class="p">.</span><span class="nx">findOne</span><span class="p">({</span><span class="w"> </span><span class="nx">where</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">})</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">user</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Usuário encontrado:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">user</span><span class="p">);</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="w">  </span><span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Erro ao consultar usuário:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">  </span><span class="p">});</span>
+</code></pre></div>
+<p>Esses são apenas alguns dos métodos disponíveis na interface de conexão do Sequelize com o banco de dados. Há muitos outros métodos e opções disponíveis para consulta, inserção, atualização e exclusão de dados.</p>
 <p>Ao final desta etapa você terá a seguinte estrutura de diretório:</p>
 <div class="highlight"><pre><span></span><code>nome-do-projeto/
 ├── src/
@@ -1819,6 +1926,36 @@ Para isso podemos cria um arquivo <code>src/database/index.js</code> para defini
 </li>
 </ol>
 <p>Em resumo, o código configura a conexão do Sequelize com o banco de dados e define os modelos que serão utilizados na aplicação, permitindo que eles sejam sincronizados com o banco de dados.</p>
+<h3 id="metodos-para-operacoes-crud-com-sequelize">Métodos para operações CRUD  com Sequelize.<a class="headerlink" href="#metodos-para-operacoes-crud-com-sequelize" title="Permanent link">#</a></h3>
+<p>O Sequelize oferece uma variedade de métodos para executar operações CRUD em bancos de dados relacionais. Alguns dos métodos mais comuns são <code>create</code>, <code>findAll</code>, <code>findOne</code>, <code>update</code> e <code>destroy</code>.</p>
+<p>O método <code>create</code> é utilizado para criar um novo registro na tabela especificada, com os dados fornecidos como um objeto. Por exemplo, para criar um novo cliente no banco de dados, podemos utilizar o seguinte código:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">Clientes</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">nome</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;João&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;joao@teste.com&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">senha</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;senha123&#39;</span>
+<span class="p">})</span>
+</code></pre></div>
+<p>O método <code>findAll</code> retorna todos os registros na tabela especificada que correspondem aos critérios fornecidos. Já o método <code>findOne</code> retorna o primeiro registro na tabela especificada que corresponde aos critérios fornecidos. Por exemplo, para buscar um cliente no banco de dados pelo ID, podemos utilizar o seguinte código:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">Clientes</span><span class="p">.</span><span class="nx">findByPk</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span>
+</code></pre></div>
+<p>O método <code>update</code> é utilizado para atualizar os registros na tabela especificada com os dados fornecidos como um objeto, com base nos critérios fornecidos. Por exemplo, para atualizar o nome de um cliente no banco de dados, podemos utilizar o seguinte código:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">Clientes</span><span class="p">.</span><span class="nx">update</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">nome</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;João da Silva&#39;</span>
+<span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">where</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div>
+<p>Por fim, o método <code>destroy</code> é utilizado para excluir os registros da tabela especificada que correspondem aos critérios fornecidos. Por exemplo, para excluir um cliente do banco de dados, podemos utilizar o seguinte código:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">Clientes</span><span class="p">.</span><span class="nx">destroy</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">where</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div>
+<p>É importante destacar que esses métodos podem ser usados para executar operações CRUD em qualquer tabela do banco de dados, desde que o modelo correspondente tenha sido definido corretamente no Sequelize. Além disso, o Sequelize oferece muitos outros métodos para lidar com outras operações comuns no banco de dados, como associações entre tabelas, validações de dados e muito mais.</p>
+<p>Em resumo, o Sequelize é uma ferramenta poderosa e flexível para o mapeamento de objetos em bancos de dados relacionais, e seus métodos para operações CRUD são essenciais para a manipulação de dados de forma eficiente e segura.</p>
 <p>Ao final desta etapa você tera a seguinte estrutura de diretorio:</p>
 <div class="highlight"><pre><span></span><code>nome-do-projeto/
 ├── src/
