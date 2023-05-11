@@ -202,3 +202,67 @@ Neste exemplo, definimos um método estático chamado `formatarNumero` na classe
 ---
 
 - A programação orientada a objetos é um paradigma importante para a escrita de código estruturado e reutilizável. Em JavaScript, podemos utilizar classes, herança, encapsulamento, polimorfismo e outros conceitos da orientação a objetos para criar código mais legível e organizado. Com esses conceitos em mente, podemos criar soluções mais eficientes e escaláveis para nossos projetos em JavaScript.
+
+---
+
+## Pacotes
+
+Um pacote em JavaScript é um conjunto de código que pode ser facilmente compartilhado entre projetos. Se você está trabalhando em um projeto que usa um conjunto de funcionalidades que você gostaria de reutilizar em outros projetos, pode ser útil criar um pacote para essas funcionalidades. Neste artigo, vamos ver como criar um pacote em JavaScript para uso interno, ou seja, que não será publicado no registro de pacotes do NPM.
+
+O primeiro passo para criar um pacote em JavaScript é criar uma nova pasta com o nome que desejar para o seu pacote. Você pode criar essa pasta em qualquer lugar do seu computador. Por exemplo, você pode criar uma pasta chamada "meu-pacote" em sua área de trabalho.
+
+Dentro da pasta que você acabou de criar, execute o comando "npm init" no terminal. Isso irá criar um arquivo "package.json" para gerenciar as dependências do seu pacote. Siga as instruções na linha de comando para preencher as informações do seu pacote, como o nome, versão, descrição, etc. Essas informações podem ser alteradas posteriormente.
+
+```bash
+cd meu-pacote
+npm init
+```
+
+Agora que o projeto está inicializado, é hora de começar a escrever o código que você deseja incluir no pacote. Este pode ser um único arquivo ou vários arquivos em um diretório. Para este exemplo, vamos criar uma função simples que calcula a soma de dois números.
+
+Crie um novo arquivo chamado "minhas-funcoes.js" dentro da pasta "meu-pacote" e adicione o seguinte código:
+
+```javascript
+module.exports = {
+  soma: function(a, b) {
+    return a + b;
+  }
+};
+```
+
+Crie um arquivo "index.js" na raiz da pasta do seu pacote. Este arquivo será a entrada do seu pacote e irá exportar as funcionalidades que você deseja disponibilizar. No nosso caso, vamos exportar a função "soma" que acabamos de criar.
+
+```javascript
+const minhasFuncoes = require('./minhas-funcoes');
+
+module.exports = {
+  soma: minhasFuncoes.soma
+};
+```
+
+Agora que você criou o pacote, é hora de testá-lo. Para fazer isso, crie um novo projeto em um diretório separado e adicione o seu pacote como uma dependência.
+
+```bash
+mkdir meu-projeto
+cd meu-projeto
+npm init
+npm install ../meu-pacote
+```
+
+Em seguida, crie um arquivo "index.js" em seu novo projeto e importe a função "soma" do seu pacote.
+
+```javascript
+const meuPacote = require('meu-pacote');
+
+console.log(meuPacote.soma(2, 3)); // Output: 5
+```
+
+Execute o arquivo "index.js" usando o Node.js.
+
+```bash
+node index.js
+```
+
+Se o output for "5", isso significa que o seu pacote está funcionando corretamente.
+
+Criar um pacote em JavaScript pode ser uma maneira útil de reutilizar código em vários projetos. Neste artigo, você aprendeu a criar um pacote em JavaScript para uso interno, sem publicá-lo no registro de pacotes do NPM. Lembre-se de que este é apenas um exemplo simples e que há muitas maneiras de criar pacotes mais complexos e robustos em JavaScript.

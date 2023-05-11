@@ -83,6 +83,89 @@ console.log(resultado); // Saída: 5
 
 Aqui, a função `somar` espera dois parâmetros, `valor1` e `valor2`, que são usados ​​para somar os valores e retornar o resultado.
 
+#### Ordem de função
+
+A ordem de função em JavaScript se refere à ordem em que as funções são definidas e executadas no código. 
+
+Quando uma função é definida em JavaScript, ela é armazenada em memória, mas seu código não é executado imediatamente. Em vez disso, o código dentro da função só será executado quando a função for chamada. 
+
+Por exemplo, considere o seguinte código:
+
+```js
+function soma(a, b) {
+  return a + b;
+}
+
+function subtracao(a, b) {
+  return a - b;
+}
+
+console.log(soma(1, 2)); // output: 3
+console.log(subtracao(4, 2)); // output: 2
+```
+
+Nesse exemplo, as funções "soma" e "subtracao" são definidas primeiro e, em seguida, são chamadas para realizar cálculos. A ordem em que as funções são definidas não afeta o resultado final.
+
+No entanto, se houver dependências entre as funções, a ordem de definição pode ser importante. Se uma função A chama uma função B, a função B deve ser definida antes da função A. Caso contrário, o código irá gerar um erro. 
+
+Por exemplo:
+
+```js
+function soma(a, b) {
+  return a + b;
+}
+
+function multiplicacao(a, b) {
+  return a * b;
+}
+
+function somaMultiplicacao(a, b, c) {
+  return soma(multiplicacao(a, b), c);
+}
+
+console.log(somaMultiplicacao(2, 3, 4)); // output: 10
+```
+
+Neste exemplo, a função "somaMultiplicacao" chama as funções "soma" e "multiplicacao". Essas funções devem ser definidas antes da função "somaMultiplicacao" para que o código funcione corretamente.
+
+#### Arrow functions
+
+Arrow functions (ou "funções de seta" em português) são uma sintaxe alternativa para escrever funções em JavaScript. Elas foram introduzidas na especificação ECMAScript 6 e são uma maneira mais concisa e expressiva de definir funções.
+
+A sintaxe de uma arrow function é a seguinte:
+
+```js
+(param1, param2, ..., paramN) => { 
+  // corpo da função
+}
+```
+
+Aqui, `param1`, `param2`, ..., `paramN` são os parâmetros da função e o `=>` é a "seta" que indica que estamos definindo uma arrow function. O corpo da função é definido dentro das chaves `{}` e pode conter uma ou mais instruções. Se o corpo da função tiver apenas uma instrução, podemos omitir as chaves e a palavra-chave `return`, como no exemplo a seguir:
+
+```js
+(param1, param2, ..., paramN) => instrucao;
+```
+
+Aqui, `instrucao` é a instrução que será retornada pela função.
+
+Por exemplo, considere a seguinte função tradicional:
+
+```js
+function soma(a, b) {
+  return a + b;
+}
+```
+
+Podemos reescrevê-la usando arrow function da seguinte forma:
+
+```js
+const soma = (a, b) => a + b;
+```
+
+Observe como a sintaxe da arrow function é mais concisa e expressiva, tornando o código mais fácil de ler e entender.
+
+As arrow functions também têm algumas diferenças comportamentais em relação às funções tradicionais. Em particular, elas têm um `this` léxico, o que significa que o valor de `this` é definido no momento em que a função é definida, e não quando ela é executada. Além disso, as arrow functions não têm o objeto `arguments`, o que pode afetar a forma como lidamos com os argumentos da função.
+
 #### Funções Anônimas em JavaScript
 
 Em JavaScript, você pode criar funções anônimas, que são funções que não possuem nome. As funções anônimas são usadas em situações em que você precisa passar uma função como argumento para outra função.
