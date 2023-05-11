@@ -1,7 +1,5 @@
 ## Teste de software e ferramentas de teste
 
-Ferramentas de teste em JavaScript: conheça as opções disponíveis
-
 Os testes de software são uma parte fundamental do processo de desenvolvimento, e a escolha das ferramentas de teste certas é crucial para garantir que o código esteja funcionando corretamente e de acordo com os requisitos do projeto. Quando se trata de JavaScript, existem várias opções disponíveis, cada uma com um propósito específico e adequada para diferentes tipos de teste.
 
 A seguir, apresentamos uma breve explicação de cada uma das ferramentas de teste em JavaScript e em que elas se aplicam:

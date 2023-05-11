@@ -2,7 +2,7 @@
 
 Uma API (Application Programming Interface) é uma interface que permite a comunicação entre diferentes componentes de software. Ela fornece um conjunto de regras, protocolos e ferramentas para que as aplicações possam interagir entre si, consumindo dados, serviços ou recursos.
 
-É bastante comum utilizar uma API para consultar uma base de dados. Muitos aplicativos e serviços utilizam APIs para acessar informações de bancos de dados e disponibilizá-las para outros aplicativos.
+É bastante comum utilizar uma API para persistir e consultar uma base de dados. Muitos aplicativos e serviços utilizam APIs para acessar informações de bancos de dados e disponibilizá-las para outros aplicativos.
 
 ```mermaid
 sequenceDiagram
