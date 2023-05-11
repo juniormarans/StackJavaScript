@@ -978,6 +978,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#chamada-de-stored-procedures" class="md-nav__link">
+    Chamada de stored procedures
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1271,6 +1278,13 @@
           <li class="md-nav__item">
   <a href="#metodos-para-operacoes-crud-com-sequelize" class="md-nav__link">
     Métodos para operações CRUD  com Sequelize
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chamada-de-stored-procedures" class="md-nav__link">
+    Chamada de stored procedures
   </a>
   
 </li>
@@ -1960,6 +1974,21 @@ Para isso podemos cria um arquivo <code>src/database/index.js</code> para defini
 </code></pre></div>
 <p>É importante destacar que esses métodos podem ser usados para executar operações CRUD em qualquer tabela do banco de dados, desde que o modelo correspondente tenha sido definido corretamente no Sequelize. Além disso, o Sequelize oferece muitos outros métodos para lidar com outras operações comuns no banco de dados, como associações entre tabelas, validações de dados e muito mais.</p>
 <p>Em resumo, o Sequelize é uma ferramenta poderosa e flexível para o mapeamento de objetos em bancos de dados relacionais, e seus métodos para operações CRUD são essenciais para a manipulação de dados de forma eficiente e segura.</p>
+<h3 id="chamada-de-stored-procedures">Chamada de stored procedures<a class="headerlink" href="#chamada-de-stored-procedures" title="Permanent link">#</a></h3>
+<p>O Sequelize oferece suporte a chamadas de stored procedures através do método <code>query()</code>. Com esse método, é possível executar qualquer comando SQL válido no banco de dados, incluindo chamadas de stored procedures.</p>
+<p>Aqui está um exemplo de como chamar uma stored procedure no Sequelize:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">sequelize</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s1">&#39;CALL nome_da_stored_procedure()&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Sequelize</span><span class="p">.</span><span class="nx">QueryTypes</span><span class="p">.</span><span class="nx">SELECT</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>Nesse exemplo, o método <code>query()</code> é chamado com a string contendo a chamada da stored procedure dentro do parâmetro <code>sql</code>. O segundo parâmetro é um objeto que define o tipo de consulta a ser executada (<code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code>, etc.). O resultado da consulta é retornado como uma promessa, que pode ser tratada com os métodos <code>.then()</code> e <code>.catch()</code>.</p>
+<p>É importante lembrar que a sintaxe da chamada da stored procedure pode variar dependendo do banco de dados e do tipo de linguagem de programação usada na stored procedure. Certifique-se de consultar a documentação do seu banco de dados para obter informações específicas sobre a sintaxe correta para a sua situação.</p>
 <p>Ao final desta etapa você tera a seguinte estrutura de diretorio:</p>
 <div class="highlight"><pre><span></span><code>nome-do-projeto/
 ├── src/
