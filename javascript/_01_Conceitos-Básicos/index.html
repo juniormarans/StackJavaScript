@@ -2457,23 +2457,28 @@ Abra o arquivo HTML no navegador, clicando duas vezes no arquivo, arrastando e s
 <h4 id="tipos-de-dados-nao-primitivos">Tipos de dados não primitivos<a class="headerlink" href="#tipos-de-dados-nao-primitivos" title="Permanent link">#</a></h4>
 <p>Os tipos de dados não primitivos são aqueles que são definidos pelo usuário ou são objetos. Eles são mutáveis, o que significa que seus valores podem ser alterados depois de definidos. Os tipos de dados não primitivos em JavaScript são:</p>
 <ul>
-<li>Arrays: são usados para representar coleções ordenadas de valores. Podem conter qualquer tipo de dado, inclusive outros arrays. Exemplo:</li>
+<li><strong>Arrays</strong>: são usados para representar coleções ordenadas de valores. Podem conter qualquer tipo de dado, inclusive outros arrays. Exemplo:</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">numeros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">];</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">nomes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;João&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Maria&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Pedro&quot;</span><span class="p">];</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">misto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;João&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Maria&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Pedro&quot;</span><span class="p">],</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Marcos&quot;</span><span class="p">];</span>
 </code></pre></div>
 <ul>
-<li>Objetos: são usados para representar coleções de propriedades e valores relacionados. Cada propriedade é uma chave que aponta para um valor. Exemplo:</li>
+<li><strong>Objetos</strong>: são coleções de pares de chave-valor, em que cada chave é uma string e o valor pode ser qualquer tipo de dado, incluindo outros objetos. Para criar um objeto em JavaScript, você pode usar a sintaxe de objeto literal, que é colocar as chaves e valores dentro de chaves <code>{}</code>:</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">pessoa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<span class="w">  </span><span class="nx">nome</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;João&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">  </span><span class="nx">idade</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span>
-<span class="w">  </span><span class="nx">altura</span><span class="o">:</span><span class="w"> </span><span class="mf">1.75</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">pessoa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">nome</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;João&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">idade</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">endereco</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">rua</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Av. Paulista&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">numero</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">cidade</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;São Paulo&quot;</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div>
+<p>Além desses tipos estruturados básicos, JavaScript também oferece outras formas de definir estruturas mais complexas, como classes e funções construtoras, que permitem criar objetos com métodos e propriedades personalizados.Essas são apenas algumas das maneiras de definir tipos estruturados em JavaScript. Existem muitas outras, incluindo as bibliotecas e frameworks populares, como React e Vue, que fornecem maneiras de definir componentes reutilizáveis e estruturas de dados personalizadas.</p>
 <ul>
-<li>Funções: são usadas para agrupar um conjunto de ações em um bloco de código reutilizável. Podem ser declaradas com ou sem parâmetros. Exemplo:</li>
+<li><strong>Funções</strong>: são usadas para agrupar um conjunto de ações em um bloco de código reutilizável. Podem ser declaradas com ou sem parâmetros. Exemplo:</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">saudacao</span><span class="p">(</span><span class="nx">nome</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Olá, &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">nome</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;!&quot;</span><span class="p">);</span>
