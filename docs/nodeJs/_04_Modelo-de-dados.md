@@ -757,6 +757,28 @@ Clientes.destroy({
 
 Em resumo, o Sequelize é uma ferramenta poderosa e flexível para o mapeamento de objetos em bancos de dados relacionais, e seus métodos para operações CRUD são essenciais para a manipulação de dados de forma eficiente e segura.
 
+### Chamada de stored procedures
+
+O Sequelize oferece suporte a chamadas de stored procedures através do método `query()`. Com esse método, é possível executar qualquer comando SQL válido no banco de dados, incluindo chamadas de stored procedures.
+
+Aqui está um exemplo de como chamar uma stored procedure no Sequelize:
+
+```js
+sequelize.query('CALL nome_da_stored_procedure()', {
+  type: Sequelize.QueryTypes.SELECT
+})
+.then(result => {
+  console.log(result);
+})
+.catch(error => {
+  console.error(error);
+});
+```
+
+Nesse exemplo, o método `query()` é chamado com a string contendo a chamada da stored procedure dentro do parâmetro `sql`. O segundo parâmetro é um objeto que define o tipo de consulta a ser executada (`SELECT`, `INSERT`, `UPDATE`, `DELETE`, etc.). O resultado da consulta é retornado como uma promessa, que pode ser tratada com os métodos `.then()` e `.catch()`.
+
+É importante lembrar que a sintaxe da chamada da stored procedure pode variar dependendo do banco de dados e do tipo de linguagem de programação usada na stored procedure. Certifique-se de consultar a documentação do seu banco de dados para obter informações específicas sobre a sintaxe correta para a sua situação.
+
 Ao final desta etapa você tera a seguinte estrutura de diretorio:
 
 ```tree

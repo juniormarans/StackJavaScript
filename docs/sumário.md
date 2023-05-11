@@ -235,6 +235,7 @@
 * [Modelos e Migrações](nodeJs/_04_Modelo-de-dados.md#modelos-e-migracoes)
 * [Conectando os Models](nodeJs/_04_Modelo-de-dados.md#conectando-os-models)
 * [Métodos para operações CRUD  com Sequelize](nodeJs/_04_Modelo-de-dados.md#metodos-para-operacoes-crud-com-sequelize)
+* [Chamada de stored procedures](nodeJs/_04_Modelo-de-dados.md#chamada-de-stored-procedures)
 ### [Introdução](nodeJs/_05_Definindo os Endpoints.md#introducao)
 * [Criando Endpoints](nodeJs/_05_Definindo os Endpoints.md#criando-endpoints)
 * [Parâmetros](nodeJs/_05_Definindo os Endpoints.md#parametros)
