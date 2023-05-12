@@ -1251,6 +1251,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#uso-das-colecoes-dos-pacotes" class="md-nav__link">
+    Uso das coleções dos pacotes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#documentacao-de-programas-javascript" class="md-nav__link">
     Documentação de Programas JavaScript
   </a>
@@ -2249,6 +2256,13 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-das-colecoes-dos-pacotes" class="md-nav__link">
+    Uso das coleções dos pacotes
+  </a>
   
 </li>
         
@@ -3319,6 +3333,32 @@ Os operadores em JavaScript são fundamentais para escrever um código limpo e e
 <div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pessoa</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s2">&quot;nome&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// true</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pessoa</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s2">&quot;toString&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// false</span>
 </code></pre></div>
+<h3 id="uso-das-colecoes-dos-pacotes">Uso das coleções dos pacotes<a class="headerlink" href="#uso-das-colecoes-dos-pacotes" title="Permanent link">#</a></h3>
+<p>O uso de coleções dos pacotes JavaScript depende do pacote específico que você está utilizando. Geralmente, o pacote deve ser instalado usando um gerenciador de pacotes, como o npm, e importado no seu arquivo JavaScript usando a palavra-chave <code>require</code> ou <code>import</code>, dependendo da versão do JavaScript que você está usando.</p>
+<p>existem pacotes integrados com o próprio ambiente de execução, como o navegador ou o Node.js, e geralmente não precisam ser instalados separadamente. Alguns exemplos de pacotes nativos incluem o Array, o Object e o Math.</p>
+<p>Por exemplo, se você quiser usar a biblioteca Lodash, que fornece muitas funções úteis para trabalhar com coleções, você pode instalá-la usando o npm:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">npm</span><span class="w"> </span><span class="nx">install</span><span class="w"> </span><span class="nx">lodash</span>
+</code></pre></div>
+<p>Em seguida, você pode importar a biblioteca no seu arquivo JavaScript usando o <code>require</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;lodash&#39;</span><span class="p">);</span>
+</code></pre></div>
+<p>A partir daí, você pode usar as funções da biblioteca para trabalhar com coleções. Por exemplo o pacote Immutable.js, que fornece estruturas de dados imutáveis para JavaScript, incluindo List, Map e Set. Para usar o Immutable.js, você pode instalá-lo usando o npm:</p>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>immutable
+</code></pre></div>
+<p>Em seguida, você pode importar o pacote e usar as estruturas de dados imutáveis. Por exemplo, para criar um mapa imutável com algumas chaves e valores:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">Map</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;immutable&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">map1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Map</span><span class="p">({</span><span class="w"> </span><span class="nx">a</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">map1</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: Map { &quot;a&quot;: 1, &quot;b&quot;: 2, &quot;c&quot;: 3 }</span>
+</code></pre></div>
+<p>Você pode então usar as funções da biblioteca para manipular o mapa imutável, criando novas instâncias de mapa imutável a partir da original:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">map2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">map1</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">map2</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: Map { &quot;a&quot;: 1, &quot;b&quot;: 50, &quot;c&quot;: 3 }</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">map3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">map2</span><span class="p">.</span><span class="ow">delete</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">map3</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: Map { &quot;b&quot;: 50, &quot;c&quot;: 3 }</span>
+</code></pre></div>
+<p>Esses são apenas alguns exemplos de como usar coleções em pacotes JavaScript. Sempre consulte a documentação do pacote específico que você está usando para obter informações detalhadas sobre como usar suas coleções.</p>
 <h3 id="documentacao-de-programas-javascript">Documentação de Programas JavaScript<a class="headerlink" href="#documentacao-de-programas-javascript" title="Permanent link">#</a></h3>
 <p>A documentação de um programa JavaScript é um conjunto de informações escritas sobre o programa, incluindo como usar o programa, quais funções e métodos ele oferece, quais parâmetros essas funções e métodos aceitam, quais valores eles retornam, exemplos de uso e outros detalhes relevantes.</p>
 <p>A documentação é essencial para ajudar outros desenvolvedores a entenderem e usarem o programa com facilidade, especialmente em projetos colaborativos. Além disso, a documentação também é uma ferramenta valiosa para ajudar os próprios desenvolvedores a lembrarem de como seu próprio código funciona e como usá-lo corretamente.</p>
